@@ -7,12 +7,20 @@
 
 import UIKit
 
-@main
+@UIApplicationMain
+@available(iOS 13.0, *)
+@available(iOS 13.0, *)
+@available(iOS 13.0, *)
+@available(iOS 13.0, *)
+@available(iOS 13.0, *)
+@available(iOS 13.0, *)
+
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
+    var window: UIWindow?
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        print ("test1234567")
         // Override point for customization after application launch.
         return true
     }
