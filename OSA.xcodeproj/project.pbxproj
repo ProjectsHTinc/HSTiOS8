@@ -27,6 +27,7 @@
 		6BFF985425C92ACA00D60BF3 /* Montserrat-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6BFF984925C92ACA00D60BF3 /* Montserrat-Medium.otf */; };
 		6BFF985525C92ACA00D60BF3 /* Montserrat-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6BFF984A25C92ACA00D60BF3 /* Montserrat-BoldItalic.otf */; };
 		6BFF985625C92ACA00D60BF3 /* Montserrat-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6BFF984B25C92ACA00D60BF3 /* Montserrat-ExtraBold.otf */; };
+		75C23945F22A66FEB1213F9B /* Pods_OSA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F66AD27FA536D59C45654DA6 /* Pods_OSA.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,9 @@
 		6BFF984925C92ACA00D60BF3 /* Montserrat-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.otf"; sourceTree = "<group>"; };
 		6BFF984A25C92ACA00D60BF3 /* Montserrat-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-BoldItalic.otf"; sourceTree = "<group>"; };
 		6BFF984B25C92ACA00D60BF3 /* Montserrat-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraBold.otf"; sourceTree = "<group>"; };
+		BE96B208A2855FB2D725DBF0 /* Pods-OSA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OSA.debug.xcconfig"; path = "Target Support Files/Pods-OSA/Pods-OSA.debug.xcconfig"; sourceTree = "<group>"; };
+		E9469CD60AD1D54DDFCA61FF /* Pods-OSA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OSA.release.xcconfig"; path = "Target Support Files/Pods-OSA/Pods-OSA.release.xcconfig"; sourceTree = "<group>"; };
+		F66AD27FA536D59C45654DA6 /* Pods_OSA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OSA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75C23945F22A66FEB1213F9B /* Pods_OSA.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,6 +136,8 @@
 				6BFF982425C9255400D60BF3 /* OSATests */,
 				6BFF982F25C9255400D60BF3 /* OSAUITests */,
 				6BFF980C25C9253700D60BF3 /* Products */,
+				F1ED08369EB70DF7C5161126 /* Pods */,
+				8F4DB25C7B379BC15395EAF8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -196,6 +203,24 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		8F4DB25C7B379BC15395EAF8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F66AD27FA536D59C45654DA6 /* Pods_OSA.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F1ED08369EB70DF7C5161126 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BE96B208A2855FB2D725DBF0 /* Pods-OSA.debug.xcconfig */,
+				E9469CD60AD1D54DDFCA61FF /* Pods-OSA.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -203,9 +228,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6BFF983525C9255400D60BF3 /* Build configuration list for PBXNativeTarget "OSA" */;
 			buildPhases = (
+				A238791BB6D75AF739BCD81B /* [CP] Check Pods Manifest.lock */,
 				6BFF980725C9253700D60BF3 /* Sources */,
 				6BFF980825C9253700D60BF3 /* Frameworks */,
 				6BFF980925C9253700D60BF3 /* Resources */,
+				0D8442DA8E3B953B469C0BA2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -331,6 +358,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0D8442DA8E3B953B469C0BA2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OSA/Pods-OSA-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OSA/Pods-OSA-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OSA/Pods-OSA-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A238791BB6D75AF739BCD81B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OSA-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6BFF980725C9253700D60BF3 /* Sources */ = {
@@ -513,6 +582,7 @@
 		};
 		6BFF983625C9255400D60BF3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE96B208A2855FB2D725DBF0 /* Pods-OSA.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -533,6 +603,7 @@
 		};
 		6BFF983725C9255400D60BF3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E9469CD60AD1D54DDFCA61FF /* Pods-OSA.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
