@@ -81,3 +81,71 @@ extension UINavigationBar {
     
     
 }
+
+
+//func setNavGradient() {
+//
+//       if let navigationbar = self.navigationController?.navigationBar {
+//              navigationbar.setGradientBackground(colors: [UIColor(red: 189.0/255.0, green: 6.0/255.0, blue: 33.0/255.0, alpha: 1.0), UIColor(red: 95.0/255.0, green: 3.0/255.0, blue: 17.0/255.0, alpha: 1.0)], startPoint: .topLeft, endPoint: .bottomRight)
+//              backView.layer.cornerRadius = 15
+//       }
+//}
+
+//       //MARK:- Facebook Login
+//       func fbLogin() {
+//           let loginManager = LoginManager()
+//           loginManager.logOut()
+//           loginManager.logIn(permissions:[ .publicProfile, .email, .userFriends ], viewController: self) { loginResult in
+//
+//               switch loginResult {
+//
+//               case .failed(let error):
+//                   //HUD.hide()
+//                   print(error)
+//
+//               case .cancelled:
+//                   //HUD.hide()
+//                   print("User cancelled login process.")
+//
+//               case .success( _, _, _):
+//                   print("Logged in!")
+//                   self.getFBUserData()
+//               }
+//           }
+//       }
+//
+//       func getFBUserData() {
+//           //which if my function to get facebook user details
+//           if((AccessToken.current) != nil){
+//
+//               GraphRequest(graphPath: "me", parameters: ["fields": "id, name, picture.type(large), email, gender"]).start(completionHandler: { (connection, result, error) -> Void in
+//                   if (error == nil){
+//
+//                       let dict = result as! [String : AnyObject]
+//                       print(result!)
+//                       print(dict)
+//                       let picutreDic = dict as NSDictionary
+//                       let tmpURL1 = picutreDic.object(forKey: "picture") as! NSDictionary
+//                       let tmpURL2 = tmpURL1.object(forKey: "data") as! NSDictionary
+//                    _ = tmpURL2.object(forKey: "url") as! String
+//
+//                       let nameOfUser = picutreDic.object(forKey: "name") as! String
+////                        self.lblUserName.text = nameOfUser
+//                    print(nameOfUser)
+//
+//                       var tmpEmailAdd = ""
+//                       if let emailAddress = picutreDic.object(forKey: "email") {
+//                           tmpEmailAdd = emailAddress as! String
+////                           self.lblUserEmail.text = tmpEmailAdd
+//                        print(tmpEmailAdd)
+//                       }
+//                       else {
+//                           var usrName = nameOfUser
+//                           usrName = usrName.replacingOccurrences(of: " ", with: "")
+//                           tmpEmailAdd = usrName+"@facebook.com"
+//                       }
+//                   }
+//                   print(error?.localizedDescription as Any)
+//               })
+//           }
+//       }

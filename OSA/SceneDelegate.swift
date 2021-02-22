@@ -7,6 +7,7 @@
 
 
 import UIKit
+
 @available(iOS 13.0, *)
 @available(iOS 13.0, *)
 @available(iOS 13.0, *)
@@ -28,7 +29,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
         // Set initial view controller from Main storyboard as root view controller of UIWindow
-        self.window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
+        self.window?.rootViewController = UIStoryboard(name: "DashBoard", bundle: nil).instantiateInitialViewController()
         // Present window to screen
         self.window?.makeKeyAndVisible()
 

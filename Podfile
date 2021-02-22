@@ -7,5 +7,7 @@
    pod 'SDWebImage', '~> 5.0'
    pod 'IQKeyboardManagerSwift'
    pod 'HMSegmentedControl'
-   
+   pod 'FBSDKLoginKit'
+   pod 'GoogleSignIn'
+   pod 'SideMenu'
    end
