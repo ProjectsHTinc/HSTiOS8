@@ -34,5 +34,43 @@ class Menu: UIViewController {
         // Hide the Navigation Bar
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }
+    
+    @IBAction func logOutAction(_ sender: Any) {
+        
+        let alertController = UIAlertController(title: Globals.alertTitle, message: "Are you sure want to log out", preferredStyle: .alert)
+
+        // Create the actions
+        let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) {
+            UIAlertAction in
+            NSLog("OK Pressed")
+          
+            GlobalVariables.shared.customer_id = ""
+            GlobalVariables.shared.profile_picture = ""
+            GlobalVariables.shared.phone_number = ""
+            GlobalVariables.shared.first_name = ""
+            GlobalVariables.shared.last_name = ""
+            GlobalVariables.shared.email_Id = ""
+            
+            UserDefaults.standard.clearUserData()
+            
+            self.reNew()
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel) {
+            UIAlertAction in
+            NSLog("Cancel Pressed")
+        }
+
+        // Add the actions
+        alertController.addAction(okAction)
+        alertController.addAction(cancelAction)
+
+        // Present the controller
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    func reNew(){
+            //reload application data (renew root view )
+        UIApplication.shared.keyWindow?.rootViewController = storyboard!.instantiateViewController(withIdentifier: "nav")
+    }
 }
                                                                                                                                 
