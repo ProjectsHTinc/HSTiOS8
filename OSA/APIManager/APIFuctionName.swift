@@ -16,6 +16,9 @@ struct APIFunctionName {
     static let forgotEmailPasswordUrl = "mobileapi/forgot_password"
     static let signUpUrl = "mobileapi/registration"
     static let dashBoardUrl = "mobileapi/home_page"
+    static let categoryListURL = "mobileapi/sub_cat_list"
+    static let subCatListDetailsURL = "mobileapi/product_list"
+    static let productDetailsURL = "mobileapi/product_list"
 }
  
 

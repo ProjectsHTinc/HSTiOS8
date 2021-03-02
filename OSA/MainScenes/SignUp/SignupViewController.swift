@@ -58,10 +58,15 @@ class SignupViewController: UIViewController, SignupDisplayLogic {
     
     func successFetchedItems(viewModel: SignupModel.Fetch.ViewModel) {
         
+        if viewModel.status == "success"{
+            self.navigationController?.popToRootViewController(animated: true)
+        }
     }
     
     func errorFetchingItems(viewModel: SignupModel.Fetch.ViewModel) {
         
+        AlertController.shared.showAlert(targetVc: self, title: Globals.alertTitle, message:"User Already Register", complition: {
+        })
     }
     
     @IBAction func continueAction(_ sender: Any) {

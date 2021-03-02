@@ -24,13 +24,14 @@ class OTPViewController: UIViewController, UITextFieldDelegate, OTPDisplayLogic 
     @IBOutlet weak var textField2: UITextField!
     @IBOutlet weak var textField3: UITextField!
     @IBOutlet weak var textField4: UITextField!
+    @IBOutlet weak var mobileNumLbl: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        self.mobileNumLbl.text = self.mobileNumber
         self.setTextfieldDelegates()
         self.hideKeyboardWhenTappedAround()
-        self.otp = GlobalVariables.shared.Otp
         print(otp)
     }
     
@@ -71,7 +72,26 @@ class OTPViewController: UIViewController, UITextFieldDelegate, OTPDisplayLogic 
     func successFetchedItems(viewModel: OTPModel.Fetch.ViewModel) {
         print(viewModel.phone_number!)
         if viewModel.status == "success" {
-            GlobalVariables.shared.Otp = viewModel.phone_number!
+           
+            UserDefaults.standard.set(viewModel.customer_id!, forKey: UserDefaultsKey.customer_idkey.rawValue)
+            GlobalVariables.shared.customer_id = UserDefaults.standard.object(forKey: UserDefaultsKey.customer_idkey.rawValue) as! String
+            
+            UserDefaults.standard.set(viewModel.profile_picture!, forKey: UserDefaultsKey.profile_picturekey.rawValue)
+            GlobalVariables.shared.profile_picture = UserDefaults.standard.object(forKey: UserDefaultsKey.profile_picturekey.rawValue) as! String
+            
+            UserDefaults.standard.set(viewModel.phone_number!, forKey: UserDefaultsKey.phone_numberKey.rawValue)
+            GlobalVariables.shared.phone_number = UserDefaults.standard.object(forKey: UserDefaultsKey.phone_numberKey.rawValue) as! String
+            
+            
+            UserDefaults.standard.set(viewModel.first_name!, forKey: UserDefaultsKey.first_nameKey.rawValue)
+            GlobalVariables.shared.first_name = UserDefaults.standard.object(forKey: UserDefaultsKey.first_nameKey.rawValue) as! String
+            
+            UserDefaults.standard.set(viewModel.last_name!, forKey: UserDefaultsKey.last_namekey.rawValue)
+            GlobalVariables.shared.last_name = UserDefaults.standard.object(forKey: UserDefaultsKey.last_namekey.rawValue) as! String
+            
+            UserDefaults.standard.set(viewModel.email!, forKey: UserDefaultsKey.email_idkey.rawValue)
+            GlobalVariables.shared.email_Id = UserDefaults.standard.object(forKey: UserDefaultsKey.email_idkey.rawValue) as! String
+
         self.performSegue(withIdentifier: "to_dashBoard1", sender: self)
         }
     }

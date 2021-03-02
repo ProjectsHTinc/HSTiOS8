@@ -62,7 +62,9 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>Montserrat-BoldItalic</string>
+		<string>Montserrat-Medium</string>
 		<string></string>
+		<string>Montserrat-Medium</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
@@ -88,7 +90,7 @@
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
-	<string>DashBoard</string>
+	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

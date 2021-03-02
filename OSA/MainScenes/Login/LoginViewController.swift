@@ -19,6 +19,7 @@ class LoginViewController: UIViewController, GIDSignInDelegate, LoginDisplayLogi
     
     var interactor: LoginBusinessLogic?
     var router: (NSObjectProtocol & LoginRoutingLogic & LoginDataPassing)?
+    var Otp = String()
     
     @IBOutlet weak var backView: UIView!
     @IBOutlet weak var loginWithFbBtn: UIButton!
@@ -30,6 +31,13 @@ class LoginViewController: UIViewController, GIDSignInDelegate, LoginDisplayLogi
         
         self.hideKeyboardWhenTappedAround()
         GIDSignIn.sharedInstance().delegate = self
+        
+//        let value = UserDefaults.standard.object(forKey: "getStartedKey") ?? ""
+//        if value as! String == ""
+//        {
+//            self.performSegue(withIdentifier: "pop", sender: self)
+//        }
+        
     }
       
     @IBAction func gigninBtn(_ sender: Any) {
@@ -104,7 +112,7 @@ class LoginViewController: UIViewController, GIDSignInDelegate, LoginDisplayLogi
     func successFetchedItems(viewModel: LoginModel.Fetch.ViewModel) {
         print(viewModel.OTP!)
         if viewModel.status == "success" {
-            GlobalVariables.shared.Otp = viewModel.OTP!
+        self.Otp = viewModel.OTP!
         self.performSegue(withIdentifier: "to_otp", sender: self)
         }
     }
@@ -114,15 +122,14 @@ class LoginViewController: UIViewController, GIDSignInDelegate, LoginDisplayLogi
   
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-    {
-          if let scene = segue.identifier {
-          let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-          if let router = router, router.responds(to: selector) {
-            router.perform(selector, with: segue)
-          }
-        }
-     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "to_otp")
+        {
+        let vc = segue.destination as! OTPViewController
+            vc.mobileNumber = self.phoneNumTextField.text!
+            vc.otp = self.Otp
+    }
+  }
     
     func CheckValuesAreEmpty () -> Bool{
         
@@ -139,7 +146,6 @@ class LoginViewController: UIViewController, GIDSignInDelegate, LoginDisplayLogi
               })
              return false
          }
-            
           return true
     }
 }

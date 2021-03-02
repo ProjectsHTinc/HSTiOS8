@@ -7,7 +7,6 @@
 
 import UIKit
 
-
 protocol ForgotPasswordDisplayLogic: class
 {
     func successFetchedItems(viewModel: ForgotPasswordModel.Fetch.ViewModel)
@@ -56,7 +55,15 @@ class ForgotPasswordViewController: UIViewController, ForgotPasswordDisplayLogic
     }
     
     @IBAction func sendAction(_ sender: Any) {
-        interactor?.fetchItems(request: ForgotPasswordModel.Fetch.Request(email :self.emailIdtextField.text))
+        if emailIdtextField.text!.isEmpty == true
+        {
+            AlertController.shared.showAlert(targetVc: self, title: Globals.alertTitle, message: "EmailId is Empty", complition: {
+             })
+        }
+        else
+        {
+            interactor?.fetchItems(request: ForgotPasswordModel.Fetch.Request(email :self.emailIdtextField.text))
+        }
     }
     
     func successFetchedItems(viewModel: ForgotPasswordModel.Fetch.ViewModel) {

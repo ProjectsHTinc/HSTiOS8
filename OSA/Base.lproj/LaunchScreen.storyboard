@@ -9,9 +9,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Montserrat-Bold.otf">
-            <string>Montserrat-Bold</string>
-        </array>
         <array key="Montserrat-MediumItalic.otf">
             <string>Montserrat-MediumItalic</string>
         </array>
@@ -29,14 +26,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Component 29 – 1" translatesAutoresizingMaskIntoConstraints="NO" id="lbj-Zg-4rI">
-                                <rect key="frame" x="94" y="264" width="226" height="131"/>
+                                <rect key="frame" x="94" y="257.5" width="226" height="131"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="131" id="hrH-Uc-WmS"/>
                                     <constraint firstAttribute="width" constant="226" id="zca-7N-X91"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Passion for Shop" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="miH-Wu-KSO">
-                                <rect key="frame" x="30" y="489" width="354" height="28"/>
+                                <rect key="frame" x="30" y="496" width="354" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="28" id="OhK-D1-DdM"/>
                                     <constraint firstAttribute="width" constant="354" id="g3B-LJ-w89"/>
@@ -46,19 +43,19 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9e7-WX-qkx">
-                                <rect key="frame" x="57" y="421" width="300" height="54"/>
+                                <rect key="frame" x="57" y="414.5" width="300" height="67.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EASY" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nzn-rC-mNh">
-                                        <rect key="frame" x="0.0" y="0.0" width="150" height="54"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="150" height="67.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="150" id="x8d-nK-EsK"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="44"/>
+                                        <fontDescription key="fontDescription" name="KohinoorGujarati-Bold" family="Kohinoor Gujarati" pointSize="45"/>
                                         <color key="textColor" red="0.74117647058823533" green="0.023529411764705882" blue="0.12941176470588234" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SHOP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T1k-ra-BVl">
-                                        <rect key="frame" x="150" y="0.0" width="150" height="54"/>
+                                        <rect key="frame" x="150" y="0.0" width="150" height="67.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="150" id="mlH-oR-I6a"/>
                                         </constraints>

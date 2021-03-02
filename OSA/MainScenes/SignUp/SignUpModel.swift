@@ -28,7 +28,6 @@ struct SignupModel{
         
         struct ViewModel
         {
-            var OTP : String?
             var status : String?
             var isError: Bool
             var message: String?

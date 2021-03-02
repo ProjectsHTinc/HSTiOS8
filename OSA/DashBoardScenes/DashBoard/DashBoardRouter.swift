@@ -28,7 +28,6 @@ class DashBoardRouter: NSObject, DashBoardRoutingLogic, DashBoardDataPassing
             _ = viewController?.storyboard?.instantiateViewController(withIdentifier: "to_otp") as! OTPViewController
         }
     }
-    
     func fetchItems(request: DashBoardModel.Fetch.Request) {
         
     }

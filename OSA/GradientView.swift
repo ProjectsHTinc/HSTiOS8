@@ -96,6 +96,8 @@ public enum CAGradientPoint {
     case topRight
     case centerRight
     case bottomRight
+    case left
+    case right
     var point: CGPoint {
         switch self {
         case .topLeft:
@@ -116,6 +118,10 @@ public enum CAGradientPoint {
             return CGPoint(x: 1.0, y: 0.5)
         case .bottomRight:
             return CGPoint(x: 1.0, y: 1.0)
+        case .left:
+            return CGPoint(x: 0, y: 0.5)
+        case .right:
+            return CGPoint(x:1 , y: 0.5)
         }
     }
 }

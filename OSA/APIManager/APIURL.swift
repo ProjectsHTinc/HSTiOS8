@@ -9,9 +9,10 @@ import Foundation
 import UIKit
 
 struct  APIURL {
-    static let BaseUrl_Dev = "https://happysanz.in/shopping/"
-    static let BaseUrl_Live = "https://happysanz.in/shopping/"
+    
+    static let BaseUrl_Dev = "https://happysanztech.com/shopping/"
+    static let BaseUrl_Live = "https://happysanztech.com/shopping/"
    
 }
-//
+
 

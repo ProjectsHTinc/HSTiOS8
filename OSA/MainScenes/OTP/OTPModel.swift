@@ -39,6 +39,7 @@ struct  OTPModel{
             var newsletter_status : String?
             var phone_number : String?
             var profile_picture : String?
+            var email : String?
             var isError: Bool
             var message: String?
         }
