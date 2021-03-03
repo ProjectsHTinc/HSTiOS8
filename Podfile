@@ -10,4 +10,5 @@
    pod 'FBSDKLoginKit'
    pod 'GoogleSignIn'
    pod 'SideMenu'
+   pod "GMStepper"
    end

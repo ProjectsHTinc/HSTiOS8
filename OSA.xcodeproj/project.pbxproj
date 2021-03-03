@@ -96,9 +96,20 @@
 		6BE4049D25E4CB96006BC307 /* BestSellingWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE4049C25E4CB96006BC307 /* BestSellingWorker.swift */; };
 		6BE404A225E4CBB8006BC307 /* BestSellingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE404A125E4CBB8006BC307 /* BestSellingPresenter.swift */; };
 		6BE404A725E4CBDE006BC307 /* BestSellingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE404A625E4CBDE006BC307 /* BestSellingModel.swift */; };
+		6BE8585625EE599D00A1F30B /* ProductSizeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE8585525EE599D00A1F30B /* ProductSizeInteractor.swift */; };
+		6BE8585B25EE59B400A1F30B /* ProductSizePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE8585A25EE59B400A1F30B /* ProductSizePresenter.swift */; };
+		6BE8586425EE59DE00A1F30B /* ProductSizeWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE8586325EE59DE00A1F30B /* ProductSizeWorker.swift */; };
+		6BE8586925EE59FD00A1F30B /* ProductSizeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE8586825EE59FD00A1F30B /* ProductSizeModel.swift */; };
+		6BE8586F25EE5A2300A1F30B /* ProductColourInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE8586E25EE5A2300A1F30B /* ProductColourInteractor.swift */; };
+		6BE8587425EE5A3400A1F30B /* ProductColourWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE8587325EE5A3400A1F30B /* ProductColourWorker.swift */; };
+		6BE8587925EE5A5100A1F30B /* ProductColourPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE8587825EE5A5100A1F30B /* ProductColourPresenter.swift */; };
+		6BE8587E25EE5A6000A1F30B /* ProductColourModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE8587D25EE5A6000A1F30B /* ProductColourModel.swift */; };
+		6BE8588625EE6C6600A1F30B /* ProductSizeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE8588525EE6C6600A1F30B /* ProductSizeCollectionViewCell.swift */; };
+		6BE8588825EE6C9B00A1F30B /* ProductColourCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE8588725EE6C9B00A1F30B /* ProductColourCollectionViewCell.swift */; };
 		6BEA433425DA963E00BC578E /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BEA433325DA963E00BC578E /* ForgotPasswordViewController.swift */; };
 		6BEC1F4225E765AD00193015 /* CategorySelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BEC1F4125E765AD00193015 /* CategorySelectViewController.swift */; };
 		6BEC1F4725E77B8300193015 /* CategoryDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BEC1F4625E77B8300193015 /* CategoryDetailRouter.swift */; };
+		6BEC41D825EF659500B646AA /* HexToUIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BEC41D725EF659400B646AA /* HexToUIColor.swift */; };
 		6BF627F325D6845400CC8535 /* OTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF627F225D6845400CC8535 /* OTPViewController.swift */; };
 		6BF627F525D6847C00CC8535 /* OTPInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF627F425D6847C00CC8535 /* OTPInteractor.swift */; };
 		6BF627F725D6849500CC8535 /* OTPWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF627F625D6849500CC8535 /* OTPWorker.swift */; };
@@ -245,9 +256,20 @@
 		6BE4049C25E4CB96006BC307 /* BestSellingWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestSellingWorker.swift; sourceTree = "<group>"; };
 		6BE404A125E4CBB8006BC307 /* BestSellingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestSellingPresenter.swift; sourceTree = "<group>"; };
 		6BE404A625E4CBDE006BC307 /* BestSellingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestSellingModel.swift; sourceTree = "<group>"; };
+		6BE8585525EE599D00A1F30B /* ProductSizeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductSizeInteractor.swift; sourceTree = "<group>"; };
+		6BE8585A25EE59B400A1F30B /* ProductSizePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductSizePresenter.swift; sourceTree = "<group>"; };
+		6BE8586325EE59DE00A1F30B /* ProductSizeWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductSizeWorker.swift; sourceTree = "<group>"; };
+		6BE8586825EE59FD00A1F30B /* ProductSizeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductSizeModel.swift; sourceTree = "<group>"; };
+		6BE8586E25EE5A2300A1F30B /* ProductColourInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductColourInteractor.swift; sourceTree = "<group>"; };
+		6BE8587325EE5A3400A1F30B /* ProductColourWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductColourWorker.swift; sourceTree = "<group>"; };
+		6BE8587825EE5A5100A1F30B /* ProductColourPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductColourPresenter.swift; sourceTree = "<group>"; };
+		6BE8587D25EE5A6000A1F30B /* ProductColourModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductColourModel.swift; sourceTree = "<group>"; };
+		6BE8588525EE6C6600A1F30B /* ProductSizeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProductSizeCollectionViewCell.swift; path = OSA/DashBoardScenes/ProductDetails/ProductColour/ProductSizeCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
+		6BE8588725EE6C9B00A1F30B /* ProductColourCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductColourCollectionViewCell.swift; sourceTree = "<group>"; };
 		6BEA433325DA963E00BC578E /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		6BEC1F4125E765AD00193015 /* CategorySelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySelectViewController.swift; sourceTree = "<group>"; };
 		6BEC1F4625E77B8300193015 /* CategoryDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDetailRouter.swift; sourceTree = "<group>"; };
+		6BEC41D725EF659400B646AA /* HexToUIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexToUIColor.swift; sourceTree = "<group>"; };
 		6BF627F225D6845400CC8535 /* OTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewController.swift; sourceTree = "<group>"; };
 		6BF627F425D6847C00CC8535 /* OTPInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPInteractor.swift; sourceTree = "<group>"; };
 		6BF627F625D6849500CC8535 /* OTPWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPWorker.swift; sourceTree = "<group>"; };
@@ -449,6 +471,8 @@
 		6B8A680B25DE942A004AD774 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				6BE8588525EE6C6600A1F30B /* ProductSizeCollectionViewCell.swift */,
+				6BE8588725EE6C9B00A1F30B /* ProductColourCollectionViewCell.swift */,
 				6B158D1925E3799000A247A1 /* DashBoardBannerCell.swift */,
 				6B158D4A25E3934500A247A1 /* CategoryCell.swift */,
 				6BE4048E25E4C59D006BC307 /* BestSellingCollectionViewCell.swift */,
@@ -471,6 +495,8 @@
 				6B8B015825EA733B007564F9 /* ProductDetailsModel.swift */,
 				6B8B015D25EA7357007564F9 /* ProductDetailsPresenter.swift */,
 				6B8B016225EA7377007564F9 /* ProductDetailsRouter.swift */,
+				6BE8585C25EE59BB00A1F30B /* ProductSize */,
+				6BE8586D25EE5A0300A1F30B /* ProductColour */,
 			);
 			path = ProductDetails;
 			sourceTree = "<group>";
@@ -497,6 +523,7 @@
 				6B70FA4125CBCA0E00AA4DD8 /* TapToDismissKeypad.swift */,
 				6B70FA4F25CBCA1500AA4DD8 /* userDefault.swift */,
 				6B70FA6A25CBCA1800AA4DD8 /* ViewBindToKeypad.swift */,
+				6BEC41D725EF659400B646AA /* HexToUIColor.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -544,6 +571,28 @@
 				6BE4049C25E4CB96006BC307 /* BestSellingWorker.swift */,
 			);
 			path = BestSelling;
+			sourceTree = "<group>";
+		};
+		6BE8585C25EE59BB00A1F30B /* ProductSize */ = {
+			isa = PBXGroup;
+			children = (
+				6BE8585525EE599D00A1F30B /* ProductSizeInteractor.swift */,
+				6BE8586325EE59DE00A1F30B /* ProductSizeWorker.swift */,
+				6BE8586825EE59FD00A1F30B /* ProductSizeModel.swift */,
+				6BE8585A25EE59B400A1F30B /* ProductSizePresenter.swift */,
+			);
+			path = ProductSize;
+			sourceTree = "<group>";
+		};
+		6BE8586D25EE5A0300A1F30B /* ProductColour */ = {
+			isa = PBXGroup;
+			children = (
+				6BE8586E25EE5A2300A1F30B /* ProductColourInteractor.swift */,
+				6BE8587325EE5A3400A1F30B /* ProductColourWorker.swift */,
+				6BE8587825EE5A5100A1F30B /* ProductColourPresenter.swift */,
+				6BE8587D25EE5A6000A1F30B /* ProductColourModel.swift */,
+			);
+			path = ProductColour;
 			sourceTree = "<group>";
 		};
 		6BF1E33C25E76383002FD92E /* CategorySelect */ = {
@@ -922,22 +971,26 @@
 				6BE4048F25E4C59D006BC307 /* BestSellingCollectionViewCell.swift in Sources */,
 				6B158D2625E37C2C00A247A1 /* CategoryPresenter.swift in Sources */,
 				6B05F64D25E50430001668B3 /* NewArrivalsMode.swift in Sources */,
+				6BE8586925EE59FD00A1F30B /* ProductSizeModel.swift in Sources */,
 				6B05F63625E5033F001668B3 /* NewArrivalsTableViewCell.swift in Sources */,
 				6BF627FC25D684B600CC8535 /* OTPModel.swift in Sources */,
 				6BEC1F4725E77B8300193015 /* CategoryDetailRouter.swift in Sources */,
 				6B2AF6A225DD44B4003D1930 /* DashBoardWorker.swift in Sources */,
 				6BF6280625D684ED00CC8535 /* OTPRouter.swift in Sources */,
 				6B71624C25CD2C9D0021F55D /* loginPresenter.swift in Sources */,
+				6BE8588825EE6C9B00A1F30B /* ProductColourCollectionViewCell.swift in Sources */,
 				6B7CC29B25E7B2AD0045DFB8 /* CategorySelectModel.swift in Sources */,
 				6B70FA8925CBD47C00AA4DD8 /* BottomBorder.swift in Sources */,
 				6B78E4A625E684A700A3AA6C /* NewArrivalALlCollectionViewCell.swift in Sources */,
 				6B70FA6D25CBCA1900AA4DD8 /* TapToDismissKeypad.swift in Sources */,
 				6BC3EE2325E9178200A0CAD9 /* SubCategoryInteractor.swift in Sources */,
+				6BE8588625EE6C6600A1F30B /* ProductSizeCollectionViewCell.swift in Sources */,
 				6B70FA7225CBCA1900AA4DD8 /* GradientView.swift in Sources */,
 				6B03DCA325D4F694000344D0 /* DashBoard.swift in Sources */,
 				6B158D3325E37C8B00A247A1 /* CategoryInteracter.swift in Sources */,
 				6BC3EE2E25E917DD00A0CAD9 /* SubCategoryRouter.swift in Sources */,
 				6B05F63B25E5040E001668B3 /* NewArrivalsInteracter.swift in Sources */,
+				6BE8587425EE5A3400A1F30B /* ProductColourWorker.swift in Sources */,
 				6B2AF6AC25DD495E003D1930 /* DashBoardRouter.swift in Sources */,
 				6B70FA7025CBCA1900AA4DD8 /* ShadowEffectForUIView.swift in Sources */,
 				6BFF981325C9253800D60BF3 /* ViewController.swift in Sources */,
@@ -953,11 +1006,13 @@
 				6B91856D25EE05BA00F607F6 /* OnBoardingViewController.swift in Sources */,
 				6B03DCA825D505D8000344D0 /* Menu.swift in Sources */,
 				6B0CB0DE25E5293E0066B927 /* AdvertisementPresenter.swift in Sources */,
+				6BE8586425EE59DE00A1F30B /* ProductSizeWorker.swift in Sources */,
 				6BF6282425D6869100CC8535 /* ForgotPasswordRouter.swift in Sources */,
 				6B78E49525E63C0400A3AA6C /* CategoryAllCollectionViewCell.swift in Sources */,
 				6BF6280125D684D200CC8535 /* OTPPresenter.swift in Sources */,
 				6B158D2B25E37C4200A247A1 /* CategoryModel.swift in Sources */,
 				6B158D4B25E3934500A247A1 /* CategoryCell.swift in Sources */,
+				6BEC41D825EF659500B646AA /* HexToUIColor.swift in Sources */,
 				6BF6284825D68D2700CC8535 /* SignUpRouter.swift in Sources */,
 				6B70FA8B25CBD47C00AA4DD8 /* LocalizationSystem.swift in Sources */,
 				6B01F1A625CD709C004E415B /* EmailLoginModel.swift in Sources */,
@@ -971,6 +1026,7 @@
 				6BDDAFF125DBE85C00E18242 /* APIFuctionName.swift in Sources */,
 				6BF627F725D6849500CC8535 /* OTPWorker.swift in Sources */,
 				6BE404A725E4CBDE006BC307 /* BestSellingModel.swift in Sources */,
+				6BE8586F25EE5A2300A1F30B /* ProductColourInteractor.swift in Sources */,
 				6BF6283425D68C5800CC8535 /* SignUpInteractor.swift in Sources */,
 				6B8B013E25EA1EAC007564F9 /* SubCategoryListCollectionViewCell.swift in Sources */,
 				6B8B016825EA7DD4007564F9 /* ProductsModels.swift in Sources */,
@@ -978,6 +1034,7 @@
 				6B158D2425E37C1200A247A1 /* CategoryWorker.swift in Sources */,
 				6B71625B25CD2CF10021F55D /* LoginRouter.swift in Sources */,
 				6BE4049D25E4CB96006BC307 /* BestSellingWorker.swift in Sources */,
+				6BE8585625EE599D00A1F30B /* ProductSizeInteractor.swift in Sources */,
 				6BE4049525E4CB74006BC307 /* BestSellingInteracter.swift in Sources */,
 				6B2AF6AE25DD4973003D1930 /* DashBoardInteractor.swift in Sources */,
 				6B70FA6B25CBCA1900AA4DD8 /* CustomNavigationBackButtonTitle.swift in Sources */,
@@ -986,6 +1043,7 @@
 				6B71625625CD2CDB0021F55D /* LoginWorker.swift in Sources */,
 				6B78E49025E6291400A3AA6C /* CategoryDetailViewController.swift in Sources */,
 				6B70FA7125CBCA1900AA4DD8 /* userDefault.swift in Sources */,
+				6BE8585B25EE59B400A1F30B /* ProductSizePresenter.swift in Sources */,
 				6B8B015E25EA7357007564F9 /* ProductDetailsPresenter.swift in Sources */,
 				6B70FA6E25CBCA1900AA4DD8 /* HTMLToString.swift in Sources */,
 				6B01F19725CD7052004E415B /* EmailLoginRouter.swift in Sources */,
@@ -1001,6 +1059,7 @@
 				6B70FA7325CBCA1900AA4DD8 /* DateFormatter.swift in Sources */,
 				6B78E49E25E67D9C00A3AA6C /* NewArrivalViewController.swift in Sources */,
 				6B01F18A25CD7000004E415B /* EmailLoginPresenter.swift in Sources */,
+				6BE8587925EE5A5100A1F30B /* ProductColourPresenter.swift in Sources */,
 				6B01F19C25CD7068004E415B /* EmailLoginInteracter.swift in Sources */,
 				6B01F19225CD7033004E415B /* EmailLoginViewController.swift in Sources */,
 				6BEA433425DA963E00BC578E /* ForgotPasswordViewController.swift in Sources */,
@@ -1023,6 +1082,7 @@
 				6B7CC2A025E7B2C60045DFB8 /* CategorySelectRouter.swift in Sources */,
 				6B70FA8625CBD47C00AA4DD8 /* Reachability.swift in Sources */,
 				6BFF981125C9253800D60BF3 /* SceneDelegate.swift in Sources */,
+				6BE8587E25EE5A6000A1F30B /* ProductColourModel.swift in Sources */,
 				6B0CB0C025E527D50066B927 /* AdsTableViewCell.swift in Sources */,
 				6BF6283E25D68CD800CC8535 /* SignUpModel.swift in Sources */,
 				6B70FA8825CBD47C00AA4DD8 /* ActivityIndicator.swift in Sources */,

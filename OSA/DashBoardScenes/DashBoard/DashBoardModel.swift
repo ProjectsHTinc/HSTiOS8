@@ -34,16 +34,7 @@ struct DashBoardModel{
             var product_id : String?
             }
               var displayedDashBoardData: [DisplayedDashBoardData]
-    
-//        struct DisplayedCategoryData
-//        {
-//         var id : String?
-//         var banner_title : String?
-//         var banner_desc : String?
-//         var banner_image : String?
-//         var product_id : String?
-//         }
-//           var displayedcategoryData: [DisplayedCategoryData]
+
         }
     }
 }

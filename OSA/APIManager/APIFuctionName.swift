@@ -18,7 +18,8 @@ struct APIFunctionName {
     static let dashBoardUrl = "mobileapi/home_page"
     static let categoryListURL = "mobileapi/sub_cat_list"
     static let subCatListDetailsURL = "mobileapi/product_list"
-    static let productDetailsURL = "mobileapi/product_list"
+    static let productDetailsURL = "mobileapi/product_details"
+    static let productColourUrl = "mobileapi/get_product_color"
+    static let ProductSizeUrl = "mobileapi/get_product_size"
 }
  
-
