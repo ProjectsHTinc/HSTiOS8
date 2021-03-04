@@ -300,6 +300,7 @@ class NewArrivalsDetailModels : NSObject {
          return model
      }
 }
+
 class AdvertisementDetailModels : NSObject {
     
     var id : String?

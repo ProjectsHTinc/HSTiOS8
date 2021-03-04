@@ -21,5 +21,10 @@ struct APIFunctionName {
     static let productDetailsURL = "mobileapi/product_details"
     static let productColourUrl = "mobileapi/get_product_color"
     static let ProductSizeUrl = "mobileapi/get_product_size"
+    static let ProductReviewListUrl = "mobileapi/product_reviews"
+    static let addToCartUrl = "mobileapi/product_cart"
+    static let cartListUrl = "mobileapi/view_cart_items"
+    
 }
- 
+
+

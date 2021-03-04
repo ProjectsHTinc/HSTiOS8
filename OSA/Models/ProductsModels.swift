@@ -166,3 +166,89 @@ class ProductColourModels : NSObject {
          return model
      }
 }
+
+class RelatedProductModels : NSObject {
+    
+    var product_name : String?
+    var product_cover_img : String?
+    var product_description : String?
+    var offer_percentage : String?
+    var review_average : String?
+    var prod_mrp_price : String?
+    var offer_status : String?
+    var stocks_left : String?
+    var prod_actual_price : String?
+    
+    
+     // MARK: Instance Method
+     func loadFromDictionary(_ dict: [String: AnyObject])
+     {
+        if let data = dict["product_name"] as? String {
+             self.product_name = data
+        }
+        if let data = dict["product_cover_img"] as? String {
+            self.product_cover_img = data
+        }
+        if let data = dict["product_description"] as? String {
+            self.product_description = data
+        }
+        if let data = dict["offer_status"] as? String {
+            self.offer_status = data
+        }
+        if let data = dict["prod_actual_price"] as? String {
+            self.prod_actual_price = data
+        }
+        if let data = dict["prod_mrp_price"] as? String {
+            self.prod_mrp_price = data
+        }
+        if let data = dict["offer_percentage"] as? String {
+           self.offer_percentage = data
+        }
+        if let data = dict["stocks_left"] as? String {
+           self.stocks_left = data
+        }
+        if let data = dict["review_average"] as? String {
+           self.review_average = data
+        }
+    }
+     // MARK: Class Method
+     class func build(_ dict: [String: AnyObject]) -> RelatedProductModels {
+         let model = RelatedProductModels()
+         model.loadFromDictionary(dict)
+         return model
+     }
+}
+
+class ReviewListModels : NSObject {
+    
+    var customer_name : String?
+    var product_id : String?
+    var rating : String?
+    var comment : String?
+    
+    
+    
+     // MARK: Instance Method
+     func loadFromDictionary(_ dict: [String: AnyObject])
+     {
+        if let data = dict["customer_name"] as? String {
+             self.customer_name = data
+        }
+        if let data = dict["product_id"] as? String {
+            self.product_id = data
+        }
+        if let data = dict["rating"] as? String {
+            self.rating = data
+        }
+        if let data = dict["comment"] as? String {
+            self.comment = data
+        }
+        
+    }
+     // MARK: Class Method
+     class func build(_ dict: [String: AnyObject]) -> ReviewListModels {
+         let model = ReviewListModels()
+         model.loadFromDictionary(dict)
+         return model
+     }
+}

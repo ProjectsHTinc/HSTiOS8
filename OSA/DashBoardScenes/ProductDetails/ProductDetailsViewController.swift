@@ -14,59 +14,94 @@ protocol ProductDetailsDisplayLogic: class
     func successFetchedItems(viewModel: ProductDetailsModel.Fetch.ViewModel)
     func errorFetchingItems(viewModel: ProductDetailsModel.Fetch.ViewModel)
 }
-
 protocol ProductSizeDisplayLogic: class
 {
     func successFetchedItems(viewModel: ProductSizeModel.Fetch.ViewModel)
     func errorFetchingItems(viewModel: ProductSizeModel.Fetch.ViewModel)
 }
-
 protocol ProductColourDisplayLogic: class
 {
     func successFetchedItems(viewModel: ProductColourModel.Fetch.ViewModel)
     func errorFetchingItems(viewModel: ProductColourModel.Fetch.ViewModel)
 }
+protocol RelatedProductDisplayLogic: class
+{
+    func successFetchedItems(viewModel: RelatedProductModel.Fetch.ViewModel)
+    func errorFetchingItems(viewModel: RelatedProductModel.Fetch.ViewModel)
+}
+protocol ReviewListDisplayLogic: class
+{
+    func successFetchedItems(viewModel: ReviewListModel.Fetch.ViewModel)
+    func errorFetchingItems(viewModel: ReviewListModel.Fetch.ViewModel)
+}
+protocol AddToCartDisplayLogic: class
+{
+    func successFetchedItems(viewModel: AddToCartModel.Fetch.ViewModel)
+    func errorFetchingItems(viewModel: AddToCartModel.Fetch.ViewModel)
+}
 
-class ProductDetailsViewController: UIViewController, ProductSizeDisplayLogic, ProductDetailsDisplayLogic,ProductColourDisplayLogic {
-     
+
+class ProductDetailsViewController: UIViewController, ProductSizeDisplayLogic, ProductDetailsDisplayLogic,ProductColourDisplayLogic, RelatedProductDisplayLogic, ReviewListDisplayLogic, AddToCartDisplayLogic {
+    
+       
     @IBOutlet weak var productImage: UIImageView!
     @IBOutlet weak var productName: UILabel!
     @IBOutlet weak var productSizeCollectionView: UICollectionView!
     @IBOutlet weak var productColourCollectionView: UICollectionView!
+    @IBOutlet weak var relatedProductsCollectionView: UICollectionView!
     @IBOutlet weak var stepper: GMStepper!
     @IBOutlet weak var productPriceMrpLbl: UILabel!
     @IBOutlet weak var productDetailLbl: UILabel!
+    @IBOutlet weak var reviewListTableView: UITableView!
+    @IBOutlet weak var mrpPriceLbl: UILabel!
     
     var router: (NSObjectProtocol & ProductDetailsRoutingLogic & ProductDetailsDataPassing)?
     var product_id = String()
     var interactor: ProductDetailsBusinessLogic?
     var interactor1: ProductSizeBusinessLogic?
     var interactor2: ProductColourBusinessLogic?
+    var interactor3: RelatedProductBusinessLogic?
+    var interactor4: ReviewListBusinessLogic?
+    var interactor5: AddToCartBusinessLogic?
     
     var displayedProductSizeData: [ProductSizeModel.Fetch.ViewModel.DisplayedProductSizeData] = []
     var displayedProductColourData: [ProductColourModel.Fetch.ViewModel.DisplayedProductColourData] = []
+    var displayedRelatedProductData: [RelatedProductModel.Fetch.ViewModel.DisplayedRelatedProductData] = []
+    var displayedReviewListData: [ReviewListModel.Fetch.ViewModel.DisplayedReviewListData] = []
     
     var sizeIdArr = [String]()
     var selectedsizeId = String()
     var colourIdArr = [String]()
     var selectedcolourId = String()
+    var colourCodeArr = [String]()
+    var quantity = String()
     
     override func viewDidLoad() {
         
         super.viewDidLoad() 
         print(product_id)
-        
-        interactor?.fetchItems(request: ProductDetailsModel.Fetch.Request(product_id:product_id))
-        interactor1?.fetchItems(request: ProductSizeModel.Fetch.Request(product_id:product_id))
         stepper.addTarget(self, action: #selector(ProductDetailsViewController.stepperValueChanged), for: .valueChanged)
+        self.callInteractor()
         // Do any additional setup after loading the view.
     }
     
+    func callInteractor () {
+        
+        interactor?.fetchItems(request: ProductDetailsModel.Fetch.Request(product_id:product_id))
+        interactor1?.fetchItems(request: ProductSizeModel.Fetch.Request(product_id:product_id))
+        interactor3?.fetchItems(request: RelatedProductModel.Fetch.Request(product_id:product_id))
+        interactor4?.fetchItems(request: ReviewListModel.Fetch.Request(product_id:product_id))
+    }
+    
     @objc func stepperValueChanged(stepper: GMStepper) {
-//        print(stepper.value, terminator: "")
-        let quantity = stepper.value
+        let Quantity = stepper.value
+        self.quantity = String(Quantity)
         print(quantity)
     }
+
+    @IBAction func addToCartAction(_ sender: Any) {
+        interactor5?.fetchItems(request: AddToCartModel.Fetch.Request(product_id:self.product_id,product_comb_id:self.selectedcolourId,quantity:self.quantity,user_id:"1"))
+    }    
      
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
     {
@@ -106,17 +141,38 @@ class ProductDetailsViewController: UIViewController, ProductSizeDisplayLogic, P
         viewController2.interactor2 = interactor2
         interactor2.presenter2 = presenter2
         presenter2.viewController2 = viewController2
-       
+        
+        let viewController3 = self
+        let interactor3 = RelatedProductInteractor()
+        let presenter3 = RelatedProductPresenter()
+        viewController3.interactor3 = interactor3
+        interactor3.presenter3 = presenter3
+        presenter3.viewController3 = viewController3
+                
+        let viewController4 = self
+        let interactor4 = ReviewListInteractor()
+        let presenter4 = ReviewListPresenter()
+        viewController4.interactor4 = interactor4
+        interactor4.presenter4 = presenter4
+        presenter4.viewController4 = viewController4
+        
+        let viewController5 = self
+        let interactor5 = AddToCartInteractor()
+        let presenter5 = AddToCartPresenter()
+        viewController5.interactor5 = interactor5
+        interactor5.presenter5 = presenter5
+        presenter5.viewController5 = viewController5
     }
     
 //    productDetails
     func successFetchedItems(viewModel: ProductDetailsModel.Fetch.ViewModel) {
         print(viewModel.id!)
         self.productImage.sd_setImage(with: URL(string:viewModel.product_cover_img!), placeholderImage: UIImage(named: ""))
-        productName.text = viewModel.product_name
+        productName.text = viewModel.product_name!
         productPriceMrpLbl.text = "₹\(viewModel.prod_mrp_price!)"
-        productDetailLbl.text = viewModel.product_description
-        
+        productDetailLbl.text = viewModel.product_description!
+        mrpPriceLbl.text = "₹\(viewModel.prod_mrp_price!)"
+        print(viewModel.product_description!)
     }
     
     func errorFetchingItems(viewModel: ProductDetailsModel.Fetch.ViewModel) {
@@ -133,9 +189,7 @@ class ProductDetailsViewController: UIViewController, ProductSizeDisplayLogic, P
         let id = items.id
         
         self.sizeIdArr.append(id!)
-            
         self.productSizeCollectionView.reloadData()
-            
         }
     }
     
@@ -149,9 +203,12 @@ class ProductDetailsViewController: UIViewController, ProductSizeDisplayLogic, P
         self.productColourCollectionView.reloadData()
         self.colourIdArr.removeAll()
         self.selectedcolourId.removeAll()
+        self.colourCodeArr.removeAll()
         for items in displayedProductColourData{
         let id = items.id
+        let colourCode = items.color_code
         self.colourIdArr.append(id!)
+        self.colourCodeArr.append(colourCode!)
         self.productColourCollectionView.reloadData()
         }
     }
@@ -159,18 +216,86 @@ class ProductDetailsViewController: UIViewController, ProductSizeDisplayLogic, P
     func errorFetchingItems(viewModel: ProductColourModel.Fetch.ViewModel) {
         
     }
-}
-
-extension ProductDetailsViewController :  UICollectionViewDelegate,UICollectionViewDataSource {
     
+//    Related Products
+    func successFetchedItems(viewModel: RelatedProductModel.Fetch.ViewModel) {
+        displayedRelatedProductData = viewModel.displayedRelatedProductData
+        self.relatedProductsCollectionView.reloadData()
+    }
+    
+    func errorFetchingItems(viewModel: RelatedProductModel.Fetch.ViewModel) {
+        
+    }
+    
+//    Review List
+    func successFetchedItems(viewModel: ReviewListModel.Fetch.ViewModel) {
+        displayedReviewListData = viewModel.displayedReviewListData
+        self.reviewListTableView.reloadData()
+    }
+    
+    func errorFetchingItems(viewModel: ReviewListModel.Fetch.ViewModel) {
+        
+    }
+
+//    Add To Cart
+    func successFetchedItems(viewModel: AddToCartModel.Fetch.ViewModel) {
+        
+        let alertController = UIAlertController(title: Globals.alertTitle, message: viewModel.msg, preferredStyle: .alert)
+        // Create the actions
+        let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) {
+            UIAlertAction in
+            NSLog("OK Pressed")
+            self.navigateTocartList()
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel) {
+            UIAlertAction in
+            NSLog("Cancel Pressed")
+        }
+        // Add the actions
+        alertController.addAction(okAction)
+        alertController.addAction(cancelAction)
+        // Present the controller
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    func errorFetchingItems(viewModel: AddToCartModel.Fetch.ViewModel) {
+     
+    }
+    func navigateTocartList() {
+        self.performSegue(withIdentifier: "to_cartList", sender: self)
+    }
+}
+    
+
+extension ProductDetailsViewController :  UICollectionViewDelegate,UICollectionViewDataSource,UITableViewDelegate,UITableViewDataSource {
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return displayedReviewListData.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ReviewListTableViewCell
+        let newArrivaldata = displayedReviewListData[indexPath.row]
+//        cell.reviewerImage.sd_setImage(with: URL(string: newArrivaldata.product_cover_img!), placeholderImage: UIImage(named: ""))
+        cell.reviewerName.text = newArrivaldata.customer_name
+        cell.reviewText.text = newArrivaldata.comment
+           return cell
+    }
+                                
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
         if collectionView == self.productSizeCollectionView
         {
-        return displayedProductSizeData.count
+            return displayedProductSizeData.count
+        }
+        else if collectionView == self.productColourCollectionView
+        {
+            return displayedProductColourData.count
         }
         else
         {
-        return displayedProductColourData.count
+            return displayedRelatedProductData.count
         }
     }
     
@@ -194,17 +319,26 @@ extension ProductDetailsViewController :  UICollectionViewDelegate,UICollectionV
         return cell
         }
         
-        else {
+        else  if collectionView == self.productColourCollectionView {
             let cell = productColourCollectionView.dequeueReusableCell(withReuseIdentifier: "colourCell", for: indexPath) as! ProductColourCollectionViewCell
-            let data = displayedProductColourData[indexPath.row]
-            
-            cell.backgroundColor = UIColor(hexString: data.color_code!)
-           
+            _ = displayedProductColourData[indexPath.row]
+            let colourCode = colourCodeArr[indexPath.row]
+            cell.backgroundColor = UIColor(hexString: colourCode)
+            return cell
+        }
+        
+        else {
+            let cell = relatedProductsCollectionView.dequeueReusableCell(withReuseIdentifier: "relatedCell", for: indexPath) as! RelatedProductsCollectionViewCell
+            let data = displayedRelatedProductData[indexPath.row]
+            cell.productTitlelabel.text = data.product_name
+            cell.MrpPriceLabel.text = data.prod_mrp_price
+            cell.productImage.sd_setImage(with: URL(string: data.product_cover_img!), placeholderImage: UIImage(named: ""))
             return cell
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
         if collectionView == self.productSizeCollectionView
         {
         print("You selected cell #\(indexPath.item)!")
@@ -215,13 +349,21 @@ extension ProductDetailsViewController :  UICollectionViewDelegate,UICollectionV
 
         interactor2?.fetchItems(request: ProductColourModel.Fetch.Request(product_id:product_id,size_id:selectedsizeId))
         }
-        else {
+        
+        else if collectionView == self.productColourCollectionView{
             print("You selected cell #\(indexPath.item)!")
             let selectedIndex = Int(indexPath.item)
             let sel = self.colourIdArr[selectedIndex]
             self.selectedcolourId = String (sel)
             print(selectedcolourId)
-
+        }
+    }
+   
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "to_cartList")
+        {
+            _ = segue.destination as! CartListViewController
+            
         }
     }
 }
