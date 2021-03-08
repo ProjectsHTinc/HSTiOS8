@@ -24,6 +24,7 @@ class GlobalVariables: NSObject {
     var phone_number = String()
     var profile_picture = String()
     var email_Id = String()
+    var total_cart_payment = String()
     
 }
 

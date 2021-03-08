@@ -40,6 +40,8 @@ struct CartListModel{
             var product_description : String?
             var product_id : String?
             var product_name : String?
+            var id : String?
+            var quantity : String?
             
             }
               var displayedCartListData: [DisplayedCartListData]

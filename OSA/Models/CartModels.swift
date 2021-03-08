@@ -39,6 +39,8 @@ class CartListModels : NSObject {
     var product_description : String?
     var product_id : String?
     var product_name : String?
+    var id : String?
+    var quantity : String?
    
      // MARK: Instance Method
      func loadFromDictionary(_ dict: [String: AnyObject])
@@ -54,6 +56,9 @@ class CartListModels : NSObject {
         }
         if let data = dict["total_amount"] as? String {
             self.total_amount = data
+        }
+        if let data = dict["quantity"] as? String {
+            self.quantity = data
         }
         
         
@@ -82,11 +87,51 @@ class CartListModels : NSObject {
        if let data = dict["product_name"] as? String {
            self.product_name = data
        }
+        if let data = dict["id"] as? String {
+            self.id = data
+        }
         
     }
     class func build(_ dict: [String: AnyObject]) -> CartListModels {
         let model = CartListModels()
         model.loadFromDictionary(dict)
         return model
+    }
+}
+
+
+class DeleteCartModels {
+    
+    var msg : String?
+    var status : String?
+   
+    
+    // MARK: Instance Method
+    func loadFromDictionary(_ dict: [String: AnyObject])
+    {
+        if let data = dict["msg"] as? String {
+            self.msg = data
+        }
+        if let data = dict["status"] as? String {
+            self.status = data
+        }
+    }
+}
+
+class QuantityUpdateModels {
+    
+    var msg : String?
+    var status : String?
+   
+    
+    // MARK: Instance Method
+    func loadFromDictionary(_ dict: [String: AnyObject])
+    {
+        if let data = dict["msg"] as? String {
+            self.msg = data
+        }
+        if let data = dict["status"] as? String {
+            self.status = data
+        }
     }
 }

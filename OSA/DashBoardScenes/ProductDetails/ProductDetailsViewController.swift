@@ -39,10 +39,14 @@ protocol AddToCartDisplayLogic: class
     func successFetchedItems(viewModel: AddToCartModel.Fetch.ViewModel)
     func errorFetchingItems(viewModel: AddToCartModel.Fetch.ViewModel)
 }
+protocol CheckPincodeDisplayLogic: class
+{
+    func successFetchedItems(viewModel: CheckPincodeModel.Fetch.ViewModel)
+    func errorFetchingItems(viewModel: CheckPincodeModel.Fetch.ViewModel)
+}
 
-
-class ProductDetailsViewController: UIViewController, ProductSizeDisplayLogic, ProductDetailsDisplayLogic,ProductColourDisplayLogic, RelatedProductDisplayLogic, ReviewListDisplayLogic, AddToCartDisplayLogic {
-    
+class ProductDetailsViewController: UIViewController, ProductSizeDisplayLogic, ProductDetailsDisplayLogic,ProductColourDisplayLogic, RelatedProductDisplayLogic, ReviewListDisplayLogic, AddToCartDisplayLogic, CheckPincodeDisplayLogic {
+ 
        
     @IBOutlet weak var productImage: UIImageView!
     @IBOutlet weak var productName: UILabel!
@@ -54,7 +58,9 @@ class ProductDetailsViewController: UIViewController, ProductSizeDisplayLogic, P
     @IBOutlet weak var productDetailLbl: UILabel!
     @IBOutlet weak var reviewListTableView: UITableView!
     @IBOutlet weak var mrpPriceLbl: UILabel!
-    
+    @IBOutlet weak var pinCodeTextField: UITextField!
+    @IBOutlet weak var pinCodeAvilableLbl: UILabel!
+    @IBOutlet weak var QuantityAvailableLbl: UILabel!
     var router: (NSObjectProtocol & ProductDetailsRoutingLogic & ProductDetailsDataPassing)?
     var product_id = String()
     var interactor: ProductDetailsBusinessLogic?
@@ -63,6 +69,7 @@ class ProductDetailsViewController: UIViewController, ProductSizeDisplayLogic, P
     var interactor3: RelatedProductBusinessLogic?
     var interactor4: ReviewListBusinessLogic?
     var interactor5: AddToCartBusinessLogic?
+    var interactor6: CheckPincodeBusinessLogic?
     
     var displayedProductSizeData: [ProductSizeModel.Fetch.ViewModel.DisplayedProductSizeData] = []
     var displayedProductColourData: [ProductColourModel.Fetch.ViewModel.DisplayedProductColourData] = []
@@ -77,11 +84,13 @@ class ProductDetailsViewController: UIViewController, ProductSizeDisplayLogic, P
     var quantity = String()
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         
-        super.viewDidLoad() 
         print(product_id)
         stepper.addTarget(self, action: #selector(ProductDetailsViewController.stepperValueChanged), for: .valueChanged)
         self.callInteractor()
+        self.selectedcolourId = "0"
+        self.hideKeyboardWhenTappedAround()
         // Do any additional setup after loading the view.
     }
     
@@ -101,8 +110,12 @@ class ProductDetailsViewController: UIViewController, ProductSizeDisplayLogic, P
 
     @IBAction func addToCartAction(_ sender: Any) {
         interactor5?.fetchItems(request: AddToCartModel.Fetch.Request(product_id:self.product_id,product_comb_id:self.selectedcolourId,quantity:self.quantity,user_id:"1"))
-    }    
-     
+    }
+    
+    @IBAction func checkPincodeAction(_ sender: Any) {
+        interactor6?.fetchItems(request: CheckPincodeModel.Fetch.Request(pin_code:self.pinCodeTextField.text))
+    }
+         
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
     {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -162,6 +175,13 @@ class ProductDetailsViewController: UIViewController, ProductSizeDisplayLogic, P
         viewController5.interactor5 = interactor5
         interactor5.presenter5 = presenter5
         presenter5.viewController5 = viewController5
+        
+        let viewController6 = self
+        let interactor6 = CheckPincodeInteractor()
+        let presenter6 = CheckPincodePresenter()
+        viewController6.interactor6 = interactor6
+        interactor6.presenter6 = presenter6
+        presenter6.viewController6 = viewController6
     }
     
 //    productDetails
@@ -261,6 +281,23 @@ class ProductDetailsViewController: UIViewController, ProductSizeDisplayLogic, P
     func errorFetchingItems(viewModel: AddToCartModel.Fetch.ViewModel) {
      
     }
+    
+//   Check Pincode
+    func successFetchedItems(viewModel: CheckPincodeModel.Fetch.ViewModel) {
+        if viewModel.msg == "No Delivery for this Area"{
+            pinCodeAvilableLbl.textColor = UIColor.red
+            self.pinCodeAvilableLbl.text = "No Delivery for this Area"
+        }
+        else {
+            pinCodeAvilableLbl.textColor = UIColor(red: 70.0/255.0, green: 171.0/255.0, blue: 98.0/255.0, alpha: 1.0)
+            self.pinCodeAvilableLbl.text = "pin code area is deliverable"
+        }
+    }
+    
+    func errorFetchingItems(viewModel: CheckPincodeModel.Fetch.ViewModel) {
+        
+    }
+    
     func navigateTocartList() {
         self.performSegue(withIdentifier: "to_cartList", sender: self)
     }

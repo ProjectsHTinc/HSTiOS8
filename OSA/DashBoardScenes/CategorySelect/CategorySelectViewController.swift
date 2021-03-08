@@ -162,8 +162,6 @@ class CategorySelectViewController: UIViewController,UICollectionViewDelegate,UI
         let selectedIndex = Int(indexPath.item)
         let sel = self.idArr[selectedIndex]
         self.selectedCategoryId = String (sel)
-        print("karan(\(selectedCategoryId))")
-
         interactor2?.fetchItems(request: SubCategoryListModel.Fetch.Request(cat_id:id,sub_cat_id:selectedCategoryId,user_id:"1"))
         } else
         {
@@ -181,3 +179,4 @@ class CategorySelectViewController: UIViewController,UICollectionViewDelegate,UI
      }
    }
 }
+
