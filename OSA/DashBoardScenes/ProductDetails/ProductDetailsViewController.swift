@@ -61,6 +61,12 @@ class ProductDetailsViewController: UIViewController, ProductSizeDisplayLogic, P
     @IBOutlet weak var pinCodeTextField: UITextField!
     @IBOutlet weak var pinCodeAvilableLbl: UILabel!
     @IBOutlet weak var QuantityAvailableLbl: UILabel!
+    @IBOutlet weak var image1: UIImageView!
+    @IBOutlet weak var image2: UIImageView!
+    @IBOutlet weak var image3: UIImageView!
+    @IBOutlet weak var image4: UIImageView!
+    @IBOutlet weak var image5: UIImageView!
+    
     var router: (NSObjectProtocol & ProductDetailsRoutingLogic & ProductDetailsDataPassing)?
     var product_id = String()
     var interactor: ProductDetailsBusinessLogic?
@@ -87,6 +93,7 @@ class ProductDetailsViewController: UIViewController, ProductSizeDisplayLogic, P
         super.viewDidLoad()
         
         print(product_id)
+        print("Karann\(GlobalVariables.shared.customer_id)")
         stepper.addTarget(self, action: #selector(ProductDetailsViewController.stepperValueChanged), for: .valueChanged)
         self.callInteractor()
         self.selectedcolourId = "0"
@@ -109,7 +116,7 @@ class ProductDetailsViewController: UIViewController, ProductSizeDisplayLogic, P
     }
 
     @IBAction func addToCartAction(_ sender: Any) {
-        interactor5?.fetchItems(request: AddToCartModel.Fetch.Request(product_id:self.product_id,product_comb_id:self.selectedcolourId,quantity:self.quantity,user_id:"1"))
+        interactor5?.fetchItems(request: AddToCartModel.Fetch.Request(product_id:self.product_id,product_comb_id:self.selectedcolourId,quantity:self.quantity,user_id:GlobalVariables.shared.customer_id))
     }
     
     @IBAction func checkPincodeAction(_ sender: Any) {

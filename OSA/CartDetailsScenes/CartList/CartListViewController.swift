@@ -46,7 +46,7 @@ class CartListViewController: UIViewController,UITableViewDelegate,UITableViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        interactor?.fetchItems(request: CartListModel.Fetch.Request(user_id:"1"))
+        interactor?.fetchItems(request: CartListModel.Fetch.Request(user_id:GlobalVariables.shared.customer_id))
         // Do any additional setup after loading the view.
     }
     
@@ -113,14 +113,12 @@ class CartListViewController: UIViewController,UITableViewDelegate,UITableViewDa
 // Cart Delete
     func successFetchedItems(viewModel: DeleteCartModel.Fetch.ViewModel) {
         
-        
-        
         let alertController = UIAlertController(title: Globals.alertTitle, message: viewModel.msg, preferredStyle: .alert)
         // Create the actions
         let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) { [self]
             UIAlertAction in
             NSLog("OK Pressed")
-            self.interactor?.fetchItems(request: CartListModel.Fetch.Request(user_id:"1"))
+            self.interactor?.fetchItems(request: CartListModel.Fetch.Request(user_id:GlobalVariables.shared.customer_id))
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel) {
             UIAlertAction in
@@ -142,15 +140,14 @@ class CartListViewController: UIViewController,UITableViewDelegate,UITableViewDa
     func successFetchedItems(viewModel: QuantityUpdateModel.Fetch.ViewModel) {
         if viewModel.msg == "Product Quantity Updated" {
            
-        interactor?.fetchItems(request: CartListModel.Fetch.Request(user_id:"1"))
+        interactor?.fetchItems(request: CartListModel.Fetch.Request(user_id:GlobalVariables.shared.customer_id))
         }
     }
     
     func errorFetchingItems(viewModel: QuantityUpdateModel.Fetch.ViewModel) {
         
     }
-    
-    
+        
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return displayedCartListData.count
     }
@@ -169,8 +166,6 @@ class CartListViewController: UIViewController,UITableViewDelegate,UITableViewDa
         cell.stepper.addTarget(self, action: #selector(CartListViewController.stepperValueChanged), for: .valueChanged)
 
            return cell
-        
-      
     }
     
     @objc func deleteButtonClicked(sender: UIButton){
@@ -179,10 +174,10 @@ class CartListViewController: UIViewController,UITableViewDelegate,UITableViewDa
         let selectedIndex = Int(buttonClicked)
         let sel = self.idArr[selectedIndex]
         self.deletedCartId = String(sel)
-        interactor1?.fetchItems(request: DeleteCartModel.Fetch.Request(cart_id:self.deletedCartId, user_id:"1"))
+        interactor1?.fetchItems(request: DeleteCartModel.Fetch.Request(cart_id:self.deletedCartId, user_id:GlobalVariables.shared.customer_id))
     }
     
-    @objc func stepperValueChanged(stepper: GMStepper) {
+    @objc func stepperValueChanged(stepper: GMStepper){
         let buttonClicked = stepper.tag
           print(buttonClicked)
           let selectedIndex = Int(buttonClicked)
@@ -192,7 +187,7 @@ class CartListViewController: UIViewController,UITableViewDelegate,UITableViewDa
         let Quantity = stepper.value
         let quantityValue = String(Quantity)
         print(quantityValue)
-        interactor2?.fetchItems(request: QuantityUpdateModel.Fetch.Request(cart_id:self.selectedCartId, user_id:"1",cart_quantity:quantityValue))
+        interactor2?.fetchItems(request: QuantityUpdateModel.Fetch.Request(cart_id:self.selectedCartId, user_id:GlobalVariables.shared.customer_id,cart_quantity:quantityValue))
     }
 }
 

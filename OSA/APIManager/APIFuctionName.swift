@@ -27,6 +27,9 @@ struct APIFunctionName {
     static let DeleteCartUrl = "mobileapi/product_cart_remove"
     static let checkPinCodeUrl = "mobileapi/check_pincode"
     static let quantityUpdateUrl = "mobileapi/cart_quantity"
+    static let addressListUrl = "mobileapi/address_list"
+    static let promoCodeApplyUrl = "mobileapi/apply_promo_code"
+    static let placeOrderUrl = "mobileapi/place_order"
+    static let orderDetailsUrl = "mobileapi/order_details"
     
 }
-

@@ -74,6 +74,9 @@ class DashBoard: UIViewController, DashBoardDisplayLogic,CategoryDisplayLogic,Be
         interactor2?.fetchItems(request: BestSellingModel.Fetch.Request(user_id:"1"))
         interactor3?.fetchItems(request: NewArrivalsModel.Fetch.Request(user_id:"1"))
         interactor4?.fetchItems(request: AdvertisementModel.Fetch.Request(user_id:"1"))
+        
+        GlobalVariables.shared.customer_id = UserDefaults.standard.object(forKey: UserDefaultsKey.customer_idkey.rawValue) as! String
+        
         self.navigationController?.navigationBar.shadowImage = UIImage()
     }
     override func viewDidLayoutSubviews(){
