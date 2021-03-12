@@ -26,6 +26,7 @@ class CategorySelectViewController: UIViewController,UICollectionViewDelegate,UI
     @IBOutlet weak var categoryCount: UILabel!
     @IBOutlet weak var selectCategeryCollectionView: UICollectionView!
     @IBOutlet weak var subCategoryListCollectionView: UICollectionView!
+    @IBOutlet weak var searchBarView: UIView!
     
     var router: (NSObjectProtocol & CategorySelectRoutingLogic & CategorySelectDataPassing)?
     var router2: (NSObjectProtocol & SubCategoryListRoutingLogic & SubCategoryListDataPassing)?
@@ -47,6 +48,11 @@ class CategorySelectViewController: UIViewController,UICollectionViewDelegate,UI
     override func viewDidLoad() {
         super.viewDidLoad()
         interactor?.fetchItems(request: CategorySelectModel.Fetch.Request(cat_id:id))
+    }
+    
+    override func viewDidLayoutSubviews(){
+
+        searchBarView.layerGradient(startPoint: .left, endPoint: .right, colorArray: [UIColor(red: 189.0/255.0, green: 6.0/255.0, blue: 33.0/255.0, alpha: 1.0).cgColor, UIColor(red: 95.0/255.0, green: 3.0/255.0, blue: 17.0/255.0, alpha: 1.0).cgColor], type: .axial)
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)

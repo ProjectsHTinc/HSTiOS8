@@ -37,9 +37,9 @@ struct AddressListModel{
             var landmark : String?
             var mobile_number : String?
             var pincode : String?
-            var product_name : String?
             var state : String?
             var street : String?
+            var address_mode : String?
             
             }
               var displayedAddressListData: [DisplayedAddressListData]

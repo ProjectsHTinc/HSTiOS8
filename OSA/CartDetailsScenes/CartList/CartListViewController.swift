@@ -99,7 +99,7 @@ class CartListViewController: UIViewController,UITableViewDelegate,UITableViewDa
         for data in displayedCartListData {
             let id = data.id
             let quantity = Double(data.quantity!)
-            
+        
             self.quantityArr.append(quantity!)
             self.idArr.append(id!)
         }
@@ -129,7 +129,7 @@ class CartListViewController: UIViewController,UITableViewDelegate,UITableViewDa
         alertController.addAction(cancelAction)
         // Present the controller
         self.present(alertController, animated: true, completion: nil)
-        self.cartListTableView.reloadData()
+       
     }
     
     func errorFetchingItems(viewModel: DeleteCartModel.Fetch.ViewModel) {
@@ -183,6 +183,7 @@ class CartListViewController: UIViewController,UITableViewDelegate,UITableViewDa
           let selectedIndex = Int(buttonClicked)
           let sel = self.idArr[selectedIndex]
          self.selectedCartId = String(sel)
+     
         
         let Quantity = stepper.value
         let quantityValue = String(Quantity)
@@ -190,6 +191,4 @@ class CartListViewController: UIViewController,UITableViewDelegate,UITableViewDa
         interactor2?.fetchItems(request: QuantityUpdateModel.Fetch.Request(cart_id:self.selectedCartId, user_id:GlobalVariables.shared.customer_id,cart_quantity:quantityValue))
     }
 }
-
-
 

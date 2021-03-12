@@ -15,6 +15,22 @@
 		6B01F1A625CD709C004E415B /* EmailLoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B01F1A525CD709C004E415B /* EmailLoginModel.swift */; };
 		6B03DCA325D4F694000344D0 /* DashBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B03DCA225D4F694000344D0 /* DashBoard.swift */; };
 		6B03DCA825D505D8000344D0 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B03DCA725D505D8000344D0 /* Menu.swift */; };
+		6B05776925F8C8EA007E5F4F /* AddAddressInteracter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B05776825F8C8EA007E5F4F /* AddAddressInteracter.swift */; };
+		6B05776E25F8C92D007E5F4F /* AddAddressWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B05776D25F8C92D007E5F4F /* AddAddressWorker.swift */; };
+		6B05777025F8C97C007E5F4F /* AddAddressPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B05776F25F8C97C007E5F4F /* AddAddressPresenter.swift */; };
+		6B05777225F8C991007E5F4F /* AddAddressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B05777125F8C991007E5F4F /* AddAddressModel.swift */; };
+		6B05777B25F9052E007E5F4F /* DeleteAddressInteracter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B05777A25F9052E007E5F4F /* DeleteAddressInteracter.swift */; };
+		6B05778025F9058E007E5F4F /* DeleteAddressWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B05777F25F9058E007E5F4F /* DeleteAddressWorker.swift */; };
+		6B05778525F905E8007E5F4F /* DeleteAddresPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B05778425F905E8007E5F4F /* DeleteAddresPresenter.swift */; };
+		6B05778725F90601007E5F4F /* DeleteAddressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B05778625F90601007E5F4F /* DeleteAddressModel.swift */; };
+		6B05779025F9063A007E5F4F /* UpdateAddressInteracter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B05778F25F9063A007E5F4F /* UpdateAddressInteracter.swift */; };
+		6B05779525F90644007E5F4F /* UpdateAddressWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B05779425F90644007E5F4F /* UpdateAddressWorker.swift */; };
+		6B05779A25F9064E007E5F4F /* UpdateAddressPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B05779925F9064E007E5F4F /* UpdateAddressPresenter.swift */; };
+		6B05779F25F90658007E5F4F /* UpdateAddressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B05779E25F90658007E5F4F /* UpdateAddressModel.swift */; };
+		6B0577A525F9069B007E5F4F /* DefaultAddressInteracter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0577A425F9069B007E5F4F /* DefaultAddressInteracter.swift */; };
+		6B0577AA25F906A6007E5F4F /* DefaultAddressWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0577A925F906A6007E5F4F /* DefaultAddressWorker.swift */; };
+		6B0577AF25F906B1007E5F4F /* DefaultAddressPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0577AE25F906B1007E5F4F /* DefaultAddressPresenter.swift */; };
+		6B0577B425F906CB007E5F4F /* DefaultAddressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0577B325F906CB007E5F4F /* DefaultAddressModel.swift */; };
 		6B05F63625E5033F001668B3 /* NewArrivalsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B05F63525E5033F001668B3 /* NewArrivalsTableViewCell.swift */; };
 		6B05F63B25E5040E001668B3 /* NewArrivalsInteracter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B05F63A25E5040E001668B3 /* NewArrivalsInteracter.swift */; };
 		6B05F64325E5041A001668B3 /* NewArrivalsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B05F64225E5041A001668B3 /* NewArrivalsPresenter.swift */; };
@@ -114,12 +130,17 @@
 		6B78E49525E63C0400A3AA6C /* CategoryAllCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B78E49425E63C0400A3AA6C /* CategoryAllCollectionViewCell.swift */; };
 		6B78E49E25E67D9C00A3AA6C /* NewArrivalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B78E49D25E67D9900A3AA6C /* NewArrivalViewController.swift */; };
 		6B78E4A625E684A700A3AA6C /* NewArrivalALlCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B78E4A525E684A700A3AA6C /* NewArrivalALlCollectionViewCell.swift */; };
+		6B7CB0A725FB9B3300DF76C5 /* CCWebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7CB0A625FB9B3200DF76C5 /* CCWebViewViewController.swift */; };
 		6B7CC29125E7B24E0045DFB8 /* CategorySelectInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7CC29025E7B24E0045DFB8 /* CategorySelectInteractor.swift */; };
 		6B7CC29625E7B2850045DFB8 /* CategorySelectWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7CC29525E7B2850045DFB8 /* CategorySelectWorker.swift */; };
 		6B7CC29B25E7B2AD0045DFB8 /* CategorySelectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7CC29A25E7B2AD0045DFB8 /* CategorySelectModel.swift */; };
 		6B7CC2A025E7B2C60045DFB8 /* CategorySelectRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7CC29F25E7B2C60045DFB8 /* CategorySelectRouter.swift */; };
 		6B7CC2A825E7B3700045DFB8 /* CategorySelectPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7CC2A725E7B3700045DFB8 /* CategorySelectPresenter.swift */; };
 		6B7CC2AD25E7C3240045DFB8 /* CategoryModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7CC2AC25E7C3240045DFB8 /* CategoryModels.swift */; };
+		6B7D2AB125FB8677003DDF82 /* AddMoneyToWalletInteracter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7D2AB025FB8677003DDF82 /* AddMoneyToWalletInteracter.swift */; };
+		6B7D2AB625FB8690003DDF82 /* AddMoneyToWalletWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7D2AB525FB8690003DDF82 /* AddMoneyToWalletWorker.swift */; };
+		6B7D2AB825FB86A6003DDF82 /* AddMoneyToWalletPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7D2AB725FB86A6003DDF82 /* AddMoneyToWalletPresenter.swift */; };
+		6B7D2ABA25FB86BC003DDF82 /* AddMoneyToWalletModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7D2AB925FB86BC003DDF82 /* AddMoneyToWalletModel.swift */; };
 		6B8A680225DE7272004AD774 /* DasboardModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8A680125DE7272004AD774 /* DasboardModels.swift */; };
 		6B8B013E25EA1EAC007564F9 /* SubCategoryListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8B013D25EA1EAC007564F9 /* SubCategoryListCollectionViewCell.swift */; };
 		6B8B014725EA70DA007564F9 /* ProductDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8B014625EA70D6007564F9 /* ProductDetailsViewController.swift */; };
@@ -130,6 +151,16 @@
 		6B8B016325EA7377007564F9 /* ProductDetailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8B016225EA7377007564F9 /* ProductDetailsRouter.swift */; };
 		6B8B016825EA7DD4007564F9 /* ProductsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8B016725EA7DD4007564F9 /* ProductsModels.swift */; };
 		6B91856D25EE05BA00F607F6 /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B91856C25EE05BA00F607F6 /* OnBoardingViewController.swift */; };
+		6B92961D25FB519200C5E72B /* WalletDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B92961C25FB519200C5E72B /* WalletDetailsViewController.swift */; };
+		6B92962225FB521100C5E72B /* AddMoneyWalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B92962125FB521100C5E72B /* AddMoneyWalletViewController.swift */; };
+		6B92962725FB545000C5E72B /* WalletDetailsInteracter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B92962625FB545000C5E72B /* WalletDetailsInteracter.swift */; };
+		6B92962F25FB545C00C5E72B /* WalletDetailsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B92962E25FB545C00C5E72B /* WalletDetailsWorker.swift */; };
+		6B92963125FB547600C5E72B /* WalletDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B92963025FB547600C5E72B /* WalletDetailsPresenter.swift */; };
+		6B92963325FB548D00C5E72B /* WalletDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B92963225FB548D00C5E72B /* WalletDetailsModel.swift */; };
+		6B92963525FB549D00C5E72B /* WalletDetailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B92963425FB549D00C5E72B /* WalletDetailsRouter.swift */; };
+		6B92963A25FB55F800C5E72B /* WalletModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B92963925FB55F800C5E72B /* WalletModels.swift */; };
+		6B92963F25FB6B0800C5E72B /* WalletListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B92963E25FB6B0800C5E72B /* WalletListTableViewCell.swift */; };
+		6BB38BBE25FA3CDE00971BE4 /* Wallet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BB38BBD25FA3CDE00971BE4 /* Wallet.storyboard */; };
 		6BC016F825F0FBE100CF46B5 /* CartListInteracter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC016F725F0FBE100CF46B5 /* CartListInteracter.swift */; };
 		6BC016FD25F0FBF300CF46B5 /* CartListWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC016FC25F0FBF300CF46B5 /* CartListWorker.swift */; };
 		6BC016FF25F0FBFE00CF46B5 /* CartListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC016FE25F0FBFE00CF46B5 /* CartListPresenter.swift */; };
@@ -238,6 +269,22 @@
 		6B01F1A525CD709C004E415B /* EmailLoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailLoginModel.swift; sourceTree = "<group>"; };
 		6B03DCA225D4F694000344D0 /* DashBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashBoard.swift; sourceTree = "<group>"; };
 		6B03DCA725D505D8000344D0 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
+		6B05776825F8C8EA007E5F4F /* AddAddressInteracter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAddressInteracter.swift; sourceTree = "<group>"; };
+		6B05776D25F8C92D007E5F4F /* AddAddressWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAddressWorker.swift; sourceTree = "<group>"; };
+		6B05776F25F8C97C007E5F4F /* AddAddressPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAddressPresenter.swift; sourceTree = "<group>"; };
+		6B05777125F8C991007E5F4F /* AddAddressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAddressModel.swift; sourceTree = "<group>"; };
+		6B05777A25F9052E007E5F4F /* DeleteAddressInteracter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAddressInteracter.swift; sourceTree = "<group>"; };
+		6B05777F25F9058E007E5F4F /* DeleteAddressWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAddressWorker.swift; sourceTree = "<group>"; };
+		6B05778425F905E8007E5F4F /* DeleteAddresPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAddresPresenter.swift; sourceTree = "<group>"; };
+		6B05778625F90601007E5F4F /* DeleteAddressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAddressModel.swift; sourceTree = "<group>"; };
+		6B05778F25F9063A007E5F4F /* UpdateAddressInteracter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateAddressInteracter.swift; sourceTree = "<group>"; };
+		6B05779425F90644007E5F4F /* UpdateAddressWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateAddressWorker.swift; sourceTree = "<group>"; };
+		6B05779925F9064E007E5F4F /* UpdateAddressPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateAddressPresenter.swift; sourceTree = "<group>"; };
+		6B05779E25F90658007E5F4F /* UpdateAddressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateAddressModel.swift; sourceTree = "<group>"; };
+		6B0577A425F9069B007E5F4F /* DefaultAddressInteracter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultAddressInteracter.swift; sourceTree = "<group>"; };
+		6B0577A925F906A6007E5F4F /* DefaultAddressWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultAddressWorker.swift; sourceTree = "<group>"; };
+		6B0577AE25F906B1007E5F4F /* DefaultAddressPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultAddressPresenter.swift; sourceTree = "<group>"; };
+		6B0577B325F906CB007E5F4F /* DefaultAddressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultAddressModel.swift; sourceTree = "<group>"; };
 		6B05F63525E5033F001668B3 /* NewArrivalsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewArrivalsTableViewCell.swift; sourceTree = "<group>"; };
 		6B05F63A25E5040E001668B3 /* NewArrivalsInteracter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewArrivalsInteracter.swift; sourceTree = "<group>"; };
 		6B05F64225E5041A001668B3 /* NewArrivalsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewArrivalsPresenter.swift; sourceTree = "<group>"; };
@@ -337,12 +384,17 @@
 		6B78E49425E63C0400A3AA6C /* CategoryAllCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryAllCollectionViewCell.swift; sourceTree = "<group>"; };
 		6B78E49D25E67D9900A3AA6C /* NewArrivalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewArrivalViewController.swift; sourceTree = "<group>"; };
 		6B78E4A525E684A700A3AA6C /* NewArrivalALlCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewArrivalALlCollectionViewCell.swift; sourceTree = "<group>"; };
+		6B7CB0A625FB9B3200DF76C5 /* CCWebViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCWebViewViewController.swift; sourceTree = "<group>"; };
 		6B7CC29025E7B24E0045DFB8 /* CategorySelectInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySelectInteractor.swift; sourceTree = "<group>"; };
 		6B7CC29525E7B2850045DFB8 /* CategorySelectWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySelectWorker.swift; sourceTree = "<group>"; };
 		6B7CC29A25E7B2AD0045DFB8 /* CategorySelectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySelectModel.swift; sourceTree = "<group>"; };
 		6B7CC29F25E7B2C60045DFB8 /* CategorySelectRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySelectRouter.swift; sourceTree = "<group>"; };
 		6B7CC2A725E7B3700045DFB8 /* CategorySelectPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySelectPresenter.swift; sourceTree = "<group>"; };
 		6B7CC2AC25E7C3240045DFB8 /* CategoryModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModels.swift; sourceTree = "<group>"; };
+		6B7D2AB025FB8677003DDF82 /* AddMoneyToWalletInteracter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMoneyToWalletInteracter.swift; sourceTree = "<group>"; };
+		6B7D2AB525FB8690003DDF82 /* AddMoneyToWalletWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMoneyToWalletWorker.swift; sourceTree = "<group>"; };
+		6B7D2AB725FB86A6003DDF82 /* AddMoneyToWalletPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMoneyToWalletPresenter.swift; sourceTree = "<group>"; };
+		6B7D2AB925FB86BC003DDF82 /* AddMoneyToWalletModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMoneyToWalletModel.swift; sourceTree = "<group>"; };
 		6B8A680125DE7272004AD774 /* DasboardModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DasboardModels.swift; sourceTree = "<group>"; };
 		6B8B013D25EA1EAC007564F9 /* SubCategoryListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCategoryListCollectionViewCell.swift; sourceTree = "<group>"; };
 		6B8B014625EA70D6007564F9 /* ProductDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewController.swift; sourceTree = "<group>"; };
@@ -353,6 +405,16 @@
 		6B8B016225EA7377007564F9 /* ProductDetailsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsRouter.swift; sourceTree = "<group>"; };
 		6B8B016725EA7DD4007564F9 /* ProductsModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsModels.swift; sourceTree = "<group>"; };
 		6B91856C25EE05BA00F607F6 /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
+		6B92961C25FB519200C5E72B /* WalletDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletDetailsViewController.swift; sourceTree = "<group>"; };
+		6B92962125FB521100C5E72B /* AddMoneyWalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMoneyWalletViewController.swift; sourceTree = "<group>"; };
+		6B92962625FB545000C5E72B /* WalletDetailsInteracter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletDetailsInteracter.swift; sourceTree = "<group>"; };
+		6B92962E25FB545C00C5E72B /* WalletDetailsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletDetailsWorker.swift; sourceTree = "<group>"; };
+		6B92963025FB547600C5E72B /* WalletDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletDetailsPresenter.swift; sourceTree = "<group>"; };
+		6B92963225FB548D00C5E72B /* WalletDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletDetailsModel.swift; sourceTree = "<group>"; };
+		6B92963425FB549D00C5E72B /* WalletDetailsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletDetailsRouter.swift; sourceTree = "<group>"; };
+		6B92963925FB55F800C5E72B /* WalletModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletModels.swift; sourceTree = "<group>"; };
+		6B92963E25FB6B0800C5E72B /* WalletListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletListTableViewCell.swift; sourceTree = "<group>"; };
+		6BB38BBD25FA3CDE00971BE4 /* Wallet.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Wallet.storyboard; sourceTree = "<group>"; };
 		6BC016F725F0FBE100CF46B5 /* CartListInteracter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartListInteracter.swift; sourceTree = "<group>"; };
 		6BC016FC25F0FBF300CF46B5 /* CartListWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartListWorker.swift; sourceTree = "<group>"; };
 		6BC016FE25F0FBFE00CF46B5 /* CartListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartListPresenter.swift; sourceTree = "<group>"; };
@@ -469,6 +531,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6B05777625F8C9A1007E5F4F /* DeleteAddress */ = {
+			isa = PBXGroup;
+			children = (
+				6B05777A25F9052E007E5F4F /* DeleteAddressInteracter.swift */,
+				6B05777F25F9058E007E5F4F /* DeleteAddressWorker.swift */,
+				6B05778425F905E8007E5F4F /* DeleteAddresPresenter.swift */,
+				6B05778625F90601007E5F4F /* DeleteAddressModel.swift */,
+			);
+			path = DeleteAddress;
+			sourceTree = "<group>";
+		};
+		6B05778825F90609007E5F4F /* UpdateAddress */ = {
+			isa = PBXGroup;
+			children = (
+				6B05778F25F9063A007E5F4F /* UpdateAddressInteracter.swift */,
+				6B05779925F9064E007E5F4F /* UpdateAddressPresenter.swift */,
+				6B05779425F90644007E5F4F /* UpdateAddressWorker.swift */,
+				6B05779E25F90658007E5F4F /* UpdateAddressModel.swift */,
+			);
+			path = UpdateAddress;
+			sourceTree = "<group>";
+		};
+		6B0577A325F90668007E5F4F /* SetDefaultAddress */ = {
+			isa = PBXGroup;
+			children = (
+				6B0577A425F9069B007E5F4F /* DefaultAddressInteracter.swift */,
+				6B0577A925F906A6007E5F4F /* DefaultAddressWorker.swift */,
+				6B0577AE25F906B1007E5F4F /* DefaultAddressPresenter.swift */,
+				6B0577B325F906CB007E5F4F /* DefaultAddressModel.swift */,
+			);
+			path = SetDefaultAddress;
+			sourceTree = "<group>";
+		};
 		6B05F63025E4FF14001668B3 /* NewArrivals */ = {
 			isa = PBXGroup;
 			children = (
@@ -497,6 +592,9 @@
 			children = (
 				6B0D9C8525F78305003DBBDF /* AddressList */,
 				6B3B34A125F7AAEA00C075A0 /* AddAddress */,
+				6B05777625F8C9A1007E5F4F /* DeleteAddress */,
+				6B05778825F90609007E5F4F /* UpdateAddress */,
+				6B0577A325F90668007E5F4F /* SetDefaultAddress */,
 			);
 			path = AddressScenes;
 			sourceTree = "<group>";
@@ -635,6 +733,10 @@
 			isa = PBXGroup;
 			children = (
 				6B3B34A225F7AB2F00C075A0 /* AddAddressViewController.swift */,
+				6B05776825F8C8EA007E5F4F /* AddAddressInteracter.swift */,
+				6B05776D25F8C92D007E5F4F /* AddAddressWorker.swift */,
+				6B05776F25F8C97C007E5F4F /* AddAddressPresenter.swift */,
+				6B05777125F8C991007E5F4F /* AddAddressModel.swift */,
 			);
 			path = AddAddress;
 			sourceTree = "<group>";
@@ -720,6 +822,7 @@
 				6B0F6D4925F0DBA3008726FB /* CartModels.swift */,
 				6B11793125F61FD700B0D9EA /* CheckOutModels.swift */,
 				6B0D9CA525F786BD003DBBDF /* AddressModels.swift */,
+				6B92963925FB55F800C5E72B /* WalletModels.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -764,6 +867,22 @@
 			path = NewArrivalsAll;
 			sourceTree = "<group>";
 		};
+		6B7CB0A425FB9AB400DF76C5 /* CCAvenue */ = {
+			isa = PBXGroup;
+			children = (
+				6B7CB0A525FB9AC000DF76C5 /* CCWeb */,
+			);
+			path = CCAvenue;
+			sourceTree = "<group>";
+		};
+		6B7CB0A525FB9AC000DF76C5 /* CCWeb */ = {
+			isa = PBXGroup;
+			children = (
+				6B7CB0A625FB9B3200DF76C5 /* CCWebViewViewController.swift */,
+			);
+			path = CCWeb;
+			sourceTree = "<group>";
+		};
 		6B8A680B25DE942A004AD774 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -782,6 +901,7 @@
 				6B6FDB6125EFAECA00B07955 /* ReviewListTableViewCell.swift */,
 				6BD13BBE25F10255005EFAB4 /* CartListTableViewCell.swift */,
 				6B0D9C8025F781D4003DBBDF /* AddressListTableViewCell.swift */,
+				6B92963E25FB6B0800C5E72B /* WalletListTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -809,6 +929,40 @@
 				6B91856C25EE05BA00F607F6 /* OnBoardingViewController.swift */,
 			);
 			path = OnBoardingScreen;
+			sourceTree = "<group>";
+		};
+		6B92961625FB41D100C5E72B /* WalletScenes */ = {
+			isa = PBXGroup;
+			children = (
+				6B92961B25FB511300C5E72B /* WalletDetails */,
+				6B92961A25FB510E00C5E72B /* AddMoneyToWallet */,
+			);
+			path = WalletScenes;
+			sourceTree = "<group>";
+		};
+		6B92961A25FB510E00C5E72B /* AddMoneyToWallet */ = {
+			isa = PBXGroup;
+			children = (
+				6B92962125FB521100C5E72B /* AddMoneyWalletViewController.swift */,
+				6B7D2AB025FB8677003DDF82 /* AddMoneyToWalletInteracter.swift */,
+				6B7D2AB525FB8690003DDF82 /* AddMoneyToWalletWorker.swift */,
+				6B7D2AB725FB86A6003DDF82 /* AddMoneyToWalletPresenter.swift */,
+				6B7D2AB925FB86BC003DDF82 /* AddMoneyToWalletModel.swift */,
+			);
+			path = AddMoneyToWallet;
+			sourceTree = "<group>";
+		};
+		6B92961B25FB511300C5E72B /* WalletDetails */ = {
+			isa = PBXGroup;
+			children = (
+				6B92961C25FB519200C5E72B /* WalletDetailsViewController.swift */,
+				6B92962625FB545000C5E72B /* WalletDetailsInteracter.swift */,
+				6B92962E25FB545C00C5E72B /* WalletDetailsWorker.swift */,
+				6B92963025FB547600C5E72B /* WalletDetailsPresenter.swift */,
+				6B92963225FB548D00C5E72B /* WalletDetailsModel.swift */,
+				6B92963425FB549D00C5E72B /* WalletDetailsRouter.swift */,
+			);
+			path = WalletDetails;
 			sourceTree = "<group>";
 		};
 		6BC207B425CA600B007083D4 /* Extensions */ = {
@@ -849,6 +1003,7 @@
 				6BFF981425C9253800D60BF3 /* Main.storyboard */,
 				6BD7EE9425D2C3AE00404671 /* DashBoard.storyboard */,
 				6B0D9C7325F77CD4003DBBDF /* Address.storyboard */,
+				6BB38BBD25FA3CDE00971BE4 /* Wallet.storyboard */,
 			);
 			path = StoryBoards;
 			sourceTree = "<group>";
@@ -1004,6 +1159,7 @@
 		6BFF980D25C9253700D60BF3 /* OSA */ = {
 			isa = PBXGroup;
 			children = (
+				6B7CB0A425FB9AB400DF76C5 /* CCAvenue */,
 				6BFF980E25C9253700D60BF3 /* AppDelegate.swift */,
 				6BFF981025C9253800D60BF3 /* SceneDelegate.swift */,
 				6BFF981225C9253800D60BF3 /* ViewController.swift */,
@@ -1015,6 +1171,7 @@
 				6B0F6D4E25F0E77B008726FB /* CartDetailsScenes */,
 				6B11791125F6059F00B0D9EA /* CheckOutScenes */,
 				6B0D9C6F25F77C00003DBBDF /* AddressScenes */,
+				6B92961625FB41D100C5E72B /* WalletScenes */,
 				6B8A680B25DE942A004AD774 /* Cells */,
 				6BC207B625CA6073007083D4 /* StoryBoards */,
 				6BC207B425CA600B007083D4 /* Extensions */,
@@ -1200,6 +1357,7 @@
 				6BFF985325C92ACA00D60BF3 /* Montserrat-Regular.otf in Resources */,
 				6BFF981825C9255100D60BF3 /* Assets.xcassets in Resources */,
 				6BFF981625C9253800D60BF3 /* Main.storyboard in Resources */,
+				6BB38BBE25FA3CDE00971BE4 /* Wallet.storyboard in Resources */,
 				6B0D9C7425F77CD4003DBBDF /* Address.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1291,9 +1449,12 @@
 				6B11794225F6346100B0D9EA /* PromoCodeWorker.swift in Sources */,
 				6B158D2625E37C2C00A247A1 /* CategoryPresenter.swift in Sources */,
 				6B05F64D25E50430001668B3 /* NewArrivalsMode.swift in Sources */,
+				6B05776925F8C8EA007E5F4F /* AddAddressInteracter.swift in Sources */,
 				6BE8586925EE59FD00A1F30B /* ProductSizeModel.swift in Sources */,
 				6B05F63625E5033F001668B3 /* NewArrivalsTableViewCell.swift in Sources */,
+				6B7CB0A725FB9B3300DF76C5 /* CCWebViewViewController.swift in Sources */,
 				6BF627FC25D684B600CC8535 /* OTPModel.swift in Sources */,
+				6B05778025F9058E007E5F4F /* DeleteAddressWorker.swift in Sources */,
 				6BEC1F4725E77B8300193015 /* CategoryDetailRouter.swift in Sources */,
 				6B6FDB5825EFAB1F00B07955 /* ReviewListModel.swift in Sources */,
 				6B2AF6A225DD44B4003D1930 /* DashBoardWorker.swift in Sources */,
@@ -1306,7 +1467,9 @@
 				6B7CC29B25E7B2AD0045DFB8 /* CategorySelectModel.swift in Sources */,
 				6B0D9C8F25F78358003DBBDF /* AddressListWorker.swift in Sources */,
 				6B70FA8925CBD47C00AA4DD8 /* BottomBorder.swift in Sources */,
+				6B0577B425F906CB007E5F4F /* DefaultAddressModel.swift in Sources */,
 				6B78E4A625E684A700A3AA6C /* NewArrivalALlCollectionViewCell.swift in Sources */,
+				6B0577AF25F906B1007E5F4F /* DefaultAddressPresenter.swift in Sources */,
 				6B70FA6D25CBCA1900AA4DD8 /* TapToDismissKeypad.swift in Sources */,
 				6B0F6D3E25F0DA00008726FB /* AddToCartWorker.swift in Sources */,
 				6B6FDB3A25EFAA8E00B07955 /* ReletedProductsWorker.swift in Sources */,
@@ -1339,6 +1502,7 @@
 				6BF6283925D68CB500CC8535 /* SignUpWorker.swift in Sources */,
 				6BDDAFF625DBE96600E18242 /* APIURL.swift in Sources */,
 				6B457CCC25F7551C00DC017F /* OrderDetailsInteracter.swift in Sources */,
+				6B05777225F8C991007E5F4F /* AddAddressModel.swift in Sources */,
 				6B11790825F5EE0500B0D9EA /* CartQuantityPresenter.swift in Sources */,
 				6B70FA7425CBCA1900AA4DD8 /* ViewBindToKeypad.swift in Sources */,
 				6B0CB0C925E528CD0066B927 /* AdvertisementInteracter.swift in Sources */,
@@ -1349,6 +1513,7 @@
 				6BE8586425EE59DE00A1F30B /* ProductSizeWorker.swift in Sources */,
 				6B0F6D5125F0E7F5008726FB /* CartListViewController.swift in Sources */,
 				6BF6282425D6869100CC8535 /* ForgotPasswordRouter.swift in Sources */,
+				6B05777025F8C97C007E5F4F /* AddAddressPresenter.swift in Sources */,
 				6B78E49525E63C0400A3AA6C /* CategoryAllCollectionViewCell.swift in Sources */,
 				6BF6280125D684D200CC8535 /* OTPPresenter.swift in Sources */,
 				6B158D2B25E37C4200A247A1 /* CategoryModel.swift in Sources */,
@@ -1361,11 +1526,14 @@
 				6B70FA6C25CBCA1900AA4DD8 /* NavigationBarTitleOnLeftSide.swift in Sources */,
 				6B71625125CD2CB10021F55D /* LoginModel.swift in Sources */,
 				6B1178FB25F5EDAD00B0D9EA /* CartQuantityInteracter.swift in Sources */,
+				6B05779525F90644007E5F4F /* UpdateAddressWorker.swift in Sources */,
 				6BF6281A25D6867100CC8535 /* ForgotPasswordPresenter.swift in Sources */,
 				6BF6282C25D68C2400CC8535 /* SignupViewController.swift in Sources */,
 				6B8B015925EA733B007564F9 /* ProductDetailsModel.swift in Sources */,
 				6B11793D25F6340A00B0D9EA /* PromoCodeInteracter.swift in Sources */,
 				6BD8923F25F206F50004EEB3 /* CartDeletePresenter.swift in Sources */,
+				6B05779025F9063A007E5F4F /* UpdateAddressInteracter.swift in Sources */,
+				6B92963525FB549D00C5E72B /* WalletDetailsRouter.swift in Sources */,
 				6B11790D25F5EE1200B0D9EA /* CartQuantityModel.swift in Sources */,
 				6B457CDB25F7556400DC017F /* OrderDetailsModel.swift in Sources */,
 				6B70FA8C25CBD47C00AA4DD8 /* AlertController.swift in Sources */,
@@ -1381,15 +1549,19 @@
 				6B0F6D4525F0DA20008726FB /* AddToCartModel.swift in Sources */,
 				6BC207D825CA9DD2007083D4 /* LoginViewController.swift in Sources */,
 				6B158D2425E37C1200A247A1 /* CategoryWorker.swift in Sources */,
+				6B92962725FB545000C5E72B /* WalletDetailsInteracter.swift in Sources */,
+				6B05778525F905E8007E5F4F /* DeleteAddresPresenter.swift in Sources */,
 				6B0D9C9725F78378003DBBDF /* AddressListPresenter.swift in Sources */,
 				6B71625B25CD2CF10021F55D /* LoginRouter.swift in Sources */,
 				6BE4049D25E4CB96006BC307 /* BestSellingWorker.swift in Sources */,
+				6B7D2AB825FB86A6003DDF82 /* AddMoneyToWalletPresenter.swift in Sources */,
 				6BE8585625EE599D00A1F30B /* ProductSizeInteractor.swift in Sources */,
 				6BE4049525E4CB74006BC307 /* BestSellingInteracter.swift in Sources */,
 				6B2AF6AE25DD4973003D1930 /* DashBoardInteractor.swift in Sources */,
 				6B70FA6B25CBCA1900AA4DD8 /* CustomNavigationBackButtonTitle.swift in Sources */,
 				6B01F1A125CD707A004E415B /* EmailLoginWorker.swift in Sources */,
 				6B6FDB5325EFAB1300B07955 /* ReviewListPresenter.swift in Sources */,
+				6B0577A525F9069B007E5F4F /* DefaultAddressInteracter.swift in Sources */,
 				6B6FDB3F25EFAAAD00B07955 /* RelatedProductsPresenter.swift in Sources */,
 				6BF627F325D6845400CC8535 /* OTPViewController.swift in Sources */,
 				6B11790325F5EDE400B0D9EA /* CartQuantityWorker.swift in Sources */,
@@ -1398,6 +1570,7 @@
 				6B70FA7125CBCA1900AA4DD8 /* userDefault.swift in Sources */,
 				6BE8585B25EE59B400A1F30B /* ProductSizePresenter.swift in Sources */,
 				6B8B015E25EA7357007564F9 /* ProductDetailsPresenter.swift in Sources */,
+				6B7D2AB125FB8677003DDF82 /* AddMoneyToWalletInteracter.swift in Sources */,
 				6B70FA6E25CBCA1900AA4DD8 /* HTMLToString.swift in Sources */,
 				6BC016FD25F0FBF300CF46B5 /* CartListWorker.swift in Sources */,
 				6B01F19725CD7052004E415B /* EmailLoginRouter.swift in Sources */,
@@ -1411,6 +1584,7 @@
 				6B8A680225DE7272004AD774 /* DasboardModels.swift in Sources */,
 				6B0CB0D425E529040066B927 /* AdvertisementModel.swift in Sources */,
 				6BC3EE2C25E917CD00A0CAD9 /* SubCategoryWorker.swift in Sources */,
+				6B92963F25FB6B0800C5E72B /* WalletListTableViewCell.swift in Sources */,
 				6B2AF6B325DD4987003D1930 /* DashBoardModel.swift in Sources */,
 				6BC3EE1A25E8BB2C00A0CAD9 /* SelectCategorySegmentCell.swift in Sources */,
 				6BC0170625F0FC2D00CF46B5 /* CartListRouter.swift in Sources */,
@@ -1424,6 +1598,7 @@
 				6BEA433425DA963E00BC578E /* ForgotPasswordViewController.swift in Sources */,
 				6BC0170125F0FC0B00CF46B5 /* CartListModel.swift in Sources */,
 				6B158D1A25E3799000A247A1 /* DashBoardBannerCell.swift in Sources */,
+				6B7D2AB625FB8690003DDF82 /* AddMoneyToWalletWorker.swift in Sources */,
 				6B2AF6A725DD494C003D1930 /* DashBoardPresenter.swift in Sources */,
 				6B19743D25C9613300B611A0 /* NavigationBarGradient.swift in Sources */,
 				6B11793725F62A0500B0D9EA /* DeliveryAddressRouter.swift in Sources */,
@@ -1431,20 +1606,28 @@
 				6B70FA8A25CBD47C00AA4DD8 /* GlobalVariables.swift in Sources */,
 				6BF6284325D68D0A00CC8535 /* SignUpPresenter.swift in Sources */,
 				6B8B014725EA70DA007564F9 /* ProductDetailsViewController.swift in Sources */,
+				6B05777B25F9052E007E5F4F /* DeleteAddressInteracter.swift in Sources */,
+				6B05776E25F8C92D007E5F4F /* AddAddressWorker.swift in Sources */,
 				6B05F64325E5041A001668B3 /* NewArrivalsPresenter.swift in Sources */,
+				6B92962F25FB545C00C5E72B /* WalletDetailsWorker.swift in Sources */,
+				6B05779F25F90658007E5F4F /* UpdateAddressModel.swift in Sources */,
 				6B6FDB4425EFAAC700B07955 /* ReletedProductsModel.swift in Sources */,
 				6BC016F825F0FBE100CF46B5 /* CartListInteracter.swift in Sources */,
 				6BD1BE2925F24B3500CC5721 /* CheckPincodePresenter.swift in Sources */,
+				6B92962225FB521100C5E72B /* AddMoneyWalletViewController.swift in Sources */,
 				6B3B34A325F7AB2F00C075A0 /* AddAddressViewController.swift in Sources */,
 				6B0D9C8125F781D4003DBBDF /* AddressListTableViewCell.swift in Sources */,
+				6B92963A25FB55F800C5E72B /* WalletModels.swift in Sources */,
 				6B7CC2AD25E7C3240045DFB8 /* CategoryModels.swift in Sources */,
 				6BF6281525D6866200CC8535 /* ForgotPasswordWorker.swift in Sources */,
 				6BE404A225E4CBB8006BC307 /* BestSellingPresenter.swift in Sources */,
 				6BF6281F25D6867E00CC8535 /* ForgotPasswordModel.swift in Sources */,
 				6BFF980F25C9253700D60BF3 /* AppDelegate.swift in Sources */,
 				6BC016FF25F0FBFE00CF46B5 /* CartListPresenter.swift in Sources */,
+				6B92963325FB548D00C5E72B /* WalletDetailsModel.swift in Sources */,
 				6B8B014F25EA7304007564F9 /* ProductDetailsInteractor.swift in Sources */,
 				6B8B016325EA7377007564F9 /* ProductDetailsRouter.swift in Sources */,
+				6B7D2ABA25FB86BC003DDF82 /* AddMoneyToWalletModel.swift in Sources */,
 				6B71627425CD68C70021F55D /* APIManger.swift in Sources */,
 				6B0CB0D925E529170066B927 /* AdvertisementWorker.swift in Sources */,
 				6B7CC2A025E7B2C60045DFB8 /* CategorySelectRouter.swift in Sources */,
@@ -1456,16 +1639,21 @@
 				6B6FDB4E25EFAB0800B07955 /* ReviewListWorker.swift in Sources */,
 				6BD8924425F2070A0004EEB3 /* CartDeleteModel.swift in Sources */,
 				6B0D9CA625F786BD003DBBDF /* AddressModels.swift in Sources */,
+				6B05779A25F9064E007E5F4F /* UpdateAddressPresenter.swift in Sources */,
 				6B6FDB6225EFAECA00B07955 /* ReviewListTableViewCell.swift in Sources */,
+				6B92963125FB547600C5E72B /* WalletDetailsPresenter.swift in Sources */,
 				6BE8587E25EE5A6000A1F30B /* ProductColourModel.swift in Sources */,
+				6B0577AA25F906A6007E5F4F /* DefaultAddressWorker.swift in Sources */,
 				6B0CB0C025E527D50066B927 /* AdsTableViewCell.swift in Sources */,
 				6B11792D25F61FA700B0D9EA /* DeliveryAddressModel.swift in Sources */,
 				6BF6283E25D68CD800CC8535 /* SignUpModel.swift in Sources */,
+				6B92961D25FB519200C5E72B /* WalletDetailsViewController.swift in Sources */,
 				6B70FA8825CBD47C00AA4DD8 /* ActivityIndicator.swift in Sources */,
 				6B11792125F61F6500B0D9EA /* DeliveryAddressWorker.swift in Sources */,
 				6B0D9C7C25F77E56003DBBDF /* AddressListViewController.swift in Sources */,
 				6BD8923A25F206DC0004EEB3 /* CartDeleteWorker.swift in Sources */,
 				6BEC1F4225E765AD00193015 /* CategorySelectViewController.swift in Sources */,
+				6B05778725F90601007E5F4F /* DeleteAddressModel.swift in Sources */,
 				6B70FA8725CBD47C00AA4DD8 /* constants.swift in Sources */,
 				6BD13BBF25F10255005EFAB4 /* CartListTableViewCell.swift in Sources */,
 			);

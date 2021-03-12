@@ -20,9 +20,9 @@ class AddressListModels : NSObject {
     var landmark : String?
     var mobile_number : String?
     var pincode : String?
-    var product_name : String?
     var state : String?
     var street : String?
+    var address_mode : String?
    
      // MARK: Instance Method
      func loadFromDictionary(_ dict: [String: AnyObject])
@@ -57,14 +57,14 @@ class AddressListModels : NSObject {
         if let data = dict["pincode"] as? String {
            self.pincode = data
         }
-        if let data = dict["product_name"] as? String {
-           self.product_name = data
-        }
         if let data = dict["state"] as? String {
             self.state = data
         }
         if let data = dict["street"] as? String {
             self.street = data
+        }
+        if let data = dict["address_mode"] as? String {
+            self.address_mode = data
         }
     }
     
@@ -73,4 +73,79 @@ class AddressListModels : NSObject {
         model.loadFromDictionary(dict)
         return model
      }
+}
+
+class AddAddressModels {
+    
+    var msg : String?
+    var status : String?
+    var address_id : String?
+   
+    
+    // MARK: Instance Method
+    func loadFromDictionary(_ dict: [String: AnyObject])
+    {
+        if let data = dict["msg"] as? String {
+            self.msg = data
+        }
+        if let data = dict["status"] as? String {
+            self.status = data
+        }
+        if let data = dict["address_id"] as? String {
+            self.address_id = data
+        }
+    }
+}
+
+class DeleteAddressModels{
+    
+    var status : String?
+    
+    
+    // MARK: Instance Method
+    func loadFromDictionary(_ dict: [String: AnyObject])
+    {
+       
+        if let data = dict["status"] as? String {
+            self.status = data
+        }
+    }
+}
+
+class UpdateAddressModels{
+    
+    var msg : String?
+    var status : String?
+    var order_id : String?
+   
+    
+    // MARK: Instance Method
+    func loadFromDictionary(_ dict: [String: AnyObject])
+    {
+        if let data = dict["msg"] as? String {
+            self.msg = data
+        }
+        if let data = dict["status"] as? String {
+            self.status = data
+        }
+        if let data = dict["order_id"] as? String {
+            self.order_id = data
+        }
+    }
+}
+class DefaultAddressModels{
+    
+    var msg : String?
+    var status : String?
+    
+    // MARK: Instance Method
+    func loadFromDictionary(_ dict: [String: AnyObject])
+    {
+        if let data = dict["msg"] as? String {
+            self.msg = data
+        }
+        if let data = dict["status"] as? String {
+            self.status = data
+        }
+    }
 }

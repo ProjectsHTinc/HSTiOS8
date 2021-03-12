@@ -116,7 +116,43 @@ class ProductDetailsViewController: UIViewController, ProductSizeDisplayLogic, P
     }
 
     @IBAction func addToCartAction(_ sender: Any) {
-        interactor5?.fetchItems(request: AddToCartModel.Fetch.Request(product_id:self.product_id,product_comb_id:self.selectedcolourId,quantity:self.quantity,user_id:GlobalVariables.shared.customer_id))
+        
+        let user_Id = UserDefaults.standard.object(forKey: UserDefaultsKey.customer_idkey.rawValue) ?? ""
+        
+        if user_Id as! String == ""
+        {
+            let alertController = UIAlertController(title: Globals.alertTitle, message: "Sign in to Continue", preferredStyle: .alert)
+
+            // Create the actions
+            let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) {
+                UIAlertAction in
+                NSLog("OK Pressed")
+                self.navigateToLogin ()
+                
+            }
+            let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel) {
+                UIAlertAction in
+                NSLog("Cancel Pressed")
+            }
+
+            // Add the actions
+            alertController.addAction(okAction)
+            alertController.addAction(cancelAction)
+
+            // Present the controller
+            self.present(alertController, animated: true, completion: nil)
+        }
+        else
+        {
+            GlobalVariables.shared.customer_id = UserDefaults.standard.object(forKey: UserDefaultsKey.customer_idkey.rawValue) as! String
+            GlobalVariables.shared.phone_number = UserDefaults.standard.object(forKey: UserDefaultsKey.phone_numberKey.rawValue) as! String
+            
+            interactor5?.fetchItems(request: AddToCartModel.Fetch.Request(product_id:self.product_id,product_comb_id:self.selectedcolourId,quantity:self.quantity,user_id:GlobalVariables.shared.customer_id))
+        }
+    }
+                                                                                       
+    func navigateToLogin () {
+        UIApplication.shared.keyWindow?.rootViewController = storyboard!.instantiateViewController(withIdentifier: "nav")
     }
     
     @IBAction func checkPincodeAction(_ sender: Any) {

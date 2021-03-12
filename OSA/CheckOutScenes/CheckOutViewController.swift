@@ -62,6 +62,7 @@ class CheckOutViewController: UIViewController,DeliveryAddressDisplayLogic, Prom
         super.viewDidLoad()
         
         print(GlobalVariables.shared.customer_id)
+        
       interactor?.fetchItems(request: DeliveryAddressModel.Fetch.Request(user_id:GlobalVariables.shared.customer_id))
     }
     
@@ -119,16 +120,20 @@ class CheckOutViewController: UIViewController,DeliveryAddressDisplayLogic, Prom
         AlertController.shared.showAlert(targetVc: self, title: Globals.alertTitle, message: "Field is Empty", complition: {
             })
         }
-        else
-        {
-        interactor1?.fetchItems(request: PromoCodeModel.Fetch.Request(purchse_order_id:self.orderId, user_id:GlobalVariables.shared.customer_id,promo_code:self.promoCodeTextField.text!))
-        }
+//        else
+//        {
+//        interactor1?.fetchItems(request: PromoCodeModel.Fetch.Request(purchse_order_id:self.orderId, user_id:GlobalVariables.shared.customer_id,promo_code:self.promoCodeTextField.text!))
+//        }
     }
     
 //    Address List
     func successFetchedItems(viewModel: DeliveryAddressModel.Fetch.ViewModel) {
         displayedDeliveryAddressData = viewModel.displayedDeliveryAddressData
 
+        self.userCity.removeAll()
+        self.userName.removeAll()
+        self.userPhoneNumber.removeAll()
+        self.addressId.removeAll()
         for data in displayedDeliveryAddressData {
             let name = data.full_name
             let phoneNumber = data.mobile_number
@@ -140,11 +145,12 @@ class CheckOutViewController: UIViewController,DeliveryAddressDisplayLogic, Prom
             self.userPhoneNumber.append(phoneNumber!)
             self.addressId.append(id!)
             
-            self.nameLbl.text = userName
-            self.addressLbl.text = userCity
-            self.phoneNumberLbl.text = userPhoneNumber
         }
-        interactor2?.fetchItems(request: PlaceOrderModel.Fetch.Request(cus_notes:"", user_id:GlobalVariables.shared.customer_id,address_id:self.addressId))
+         self.nameLbl.text = userName
+         self.addressLbl.text = userCity
+         self.phoneNumberLbl.text = userPhoneNumber
+        
+//        interactor2?.fetchItems(request: PlaceOrderModel.Fetch.Request(cus_notes:"", user_id:GlobalVariables.shared.customer_id,address_id:self.addressId))
     }
     
     func errorFetchingItems(viewModel: DeliveryAddressModel.Fetch.ViewModel) {
@@ -164,7 +170,7 @@ class CheckOutViewController: UIViewController,DeliveryAddressDisplayLogic, Prom
     func successFetchedItems(viewModel: PlaceOrderModel.Fetch.ViewModel) {
         
         self.orderId = viewModel.order_id!
-        interactor3?.fetchItems(request: OrderDetailsModel.Fetch.Request( user_id:GlobalVariables.shared.customer_id,order_id:self.orderId))
+//        interactor3?.fetchItems(request: OrderDetailsModel.Fetch.Request( user_id:GlobalVariables.shared.customer_id,order_id:self.orderId))
     }
     
     func errorFetchingItems(viewModel: PlaceOrderModel.Fetch.ViewModel) {
