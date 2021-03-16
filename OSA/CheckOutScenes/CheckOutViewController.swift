@@ -27,10 +27,15 @@ protocol OrderDetailsDisplayLogic: class
     func successFetchedItems(viewModel: OrderDetailsModel.Fetch.ViewModel)
     func errorFetchingItems(viewModel: OrderDetailsModel.Fetch.ViewModel)
 }
+protocol RemovePromoCodeDisplayLogic: class
+{
+    func successFetchedItems(viewModel: RemovePromoCodeModel.Fetch.ViewModel)
+    func errorFetchingItems(viewModel: RemovePromoCodeModel.Fetch.ViewModel)
+}
 
-class CheckOutViewController: UIViewController,DeliveryAddressDisplayLogic, PromoCodeDisplayLogic,PlaceOrderDisplayLogic,OrderDetailsDisplayLogic {
+class CheckOutViewController: UIViewController,DeliveryAddressDisplayLogic, PromoCodeDisplayLogic,PlaceOrderDisplayLogic,OrderDetailsDisplayLogic, RemovePromoCodeDisplayLogic {
+ 
    
-    
     @IBOutlet weak var promoCodeTextField: UITextField!
     @IBOutlet weak var nameLbl: UILabel!
     @IBOutlet weak var phoneNumberLbl: UILabel!
@@ -48,7 +53,8 @@ class CheckOutViewController: UIViewController,DeliveryAddressDisplayLogic, Prom
     var interactor1: PromoCodeBusinessLogic?
     var interactor2: PlaceOrderBusinessLogic?
     var interactor3: OrderDetailsBusinessLogic?
-    
+    var interactor4: RemovePromoCodeBusinessLogic?
+
     var userCity  = String()
     var userName = String()
     var userPhoneNumber = String()
@@ -111,6 +117,14 @@ class CheckOutViewController: UIViewController,DeliveryAddressDisplayLogic, Prom
         viewController3.interactor3 = interactor3
         interactor3.presenter3 = presenter3
         presenter3.viewController3 = viewController3
+        
+        let viewController4 = self
+        let interactor4 = RemovePromoCodeInteractor()
+        let presenter4 = RemovePromoCodePresenter()
+        viewController4.interactor4 = interactor4
+        interactor4.presenter4 = presenter4
+        presenter4.viewController4 = viewController4
+        
     }
     
     @IBAction func applyPromoCodeAction(_ sender: Any) {
@@ -120,10 +134,10 @@ class CheckOutViewController: UIViewController,DeliveryAddressDisplayLogic, Prom
         AlertController.shared.showAlert(targetVc: self, title: Globals.alertTitle, message: "Field is Empty", complition: {
             })
         }
-//        else
-//        {
-//        interactor1?.fetchItems(request: PromoCodeModel.Fetch.Request(purchse_order_id:self.orderId, user_id:GlobalVariables.shared.customer_id,promo_code:self.promoCodeTextField.text!))
-//        }
+        else
+        {
+        interactor1?.fetchItems(request: PromoCodeModel.Fetch.Request(purchse_order_id:self.orderId, user_id:GlobalVariables.shared.customer_id,promo_code:self.promoCodeTextField.text!))
+        }
     }
     
 //    Address List
@@ -150,7 +164,7 @@ class CheckOutViewController: UIViewController,DeliveryAddressDisplayLogic, Prom
          self.addressLbl.text = userCity
          self.phoneNumberLbl.text = userPhoneNumber
         
-//        interactor2?.fetchItems(request: PlaceOrderModel.Fetch.Request(cus_notes:"", user_id:GlobalVariables.shared.customer_id,address_id:self.addressId))
+        interactor2?.fetchItems(request: PlaceOrderModel.Fetch.Request(cus_notes:"", user_id:GlobalVariables.shared.customer_id,address_id:self.addressId))
     }
     
     func errorFetchingItems(viewModel: DeliveryAddressModel.Fetch.ViewModel) {
@@ -170,7 +184,7 @@ class CheckOutViewController: UIViewController,DeliveryAddressDisplayLogic, Prom
     func successFetchedItems(viewModel: PlaceOrderModel.Fetch.ViewModel) {
         
         self.orderId = viewModel.order_id!
-//        interactor3?.fetchItems(request: OrderDetailsModel.Fetch.Request( user_id:GlobalVariables.shared.customer_id,order_id:self.orderId))
+        interactor3?.fetchItems(request: OrderDetailsModel.Fetch.Request( user_id:GlobalVariables.shared.customer_id,order_id:self.orderId))
     }
     
     func errorFetchingItems(viewModel: PlaceOrderModel.Fetch.ViewModel) {
@@ -200,4 +214,16 @@ class CheckOutViewController: UIViewController,DeliveryAddressDisplayLogic, Prom
     func errorFetchingItems(viewModel: OrderDetailsModel.Fetch.ViewModel) {
         
     }
+    
+//    Remove PromoCode
+    func successFetchedItems(viewModel: RemovePromoCodeModel.Fetch.ViewModel) {
+        
+        
+    }
+    
+    func errorFetchingItems(viewModel: RemovePromoCodeModel.Fetch.ViewModel) {
+        
+        
+    }
+    
 }

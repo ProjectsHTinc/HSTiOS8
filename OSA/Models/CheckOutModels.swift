@@ -144,37 +144,25 @@ class OrderDetailsModels{
        return model
     }
 }
-//"address_mode" = 1;
-//"address_type_id" = 0;
-//"alternative_mobile_number" = 2;
-//"browser_sess_id" = "";
-//city = cbe;
-//"country_id" = 1;
-//"country_name" = India;
-//"created_at" = "0000-00-00 00:00:00";
-//"created_by" = 2147483647;
-//"cus_address_id" = 11;
-//"cus_id" = 3;
-//"cus_notes" = "";
-//"email_address" = 2;
-//"full_name" = 2;
-//"house_no" = 2;
-//id = 11;
-//landmark = 2;
-//"mobile_number" = 2;
-//"order_id" = "SHOP20210309F49117-3";
-//"paid_amount" = "0.00";
-//"payment_status" = "";
-//pincode = 2;
-//"promo_amount" = "0.00";
-//"purchase_date" = "2021-03-09 12:50:57";
-//"purchse_order_id" = 17;
-//state = "tAMIL nADU";
-//status = Active;
-//street = 2;
-//"total_amount" = "0.00";
-//"updated_at" = "0000-00-00 00:00:00";
-//"updated_by" = 0;
-//"wallet_amount" = "0.00";
-//}
-//);
+
+class RemovePromoCodeModels{
+    
+    var msg : String?
+    var status : String?
+    var order_id : String?
+   
+    
+    // MARK: Instance Method
+    func loadFromDictionary(_ dict: [String: AnyObject])
+    {
+        if let data = dict["msg"] as? String {
+            self.msg = data
+        }
+        if let data = dict["status"] as? String {
+            self.status = data
+        }
+        if let data = dict["order_id"] as? String {
+            self.order_id = data
+        }
+    }
+}

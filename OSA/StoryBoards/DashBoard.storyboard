@@ -2192,6 +2192,7 @@
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="addToCartAction:" destination="LVE-5I-ieF" eventType="touchUpInside" id="J7b-WJ-iwW"/>
+                                            <segue destination="NzJ-Hh-LpC" kind="show" id="Zo4-ZA-mzm"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delivery" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qvh-s7-qZo">
@@ -2346,6 +2347,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xwe-Gf-289" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5771" y="-68"/>
+        </scene>
+        <!--ReviewOrder-->
+        <scene sceneID="uTV-eG-YZV">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="reviewOrder" storyboardName="ReviewOrder" id="NzJ-Hh-LpC" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="qcd-NV-8ph"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gnE-jA-NsO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5838" y="-31"/>
         </scene>
         <!--Category Select View Controller-->
         <scene sceneID="uWH-3Y-62A">

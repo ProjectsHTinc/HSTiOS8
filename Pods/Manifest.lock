@@ -5,16 +5,16 @@ PODS:
     - AppAuth/ExternalUserAgent (= 1.4.0)
   - AppAuth/Core (1.4.0)
   - AppAuth/ExternalUserAgent (1.4.0)
-  - FBSDKCoreKit (8.2.0):
-    - FBSDKCoreKit/Basics (= 8.2.0)
-    - FBSDKCoreKit/Core (= 8.2.0)
-  - FBSDKCoreKit/Basics (8.2.0)
-  - FBSDKCoreKit/Core (8.2.0):
+  - FBSDKCoreKit (9.1.0):
+    - FBSDKCoreKit/Basics (= 9.1.0)
+    - FBSDKCoreKit/Core (= 9.1.0)
+  - FBSDKCoreKit/Basics (9.1.0)
+  - FBSDKCoreKit/Core (9.1.0):
     - FBSDKCoreKit/Basics
-  - FBSDKLoginKit (8.2.0):
-    - FBSDKLoginKit/Login (= 8.2.0)
-  - FBSDKLoginKit/Login (8.2.0):
-    - FBSDKCoreKit (~> 8.2.0)
+  - FBSDKLoginKit (9.1.0):
+    - FBSDKLoginKit/Login (= 9.1.0)
+  - FBSDKLoginKit/Login (9.1.0):
+    - FBSDKCoreKit (~> 9.1.0)
   - GMStepper (2.2)
   - GoogleSignIn (5.0.2):
     - AppAuth (~> 1.2)
@@ -30,9 +30,10 @@ PODS:
     - GTMSessionFetcher/Core (= 1.5.0)
   - HMSegmentedControl (1.5.6)
   - IQKeyboardManagerSwift (6.5.6)
-  - SDWebImage (5.10.0):
-    - SDWebImage/Core (= 5.10.0)
-  - SDWebImage/Core (5.10.0)
+  - OpenSSL-Universal (1.1.180)
+  - SDWebImage (5.10.4):
+    - SDWebImage/Core (= 5.10.4)
+  - SDWebImage/Core (5.10.4)
   - SideMenu (6.5.0)
   - SwiftyJSON (4.3.0)
 
@@ -43,6 +44,7 @@ DEPENDENCIES:
   - GoogleSignIn
   - HMSegmentedControl
   - IQKeyboardManagerSwift
+  - OpenSSL-Universal
   - SDWebImage (~> 5.0)
   - SideMenu
   - SwiftyJSON (~> 4.0)
@@ -59,6 +61,7 @@ SPEC REPOS:
     - GTMSessionFetcher
     - HMSegmentedControl
     - IQKeyboardManagerSwift
+    - OpenSSL-Universal
     - SDWebImage
     - SideMenu
     - SwiftyJSON
@@ -66,18 +69,19 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
   AppAuth: 31bcec809a638d7bd2f86ea8a52bd45f6e81e7c7
-  FBSDKCoreKit: 4afd6ff53d8133a433dbcda44451c9498f8c6ce4
-  FBSDKLoginKit: 7181765f2524d7ebf82d9629066c8e6caafc99d0
+  FBSDKCoreKit: a00fe2efd780c195a5e09201bf51c56106245b40
+  FBSDKLoginKit: d98498c598ec09de657385a9349a1f21119b7f86
   GMStepper: 89fb106944dfcc3aa3add7164e3ebd463ea2104b
   GoogleSignIn: 7137d297ddc022a7e0aa4619c86d72c909fa7213
   GTMAppAuth: 197a8dabfea5d665224aa00d17f164fc2248dab9
   GTMSessionFetcher: b3503b20a988c4e20cc189aa798fd18220133f52
   HMSegmentedControl: 34c1f54d822d8308e7b24f5d901ec674dfa31352
   IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
-  SDWebImage: 9169792e9eec3e45bba2a0c02f74bf8bd922d1ee
+  OpenSSL-Universal: 1aa4f6a6ee7256b83db99ec1ccdaa80d10f9af9b
+  SDWebImage: c666b97e1fa9c64b4909816a903322018f0a9c84
   SideMenu: f583187d21c5b1dd04c72002be544b555a2627a2
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
 
-PODFILE CHECKSUM: 546471e87828dc6cdc0c356f2335f46330edd1e9
+PODFILE CHECKSUM: 8d24aa23343e32d97013b431ac658eaf08d438a3
 
 COCOAPODS: 1.10.1

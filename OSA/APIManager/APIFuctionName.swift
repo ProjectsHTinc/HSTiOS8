@@ -40,6 +40,9 @@ struct APIFunctionName {
     
     static let walletDetailsUrl = "mobileapi/customer_wallet_history"
     static let addMoneyToWalletUrl = "mobileapi/add_money_wallet"
+    static let removePromoCodeUrl = "mobileapi/remove_promo_code"
+    static let ccWebViewUrl = "ccavenue_app/adding_money_to_wallet.php"
+    
     
 }
 

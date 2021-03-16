@@ -25,11 +25,11 @@
             <objects>
                 <viewController storyboardIdentifier="wallet" id="0zI-Ai-3mc" customClass="WalletDetailsViewController" customModule="OSA" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cg3-YX-HXZ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="946"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tcC-iO-T2F">
-                                <rect key="frame" x="0.0" y="44" width="414" height="884"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="830"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="03h-RC-m0k">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="884"/>
@@ -276,6 +276,7 @@
                             <constraint firstItem="tcC-iO-T2F" firstAttribute="leading" secondItem="bhn-lw-Y3m" secondAttribute="leading" id="teI-9K-RzZ"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="3d5-pS-gJv"/>
                     <size key="freeformSize" width="414" height="1000"/>
                     <connections>
                         <outlet property="walletAmountLbl" destination="XkP-Yg-ZXy" id="cAW-3I-rOd"/>
@@ -456,7 +457,7 @@
                     <size key="freeformSize" width="414" height="1000"/>
                     <connections>
                         <outlet property="walletAmountTextField" destination="zlt-hq-kWy" id="fa7-Kx-0xB"/>
-                        <segue destination="qeO-ZK-1Ve" kind="show" id="1G3-kw-w4i"/>
+                        <segue destination="qeO-ZK-1Ve" kind="show" identifier="to_webView" id="1G3-kw-w4i"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qrk-Su-iJt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -466,7 +467,7 @@
         <!--Web View View Controller-->
         <scene sceneID="0Kv-AH-Lt3">
             <objects>
-                <viewController id="qeO-ZK-1Ve" customClass="CCWebViewViewController" customModule="OSA" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CCWebViewController" id="qeO-ZK-1Ve" customClass="CCWebViewViewController" customModule="OSA" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pcV-Cl-ogy">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -477,7 +478,102 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ujV-xp-o4W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="639" y="-35"/>
+            <point key="canvasLocation" x="522" y="-35"/>
+        </scene>
+        <!--Result View Controller-->
+        <scene sceneID="wEI-Lt-ht9">
+            <objects>
+                <viewController id="uzC-cl-tXi" customClass="CCResultViewController" customModule="OSA" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SAJ-nk-htb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MDv-Lv-EuN">
+                                <rect key="frame" x="30" y="248" width="354" height="400"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cbt-aJ-2Qg">
+                                        <rect key="frame" x="77" y="335" width="200" height="33"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="9tl-8J-tCx"/>
+                                            <constraint firstAttribute="height" constant="33" id="T7Y-4c-Ipo"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <state key="normal" title="Back to Wallet">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="doneAction:" destination="uzC-cl-tXi" eventType="touchUpInside" id="f8A-Tb-jyU"/>
+                                        </connections>
+                                    </button>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 2147" translatesAutoresizingMaskIntoConstraints="NO" id="joB-GU-Iyk">
+                                        <rect key="frame" x="102" y="30" width="150" height="150"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="150" id="N67-fo-SZB"/>
+                                            <constraint firstAttribute="width" constant="150" id="Wa7-cK-hMR"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount added to wallet Successfully" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cdd-Ax-Thn">
+                                        <rect key="frame" x="8" y="187" width="338" height="68"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="68" id="Uuy-1O-7lJ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="19"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Now you can purchase using the easy shop Wallet" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bgd-rS-Kir">
+                                        <rect key="frame" x="8" y="263" width="338" height="54"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="54" id="JnN-SI-cLx"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="14"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Bgd-rS-Kir" secondAttribute="trailing" constant="8" id="0d8-YH-dwp"/>
+                                    <constraint firstItem="cbt-aJ-2Qg" firstAttribute="centerX" secondItem="MDv-Lv-EuN" secondAttribute="centerX" id="HfP-TL-wuX"/>
+                                    <constraint firstAttribute="bottom" secondItem="cbt-aJ-2Qg" secondAttribute="bottom" constant="32" id="JUE-id-4YZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="cdd-Ax-Thn" secondAttribute="trailing" constant="8" id="Q85-Dv-ubO"/>
+                                    <constraint firstItem="cdd-Ax-Thn" firstAttribute="leading" secondItem="MDv-Lv-EuN" secondAttribute="leading" constant="8" id="ba3-Nr-7lY"/>
+                                    <constraint firstItem="joB-GU-Iyk" firstAttribute="centerX" secondItem="MDv-Lv-EuN" secondAttribute="centerX" id="c0B-sK-T9P"/>
+                                    <constraint firstItem="cdd-Ax-Thn" firstAttribute="top" secondItem="joB-GU-Iyk" secondAttribute="bottom" constant="7" id="gHy-5e-mJT"/>
+                                    <constraint firstItem="Bgd-rS-Kir" firstAttribute="leading" secondItem="MDv-Lv-EuN" secondAttribute="leading" constant="8" id="vYc-ov-n6D"/>
+                                    <constraint firstItem="Bgd-rS-Kir" firstAttribute="top" secondItem="cdd-Ax-Thn" secondAttribute="bottom" constant="8" symbolic="YES" id="vyv-vD-rmy"/>
+                                    <constraint firstAttribute="height" constant="400" id="wc5-O2-Gbt"/>
+                                    <constraint firstItem="joB-GU-Iyk" firstAttribute="top" secondItem="MDv-Lv-EuN" secondAttribute="top" constant="30" id="z10-vx-DNZ"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="eQA-vk-Ffm"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="MDv-Lv-EuN" firstAttribute="centerY" secondItem="SAJ-nk-htb" secondAttribute="centerY" id="0nB-Qh-Iiu"/>
+                            <constraint firstItem="MDv-Lv-EuN" firstAttribute="leading" secondItem="eQA-vk-Ffm" secondAttribute="leading" constant="30" id="4El-dh-LUb"/>
+                            <constraint firstItem="eQA-vk-Ffm" firstAttribute="trailing" secondItem="MDv-Lv-EuN" secondAttribute="trailing" constant="30" id="BZR-5d-H2p"/>
+                            <constraint firstItem="MDv-Lv-EuN" firstAttribute="centerX" secondItem="SAJ-nk-htb" secondAttribute="centerX" id="UfJ-OV-c3E"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <segue destination="0zI-Ai-3mc" kind="show" identifier="to_wallet" id="129-kb-Wwg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4go-je-Ao2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1295.6521739130435" y="-35.491071428571423"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="nfF-pL-oT0">
@@ -566,10 +662,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="txS-oP-Fi7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2004" y="-1"/>
+            <point key="canvasLocation" x="2287" y="-10"/>
         </scene>
     </scenes>
     <resources>
+        <image name="Group 2147" width="195" height="195"/>
         <image name="Group 2309" width="97.5" height="84.5"/>
         <image name="Group 2432" width="60" height="129.5"/>
         <image name="add" width="24" height="24"/>

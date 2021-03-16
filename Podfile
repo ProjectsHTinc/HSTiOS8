@@ -11,4 +11,5 @@
    pod 'GoogleSignIn'
    pod 'SideMenu'
    pod "GMStepper"
+   pod 'OpenSSL-Universal'
    end
