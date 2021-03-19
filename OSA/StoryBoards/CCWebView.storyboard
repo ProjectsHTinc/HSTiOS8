@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hbU-9T-cHS">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Web View View Controller-->
+        <scene sceneID="rGu-qA-yzz">
+            <objects>
+                <viewController storyboardIdentifier="CCWebViewController" id="hbU-9T-cHS" customClass="CCWebViewViewController" customModule="OSA" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LL7-3I-ohD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="K5F-8k-06e"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="fBH-LM-slj"/>
+                    <connections>
+                        <segue destination="hh9-KF-Tzz" kind="show" identifier="to_WalletPage" id="DeP-8i-cs8"/>
+                        <segue destination="sam-Ps-deP" kind="show" identifier="reviewOrder" id="mrO-DT-u9n"/>
+                        <segue destination="Fnq-rA-zZX" kind="show" id="gHO-aK-iZh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KYU-9U-HQ4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="296" y="247"/>
+        </scene>
+        <!--Wallet-->
+        <scene sceneID="Xj0-2M-UqO">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="wallet" storyboardName="Wallet" id="hh9-KF-Tzz" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="N4z-A6-7O2"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sLf-hX-8WV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1028" y="204"/>
+        </scene>
+        <!--ReviewOrder-->
+        <scene sceneID="n4w-lU-Vxc">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="reviewOrder" storyboardName="ReviewOrder" id="sam-Ps-deP" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="yOM-kv-ef9"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gin-L7-31t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1057" y="283"/>
+        </scene>
+        <!--BookingSuccess-->
+        <scene sceneID="eHU-eZ-JME">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="bookingSuccess" storyboardName="BookingSuccess" id="Fnq-rA-zZX" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="dA8-aE-NLT"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4wP-G3-BYM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1041" y="356"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

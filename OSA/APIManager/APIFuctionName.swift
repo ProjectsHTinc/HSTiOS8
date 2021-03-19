@@ -15,7 +15,6 @@ struct APIFunctionName {
     static let mobileOtpUrl = "mobileapi/login_mobileotp"
     static let forgotEmailPasswordUrl = "mobileapi/forgot_password"
     static let signUpUrl = "mobileapi/registration"
-    
     static let dashBoardUrl = "mobileapi/home_page"
     static let categoryListURL = "mobileapi/sub_cat_list"
     static let subCatListDetailsURL = "mobileapi/product_list"
@@ -28,7 +27,6 @@ struct APIFunctionName {
     static let DeleteCartUrl = "mobileapi/product_cart_remove"
     static let checkPinCodeUrl = "mobileapi/check_pincode"
     static let quantityUpdateUrl = "mobileapi/cart_quantity"
-    
     static let addressListUrl = "mobileapi/address_list"
     static let promoCodeApplyUrl = "mobileapi/apply_promo_code"
     static let placeOrderUrl = "mobileapi/place_order"
@@ -37,12 +35,15 @@ struct APIFunctionName {
     static let deleteAddressUrl = "mobileapi/address_delete"
     static let updateAddressUrl = "mobileapi/address_update"
     static let setDefaultAddressUrl = "mobileapi/address_set_default"
-    
     static let walletDetailsUrl = "mobileapi/customer_wallet_history"
     static let addMoneyToWalletUrl = "mobileapi/add_money_wallet"
     static let removePromoCodeUrl = "mobileapi/remove_promo_code"
     static let ccWebViewUrl = "ccavenue_app/adding_money_to_wallet.php"
+    static let profileUpdateUrl = "mobileapi/update_profile_details"
+    static let profileDetailsUrl = "mobileapi/get_profile_details"
     
-    
+    static let wishListAddUrl = "mobileapi/add_wishlist"
+    static let wishListDeleteUrl = "mobileapi/remove_wishlist"
+    static let wishListListUrl = "mobileapi/view_wishlist"
+ 
 }
-

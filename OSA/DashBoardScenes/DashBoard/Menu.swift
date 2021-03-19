@@ -73,4 +73,4 @@ class Menu: UIViewController {
         UIApplication.shared.keyWindow?.rootViewController = storyboard!.instantiateViewController(withIdentifier: "nav")
     }
 }
-                                                                                                                                
+

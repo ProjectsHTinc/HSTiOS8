@@ -13,7 +13,8 @@ class NewArrivalsTableViewCell: UITableViewCell {
     @IBOutlet weak var MrpPriceLabel: UILabel!
     @IBOutlet weak var actualPriceLabel: UILabel!
     @IBOutlet weak var newArrivalImage: UIImageView!
-    
+    @IBOutlet weak var likeImage: UIImageView!
+    @IBOutlet weak var likeButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -14,5 +14,8 @@ class BestSellingCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var actualPricelabel: UILabel!
     @IBOutlet weak var discoutPricelabel: UILabel!
     @IBOutlet weak var offerPercentageLabel: UILabel!
+    @IBOutlet weak var likeImage: UIImageView!
+    @IBOutlet weak var likeButton: UIButton!
     
 }
+                                          

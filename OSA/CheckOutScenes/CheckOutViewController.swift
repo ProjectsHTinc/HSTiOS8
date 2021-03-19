@@ -140,6 +140,12 @@ class CheckOutViewController: UIViewController,DeliveryAddressDisplayLogic, Prom
         }
     }
     
+    @IBAction func reviewOrderAction(_ sender: Any) {
+        
+        self.performSegue(withIdentifier: "to_reviewOrder", sender:self)
+    }
+    
+    
 //    Address List
     func successFetchedItems(viewModel: DeliveryAddressModel.Fetch.ViewModel) {
         displayedDeliveryAddressData = viewModel.displayedDeliveryAddressData
@@ -183,8 +189,8 @@ class CheckOutViewController: UIViewController,DeliveryAddressDisplayLogic, Prom
 //    Place Order
     func successFetchedItems(viewModel: PlaceOrderModel.Fetch.ViewModel) {
         
-        self.orderId = viewModel.order_id!
-        interactor3?.fetchItems(request: OrderDetailsModel.Fetch.Request( user_id:GlobalVariables.shared.customer_id,order_id:self.orderId))
+        GlobalVariables.shared.order_id = viewModel.order_id!
+        interactor3?.fetchItems(request: OrderDetailsModel.Fetch.Request( user_id:GlobalVariables.shared.customer_id,order_id:GlobalVariables.shared.order_id))
     }
     
     func errorFetchingItems(viewModel: PlaceOrderModel.Fetch.ViewModel) {
@@ -207,7 +213,7 @@ class CheckOutViewController: UIViewController,DeliveryAddressDisplayLogic, Prom
             self.itemsLbl.text = "₹\(self.items)"
             self.offerLbl.text = "₹\(self.offer)"
             self.totalPriceLbl.text = "₹\(self.totalPrice)"
-            
+            GlobalVariables.shared.total_price = self.totalPrice
         }
     }
     
@@ -218,12 +224,18 @@ class CheckOutViewController: UIViewController,DeliveryAddressDisplayLogic, Prom
 //    Remove PromoCode
     func successFetchedItems(viewModel: RemovePromoCodeModel.Fetch.ViewModel) {
         
-        
     }
     
     func errorFetchingItems(viewModel: RemovePromoCodeModel.Fetch.ViewModel) {
         
-        
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if (segue.identifier == "to_reviewOrder")
+        {
+            _ = segue.destination as! ReviewOrderViewController
+          
+    }
+  }
 }

@@ -31,7 +31,6 @@ class CCWebViewViewController: UIViewController, CCWebViewDisplayLogic,UIWebView
     var encVal = String()
     
     var strAddMoneyToWallet = String()
-    
     var transStatus = String()
     var advancePayment = String()
     
@@ -321,10 +320,15 @@ class CCWebViewViewController: UIViewController, CCWebViewDisplayLogic,UIWebView
                     
                     if advancePayment == "Ap"
                     {
-                        let storyBoard : UIStoryboard = UIStoryboard(name: "CustomerService", bundle:nil)
-                        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "bookingSuccess") as! BookingSuccessViewController
-                        nextViewController.transStatus = transStatus
+                        
+////                        _ = navigationController?.popToRootViewController(animated: true)
+                        let storyBoard : UIStoryboard = UIStoryboard(name: "DashBoard", bundle:nil)
+                        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "dashBoardNav") as! UINavigationController
+
+//                        nextViewController.transStatus = transStatus
                         self.present(nextViewController, animated:true, completion:nil)
+//                        UIApplication.shared.keyWindow?.rootViewController = storyboard!.instantiateViewController(withIdentifier: "dashBoardNav")
+                        
                     }
                     else if advancePayment == "MW"
                     {
@@ -345,8 +349,8 @@ class CCWebViewViewController: UIViewController, CCWebViewDisplayLogic,UIWebView
                     if advancePayment == "Ap"
                     {
                         //self.performSegue(withIdentifier: "bookingPage", sender: self)
-                        let storyBoard : UIStoryboard = UIStoryboard(name: "CustomerService", bundle:nil)
-                        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "bookingSuccess") as! BookingSuccessViewController
+                        let storyBoard : UIStoryboard = UIStoryboard(name: "ReviewOrder", bundle:nil)
+                        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "reviewOrder") as! BookingSuccessViewController
                         nextViewController.transStatus = self.transStatus
                         self.present(nextViewController, animated:true, completion:nil)
                     }
@@ -428,7 +432,6 @@ class CCWebViewViewController: UIViewController, CCWebViewDisplayLogic,UIWebView
 
            })
         }
-        
     }
     
      // MARK: - Navigation
@@ -444,11 +447,15 @@ class CCWebViewViewController: UIViewController, CCWebViewDisplayLogic,UIWebView
             //let vc = nav.topViewController as!  Wallet
             //vc.transStatus = sender as! String
         }
-        else if (segue.identifier == "bookingPage")
+        else if (segue.identifier == "reviewOrder")
         {
-            //let nav = segue.destination as! BookingSuccess
+            let _ = segue.destination as! ReviewOrderViewController
+            //let nav = segue.destination as! Success
             //nav.transStatus = transStatus
         }
      }
 }
+
+
+
 

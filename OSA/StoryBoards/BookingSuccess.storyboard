@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pub-f7-uvy">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-SemiBold.otf">
+            <string>Montserrat-SemiBold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="bEU-tW-CuQ">
+            <objects>
+                <viewController id="CrJ-vg-3oh" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PmC-Kn-wWH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="JbK-DQ-8Ef"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IMW-03-LGa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-187" y="84"/>
+        </scene>
+        <!--Result View Controller-->
+        <scene sceneID="KW0-cQ-9HC">
+            <objects>
+                <viewController storyboardIdentifier="bookingSuccess" id="pub-f7-uvy" customClass="CCResultViewController" customModule="OSA" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uKo-n2-5dR">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aS3-ll-1Hj">
+                                <rect key="frame" x="30" y="248" width="354" height="400"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7gV-Tf-RbI">
+                                        <rect key="frame" x="77" y="335" width="200" height="33"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="ly1-ud-BLM"/>
+                                            <constraint firstAttribute="height" constant="33" id="sIu-3k-YWW"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <state key="normal" title="Back to Wallet">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="doneAction:" destination="pub-f7-uvy" eventType="touchUpInside" id="e2a-GT-ivk"/>
+                                        </connections>
+                                    </button>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 2147" translatesAutoresizingMaskIntoConstraints="NO" id="N4p-Sm-1LA">
+                                        <rect key="frame" x="102" y="30" width="150" height="150"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="150" id="ZFN-Y1-vMh"/>
+                                            <constraint firstAttribute="width" constant="150" id="bzb-t8-voj"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount added to wallet Successfully" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E4v-0G-dLb">
+                                        <rect key="frame" x="8" y="187" width="338" height="68"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="68" id="kyj-H8-2zu"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="19"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Now you can purchase using the easy shop Wallet" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KuJ-Kz-bEX">
+                                        <rect key="frame" x="8" y="263" width="338" height="54"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="54" id="7zV-Dw-Uob"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="14"/>
+                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="KuJ-Kz-bEX" firstAttribute="leading" secondItem="aS3-ll-1Hj" secondAttribute="leading" constant="8" id="4Cd-xQ-jIa"/>
+                                    <constraint firstAttribute="trailing" secondItem="E4v-0G-dLb" secondAttribute="trailing" constant="8" id="8C6-CG-JH2"/>
+                                    <constraint firstAttribute="height" constant="400" id="BaF-SD-UH6"/>
+                                    <constraint firstItem="KuJ-Kz-bEX" firstAttribute="top" secondItem="E4v-0G-dLb" secondAttribute="bottom" constant="8" symbolic="YES" id="E6g-88-HfH"/>
+                                    <constraint firstItem="N4p-Sm-1LA" firstAttribute="top" secondItem="aS3-ll-1Hj" secondAttribute="top" constant="30" id="OR3-fG-EZc"/>
+                                    <constraint firstAttribute="bottom" secondItem="7gV-Tf-RbI" secondAttribute="bottom" constant="32" id="TeC-ag-cpB"/>
+                                    <constraint firstItem="N4p-Sm-1LA" firstAttribute="centerX" secondItem="aS3-ll-1Hj" secondAttribute="centerX" id="VJf-88-i15"/>
+                                    <constraint firstItem="E4v-0G-dLb" firstAttribute="top" secondItem="N4p-Sm-1LA" secondAttribute="bottom" constant="7" id="fQ2-v7-Mig"/>
+                                    <constraint firstItem="E4v-0G-dLb" firstAttribute="leading" secondItem="aS3-ll-1Hj" secondAttribute="leading" constant="8" id="k46-2l-Obd"/>
+                                    <constraint firstItem="7gV-Tf-RbI" firstAttribute="centerX" secondItem="aS3-ll-1Hj" secondAttribute="centerX" id="lV4-IH-koo"/>
+                                    <constraint firstAttribute="trailing" secondItem="KuJ-Kz-bEX" secondAttribute="trailing" constant="8" id="zic-OB-Y0G"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="EJr-fC-rvv"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="aS3-ll-1Hj" firstAttribute="leading" secondItem="EJr-fC-rvv" secondAttribute="leading" constant="30" id="BAc-M1-i46"/>
+                            <constraint firstItem="aS3-ll-1Hj" firstAttribute="centerX" secondItem="uKo-n2-5dR" secondAttribute="centerX" id="pCT-Nt-DKU"/>
+                            <constraint firstItem="aS3-ll-1Hj" firstAttribute="centerY" secondItem="uKo-n2-5dR" secondAttribute="centerY" id="pRC-hV-4XR"/>
+                            <constraint firstItem="EJr-fC-rvv" firstAttribute="trailing" secondItem="aS3-ll-1Hj" secondAttribute="trailing" constant="30" id="utA-aQ-uQN"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ac0-17-Atk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="783" y="-35"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Group 2147" width="195" height="195"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

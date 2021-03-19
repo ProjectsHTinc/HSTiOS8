@@ -164,6 +164,9 @@ class CategorySelectViewController: UIViewController,UICollectionViewDelegate,UI
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == self.selectCategeryCollectionView
         {
+        let cell = selectCategeryCollectionView.cellForItem(at: indexPath) as! SelectCategorySegmentCell
+        let lastCellColor = cell.backgroundColor
+        if cell.isSelected {cell.backgroundColor = .red} else {cell.backgroundColor = lastCellColor}
         print("You selected cell #\(indexPath.item)!")
         let selectedIndex = Int(indexPath.item)
         let sel = self.idArr[selectedIndex]
@@ -184,5 +187,8 @@ class CategorySelectViewController: UIViewController,UICollectionViewDelegate,UI
             vc.product_id = self.product_id
      }
    }
+    
+  
+    
 }
 
