@@ -15,4 +15,5 @@ class WishListCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var actualPricelabel: UILabel!
     @IBOutlet weak var discoutPricelabel: UILabel!
     @IBOutlet weak var likeImage: UIImageView!
+    
 }

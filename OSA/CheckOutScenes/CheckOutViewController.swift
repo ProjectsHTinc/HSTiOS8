@@ -32,10 +32,14 @@ protocol RemovePromoCodeDisplayLogic: class
     func successFetchedItems(viewModel: RemovePromoCodeModel.Fetch.ViewModel)
     func errorFetchingItems(viewModel: RemovePromoCodeModel.Fetch.ViewModel)
 }
+protocol WalletApplyDisplayLogic: class
+{
+    func successFetchedItems(viewModel: WalletApplyModel.Fetch.ViewModel)
+    func errorFetchingItems(viewModel: WalletApplyModel.Fetch.ViewModel)
+}
 
-class CheckOutViewController: UIViewController,DeliveryAddressDisplayLogic, PromoCodeDisplayLogic,PlaceOrderDisplayLogic,OrderDetailsDisplayLogic, RemovePromoCodeDisplayLogic {
- 
-   
+class CheckOutViewController: UIViewController,DeliveryAddressDisplayLogic, PromoCodeDisplayLogic,PlaceOrderDisplayLogic,OrderDetailsDisplayLogic, RemovePromoCodeDisplayLogic, WalletApplyDisplayLogic {
+  
     @IBOutlet weak var promoCodeTextField: UITextField!
     @IBOutlet weak var nameLbl: UILabel!
     @IBOutlet weak var phoneNumberLbl: UILabel!
@@ -44,16 +48,19 @@ class CheckOutViewController: UIViewController,DeliveryAddressDisplayLogic, Prom
     @IBOutlet weak var deliveryLbl: UILabel!
     @IBOutlet weak var offerLbl: UILabel!
     @IBOutlet weak var totalPriceLbl: UILabel!
+    @IBOutlet weak var walletSelectImage: UIImageView!
+    @IBOutlet weak var cashOnDeliveryImage: UIImageView!
     
     var router: (NSObjectProtocol & DeliveryAddressRoutingLogic & DeliveryAddressDataPassing)?
     var displayedDeliveryAddressData: [DeliveryAddressModel.Fetch.ViewModel.DisplayedDeliveryAddressData] = []
     var displayedOrderDetailsData: [OrderDetailsModel.Fetch.ViewModel.DisplayedOrderDetailsData] = []
     
-    var interactor: DeliveryAddressBusinessLogic?
+    var interactor:  DeliveryAddressBusinessLogic?
     var interactor1: PromoCodeBusinessLogic?
     var interactor2: PlaceOrderBusinessLogic?
     var interactor3: OrderDetailsBusinessLogic?
     var interactor4: RemovePromoCodeBusinessLogic?
+    var interactor5: WalletApplyBusinessLogic?
 
     var userCity  = String()
     var userName = String()
@@ -63,6 +70,7 @@ class CheckOutViewController: UIViewController,DeliveryAddressDisplayLogic, Prom
     var items = String()
     var offer = String()
     var totalPrice = String()
+    var selectedPaymentMethod = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -117,13 +125,20 @@ class CheckOutViewController: UIViewController,DeliveryAddressDisplayLogic, Prom
         viewController3.interactor3 = interactor3
         interactor3.presenter3 = presenter3
         presenter3.viewController3 = viewController3
-        
+
         let viewController4 = self
         let interactor4 = RemovePromoCodeInteractor()
         let presenter4 = RemovePromoCodePresenter()
         viewController4.interactor4 = interactor4
         interactor4.presenter4 = presenter4
         presenter4.viewController4 = viewController4
+        
+        let viewController5 = self
+        let interactor5 = WalletApplyInteractor()
+        let presenter5 = WalletApplyPresenter()
+        viewController5.interactor5 = interactor5
+        interactor5.presenter5 = presenter5
+        presenter5.viewController5 = viewController5
         
     }
     
@@ -143,10 +158,25 @@ class CheckOutViewController: UIViewController,DeliveryAddressDisplayLogic, Prom
     @IBAction func reviewOrderAction(_ sender: Any) {
         
         self.performSegue(withIdentifier: "to_reviewOrder", sender:self)
+        
     }
     
     
-//    Address List
+    @IBAction func walletSelectAction(_ sender: Any) {
+        self.selectedPaymentMethod = "wallet"
+        self.walletSelectImage.image = UIImage(named: "check-mark")
+        self.cashOnDeliveryImage.image = UIImage(named: "Ellipse 4")
+
+    }
+    
+    @IBAction func cashOnDelevirySelectAction(_ sender: Any) {
+        self.selectedPaymentMethod = "cashOnDelivery"
+        self.cashOnDeliveryImage.image = UIImage(named: "check-mark")
+        self.walletSelectImage.image = UIImage(named: "Ellipse 4")
+        
+    }
+    
+//    Address List DisplayLogic
     func successFetchedItems(viewModel: DeliveryAddressModel.Fetch.ViewModel) {
         displayedDeliveryAddressData = viewModel.displayedDeliveryAddressData
 
@@ -166,39 +196,41 @@ class CheckOutViewController: UIViewController,DeliveryAddressDisplayLogic, Prom
             self.addressId.append(id!)
             
         }
+         print("Project\(addressId)")
          self.nameLbl.text = userName
          self.addressLbl.text = userCity
          self.phoneNumberLbl.text = userPhoneNumber
+        interactor2?.fetchItems(request: PlaceOrderModel.Fetch.Request(cus_notes:"", user_id:GlobalVariables.shared.customer_id,address_id:"1"))
         
-        interactor2?.fetchItems(request: PlaceOrderModel.Fetch.Request(cus_notes:"", user_id:GlobalVariables.shared.customer_id,address_id:self.addressId))
     }
     
     func errorFetchingItems(viewModel: DeliveryAddressModel.Fetch.ViewModel) {
         
     }
     
-//    Apply Promo Code
+//    Apply Promo Code DisplayLogic
     func successFetchedItems(viewModel: PromoCodeModel.Fetch.ViewModel) {
-        
+//
     }
     
     func errorFetchingItems(viewModel: PromoCodeModel.Fetch.ViewModel) {
         
     }
     
-//    Place Order
+//    Place Order DisplayLogic
     func successFetchedItems(viewModel: PlaceOrderModel.Fetch.ViewModel) {
         
         GlobalVariables.shared.order_id = viewModel.order_id!
+        self.orderId = viewModel.order_id!
         interactor3?.fetchItems(request: OrderDetailsModel.Fetch.Request( user_id:GlobalVariables.shared.customer_id,order_id:GlobalVariables.shared.order_id))
     }
     
     func errorFetchingItems(viewModel: PlaceOrderModel.Fetch.ViewModel) {
         
     }
-    
-//    Order Details
-    func successFetchedItems(viewModel: OrderDetailsModel.Fetch.ViewModel) {
+
+//    Order Details DisplayLogic
+     func successFetchedItems(viewModel: OrderDetailsModel.Fetch.ViewModel) {
         displayedOrderDetailsData = viewModel.displayedOrderDetailsData
         for data in displayedOrderDetailsData{
             
@@ -221,7 +253,7 @@ class CheckOutViewController: UIViewController,DeliveryAddressDisplayLogic, Prom
         
     }
     
-//    Remove PromoCode
+//    Remove PromoCode DisplayLogic
     func successFetchedItems(viewModel: RemovePromoCodeModel.Fetch.ViewModel) {
         
     }
@@ -230,12 +262,34 @@ class CheckOutViewController: UIViewController,DeliveryAddressDisplayLogic, Prom
         
     }
     
+//    Wallet Aplly DisplayLogic
+    func successFetchedItems(viewModel: WalletApplyModel.Fetch.ViewModel) {
+        
+    }
+    
+    func errorFetchingItems(viewModel: WalletApplyModel.Fetch.ViewModel) {
+        
+    }
+       
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if (segue.identifier == "to_reviewOrder")
         {
-            _ = segue.destination as! ReviewOrderViewController
+           let vc = segue.destination as! ReviewOrderViewController
+            vc.selectedPaymentMethod = self.selectedPaymentMethod
+            vc.offer = self.offerLbl.text!
+            vc.totalPrice = self.totalPriceLbl.text!
+            vc.items = self.itemsLbl.text!
+            vc.order_id = self.orderId
           
+        }
+//        if (segue.identifier == "place_ovar items = String()
+   
+//        {
+//        let vc = segue.destination as! OTPViewController
+//
+//       }
     }
-  }
 }
+
+//self.performSegue(withIdentifier: "place_order", sender: self)

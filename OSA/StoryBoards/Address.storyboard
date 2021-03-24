@@ -808,7 +808,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nh0-ep-gWB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="K6W-Mg-E1v" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="7236" y="218"/>
+            <point key="canvasLocation" x="7174" y="319"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

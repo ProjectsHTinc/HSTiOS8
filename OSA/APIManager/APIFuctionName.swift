@@ -41,9 +41,15 @@ struct APIFunctionName {
     static let ccWebViewUrl = "ccavenue_app/adding_money_to_wallet.php"
     static let profileUpdateUrl = "mobileapi/update_profile_details"
     static let profileDetailsUrl = "mobileapi/get_profile_details"
-    
     static let wishListAddUrl = "mobileapi/add_wishlist"
     static let wishListDeleteUrl = "mobileapi/remove_wishlist"
     static let wishListListUrl = "mobileapi/view_wishlist"
- 
+    static let deliveredOrdersUrl = "mobileapi/view_orders"
+    static let InTransitUrl = "mobileapi/view_orders"
+    static let walletApplyUrl = "mobileapi/use_wallet"
+    static let walletRemoveUrl = "mobileapi/remove_wallet"
+    static let payCODUrl = "mobileapi/payby_cod"
+    static let orderCartDetailsUrl = "mobileapi/view_order_cart_details"
+    
 }
+

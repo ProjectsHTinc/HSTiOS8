@@ -38,7 +38,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sLf-hX-8WV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1028" y="204"/>
+            <point key="canvasLocation" x="936" y="177"/>
         </scene>
         <!--ReviewOrder-->
         <scene sceneID="n4w-lU-Vxc">
@@ -48,7 +48,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gin-L7-31t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1057" y="283"/>
+            <point key="canvasLocation" x="965" y="246"/>
         </scene>
         <!--BookingSuccess-->
         <scene sceneID="eHU-eZ-JME">
@@ -58,7 +58,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4wP-G3-BYM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1041" y="356"/>
+            <point key="canvasLocation" x="981" y="308"/>
         </scene>
     </scenes>
     <resources>

@@ -14,18 +14,38 @@ protocol ReviewOrderDisplayLogic: class
     func successFetchedItems(viewModel: ReviewOrderModel.Fetch.ViewModel)
     func errorFetchingItems(viewModel: ReviewOrderModel.Fetch.ViewModel)
 }
+protocol PayCODDisplayLogic: class
+{
+    func successFetchedItems(viewModel: PayCODModel.Fetch.ViewModel)
+    func errorFetchingItems(viewModel: PayCODModel.Fetch.ViewModel)
+}
 
-class ReviewOrderViewController: UIViewController, ReviewOrderDisplayLogic,UITableViewDelegate,UITableViewDataSource {
-    
+class ReviewOrderViewController: UIViewController, ReviewOrderDisplayLogic, PayCODDisplayLogic {
+ 
     @IBOutlet weak var reviewOrderTableView: UITableView!
+    @IBOutlet weak var itemsLbl: UILabel!
+    @IBOutlet weak var deliveryLbl: UILabel!
+    @IBOutlet weak var offerLbl: UILabel!
+    @IBOutlet weak var totalPriceLbl: UILabel!
     
     var interactor: ReviewOrderBusinessLogic?
+    var interactor1: PayCODBusinessLogic?
     var displayedReviewOrderData: [ReviewOrderModel.Fetch.ViewModel.DisplayedReviewOrderData] = []
-
+    var selectedPaymentMethod = String()
+    var items = String()
+    var offer = String()
+    var totalPrice = String()
+    var order_id = String()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
        
         interactor?.fetchItems(request: ReviewOrderModel.Fetch.Request( user_id:GlobalVariables.shared.customer_id,order_id:GlobalVariables.shared.order_id))
+        print(selectedPaymentMethod)
+        
+        self.itemsLbl.text = self.items
+        self.offerLbl.text = self.offer
+        self.totalPriceLbl.text = self.totalPrice
     }
     
     override init (nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
@@ -48,24 +68,53 @@ class ReviewOrderViewController: UIViewController, ReviewOrderDisplayLogic,UITab
         viewController.interactor = interactor
         interactor.presenter = presenter
         presenter.viewController = viewController
+        
+        let viewController1 = self
+        let interactor1 = PayCODInteractor()
+        let presenter1 = PayCODPresenter()
+        viewController1.interactor1 = interactor1
+        interactor1.presenter1 = presenter1
+        presenter1.viewController1 = viewController1
     }
-    
     
     @IBAction func placeOrderAction(_ sender: Any) {
         
-        self.webRequestCCavenue ()
+        if selectedPaymentMethod == "cashOnDelivery"
+        {
+            interactor1?.fetchItems(request: PayCODModel.Fetch.Request( user_id:GlobalVariables.shared.customer_id,order_id:self.order_id))
+        }
+        else
+        {
+            self.webRequestCCavenue ()
+        }
     }
     
     func successFetchedItems(viewModel: ReviewOrderModel.Fetch.ViewModel) {
         displayedReviewOrderData = viewModel.displayedReviewOrderData
         self.reviewOrderTableView.reloadData()
-        
     }
     
     func errorFetchingItems(viewModel: ReviewOrderModel.Fetch.ViewModel) {
         
     }
     
+//    PayCOD DisplayLogic
+    func successFetchedItems(viewModel: PayCODModel.Fetch.ViewModel) {
+        
+        if viewModel.msg == "COD Completed"
+        {
+        self.performSegue(withIdentifier: "order_success", sender: self)
+        }
+    }
+    
+    func errorFetchingItems(viewModel: PayCODModel.Fetch.ViewModel) {
+        
+    }
+}
+
+
+extension ReviewOrderViewController: UITableViewDelegate,UITableViewDataSource {
+        
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return displayedReviewOrderData.count
@@ -100,6 +149,15 @@ class ReviewOrderViewController: UIViewController, ReviewOrderDisplayLogic,UITab
         viewController.rsaKeyUrl = APIURL.BaseUrl_Dev + "ccavenue_app/GetRSA.php"
         
         self.present(viewController, animated: true, completion: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if (segue.identifier == "order_success")
+        {
+            _ = segue.destination as! PayCODBookingSuccessViewController
+          
+        }
     }
 }
 

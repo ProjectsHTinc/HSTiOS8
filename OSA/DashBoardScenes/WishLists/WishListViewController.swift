@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 protocol WishListDisplayLogic: class
 {
@@ -14,8 +15,8 @@ protocol WishListDisplayLogic: class
     func errorFetchingItems(viewModel: WishListModel.Fetch.ViewModel)
 }
 
-class WishListViewController: UIViewController, WishListDisplayLogic {
-
+class WishListViewController: UIViewController, WishListDisplayLogic,UICollectionViewDelegate,UICollectionViewDataSource {
+   
     @IBOutlet weak var searchBarView: UIView!
     @IBOutlet weak var wishListCollectionView: UICollectionView!
     
@@ -57,15 +58,31 @@ class WishListViewController: UIViewController, WishListDisplayLogic {
         searchBarView.layerGradient(startPoint: .left, endPoint: .right, colorArray: [UIColor(red: 189.0/255.0, green: 6.0/255.0, blue: 33.0/255.0, alpha: 1.0).cgColor, UIColor(red: 95.0/255.0, green: 3.0/255.0, blue: 17.0/255.0, alpha: 1.0).cgColor], type: .axial)
     }
     
-    
     func successFetchedItems(viewModel: WishListModel.Fetch.ViewModel) {
         
         displayedWishListData = viewModel.displayedWishListData
-        self.wishListCollectionView.reloadData
+        self.wishListCollectionView.reloadData()
     }
     
     func errorFetchingItems(viewModel: WishListModel.Fetch.ViewModel) {
         
     }
     
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return displayedWishListData.count
+        
+    }
+     
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath:    IndexPath) -> UICollectionViewCell {
+        let cell = wishListCollectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! WishListCollectionViewCell
+        let bestSellingData = displayedWishListData[indexPath.row]
+        _ = "% off"
+        cell.wishImage.sd_setImage(with: URL(string: bestSellingData.product_cover_img!), placeholderImage: UIImage(named: ""))
+        cell.productTitleLabel.text = bestSellingData.product_name
+        cell.actualPricelabel.text = "₹\(bestSellingData.prod_actual_price!)"
+        cell.discoutPricelabel.text = "₹\(bestSellingData.prod_mrp_price!)"
+        
+        return cell
+    }
 }
+

@@ -30,6 +30,7 @@ PODS:
     - GTMSessionFetcher/Core (= 1.5.0)
   - HMSegmentedControl (1.5.6)
   - IQKeyboardManagerSwift (6.5.6)
+  - MBProgressHUD (1.2.0)
   - OpenSSL-Universal (1.1.180)
   - SDWebImage (5.10.4):
     - SDWebImage/Core (= 5.10.4)
@@ -44,6 +45,7 @@ DEPENDENCIES:
   - GoogleSignIn
   - HMSegmentedControl
   - IQKeyboardManagerSwift
+  - MBProgressHUD (~> 1.2.0)
   - OpenSSL-Universal
   - SDWebImage (~> 5.0)
   - SideMenu
@@ -61,6 +63,7 @@ SPEC REPOS:
     - GTMSessionFetcher
     - HMSegmentedControl
     - IQKeyboardManagerSwift
+    - MBProgressHUD
     - OpenSSL-Universal
     - SDWebImage
     - SideMenu
@@ -77,11 +80,12 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: b3503b20a988c4e20cc189aa798fd18220133f52
   HMSegmentedControl: 34c1f54d822d8308e7b24f5d901ec674dfa31352
   IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
+  MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   OpenSSL-Universal: 1aa4f6a6ee7256b83db99ec1ccdaa80d10f9af9b
   SDWebImage: c666b97e1fa9c64b4909816a903322018f0a9c84
   SideMenu: f583187d21c5b1dd04c72002be544b555a2627a2
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
 
-PODFILE CHECKSUM: 8d24aa23343e32d97013b431ac658eaf08d438a3
+PODFILE CHECKSUM: 0625b1cb76e1503a50a089cb2570b9c027df2c79
 
 COCOAPODS: 1.10.1

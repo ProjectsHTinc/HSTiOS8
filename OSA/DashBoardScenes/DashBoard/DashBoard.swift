@@ -444,13 +444,7 @@ extension DashBoard : UICollectionViewDelegate,UICollectionViewDataSource {
     
             cell.likeButton.tag = indexPath.row
             cell.likeButton.addTarget(self, action: #selector(BestSellingAddButtonClicked(sender:)), for: .touchUpInside)
-//          }
-//          else
-//           {
-            
-//            cell.likeButton.tag = indexPath.row
-//            cell.likeButton.addTarget(self, action: #selector(AddButtonClicked(sender:)), for: .touchUpInside)
-//          }
+
            return cell
        }
    }
