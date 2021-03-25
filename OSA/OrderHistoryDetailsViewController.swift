@@ -16,6 +16,8 @@ protocol OrderCartDetailsDisplayLogic: class
 
 class OrderHistoryDetailsViewController: UIViewController, OrderCartDetailsDisplayLogic {
     
+    @IBOutlet weak var tableView: UITableView!
+    
     var displayedOrderCartDetailsData: [OrderCartDetailsModel.Fetch.ViewModel.DisplayedOrderCartDetailsData] = []
     
     var interactor: OrderCartDetailsBusinessLogic?
@@ -53,12 +55,14 @@ class OrderHistoryDetailsViewController: UIViewController, OrderCartDetailsDispl
     
     func successFetchedItems(viewModel: OrderCartDetailsModel.Fetch.ViewModel) {
   
+        displayedOrderCartDetailsData = viewModel.displayedOrderCartDetailsData
+        self.tableView.reloadData()
+        
     }
     
     func errorFetchingItems(viewModel: OrderCartDetailsModel.Fetch.ViewModel) {
         
     }
-    
 }
 
 extension OrderHistoryDetailsViewController: UITableViewDelegate,UITableViewDataSource {
@@ -86,12 +90,12 @@ extension OrderHistoryDetailsViewController: UITableViewDelegate,UITableViewData
          print(buttonClicked)
          let selectedIndex = Int(buttonClicked)
          print(selectedIndex)
-        self.performSegue(withIdentifier: "", sender: self)
+        self.performSegue(withIdentifier: "return_order", sender: self)
             
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "to_deliveredOrderDetails")
+        if (segue.identifier == "return_order")
         {
 //        let vc = segue.destination as! OrderHistoryDetailsViewController
 //

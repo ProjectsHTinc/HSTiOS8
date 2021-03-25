@@ -45,7 +45,7 @@ protocol CheckPincodeDisplayLogic: class
     func errorFetchingItems(viewModel: CheckPincodeModel.Fetch.ViewModel)
 }
 
-class ProductDetailsViewController: UIViewController, ProductSizeDisplayLogic, ProductDetailsDisplayLogic,ProductColourDisplayLogic, RelatedProductDisplayLogic, ReviewListDisplayLogic, AddToCartDisplayLogic, CheckPincodeDisplayLogic {
+class ProductDetailsViewController: UIViewController, ProductSizeDisplayLogic, ProductDetailsDisplayLogic,ProductColourDisplayLogic, RelatedProductDisplayLogic, ReviewListDisplayLogic, AddToCartDisplayLogic, CheckPincodeDisplayLogic, UIPopoverPresentationControllerDelegate {
  
        
     @IBOutlet weak var productImage: UIImageView!
@@ -66,6 +66,7 @@ class ProductDetailsViewController: UIViewController, ProductSizeDisplayLogic, P
     @IBOutlet weak var image3: UIImageView!
     @IBOutlet weak var image4: UIImageView!
     @IBOutlet weak var image5: UIImageView!
+    @IBOutlet weak var writeReviewOutlet: UIButton!
     
     var router: (NSObjectProtocol & ProductDetailsRoutingLogic & ProductDetailsDataPassing)?
     var product_id = String()
@@ -158,7 +159,11 @@ class ProductDetailsViewController: UIViewController, ProductSizeDisplayLogic, P
     @IBAction func checkPincodeAction(_ sender: Any) {
         interactor6?.fetchItems(request: CheckPincodeModel.Fetch.Request(pin_code:self.pinCodeTextField.text))
     }
-         
+    
+    @IBAction func writeReviewAction(_ sender: Any) {
+        self.popOver(sender:writeReviewOutlet)
+    }
+    
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
     {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -445,5 +450,20 @@ extension ProductDetailsViewController :  UICollectionViewDelegate,UICollectionV
             _ = segue.destination as! CartListViewController
             
         }
+    }
+    
+    func popOver(sender : UIButton) {
+        
+    let reviewVC = storyboard?.instantiateViewController(withIdentifier: "reviewVC") as! ReviewsViewController
+        reviewVC.product_id = self.product_id
+    
+        reviewVC.modalPresentationStyle = .popover
+         if let popoverController = reviewVC.popoverPresentationController {
+            popoverController.sourceView = sender
+            popoverController.sourceRect = sender.bounds
+            popoverController.permittedArrowDirections = .any
+            popoverController.delegate = self
+            }
+            present(reviewVC, animated: true, completion: nil)
     }
 }

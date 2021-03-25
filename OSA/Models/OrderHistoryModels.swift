@@ -99,6 +99,8 @@ class DeliveredOrdersModels : NSObject {
      }
 }
 
+import Foundation
+
 class OrderCartDetailsModels : NSObject {
     
     var quantity : String?
@@ -120,12 +122,12 @@ class OrderCartDetailsModels : NSObject {
         if let data = dict["price"] as? String {
             self.price = data
         }
-        if let data = dict["size"] as? String {
-            self.size = data
-        }
-        if let data = dict["color_name"] as? String {
-            self.color_name = data
-        }
+//        if let data = dict["size"] as? String {
+//            self.size = data
+//        }
+//        if let data = dict["color_name"] as? String {
+//            self.color_name = data
+//        }
         if let data = dict["product_cover_img"] as? String {
             self.product_cover_img = data
         }

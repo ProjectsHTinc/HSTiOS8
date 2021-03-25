@@ -32,8 +32,8 @@ struct OrderCartDetailsModel{
            {
             var quantity : String?
             var price : String?
-            var size : String?
-            var color_name : String?
+//            var size : String?
+//            var color_name : String?
             var product_cover_img : String?
             var product_id : String?
             var id : String?
