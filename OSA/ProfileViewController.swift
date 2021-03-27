@@ -242,3 +242,4 @@ extension ProfileViewController : UIImagePickerControllerDelegate & UINavigation
         }
     }
 }
+

@@ -52,8 +52,8 @@ class NewArrivalViewController: UIViewController,UICollectionViewDelegate,UIColl
         let newArrivaldata = displayedNewArrivalsData[indexPath.row]
         cell.newArrivalImage.sd_setImage(with: URL(string: newArrivaldata.product_cover_img!), placeholderImage: UIImage(named: ""))
         cell.productTitlelabel.text = newArrivaldata.product_name
-        cell.MrpPriceLabel.text = newArrivaldata.prod_actual_price
-        cell.actualPriceLabel.text = newArrivaldata.prod_mrp_price
+        cell.MrpPriceLabel.text = "₹\(newArrivaldata.prod_actual_price!)"
+        cell.actualPriceLabel.text = "₹\(newArrivaldata.prod_mrp_price!)"
         
            return cell
     }

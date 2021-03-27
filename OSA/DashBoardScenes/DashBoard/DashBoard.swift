@@ -40,7 +40,7 @@ protocol WishListAddDisplayLogic: class
     func errorFetchingItems(viewModel: WishListAddModel.Fetch.ViewModel)
 }
 protocol WishListDeleteDisplayLogic: class
-{
+{ 
     func successFetchedItems(viewModel: WishListDeleteModel.Fetch.ViewModel)
     func errorFetchingItems(viewModel: WishListDeleteModel.Fetch.ViewModel)
 }
@@ -95,8 +95,7 @@ class DashBoard: UIViewController, DashBoardDisplayLogic,CategoryDisplayLogic,Be
         interactor3?.fetchItems(request: NewArrivalsModel.Fetch.Request(user_id:"1"))
         interactor4?.fetchItems(request: AdvertisementModel.Fetch.Request(user_id:"1"))
 
-        GlobalVariables.shared.customer_id = UserDefaults.standard.object(forKey: UserDefaultsKey.customer_idkey.rawValue) as! String
-
+       
         self.navigationController?.navigationBar.shadowImage = UIImage()
         
         let user_Id = UserDefaults.standard.object(forKey: UserDefaultsKey.customer_idkey.rawValue) ?? ""
@@ -318,9 +317,8 @@ extension DashBoard : UITableViewDelegate,UITableViewDataSource {
         let newArrivaldata = displayedNewArrivalsData[indexPath.row]
         cell.newArrivalImage.sd_setImage(with: URL(string: newArrivaldata.product_cover_img!), placeholderImage: UIImage(named: ""))
         cell.productTitlelabel.text = newArrivaldata.product_name
-        cell.MrpPriceLabel.text = newArrivaldata.prod_actual_price
-        cell.actualPriceLabel.text = newArrivaldata.prod_mrp_price
-            
+        cell.MrpPriceLabel.text = "₹\(newArrivaldata.prod_actual_price!)"
+        cell.actualPriceLabel.text = "₹\(newArrivaldata.prod_mrp_price!)"
             if newArrivaldata.wishlisted == "1"
             {
             cell.likeImage.image = UIImage(named:"heart (1)-1")
@@ -379,8 +377,7 @@ extension DashBoard : UITableViewDelegate,UITableViewDataSource {
 
 
 extension DashBoard : UICollectionViewDelegate,UICollectionViewDataSource {
-    
-    
+        
    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
        if collectionView == self.bannerCollectionView
        {
@@ -427,8 +424,8 @@ extension DashBoard : UICollectionViewDelegate,UICollectionViewDataSource {
            let percentageText = "% off"
            cell.sellingImage.sd_setImage(with: URL(string: bestSellingData.product_cover_img!), placeholderImage: UIImage(named: ""))
            cell.productTitleLabel.text = bestSellingData.product_name
-           cell.actualPricelabel.text = bestSellingData.prod_actual_price
-           cell.discoutPricelabel.text = bestSellingData.prod_mrp_price
+           cell.actualPricelabel.text = "₹\(bestSellingData.prod_actual_price!)"
+           cell.discoutPricelabel.text = "₹\(bestSellingData.prod_mrp_price!)"
            cell.offerPercentageLabel.text = bestSellingData.offer_percentage!+percentageText
          
         

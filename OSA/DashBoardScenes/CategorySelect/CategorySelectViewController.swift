@@ -44,7 +44,8 @@ class CategorySelectViewController: UIViewController,UICollectionViewDelegate,UI
     var idArr = [String]()
     var categoryArr = [String]()
     var product_id = String()
-
+    var selectedIndex = Int ()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         interactor?.fetchItems(request: CategorySelectModel.Fetch.Request(cat_id:id))
@@ -148,6 +149,17 @@ class CategorySelectViewController: UIViewController,UICollectionViewDelegate,UI
         let cell = selectCategeryCollectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! SelectCategorySegmentCell
 //        let catTitle = displayedCategorySelectData[indexPath.row]
             cell.catLabel.text = categoryArr[indexPath.row]
+
+                if selectedIndex == indexPath.row
+                {
+                    cell.contentView.backgroundColor = UIColor(red: 114.0/255.0, green: 3.0/255.0, blue: 25.0/255.0, alpha: 1.0)
+                    cell.catLabel.textColor = UIColor.white
+                }
+                else
+                {
+                    cell.contentView.backgroundColor = UIColor(red: 244.0/255.0, green: 243.0/255.0, blue: 244.0/255.0, alpha: 1.0)
+                    cell.catLabel.textColor = UIColor.black
+                }
           return cell
          }
         else
@@ -155,18 +167,18 @@ class CategorySelectViewController: UIViewController,UICollectionViewDelegate,UI
             let cell = subCategoryListCollectionView.dequeueReusableCell(withReuseIdentifier: "subCatList", for: indexPath) as! SubCategoryListCollectionViewCell
             let catArr = displayedSubCategoryListData[indexPath.row]
             cell.productTitlelabel.text = catArr.product_name
-            cell.MrpPriceLabel.text = catArr.prod_mrp_price
+            cell.MrpPriceLabel.text = "₹\(catArr.prod_mrp_price!)"
             cell.categoryImage.sd_setImage(with: URL(string: catArr.product_cover_img!), placeholderImage: UIImage(named: ""))
               return cell
         }
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == self.selectCategeryCollectionView
         {
-        let cell = selectCategeryCollectionView.cellForItem(at: indexPath) as! SelectCategorySegmentCell
-        let lastCellColor = cell.backgroundColor
-        if cell.isSelected {cell.backgroundColor = .red} else {cell.backgroundColor = lastCellColor}
+            selectedIndex = indexPath.row
+
+               self.selectCategeryCollectionView.reloadData()
         print("You selected cell #\(indexPath.item)!")
         let selectedIndex = Int(indexPath.item)
         let sel = self.idArr[selectedIndex]
@@ -187,8 +199,5 @@ class CategorySelectViewController: UIViewController,UICollectionViewDelegate,UI
             vc.product_id = self.product_id
      }
    }
-    
-  
-    
 }
 

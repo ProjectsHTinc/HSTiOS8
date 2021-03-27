@@ -8,22 +8,21 @@
 import UIKit
 import SDWebImage
 
-class Menu: UIViewController {
-
-    private var navigationBarWasHidden = false
+class Menu: UIViewController, ProfileDetailsDisplayLogic {
+   
     
     @IBOutlet weak var userPic: UIImageView!
     @IBOutlet weak var userNameLbl: UILabel!
     @IBOutlet weak var userMailidLbl: UILabel!
     
+    private var navigationBarWasHidden = false
+    var interactor1: ProfileDetailsBusinessLogic?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.userPic.sd_setImage(with: URL(string: GlobalVariables.shared.profile_picture), placeholderImage: UIImage(named: ""))
-        self.userNameLbl.text = GlobalVariables.shared.first_name
-        self.userMailidLbl.text = GlobalVariables.shared.phone_number
-        
+        interactor1?.fetchItems(request: ProfileDetailsModel.Fetch.Request( user_id:GlobalVariables.shared.customer_id))
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -33,6 +32,39 @@ class Menu: UIViewController {
         self.navigationBarWasHidden = self.navigationController?.isNavigationBarHidden ?? false
         // Hide the Navigation Bar
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
+    {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        setup()
+    }
+
+    required init?(coder aDecoder: NSCoder)
+    {
+        super.init(coder: aDecoder)
+        setup()
+    }
+      
+    private func setup()
+    {
+        let viewController1 = self
+        let interactor1 = ProfileDetailsInteractor()
+        let presenter1 = ProfileDetailsPresenter()
+        viewController1.interactor1 = interactor1
+        interactor1.presenter1 = presenter1
+        presenter1.viewController1 = viewController1
+    }
+    
+    func successFetchedItems(viewModel: ProfileDetailsModel.Fetch.ViewModel) {
+        
+        self.userPic.sd_setImage(with: URL(string:viewModel.profile_picture!), placeholderImage: UIImage(named: ""))
+        self.userNameLbl.text = viewModel.profile_picture
+        self.userMailidLbl.text = viewModel.phone_number
+    }
+    
+    func errorFetchingItems(viewModel: ProfileDetailsModel.Fetch.ViewModel) {
+        
     }
     
     @IBAction func logOutAction(_ sender: Any) {

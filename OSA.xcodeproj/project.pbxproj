@@ -323,6 +323,17 @@
 		6BF6284325D68D0A00CC8535 /* SignUpPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF6284225D68D0A00CC8535 /* SignUpPresenter.swift */; };
 		6BF6284825D68D2700CC8535 /* SignUpRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF6284725D68D2700CC8535 /* SignUpRouter.swift */; };
 		6BF8CEC22600921D002C712A /* ReviewOrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF8CEC12600921D002C712A /* ReviewOrderTableViewCell.swift */; };
+		6BFAEF06260DC6680051B766 /* AppSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFAEF05260DC6660051B766 /* AppSettingsViewController.swift */; };
+		6BFAEF10260DC6F00051B766 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFAEF0F260DC6F00051B766 /* ChangePasswordViewController.swift */; };
+		6BFAEF15260DC72B0051B766 /* ChangePasswordInteracter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFAEF14260DC72B0051B766 /* ChangePasswordInteracter.swift */; };
+		6BFAEF1A260DC7620051B766 /* ChangePasswordWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFAEF19260DC7620051B766 /* ChangePasswordWorker.swift */; };
+		6BFAEF1F260DC78E0051B766 /* ChangePasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFAEF1E260DC78E0051B766 /* ChangePasswordPresenter.swift */; };
+		6BFAEF24260DC79A0051B766 /* ChangePasswordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFAEF23260DC79A0051B766 /* ChangePasswordModel.swift */; };
+		6BFAEF29260DC7B40051B766 /* CheckPasswordInteracter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFAEF28260DC7B40051B766 /* CheckPasswordInteracter.swift */; };
+		6BFAEF2E260DC7CD0051B766 /* CheckPasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFAEF2D260DC7CD0051B766 /* CheckPasswordPresenter.swift */; };
+		6BFAEF33260DC7E60051B766 /* CheckPasswordWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFAEF32260DC7E60051B766 /* CheckPasswordWorker.swift */; };
+		6BFAEF38260DC7F70051B766 /* CheckPasswordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFAEF37260DC7F70051B766 /* CheckPasswordModel.swift */; };
+		6BFAEF3D260E144E0051B766 /* PasswordUpdateModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFAEF3C260E144E0051B766 /* PasswordUpdateModels.swift */; };
 		6BFB262826087698006E58B7 /* OrderHistory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BFB262726087698006E58B7 /* OrderHistory.storyboard */; };
 		6BFB262E2608809E006E58B7 /* OrderHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFB262D2608809E006E58B7 /* OrderHistoryViewController.swift */; };
 		6BFB263826089465006E58B7 /* DeliveredOrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFB263726089465006E58B7 /* DeliveredOrdersViewController.swift */; };
@@ -865,6 +876,17 @@
 		6BF6284225D68D0A00CC8535 /* SignUpPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPresenter.swift; sourceTree = "<group>"; };
 		6BF6284725D68D2700CC8535 /* SignUpRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRouter.swift; sourceTree = "<group>"; };
 		6BF8CEC12600921D002C712A /* ReviewOrderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewOrderTableViewCell.swift; sourceTree = "<group>"; };
+		6BFAEF05260DC6660051B766 /* AppSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsViewController.swift; sourceTree = "<group>"; };
+		6BFAEF0F260DC6F00051B766 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
+		6BFAEF14260DC72B0051B766 /* ChangePasswordInteracter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordInteracter.swift; sourceTree = "<group>"; };
+		6BFAEF19260DC7620051B766 /* ChangePasswordWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordWorker.swift; sourceTree = "<group>"; };
+		6BFAEF1E260DC78E0051B766 /* ChangePasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordPresenter.swift; sourceTree = "<group>"; };
+		6BFAEF23260DC79A0051B766 /* ChangePasswordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordModel.swift; sourceTree = "<group>"; };
+		6BFAEF28260DC7B40051B766 /* CheckPasswordInteracter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CheckPasswordInteracter.swift; path = OSA/AppSettingsScenes/ChangePassword/CheckPasswordInteracter.swift; sourceTree = SOURCE_ROOT; };
+		6BFAEF2D260DC7CD0051B766 /* CheckPasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckPasswordPresenter.swift; sourceTree = "<group>"; };
+		6BFAEF32260DC7E60051B766 /* CheckPasswordWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckPasswordWorker.swift; sourceTree = "<group>"; };
+		6BFAEF37260DC7F70051B766 /* CheckPasswordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckPasswordModel.swift; sourceTree = "<group>"; };
+		6BFAEF3C260E144E0051B766 /* PasswordUpdateModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordUpdateModels.swift; sourceTree = "<group>"; };
 		6BFB262726087698006E58B7 /* OrderHistory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OrderHistory.storyboard; sourceTree = "<group>"; };
 		6BFB262D2608809E006E58B7 /* OrderHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistoryViewController.swift; sourceTree = "<group>"; };
 		6BFB263726089465006E58B7 /* DeliveredOrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveredOrdersViewController.swift; sourceTree = "<group>"; };
@@ -1325,6 +1347,7 @@
 				6BFB266326089568006E58B7 /* OrderHistoryModels.swift */,
 				6B176BC9260B620B00A9A9C6 /* ReturnOrderModels.swift */,
 				6B9BBC16260C6FAB00B215F5 /* ReviewModels.swift */,
+				6BFAEF3C260E144E0051B766 /* PasswordUpdateModels.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -2116,6 +2139,39 @@
 			path = SignUp;
 			sourceTree = "<group>";
 		};
+		6BFAEF04260DC61B0051B766 /* AppSettingsScenes */ = {
+			isa = PBXGroup;
+			children = (
+				6BFAEF05260DC6660051B766 /* AppSettingsViewController.swift */,
+				6BFAEF0E260DC69F0051B766 /* ChangePassword */,
+				6BFAEF0A260DC6870051B766 /* CheckPassword */,
+			);
+			path = AppSettingsScenes;
+			sourceTree = "<group>";
+		};
+		6BFAEF0A260DC6870051B766 /* CheckPassword */ = {
+			isa = PBXGroup;
+			children = (
+				6BFAEF28260DC7B40051B766 /* CheckPasswordInteracter.swift */,
+				6BFAEF32260DC7E60051B766 /* CheckPasswordWorker.swift */,
+				6BFAEF2D260DC7CD0051B766 /* CheckPasswordPresenter.swift */,
+				6BFAEF37260DC7F70051B766 /* CheckPasswordModel.swift */,
+			);
+			path = CheckPassword;
+			sourceTree = "<group>";
+		};
+		6BFAEF0E260DC69F0051B766 /* ChangePassword */ = {
+			isa = PBXGroup;
+			children = (
+				6BFAEF0F260DC6F00051B766 /* ChangePasswordViewController.swift */,
+				6BFAEF14260DC72B0051B766 /* ChangePasswordInteracter.swift */,
+				6BFAEF19260DC7620051B766 /* ChangePasswordWorker.swift */,
+				6BFAEF1E260DC78E0051B766 /* ChangePasswordPresenter.swift */,
+				6BFAEF23260DC79A0051B766 /* ChangePasswordModel.swift */,
+			);
+			path = ChangePassword;
+			sourceTree = "<group>";
+		};
 		6BFB262C2608804C006E58B7 /* OrderHistoryScenes */ = {
 			isa = PBXGroup;
 			children = (
@@ -2194,6 +2250,7 @@
 				6BBFA23625FF9916003ADB6C /* ReviewOrderScenes */,
 				6B307A7D2603168000065E45 /* ProfileScenes */,
 				6BFB262C2608804C006E58B7 /* OrderHistoryScenes */,
+				6BFAEF04260DC61B0051B766 /* AppSettingsScenes */,
 				6B8A680B25DE942A004AD774 /* Cells */,
 				6BC207B625CA6073007083D4 /* StoryBoards */,
 				6BC207B425CA600B007083D4 /* Extensions */,
@@ -2516,6 +2573,7 @@
 				6BE8588825EE6C9B00A1F30B /* ProductColourCollectionViewCell.swift in Sources */,
 				6B0F6D4025F0DA0D008726FB /* AddtoCartPresenter.swift in Sources */,
 				6BC583512604682100C1A39C /* WishListModels.swift in Sources */,
+				6BFAEF1F260DC78E0051B766 /* ChangePasswordPresenter.swift in Sources */,
 				6BBFA24925FF9CA2003ADB6C /* ReviewOrderPresenter.swift in Sources */,
 				6B7CC29B25E7B2AD0045DFB8 /* CategorySelectModel.swift in Sources */,
 				6B0D9C8F25F78358003DBBDF /* AddressListWorker.swift in Sources */,
@@ -2652,6 +2710,7 @@
 				6BE4049D25E4CB96006BC307 /* BestSellingWorker.swift in Sources */,
 				6B4808F1260A0CB8007E8E55 /* PayCODWorker.swift in Sources */,
 				6B4808F6260A0D18007E8E55 /* PayCODPresenter.swift in Sources */,
+				6BFAEF38260DC7F70051B766 /* CheckPasswordModel.swift in Sources */,
 				6B9BBBEF260C6A6200B215F5 /* CheckReviewInteracter.swift in Sources */,
 				6B7D2AB825FB86A6003DDF82 /* AddMoneyToWalletPresenter.swift in Sources */,
 				6B409EFA25FCD84400C5E6BA /* CCWebViewRouter.swift in Sources */,
@@ -2689,6 +2748,7 @@
 				6B7CC29125E7B24E0045DFB8 /* CategorySelectInteractor.swift in Sources */,
 				6BD8923525F206AB0004EEB3 /* CartDeleteInteracter.swift in Sources */,
 				6B8A680225DE7272004AD774 /* DasboardModels.swift in Sources */,
+				6BFAEF33260DC7E60051B766 /* CheckPasswordWorker.swift in Sources */,
 				6B0CB0D425E529040066B927 /* AdvertisementModel.swift in Sources */,
 				6BC3EE2C25E917CD00A0CAD9 /* SubCategoryWorker.swift in Sources */,
 				6B79A2B22604C60700CF7A50 /* WishListModel.swift in Sources */,
@@ -2715,8 +2775,12 @@
 				6B11793725F62A0500B0D9EA /* DeliveryAddressRouter.swift in Sources */,
 				6B9BBC08260C6B2000B215F5 /* UpdateReviewWorker.swift in Sources */,
 				6B176B96260B46A900A9A9C6 /* OrderCartDetailsInteracter.swift in Sources */,
+				6BFAEF06260DC6680051B766 /* AppSettingsViewController.swift in Sources */,
+				6BFAEF15260DC72B0051B766 /* ChangePasswordInteracter.swift in Sources */,
 				6B457CD125F7554000DC017F /* OrderDetailsWorker.swift in Sources */,
+				6BFAEF3D260E144E0051B766 /* PasswordUpdateModels.swift in Sources */,
 				6B70FA8A25CBD47C00AA4DD8 /* GlobalVariables.swift in Sources */,
+				6BFAEF2E260DC7CD0051B766 /* CheckPasswordPresenter.swift in Sources */,
 				6BEC7C0D2608BCDB00A75767 /* WalletApplyPresenter.swift in Sources */,
 				6BF6284325D68D0A00CC8535 /* SignUpPresenter.swift in Sources */,
 				6B8B014725EA70DA007564F9 /* ProductDetailsViewController.swift in Sources */,
@@ -2754,7 +2818,9 @@
 				6B176BBB260B613300A9A9C6 /* ReturnReasonListWorker.swift in Sources */,
 				6B8B014F25EA7304007564F9 /* ProductDetailsInteractor.swift in Sources */,
 				6B8B016325EA7377007564F9 /* ProductDetailsRouter.swift in Sources */,
+				6BFAEF29260DC7B40051B766 /* CheckPasswordInteracter.swift in Sources */,
 				6BF8CEC22600921D002C712A /* ReviewOrderTableViewCell.swift in Sources */,
+				6BFAEF24260DC79A0051B766 /* ChangePasswordModel.swift in Sources */,
 				6B7D2ABA25FB86BC003DDF82 /* AddMoneyToWalletModel.swift in Sources */,
 				6B71627425CD68C70021F55D /* APIManger.swift in Sources */,
 				6BEC7C082608BCC500A75767 /* WalletApplyWorker.swift in Sources */,
@@ -2798,8 +2864,10 @@
 				6BEC1F4225E765AD00193015 /* CategorySelectViewController.swift in Sources */,
 				6B05778725F90601007E5F4F /* DeleteAddressModel.swift in Sources */,
 				6B70FA8725CBD47C00AA4DD8 /* constants.swift in Sources */,
+				6BFAEF1A260DC7620051B766 /* ChangePasswordWorker.swift in Sources */,
 				6BD7735725FF5EC000E89948 /* CCInitViewController.swift in Sources */,
 				6BD13BBF25F10255005EFAB4 /* CartListTableViewCell.swift in Sources */,
+				6BFAEF10260DC6F00051B766 /* ChangePasswordViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
