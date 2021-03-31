@@ -27,6 +27,7 @@ class CategorySelectViewController: UIViewController,UICollectionViewDelegate,UI
     @IBOutlet weak var selectCategeryCollectionView: UICollectionView!
     @IBOutlet weak var subCategoryListCollectionView: UICollectionView!
     @IBOutlet weak var searchBarView: UIView!
+    @IBOutlet weak var searchTextfield: UITextField!
     
     var router: (NSObjectProtocol & CategorySelectRoutingLogic & CategorySelectDataPassing)?
     var router2: (NSObjectProtocol & SubCategoryListRoutingLogic & SubCategoryListDataPassing)?
@@ -49,6 +50,7 @@ class CategorySelectViewController: UIViewController,UICollectionViewDelegate,UI
     override func viewDidLoad() {
         super.viewDidLoad()
         interactor?.fetchItems(request: CategorySelectModel.Fetch.Request(cat_id:id))
+        searchTextfield.setCorner(radius: 25)
     }
     
     override func viewDidLayoutSubviews(){

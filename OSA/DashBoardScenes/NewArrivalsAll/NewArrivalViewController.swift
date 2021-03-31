@@ -10,6 +10,7 @@ import UIKit
 class NewArrivalViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,NewArrivalsDisplayLogic {
       
     @IBOutlet weak var newArrivalCollectionView: UICollectionView!
+    @IBOutlet weak var searchTextfield: UITextField!
     
     var interactor3: NewArrivalsBusinessLogic?
     var displayedNewArrivalsData: [NewArrivalsModel.Fetch.ViewModel.DisplayedNewArrivalsData] = []
@@ -17,7 +18,7 @@ class NewArrivalViewController: UIViewController,UICollectionViewDelegate,UIColl
     override func viewDidLoad() {
         super.viewDidLoad()
         interactor3?.fetchItems(request: NewArrivalsModel.Fetch.Request(user_id:"1"))
-       
+        searchTextfield.setCorner(radius: 25)
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)

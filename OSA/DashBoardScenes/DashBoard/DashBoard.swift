@@ -45,7 +45,7 @@ protocol WishListDeleteDisplayLogic: class
     func errorFetchingItems(viewModel: WishListDeleteModel.Fetch.ViewModel)
 }
 
-class DashBoard: UIViewController, DashBoardDisplayLogic,CategoryDisplayLogic,BestSellingDisplayLogic,NewArrivalsDisplayLogic,AdvertisementDisplayLogic, WishListAddDisplayLogic, WishListDeleteDisplayLogic {
+class DashBoard: UIViewController, DashBoardDisplayLogic,CategoryDisplayLogic,BestSellingDisplayLogic,NewArrivalsDisplayLogic,AdvertisementDisplayLogic, WishListAddDisplayLogic, WishListDeleteDisplayLogic,UIPopoverPresentationControllerDelegate{
  
                  
     @IBOutlet weak var bannerCollectionView: UICollectionView!
@@ -54,6 +54,7 @@ class DashBoard: UIViewController, DashBoardDisplayLogic,CategoryDisplayLogic,Be
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var advertisementTableView: UITableView!
     @IBOutlet weak var searchBarView: UIView!
+    @IBOutlet weak var searchTextfield: UITextField!
     
     var index = 0
     var inForwardDirection = true
@@ -78,23 +79,25 @@ class DashBoard: UIViewController, DashBoardDisplayLogic,CategoryDisplayLogic,Be
     var selectedProductIdArr = String()
     var selectedNewArrivalIdArr = String()
     var indexArray  : [NSIndexPath]?
+    var fromSearchText = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.hideKeyboardWhenTappedAround()
         self.sideMenuButton()
+        self.fromSearchText = "to_searchList"
        
         if let navigationbar = self.navigationController?.navigationBar {
             
             navigationbar.setGradientBackground(colors: [UIColor(red: 189.0/255.0, green: 6.0/255.0, blue: 33.0/255.0, alpha: 1.0), UIColor(red: 95.0/255.0, green: 3.0/255.0, blue: 17.0/255.0, alpha: 1.0)], startPoint: .left, endPoint: .right)
         }
+        
         interactor?.fetchItems(request: DashBoardModel.Fetch.Request(user_id:"1"))
         interactor1?.fetchItems(request: CategoryModel.Fetch.Request(user_id:"1"))
         interactor2?.fetchItems(request: BestSellingModel.Fetch.Request(user_id:"1"))
         interactor3?.fetchItems(request: NewArrivalsModel.Fetch.Request(user_id:"1"))
         interactor4?.fetchItems(request: AdvertisementModel.Fetch.Request(user_id:"1"))
-
        
         self.navigationController?.navigationBar.shadowImage = UIImage()
         
@@ -104,12 +107,18 @@ class DashBoard: UIViewController, DashBoardDisplayLogic,CategoryDisplayLogic,Be
         {
             
         }
-        else {
+        else
+        {
             GlobalVariables.shared.customer_id = UserDefaults.standard.object(forKey: UserDefaultsKey.customer_idkey.rawValue) as! String
-
+        }
+        searchTextfield.setCorner(radius: 25)
+        if let myImage = UIImage(named: "search"){
+            searchTextfield.withImage(direction: .Left, image: myImage, colorSeparator: UIColor.clear, colorBorder: UIColor.clear)
+            searchTextfield.setCorner(radius: 25)
         }
     }
-    override func viewDidLayoutSubviews(){
+
+    override func viewDidLayoutSubviews() {
 
         searchBarView.layerGradient(startPoint: .left, endPoint: .right, colorArray: [UIColor(red: 189.0/255.0, green: 6.0/255.0, blue: 33.0/255.0, alpha: 1.0).cgColor, UIColor(red: 95.0/255.0, green: 3.0/255.0, blue: 17.0/255.0, alpha: 1.0).cgColor], type: .axial)
     }
@@ -200,6 +209,28 @@ class DashBoard: UIViewController, DashBoardDisplayLogic,CategoryDisplayLogic,Be
         return settings
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool
+    {
+        if textField == searchTextfield
+        {
+            if searchTextfield.text?.isEmpty == true{
+               AlertController.shared.showAlert(targetVc: self, title: Globals.alertTitle, message: "Empty", complition: {
+               })
+            }
+            else{
+//
+                self.performSegue(withIdentifier: "to_searchList", sender: self)
+            }
+        }
+            return true
+    }
+    
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool  {
+        self.popOver(sender:searchTextfield)
+        return true
+    }
+    
+
 //    Banner Display Logic
     func successFetchedItems(viewModel: DashBoardModel.Fetch.ViewModel) {
         displayedDashBoardData = viewModel.displayedDashBoardData
@@ -376,7 +407,7 @@ extension DashBoard : UITableViewDelegate,UITableViewDataSource {
 }
 
 
-extension DashBoard : UICollectionViewDelegate,UICollectionViewDataSource {
+extension DashBoard : UICollectionViewDelegate,UICollectionViewDataSource,UITextFieldDelegate {
         
    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
        if collectionView == self.bannerCollectionView
@@ -497,5 +528,55 @@ extension DashBoard : UICollectionViewDelegate,UICollectionViewDataSource {
                     self.interactor6?.fetchItems(request: WishListDeleteModel.Fetch.Request(product_id:self.selectedNewArrivalIdArr , user_id: "1"))
             }
       }
+    
+   func popOver(sender : UITextField) {
+        
+      let searchVC = storyboard?.instantiateViewController(withIdentifier: "searchVC") as! SearchViewController
+         searchVC.delegate = self
+         searchVC.strSearchName = self.searchTextfield.text! as NSString
+
+         searchVC.modalPresentationStyle = .popover
+         if let popoverController = searchVC.popoverPresentationController {
+            popoverController.sourceView = sender
+            popoverController.sourceRect = sender.bounds
+            popoverController.permittedArrowDirections = .any
+            popoverController.delegate = self
+            }
+            present(searchVC, animated: true, completion: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "to_searchList")
+        {
+            let vc = segue.destination as! SearchListViewController
+            vc.searchText = self.searchTextfield.text!
+            vc.fromSearchText = self.fromSearchText
+         
+        }
+    }
 }
+
+extension DashBoard :RecentSearchListDelegate {
+    
+    func saveText(searchName: String) {
+         self.searchTextfield.text = searchName
+     }
+}
+
+extension UIView {
+    
+     func setCorner(radius: CGFloat) {
+         layer.cornerRadius = radius
+         clipsToBounds = true
+     }
+    
+     func adaptivePresentationStyleForPresentationController(controller: UIPresentationController!) -> UIModalPresentationStyle {
+         return .none
+     }
+
+     private func presentationController(controller: UIPresentationController!, viewControllerForAdaptivePresentationStyle style: UIModalPresentationStyle) -> UIViewController! {
+        return UINavigationController(rootViewController: controller.presentedViewController)
+    }
+}
+
 

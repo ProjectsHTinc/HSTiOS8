@@ -7,13 +7,18 @@
 
 import UIKit
 
+
 class CategoryDetailViewController: UIViewController,CategoryDisplayLogic,UICollectionViewDelegate,UICollectionViewDataSource {
+  
    
     @IBOutlet weak var allCategoryCollectionview: UICollectionView!
     @IBOutlet weak var searchBarView: UIView!
+    @IBOutlet weak var searchTextfield: UITextField!
     
     var interactor1: CategoryBusinessLogic?
+  
     var displayedCategoryData: [CategoryModel.Fetch.ViewModel.DisplayedCategoryData] = []
+  
     var router: (NSObjectProtocol & CategoryRoutingLogic & CategoryDataPassing)?
     
     var id = String()
@@ -21,6 +26,7 @@ class CategoryDetailViewController: UIViewController,CategoryDisplayLogic,UIColl
     var category_image = String()
     var category_desc = String()
     var category_name = String()
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +37,7 @@ class CategoryDetailViewController: UIViewController,CategoryDisplayLogic,UIColl
         if let navigationbar = self.navigationController?.navigationBar {
             navigationbar.setGradientBackground(colors: [UIColor(red: 189.0/255.0, green: 6.0/255.0, blue: 33.0/255.0, alpha: 1.0), UIColor(red: 95.0/255.0, green: 3.0/255.0, blue: 17.0/255.0, alpha: 1.0)], startPoint: .left, endPoint: .right)
         }
+        searchTextfield.setCorner(radius: 25)
     }
     
     override func viewDidLayoutSubviews(){
@@ -39,7 +46,10 @@ class CategoryDetailViewController: UIViewController,CategoryDisplayLogic,UIColl
     }
     
     func callInteractor () {
-        interactor1?.fetchItems(request: CategoryModel.Fetch.Request(user_id:"1"))
+        
+       
+            interactor1?.fetchItems(request: CategoryModel.Fetch.Request(user_id:"1"))
+  
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
@@ -65,8 +75,11 @@ class CategoryDetailViewController: UIViewController,CategoryDisplayLogic,UIColl
         presenter1.viewController1 = viewController1
         router.viewController = viewController1
         router.dataStore = interactor1
+        
+       
     }
     
+//
     func successFetchedItems(viewModel: CategoryModel.Fetch.ViewModel) {
         displayedCategoryData = viewModel.displayedCategoryData
         print("123456")
@@ -78,6 +91,7 @@ class CategoryDetailViewController: UIViewController,CategoryDisplayLogic,UIColl
         
     }
     
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return displayedCategoryData.count
     }

@@ -56,7 +56,10 @@ struct APIFunctionName {
     static let productUpdateReviewUrl = "mobileapi/review_update"
     static let checkPasswordUrl = "mobileapi/check_password"
     static let changePasswordUrl = "mobileapi/password_update"
+    static let serachProductUrl = "mobileapi/search_product"
+    static let recentSearchListUrl = "mobileapi/recent_search_list"
     
 }
+
 
 
