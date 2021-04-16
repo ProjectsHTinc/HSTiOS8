@@ -22,15 +22,12 @@ class DashBoardDetailModels : NSObject {
          if let data = dict["id"] as? String {
              self.id = data
          }
-
         if let data = dict["banner_title"] as? String {
             self.banner_title = data
         }
-        
         if let data = dict["banner_desc"] as? String {
             self.banner_desc = data
         }
-        
         if let data = dict["banner_image"] as? String {
             self.banner_image = data
         }

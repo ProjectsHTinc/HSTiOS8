@@ -22,7 +22,7 @@ class RelatedProductPresenter: RelatedProductPresentationLogic
         var displayedRelatedProductData: [RelatedProductModel.Fetch.ViewModel.DisplayedRelatedProductData] = []
        
         for data in resp.testObj {
-            let displayedRelatedProductDatas = RelatedProductModel.Fetch.ViewModel.DisplayedRelatedProductData(product_name: data.product_name!,product_cover_img: data.product_cover_img!,product_description: data.product_description!,offer_percentage: data.offer_percentage!,review_average: data.review_average!, prod_mrp_price: data.prod_mrp_price!, offer_status: data.offer_status!, stocks_left: data.stocks_left!, prod_actual_price: data.prod_actual_price!)
+            let displayedRelatedProductDatas = RelatedProductModel.Fetch.ViewModel.DisplayedRelatedProductData(product_name: data.product_name!,product_cover_img: data.product_cover_img!,product_description: data.product_description!,offer_percentage: data.offer_percentage!, prod_mrp_price: data.prod_mrp_price!, offer_status: data.offer_status!, stocks_left: data.stocks_left!, prod_actual_price: data.prod_actual_price!)
             displayedRelatedProductData.append(displayedRelatedProductDatas)
         }
         let viewModel = RelatedProductModel.Fetch.ViewModel(displayedRelatedProductData: displayedRelatedProductData)

@@ -174,7 +174,7 @@ class RelatedProductModels : NSObject {
     var product_cover_img : String?
     var product_description : String?
     var offer_percentage : String?
-    var review_average : String?
+//    var review_average : String?
     var prod_mrp_price : String?
     var offer_status : String?
     var stocks_left : String?
@@ -208,9 +208,7 @@ class RelatedProductModels : NSObject {
         if let data = dict["stocks_left"] as? String {
            self.stocks_left = data
         }
-        if let data = dict["review_average"] as? String {
-           self.review_average = data
-        }
+      
     }
      // MARK: Class Method
      class func build(_ dict: [String: AnyObject]) -> RelatedProductModels {

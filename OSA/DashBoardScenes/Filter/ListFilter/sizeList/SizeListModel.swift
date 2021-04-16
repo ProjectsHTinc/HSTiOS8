@@ -7,3 +7,39 @@
 //
 
 import Foundation
+import UIKit
+
+struct SizeListModel{
+    struct Fetch {
+        
+        struct Request
+        {
+            var user_id : String?
+            var cat_id : String?
+            var sub_cat_id : String?
+            
+        }
+        
+        struct Response
+        {
+            var testObj: [SizeListModels]
+            var isError: Bool
+            var message: String?
+        }
+
+        struct ViewModel
+        {
+           struct DisplayedSizeListData
+           {
+            var mas_size_id : String?
+            var size : String?
+            var cat_id : String?
+            var sub_cat_id : String?
+            
+            }
+              var displayedSizeListData: [DisplayedSizeListData]
+    
+        }
+    }
+}
+

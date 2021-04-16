@@ -241,7 +241,7 @@ class ProductDetailsViewController: UIViewController, ProductSizeDisplayLogic, P
         productDetailLbl.text = viewModel.product_description!
         mrpPriceLbl.text = "₹\(viewModel.prod_mrp_price!)"
     
-        print(viewModel.product_review!)
+//        print(viewModel.product_review!)
     }
     
     func errorFetchingItems(viewModel: ProductDetailsModel.Fetch.ViewModel) {
@@ -308,7 +308,7 @@ class ProductDetailsViewController: UIViewController, ProductSizeDisplayLogic, P
 
 //    Add To Cart
     func successFetchedItems(viewModel: AddToCartModel.Fetch.ViewModel) {
-        
+        print(viewModel.msg!)
         let alertController = UIAlertController(title: Globals.alertTitle, message: viewModel.msg, preferredStyle: .alert)
         // Create the actions
         let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) {

@@ -322,12 +322,12 @@ class APIManager: NSObject {
          // Create dictionary
          print(responseObject)
 
-           guard let status = responseObject["status"].string, status == "Success" else{
+           guard let status = responseObject["status"].string, status == "success" else{
                failureCallback?(responseObject["msg"
                ].string!)
                return
          }
-          if let responseDict = responseObject["election_result"].arrayObject
+          if let responseDict = responseObject["popular_product_list"]["data"].arrayObject
           {
                   let toModel = responseDict as! [[String:AnyObject]]
                   // Create object
@@ -358,7 +358,7 @@ class APIManager: NSObject {
          // Create dictionary
          print(responseObject)
 
-           guard let status = responseObject["status"].string, status == "Success" else{
+           guard let status = responseObject["status"].string, status == "success" else{
                failureCallback?(responseObject["msg"
                ].string!)
                return
@@ -395,7 +395,7 @@ class APIManager: NSObject {
          // Create dictionary
          print(responseObject)
 
-           guard let status = responseObject["status"].string, status == "Success" else{
+           guard let status = responseObject["status"].string, status == "success" else{
                failureCallback?(responseObject["msg"
                ].string!)
                return
@@ -431,7 +431,7 @@ class APIManager: NSObject {
          // Create dictionary
          print(responseObject)
 
-           guard let status = responseObject["status"].string, status == "Success" else{
+           guard let status = responseObject["status"].string, status == "success" else{
                failureCallback?(responseObject["msg"
                ].string!)
                return
@@ -467,7 +467,7 @@ class APIManager: NSObject {
          // Create dictionary
          print(responseObject)
 
-           guard let status = responseObject["status"].string, status == "Success" else{
+           guard let status = responseObject["status"].string, status == "success" else{
                failureCallback?(responseObject["msg"
                ].string!)
                return
@@ -504,7 +504,7 @@ class APIManager: NSObject {
          // Create dictionary
          print(responseObject)
 
-           guard let status = responseObject["status"].string, status == "Success" else{
+           guard let status = responseObject["status"].string, status == "success" else{
                failureCallback?(responseObject["msg"
                ].string!)
                return
@@ -541,12 +541,12 @@ class APIManager: NSObject {
          // Create dictionary
          print(responseObject)
 
-           guard let status = responseObject["status"].string, status == "Success" else{
+           guard let status = responseObject["status"].string, status == "success" else{
                failureCallback?(responseObject["msg"
                ].string!)
                return
          }
-          if let responseDict = responseObject["election_result"].arrayObject
+          if let responseDict = responseObject["search_keywords"].arrayObject
           {
                   let toModel = responseDict as! [[String:AnyObject]]
                   // Create object
@@ -577,12 +577,12 @@ class APIManager: NSObject {
          // Create dictionary
          print(responseObject)
 
-           guard let status = responseObject["status"].string, status == "Success" else{
+           guard let status = responseObject["status"].string, status == "success" else{
                failureCallback?(responseObject["msg"
                ].string!)
                return
          }
-          if let responseDict = responseObject["election_result"].arrayObject
+          if let responseDict = responseObject["sub_category_list"].arrayObject
           {
                   let toModel = responseDict as! [[String:AnyObject]]
                   // Create object
@@ -613,12 +613,12 @@ class APIManager: NSObject {
          // Create dictionary
          print(responseObject)
 
-           guard let status = responseObject["status"].string, status == "Success" else{
+           guard let status = responseObject["status"].string, status == "success" else{
                failureCallback?(responseObject["msg"
                ].string!)
                return
          }
-          if let responseDict = responseObject["election_result"].arrayObject
+          if let responseDict = responseObject["product_list"].arrayObject
           {
                   let toModel = responseDict as! [[String:AnyObject]]
                   // Create object
@@ -640,34 +640,34 @@ class APIManager: NSObject {
      }
     
     
-    func callAPIProductDetails(email:String,onSuccess successCallback: ((_ login: ProductDetailsModels) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
+    func callAPIProductDetails(product_id:String,onSuccess successCallback: ((_ login: ProductDetailsModels) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
    // Build URL
        let url = APIURL.BaseUrl_Dev+APIFunctionName.productDetailsURL
    // Set Parameters
-   let parameters: Parameters =  ["email": email]
+   let parameters: Parameters =  ["product_id": product_id]
    // call API
    self.createRequest(url, method: .post, headers: nil, parameters: parameters as? [String : String], onSuccess: {(responseObject: JSON) -> Void in
    // Create dictionary
    print(responseObject)
      
-   guard let msg = responseObject["msg"].string, msg == "OTP Generated" else{
+   guard let msg = responseObject["msg"].string, msg == "product details" else{
          failureCallback?(responseObject["msg"].string!)
          return
     }
        
-       let id =  responseObject["id"].string
-       let product_name =  responseObject["product_name"].string
-       let sku_code =  responseObject["sku_code"].string
-       let product_cover_img =  responseObject["product_cover_img"].string
-       let prod_size_chart =  responseObject["prod_size_chart"].string
-       let product_description =  responseObject["product_description"].string
-       let prod_actual_price =  responseObject["prod_actual_price"].string
-       let prod_mrp_price =  responseObject["prod_mrp_price"].string
-       let offer_percentage =  responseObject["offer_percentage"].string
-       let product_meta_title =  responseObject["product_meta_title"].string
-       let product_meta_desc =  responseObject["product_meta_desc"].string
-       let stocks_left =  responseObject["stocks_left"].string
-       let product_review =  responseObject["product_review"].string
+       let id =  responseObject["product_details"]["product_details"]["id"].string
+       let product_name =  responseObject["product_details"]["product_details"]["product_name"].string
+       let sku_code =  responseObject["product_details"]["product_details"]["sku_code"].string
+       let product_cover_img =  responseObject["product_details"]["product_details"]["product_cover_img"].string
+       let prod_size_chart =  responseObject["product_details"]["product_details"]["prod_size_chart"].string
+       let product_description =  responseObject["product_details"]["product_details"]["product_description"].string
+       let prod_actual_price =  responseObject["product_details"]["product_details"]["prod_actual_price"].string
+       let prod_mrp_price =  responseObject["product_details"]["product_details"]["prod_mrp_price"].string
+       let offer_percentage =  responseObject["product_details"]["product_details"]["offer_percentage"].string
+       let product_meta_title =  responseObject["product_details"]["product_details"]["product_meta_title"].string
+       let product_meta_desc =  responseObject["product_details"]["product_details"]["product_meta_desc"].string
+       let stocks_left =  responseObject["product_details"]["product_details"]["stocks_left"].string
+//       let product_review =  responseObject["product_details"]["product_details"]["product_review"].string
      
        let sendToModel = ProductDetailsModels()
        sendToModel.id = id
@@ -682,7 +682,7 @@ class APIManager: NSObject {
        sendToModel.product_meta_title = product_meta_title
        sendToModel.product_meta_desc = product_meta_desc
        sendToModel.stocks_left = stocks_left
-       sendToModel.product_review = product_review
+//       sendToModel.product_review = product_review
     
        successCallback?(sendToModel)
        
@@ -703,12 +703,12 @@ class APIManager: NSObject {
          // Create dictionary
          print(responseObject)
 
-           guard let status = responseObject["status"].string, status == "Success" else{
+           guard let status = responseObject["status"].string, status == "success" else{
                failureCallback?(responseObject["msg"
                ].string!)
                return
          }
-          if let responseDict = responseObject["election_result"].arrayObject
+          if let responseDict = responseObject["product_size"].arrayObject
           {
                   let toModel = responseDict as! [[String:AnyObject]]
                   // Create object
@@ -739,12 +739,12 @@ class APIManager: NSObject {
          // Create dictionary
          print(responseObject)
 
-           guard let status = responseObject["status"].string, status == "Success" else{
+           guard let status = responseObject["status"].string, status == "success" else{
                failureCallback?(responseObject["msg"
                ].string!)
                return
          }
-          if let responseDict = responseObject["election_result"].arrayObject
+          if let responseDict = responseObject["product_color"].arrayObject
           {
                   let toModel = responseDict as! [[String:AnyObject]]
                   // Create object
@@ -775,12 +775,12 @@ class APIManager: NSObject {
          // Create dictionary
          print(responseObject)
 
-           guard let status = responseObject["status"].string, status == "Success" else{
+           guard let status = responseObject["status"].string, status == "success" else{
                failureCallback?(responseObject["msg"
                ].string!)
                return
          }
-          if let responseDict = responseObject["election_result"].arrayObject
+          if let responseDict = responseObject["related_products"].arrayObject
           {
                   let toModel = responseDict as! [[String:AnyObject]]
                   // Create object
@@ -812,7 +812,7 @@ class APIManager: NSObject {
          // Create dictionary
          print(responseObject)
 
-           guard let status = responseObject["status"].string, status == "Success" else{
+           guard let status = responseObject["status"].string, status == "success" else{
                failureCallback?(responseObject["msg"
                ].string!)
                return
@@ -848,12 +848,12 @@ class APIManager: NSObject {
          // Create dictionary
          print(responseObject)
 
-           guard let status = responseObject["status"].string, status == "Success" else{
+           guard let status = responseObject["status"].string, status == "success" else{
                failureCallback?(responseObject["msg"
                ].string!)
                return
          }
-          if let responseDict = responseObject["election_result"].arrayObject
+          if let responseDict = responseObject["sub_category_list"].arrayObject
           {
                   let toModel = responseDict as! [[String:AnyObject]]
                   // Create object
@@ -884,12 +884,12 @@ class APIManager: NSObject {
          // Create dictionary
          print(responseObject)
 
-           guard let status = responseObject["status"].string, status == "Success" else{
+           guard let status = responseObject["status"].string, status == "success" else{
                failureCallback?(responseObject["msg"
                ].string!)
                return
          }
-          if let responseDict = responseObject["election_result"].arrayObject
+          if let responseDict = responseObject["size_list"].arrayObject
           {
                   let toModel = responseDict as! [[String:AnyObject]]
                   // Create object
@@ -921,7 +921,7 @@ class APIManager: NSObject {
          // Create dictionary
          print(responseObject)
 
-           guard let status = responseObject["status"].string, status == "Success" else{
+           guard let status = responseObject["status"].string, status == "success" else{
                failureCallback?(responseObject["msg"
                ].string!)
                return
@@ -957,7 +957,7 @@ class APIManager: NSObject {
          // Create dictionary
          print(responseObject)
      
-         guard let msg = responseObject["msg"].string, msg == "OTP Generated" else{
+         guard let msg = responseObject["msg"].string, msg == "No Delivery for this Area" else{
           failureCallback?(responseObject["msg"].string!)
            return
          }
@@ -988,8 +988,8 @@ class APIManager: NSObject {
          // Create dictionary
          print(responseObject)
      
-         guard let msg = responseObject["msg"].string, msg == "OTP Generated" else{
-          failureCallback?(responseObject["msg"].string!)
+         guard let STATUS = responseObject["status"].string, STATUS == "success" else{
+          failureCallback?(responseObject["status"].string!)
            return
          }
           let message =  responseObject["msg"].string
@@ -1081,12 +1081,12 @@ class APIManager: NSObject {
          // Create dictionary
          print(responseObject)
 
-           guard let status = responseObject["status"].string, status == "Success" else{
+           guard let status = responseObject["status"].string, status == "success" else{
                failureCallback?(responseObject["msg"
                ].string!)
                return
          }
-          if let responseDict = responseObject["election_result"].arrayObject
+          if let responseDict = responseObject["product_list"].arrayObject
           {
                   let toModel = responseDict as! [[String:AnyObject]]
                   // Create object
@@ -1219,12 +1219,12 @@ class APIManager: NSObject {
          // Create dictionary
          print(responseObject)
 
-           guard let status = responseObject["status"].string, status == "Success" else{
+           guard let status = responseObject["status"].string, status == "success" else{
                failureCallback?(responseObject["msg"
                ].string!)
                return
          }
-          if let responseDict = responseObject["election_result"].arrayObject
+          if let responseDict = responseObject["view_cart_items"].arrayObject
           {
                   let toModel = responseDict as! [[String:AnyObject]]
                   // Create object
@@ -1288,7 +1288,7 @@ class APIManager: NSObject {
          // Create dictionary
          print(responseObject)
      
-         guard let msg = responseObject["msg"].string, msg == "OTP Generated" else{
+         guard let msg = responseObject["msg"].string, msg == "Product removed from cart" else{
           failureCallback?(responseObject["msg"].string!)
            return
          }
@@ -1319,7 +1319,7 @@ class APIManager: NSObject {
          // Create dictionary
          print(responseObject)
      
-         guard let msg = responseObject["msg"].string, msg == "OTP Generated" else{
+         guard let msg = responseObject["msg"].string, msg == "Product Quantity Updated" else{
           failureCallback?(responseObject["msg"].string!)
            return
          }
@@ -1382,12 +1382,12 @@ class APIManager: NSObject {
          // Create dictionary
          print(responseObject)
 
-           guard let status = responseObject["status"].string, status == "Success" else{
+           guard let status = responseObject["status"].string, status == "success" else{
                failureCallback?(responseObject["msg"
                ].string!)
                return
          }
-          if let responseDict = responseObject["election_result"].arrayObject
+          if let responseDict = responseObject["address_list"].arrayObject
           {
                   let toModel = responseDict as! [[String:AnyObject]]
                   // Create object
@@ -1418,7 +1418,7 @@ class APIManager: NSObject {
          // Create dictionary
          print(responseObject)
      
-         guard let msg = responseObject["msg"].string, msg == "OTP Generated" else{
+         guard let msg = responseObject["msg"].string, msg == "Promo Code Error" else{
           failureCallback?(responseObject["msg"].string!)
            return
          }
@@ -1449,7 +1449,7 @@ class APIManager: NSObject {
          // Create dictionary
          print(responseObject)
      
-         guard let msg = responseObject["msg"].string, msg == "OTP Generated" else{
+         guard let msg = responseObject["msg"].string, msg == "Order Successfully Placed" else{
           failureCallback?(responseObject["msg"].string!)
            return
          }
@@ -1482,7 +1482,7 @@ class APIManager: NSObject {
          // Create dictionary
          print(responseObject)
 
-           guard let status = responseObject["status"].string, status == "Success" else{
+           guard let status = responseObject["status"].string, status == "success" else{
                failureCallback?(responseObject["msg"
                ].string!)
                return
@@ -1551,12 +1551,12 @@ class APIManager: NSObject {
          // Create dictionary
          print(responseObject)
 
-           guard let status = responseObject["status"].string, status == "Success" else{
+           guard let status = responseObject["status"].string, status == "success" else{
                failureCallback?(responseObject["msg"
                ].string!)
                return
          }
-          if let responseDict = responseObject["election_result"].arrayObject
+          if let responseDict = responseObject["address_list"].arrayObject
           {
                   let toModel = responseDict as! [[String:AnyObject]]
                   // Create object
@@ -1587,7 +1587,7 @@ class APIManager: NSObject {
        // Create dictionary
        print(responseObject)
      
-        guard let msg = responseObject["msg"].string, msg == "OTP Generated" else{
+        guard let msg = responseObject["msg"].string, msg == "Address Added" else{
           failureCallback?(responseObject["msg"].string!)
           return
        }
@@ -1620,12 +1620,11 @@ class APIManager: NSObject {
          // Create dictionary
          print(responseObject)
      
-         guard let msg = responseObject["msg"].string, msg == "OTP Generated" else{
+         guard let status = responseObject["status"].string, status == "success" else{
           failureCallback?(responseObject["msg"].string!)
            return
          }
-          let status =  responseObject["status"].string
-     
+    
           let sendToModel = DeleteAddressModels()
            
            sendToModel.status = status
@@ -1650,7 +1649,7 @@ class APIManager: NSObject {
    // Create dictionary
    print(responseObject)
      
-   guard let msg = responseObject["msg"].string, msg == "OTP Generated" else{
+   guard let msg = responseObject["msg"].string, msg == "Address Update" else{
          failureCallback?(responseObject["msg"].string!)
          return
     }
@@ -1683,7 +1682,7 @@ class APIManager: NSObject {
          // Create dictionary
          print(responseObject)
      
-         guard let msg = responseObject["msg"].string, msg == "OTP Generated" else{
+         guard let msg = responseObject["msg"].string, msg == "Address Default Update" else{
           failureCallback?(responseObject["msg"].string!)
            return
          }
@@ -1712,7 +1711,7 @@ class APIManager: NSObject {
          // Create dictionary
          print(responseObject)
 
-           guard let status = responseObject["status"].string, status == "Success" else{
+           guard let status = responseObject["status"].string, status == "success" else{
                failureCallback?(responseObject["msg"
                ].string!)
                return
@@ -1748,7 +1747,7 @@ class APIManager: NSObject {
          // Create dictionary
          print(responseObject)
      
-         guard let msg = responseObject["msg"].string, msg == "OTP Generated" else{
+         guard let msg = responseObject["msg"].string, msg == "Add Money to Wallet" else{
           failureCallback?(responseObject["msg"].string!)
            return
          }
@@ -1776,7 +1775,7 @@ class APIManager: NSObject {
     
     func callAPIReviewOrder(user_id:String,order_id:String,onSuccess successCallback: ((_ resp: [ReviewOrderModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
          // Build URL
-         let url = APIURL.BaseUrl_Dev+APIFunctionName.loginMobileUrl
+         let url = APIURL.BaseUrl_Dev+APIFunctionName.orderDetailsUrl
          // Set Parameters
          let parameters: Parameters =  ["user_id": user_id,"order_id": order_id]
          // call API
@@ -1784,7 +1783,7 @@ class APIManager: NSObject {
          // Create dictionary
          print(responseObject)
 
-           guard let status = responseObject["status"].string, status == "Success" else{
+           guard let status = responseObject["status"].string, status == "success" else{
                failureCallback?(responseObject["msg"
                ].string!)
                return
@@ -1850,20 +1849,20 @@ class APIManager: NSObject {
          // Create dictionary
          print(responseObject)
      
-         guard let msg = responseObject["msg"].string, msg == "OTP Generated" else{
+         guard let msg = responseObject["msg"].string, msg == "Profile found" else{
           failureCallback?(responseObject["msg"].string!)
            return
          }
             
-            let first_name =  responseObject["first_name"].string
-            let profile_picture =  responseObject["profile_picture"].string
-            let gender =  responseObject["gender"].string
-            let email =  responseObject["email"].string
-            let newsletter_status =  responseObject["newsletter_status"].string
-            let birth_date =  responseObject["birth_date"].string
-            let id =  responseObject["id"].string
-            let last_name =  responseObject["last_name"].string
-            let phone_number =  responseObject["phone_number"].string
+            let first_name =  responseObject["get_profile_details"]["first_name"].string
+            let profile_picture =  responseObject["get_profile_details"]["profile_picture"].string
+            let gender =  responseObject["get_profile_details"]["gender"].string
+            let email =  responseObject["get_profile_details"]["email"].string
+            let newsletter_status =  responseObject["get_profile_details"]["newsletter_status"].string
+            let birth_date =  responseObject["get_profile_details"]["birth_date"].string
+            let id =  responseObject["get_profile_details"]["id"].string
+            let last_name =  responseObject["get_profile_details"]["last_name"].string
+            let phone_number =  responseObject["get_profile_details"]["phone_number"].string
      
           let sendToModel = ProfileDetailsModels()
            
@@ -1896,7 +1895,7 @@ class APIManager: NSObject {
          // Create dictionary
          print(responseObject)
      
-         guard let msg = responseObject["msg"].string, msg == "OTP Generated" else{
+         guard let msg = responseObject["msg"].string, msg == "Profile Updated Successfully" else{
           failureCallback?(responseObject["msg"].string!)
            return
          }
@@ -1926,7 +1925,7 @@ class APIManager: NSObject {
          // Create dictionary
          print(responseObject)
 
-           guard let status = responseObject["status"].string, status == "Success" else{
+           guard let status = responseObject["status"].string, status == "success" else{
                failureCallback?(responseObject["msg"
                ].string!)
                return
@@ -1962,7 +1961,7 @@ class APIManager: NSObject {
          // Create dictionary
          print(responseObject)
 
-           guard let status = responseObject["status"].string, status == "Success" else{
+           guard let status = responseObject["status"].string, status == "success" else{
                failureCallback?(responseObject["msg"
                ].string!)
                return
@@ -1998,7 +1997,7 @@ class APIManager: NSObject {
          // Create dictionary
          print(responseObject)
 
-           guard let status = responseObject["status"].string, status == "Success" else{
+           guard let status = responseObject["status"].string, status == "success" else{
                failureCallback?(responseObject["msg"
                ].string!)
                return
@@ -2034,7 +2033,7 @@ class APIManager: NSObject {
          // Create dictionary
          print(responseObject)
      
-         guard let msg = responseObject["msg"].string, msg == "OTP Generated" else{
+         guard let msg = responseObject["msg"].string, msg == "" else{
           failureCallback?(responseObject["msg"].string!)
            return
          }
@@ -2094,12 +2093,12 @@ class APIManager: NSObject {
          // Create dictionary
          print(responseObject)
 
-           guard let status = responseObject["status"].string, status == "Success" else{
+           guard let status = responseObject["status"].string, status == "success" else{
                failureCallback?(responseObject["msg"
                ].string!)
                return
          }
-          if let responseDict = responseObject["election_result"].arrayObject
+          if let responseDict = responseObject["offer_list"].arrayObject
           {
                   let toModel = responseDict as! [[String:AnyObject]]
                   // Create object
@@ -2130,12 +2129,12 @@ class APIManager: NSObject {
          // Create dictionary
          print(responseObject)
 
-           guard let status = responseObject["status"].string, status == "Success" else{
+           guard let status = responseObject["status"].string, status == "success" else{
                failureCallback?(responseObject["msg"
                ].string!)
                return
          }
-          if let responseDict = responseObject["election_result"].arrayObject
+          if let responseDict = responseObject["colour_list"].arrayObject
           {
                   let toModel = responseDict as! [[String:AnyObject]]
                   // Create object
