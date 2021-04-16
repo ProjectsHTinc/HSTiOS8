@@ -1,6 +1,7 @@
 ${PODS_ROOT}/Target Support Files/Pods-OSA/Pods-OSA-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
 ${BUILT_PRODUCTS_DIR}/AppAuth/AppAuth.framework
+${BUILT_PRODUCTS_DIR}/AvailableHapticFeedback/AvailableHapticFeedback.framework
 ${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework
 ${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework
 ${BUILT_PRODUCTS_DIR}/GMStepper/GMStepper.framework
@@ -9,7 +10,9 @@ ${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework
 ${BUILT_PRODUCTS_DIR}/HMSegmentedControl/HMSegmentedControl.framework
 ${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework
 ${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework
+${BUILT_PRODUCTS_DIR}/MultiSlider/MultiSlider.framework
 ${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework
 ${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework
+${BUILT_PRODUCTS_DIR}/SweeterSwift/SweeterSwift.framework
 ${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework
 ${PODS_XCFRAMEWORKS_BUILD_DIR}/OpenSSL/OpenSSL.framework/OpenSSL

@@ -37,8 +37,6 @@ struct ProfileUpdateModel{
         {
             var msg : String?
             var status : String?
-            var order_id : String?
-            var amount : String?
             var isError: Bool
             var message: String?
         }

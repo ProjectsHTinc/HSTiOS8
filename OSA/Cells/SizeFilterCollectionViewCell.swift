@@ -10,4 +10,6 @@ import UIKit
 
 class SizeFilterCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var sizeLbl: UILabel!
+    
 }

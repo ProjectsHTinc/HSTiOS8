@@ -65,8 +65,10 @@ class OTPViewController: UIViewController, UITextFieldDelegate, OTPDisplayLogic 
         guard CheckValuesAreEmpty () else {
                   return
         }
-            
-        interactor?.fetchItems(request: OTPModel.Fetch.Request(mobile_number :"6379559776",OTP:self.otp,mob_key:"5352eefa98e3d96b0b77bd0cb35ac455f9fc62ad8fda3ddc10542efcc67b8ce4" ,mobile_type:"2",login_type:"Mobile",login_portal:"App"))
+            let deviceToken = UserDefaults.standard.object(forKey: UserDefaultsKey.deviceTokenKey.rawValue) ?? ""
+        
+        print("The device token is \(deviceToken)")
+        interactor?.fetchItems(request: OTPModel.Fetch.Request(mobile_number :self.mobileNumber,OTP:self.otp,mob_key: deviceToken as? String ,mobile_type:"2",login_type:"Mobile",login_portal:"App"))
     }
   
     func successFetchedItems(viewModel: OTPModel.Fetch.ViewModel) {

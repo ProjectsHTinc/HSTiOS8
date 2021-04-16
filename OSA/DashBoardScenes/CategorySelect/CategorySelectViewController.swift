@@ -94,6 +94,12 @@ class CategorySelectViewController: UIViewController,UICollectionViewDelegate,UI
         router2.dataStore = interactor2
     }
     
+    @IBAction func filterAction(_ sender: Any) {
+        
+        self.performSegue(withIdentifier: "to_filter", sender: self)
+    }
+    
+    
     func successFetchedItems(viewModel: CategorySelectModel.Fetch.ViewModel) {
         
         displayedCategorySelectData = viewModel.displayedCategorySelectData
@@ -199,7 +205,13 @@ class CategorySelectViewController: UIViewController,UICollectionViewDelegate,UI
          {
          let vc = segue.destination as! ProductDetailsViewController
             vc.product_id = self.product_id
+         }
+         else if (segue.identifier == "to_filter")
+         {
+            let vc = segue.destination as! FilterViewController
+            vc.id = self.id
+            
+         }
      }
-   }
 }
 

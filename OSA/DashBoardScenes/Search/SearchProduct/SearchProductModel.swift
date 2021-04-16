@@ -49,6 +49,7 @@ struct SearchListModel{
             var product_meta_keywords : String?
             var stocks_left : String?
             var wishlisted : String?
+            var review_average : String?
             }
             var displayedSearchListData: [DisplayedSearchListData]
 

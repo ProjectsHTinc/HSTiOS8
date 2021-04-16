@@ -429,6 +429,7 @@
                         <outlet property="signInButton" destination="70M-zK-y6P" id="x23-oF-gNP"/>
                         <segue destination="s8r-zD-FVT" kind="show" identifier="to_otp" id="uFX-vR-UTB"/>
                         <segue destination="s8r-zD-FVT" kind="show" id="qfh-5d-FUJ"/>
+                        <segue destination="tyP-zI-ZNj" kind="show" identifier="to_dashBoard2" id="Js5-bz-vTk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HC7-Ch-2Pf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -986,7 +987,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IUj-t3-s2d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2649" y="534"/>
+            <point key="canvasLocation" x="2311" y="500"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="fg1-U2-fw4">
@@ -1311,7 +1312,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="MLX-to-9db"/>
+        <segue reference="Js5-bz-vTk"/>
         <segue reference="uFX-vR-UTB"/>
     </inferredMetricsTieBreakers>
     <resources>

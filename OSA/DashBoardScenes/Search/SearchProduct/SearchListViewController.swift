@@ -78,6 +78,48 @@ class SearchListViewController: UIViewController,SearchListDisplayLogic,UICollec
             cell.productTitlelabel.text = data.product_name
             cell.MrpPriceLabel.text = "₹\(data.prod_mrp_price!)"
             cell.categoryImage.sd_setImage(with: URL(string: data.product_cover_img!), placeholderImage: UIImage(named: ""))
+        
+        if data.review_average == "1"{
+            
+            cell.image1.image = UIImage(named:"star (3)")
+            cell.image2.image = UIImage(named:"star (3)-1")
+            cell.image3.image = UIImage(named:"star (3)-1")
+            cell.image4.image = UIImage(named:"star (3)-1")
+            cell.image5.image = UIImage(named:"star (3)-1")
+        }
+        else if data.review_average == "2"{
+            
+            cell.image1.image = UIImage(named:"star (3)")
+            cell.image2.image = UIImage(named:"star (3)")
+            cell.image3.image = UIImage(named:"star (3)-1")
+            cell.image4.image = UIImage(named:"star (3)-1")
+            cell.image5.image = UIImage(named:"star (3)-1")
+        }
+        else if data.review_average == "3"{
+            
+            cell.image1.image = UIImage(named:"star (3)")
+            cell.image2.image = UIImage(named:"star (3)")
+            cell.image3.image = UIImage(named:"star (3)")
+            cell.image4.image = UIImage(named:"star (3)-1")
+            cell.image5.image = UIImage(named:"star (3)-1")
+        }
+        else if data.review_average == "4"{
+            
+            cell.image1.image = UIImage(named:"star (3)")
+            cell.image2.image = UIImage(named:"star (3)")
+            cell.image3.image = UIImage(named:"star (3)")
+            cell.image4.image = UIImage(named:"star (3)")
+            cell.image5.image = UIImage(named:"star (3)-1")
+        }
+        else if data.review_average == "5"{
+            
+            cell.image1.image = UIImage(named:"star (3)")
+            cell.image2.image = UIImage(named:"star (3)")
+            cell.image3.image = UIImage(named:"star (3)")
+            cell.image4.image = UIImage(named:"star (3)")
+            cell.image5.image = UIImage(named:"star (3)")
+        }
+        
               return cell
         }
 

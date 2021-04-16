@@ -15,7 +15,7 @@ class ProductDetailsWorker{
    func fetch(product_id:String, onSuccess successCallback:(ProductDetailsresponseHandler)?,onFailure failureCallback: @escaping(ProductDetailsresponseHandler)) {
        let manager = APIManager()
        manager.callAPIProductDetails(
-           product_id:product_id, onSuccess: { (resp)  in
+        email:product_id, onSuccess: { (resp)  in
                successCallback?(ProductDetailsModel.Fetch.Response(testObj:resp, isError: false, message:nil))
            },
                onFailure: { (errorMessage) in

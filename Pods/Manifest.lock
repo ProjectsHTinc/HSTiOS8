@@ -5,6 +5,7 @@ PODS:
     - AppAuth/ExternalUserAgent (= 1.4.0)
   - AppAuth/Core (1.4.0)
   - AppAuth/ExternalUserAgent (1.4.0)
+  - AvailableHapticFeedback (1.0.2)
   - FBSDKCoreKit (9.1.0):
     - FBSDKCoreKit/Basics (= 9.1.0)
     - FBSDKCoreKit/Core (= 9.1.0)
@@ -31,11 +32,15 @@ PODS:
   - HMSegmentedControl (1.5.6)
   - IQKeyboardManagerSwift (6.5.6)
   - MBProgressHUD (1.2.0)
+  - MultiSlider (1.11.2):
+    - AvailableHapticFeedback
+    - SweeterSwift
   - OpenSSL-Universal (1.1.180)
   - SDWebImage (5.10.4):
     - SDWebImage/Core (= 5.10.4)
   - SDWebImage/Core (5.10.4)
   - SideMenu (6.5.0)
+  - SweeterSwift (1.1.4)
   - SwiftyJSON (4.3.0)
 
 DEPENDENCIES:
@@ -46,6 +51,7 @@ DEPENDENCIES:
   - HMSegmentedControl
   - IQKeyboardManagerSwift
   - MBProgressHUD (~> 1.2.0)
+  - MultiSlider
   - OpenSSL-Universal
   - SDWebImage (~> 5.0)
   - SideMenu
@@ -55,6 +61,7 @@ SPEC REPOS:
   trunk:
     - Alamofire
     - AppAuth
+    - AvailableHapticFeedback
     - FBSDKCoreKit
     - FBSDKLoginKit
     - GMStepper
@@ -64,14 +71,17 @@ SPEC REPOS:
     - HMSegmentedControl
     - IQKeyboardManagerSwift
     - MBProgressHUD
+    - MultiSlider
     - OpenSSL-Universal
     - SDWebImage
     - SideMenu
+    - SweeterSwift
     - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
   AppAuth: 31bcec809a638d7bd2f86ea8a52bd45f6e81e7c7
+  AvailableHapticFeedback: 9b21b9f6d3e4566015988b5de35b40abefe6c09a
   FBSDKCoreKit: a00fe2efd780c195a5e09201bf51c56106245b40
   FBSDKLoginKit: d98498c598ec09de657385a9349a1f21119b7f86
   GMStepper: 89fb106944dfcc3aa3add7164e3ebd463ea2104b
@@ -81,11 +91,13 @@ SPEC CHECKSUMS:
   HMSegmentedControl: 34c1f54d822d8308e7b24f5d901ec674dfa31352
   IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
+  MultiSlider: 944d00877d371bbb5ce0a512fec517de87958775
   OpenSSL-Universal: 1aa4f6a6ee7256b83db99ec1ccdaa80d10f9af9b
   SDWebImage: c666b97e1fa9c64b4909816a903322018f0a9c84
   SideMenu: f583187d21c5b1dd04c72002be544b555a2627a2
+  SweeterSwift: 8a90cf3156f5a1b6f39785c479369a16633b5ea9
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
 
-PODFILE CHECKSUM: 0625b1cb76e1503a50a089cb2570b9c027df2c79
+PODFILE CHECKSUM: 5a0af0a63cbdf47d59b7de2019e766bc3632ba62
 
 COCOAPODS: 1.10.1

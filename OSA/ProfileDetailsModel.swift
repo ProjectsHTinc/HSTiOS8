@@ -13,8 +13,7 @@ struct ProfileDetailsModel{
         
         struct Request
         {
-            
-            var amount : String?
+        
             var user_id : String?
         }
         

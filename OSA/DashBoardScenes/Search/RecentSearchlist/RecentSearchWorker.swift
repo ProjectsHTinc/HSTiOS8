@@ -9,7 +9,6 @@
 import Foundation
 import UIKit
 
-
 typealias RecentSearchListresponseHandler = (_ response:RecentSearchListModel.Fetch.Response) ->()
 
 class RecentSearchListWorker{

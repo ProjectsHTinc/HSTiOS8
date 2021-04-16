@@ -19,7 +19,7 @@ class ReviewOrderWorker{
     func fetch(user_id:String,order_id:String, onSuccess successCallback:(ReviewOrderresponseHandler)?,onFailure failureCallback: @escaping(ReviewOrderresponseHandler)) {
        let manager = APIManager()
        manager.callAPIReviewOrder(
-        order_id:order_id, user_id:user_id, onSuccess: { (resp)  in
+        user_id:user_id, order_id:order_id, onSuccess: { (resp)  in
                successCallback?(ReviewOrderModel.Fetch.Response(testObj:resp, isError: false, message:nil))
            },
                onFailure: { (errorMessage) in

@@ -24,6 +24,7 @@ enum UserDefaultsKey : String
       case profileInfokey
       case address_idkey
       case email_idkey
+      case deviceTokenKey
     
 }
 
@@ -57,7 +58,6 @@ extension UserDefaults
         return encodedData.map { try! JSONDecoder().decode(type, from: $0) }
     }
     
-    
     func clearUserData()
     {
         UserDefaults.standard.removeObject(forKey: UserDefaultsKey.userOtpListSessionkey.rawValue)
@@ -71,6 +71,7 @@ extension UserDefaults
         UserDefaults.standard.removeObject(forKey: UserDefaultsKey.profile_picturekey.rawValue)
         UserDefaults.standard.removeObject(forKey: UserDefaultsKey.address_idkey.rawValue)
         UserDefaults.standard.removeObject(forKey: UserDefaultsKey.email_idkey.rawValue)
+        UserDefaults.standard.removeObject(forKey: UserDefaultsKey.deviceTokenKey.rawValue)
     }
 }
 

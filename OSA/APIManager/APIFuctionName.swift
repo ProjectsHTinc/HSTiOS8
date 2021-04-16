@@ -9,8 +9,9 @@ import Foundation
 import UIKit
 
 struct APIFunctionName {
-    
+   
     static let loginMobileUrl = "mobileapi/login_mobile"
+    static let socialLoginUrl = "mobileapi/social_login"
     static let loginEmailUrl = "mobileapi/login"
     static let mobileOtpUrl = "mobileapi/login_mobileotp"
     static let forgotEmailPasswordUrl = "mobileapi/forgot_password"
@@ -58,8 +59,11 @@ struct APIFunctionName {
     static let changePasswordUrl = "mobileapi/password_update"
     static let serachProductUrl = "mobileapi/search_product"
     static let recentSearchListUrl = "mobileapi/recent_search_list"
+    static let listFilterDetailsUrl = "mobileapi/get_filter"
+    static let resultFilterDetailsUrl = "mobileapi/filter_result"
+    static let notificationListUrl = "mobileapi/offer_list"
     
 }
 
-
+//ReviewOrderURL
 

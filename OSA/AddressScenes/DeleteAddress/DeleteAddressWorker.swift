@@ -15,7 +15,7 @@ class DeleteAddressWorker{
    func fetch(user_id:String,address_id:String, onSuccess successCallback:(DeleteAddressresponseHandler)?,onFailure failureCallback: @escaping(DeleteAddressresponseHandler)) {
        let manager = APIManager()
        manager.callAPIDeleteAddress(
-        address_id:address_id, user_id:user_id, onSuccess: { (resp)  in
+        user_id:user_id, address_id:address_id, onSuccess: { (resp)  in
                successCallback?(DeleteAddressModel.Fetch.Response(testObj:resp, isError: false, message:nil))
            },
                onFailure: { (errorMessage) in

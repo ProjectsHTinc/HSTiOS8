@@ -240,7 +240,8 @@ class ProductDetailsViewController: UIViewController, ProductSizeDisplayLogic, P
         productPriceMrpLbl.text = "₹\(viewModel.prod_mrp_price!)"
         productDetailLbl.text = viewModel.product_description!
         mrpPriceLbl.text = "₹\(viewModel.prod_mrp_price!)"
-        print(viewModel.product_description!)
+    
+        print(viewModel.product_review!)
     }
     
     func errorFetchingItems(viewModel: ProductDetailsModel.Fetch.ViewModel) {
@@ -361,10 +362,51 @@ extension ProductDetailsViewController :  UICollectionViewDelegate,UICollectionV
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ReviewListTableViewCell
-        let newArrivaldata = displayedReviewListData[indexPath.row]
+        let data = displayedReviewListData[indexPath.row]
 //        cell.reviewerImage.sd_setImage(with: URL(string: newArrivaldata.product_cover_img!), placeholderImage: UIImage(named: ""))
-        cell.reviewerName.text = newArrivaldata.customer_name
-        cell.reviewText.text = newArrivaldata.comment
+        cell.reviewerName.text = data.customer_name
+        cell.reviewText.text = data.comment
+        
+        if data.rating == "1"{
+            
+            cell.image1.image = UIImage(named:"star (3)")
+            cell.image2.image = UIImage(named:"star (3)-1")
+            cell.image3.image = UIImage(named:"star (3)-1")
+            cell.image4.image = UIImage(named:"star (3)-1")
+            cell.image5.image = UIImage(named:"star (3)-1")
+        }
+        else if data.rating == "2"{
+            
+            cell.image1.image = UIImage(named:"star (3)")
+            cell.image2.image = UIImage(named:"star (3)")
+            cell.image3.image = UIImage(named:"star (3)-1")
+            cell.image4.image = UIImage(named:"star (3)-1")
+            cell.image5.image = UIImage(named:"star (3)-1")
+        }
+        else if data.rating == "3"{
+            
+            cell.image1.image = UIImage(named:"star (3)")
+            cell.image2.image = UIImage(named:"star (3)")
+            cell.image3.image = UIImage(named:"star (3)")
+            cell.image4.image = UIImage(named:"star (3)-1")
+            cell.image5.image = UIImage(named:"star (3)-1")
+        }
+        else if data.rating == "4"{
+            
+            cell.image1.image = UIImage(named:"star (3)")
+            cell.image2.image = UIImage(named:"star (3)")
+            cell.image3.image = UIImage(named:"star (3)")
+            cell.image4.image = UIImage(named:"star (3)")
+            cell.image5.image = UIImage(named:"star (3)-1")
+        }
+        else if data.rating == "5"{
+            
+            cell.image1.image = UIImage(named:"star (3)")
+            cell.image2.image = UIImage(named:"star (3)")
+            cell.image3.image = UIImage(named:"star (3)")
+            cell.image4.image = UIImage(named:"star (3)")
+            cell.image5.image = UIImage(named:"star (3)")
+        }
            return cell
     }
                                 
@@ -418,6 +460,47 @@ extension ProductDetailsViewController :  UICollectionViewDelegate,UICollectionV
             cell.productTitlelabel.text = data.product_name
             cell.MrpPriceLabel.text = data.prod_mrp_price
             cell.productImage.sd_setImage(with: URL(string: data.product_cover_img!), placeholderImage: UIImage(named: ""))
+            
+            if data.review_average == "1"{
+                
+                cell.image1.image = UIImage(named:"star (3)")
+                cell.image2.image = UIImage(named:"star (3)-1")
+                cell.image3.image = UIImage(named:"star (3)-1")
+                cell.image4.image = UIImage(named:"star (3)-1")
+                cell.image5.image = UIImage(named:"star (3)-1")
+            }
+            else if data.review_average == "2"{
+                
+                cell.image1.image = UIImage(named:"star (3)")
+                cell.image2.image = UIImage(named:"star (3)")
+                cell.image3.image = UIImage(named:"star (3)-1")
+                cell.image4.image = UIImage(named:"star (3)-1")
+                cell.image5.image = UIImage(named:"star (3)-1")
+            }
+            else if data.review_average == "3"{
+                
+                cell.image1.image = UIImage(named:"star (3)")
+                cell.image2.image = UIImage(named:"star (3)")
+                cell.image3.image = UIImage(named:"star (3)")
+                cell.image4.image = UIImage(named:"star (3)-1")
+                cell.image5.image = UIImage(named:"star (3)-1")
+            }
+            else if data.review_average == "4"{
+                
+                cell.image1.image = UIImage(named:"star (3)")
+                cell.image2.image = UIImage(named:"star (3)")
+                cell.image3.image = UIImage(named:"star (3)")
+                cell.image4.image = UIImage(named:"star (3)")
+                cell.image5.image = UIImage(named:"star (3)-1")
+            }
+            else if data.review_average == "5"{
+                
+                cell.image1.image = UIImage(named:"star (3)")
+                cell.image2.image = UIImage(named:"star (3)")
+                cell.image3.image = UIImage(named:"star (3)")
+                cell.image4.image = UIImage(named:"star (3)")
+                cell.image5.image = UIImage(named:"star (3)")
+            }
             return cell
         }
     }

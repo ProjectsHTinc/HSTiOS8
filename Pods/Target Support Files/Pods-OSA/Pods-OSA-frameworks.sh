@@ -177,6 +177,7 @@ code_sign_if_enabled() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/AppAuth/AppAuth.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/AvailableHapticFeedback/AvailableHapticFeedback.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/GMStepper/GMStepper.framework"
@@ -185,14 +186,17 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/HMSegmentedControl/HMSegmentedControl.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/MultiSlider/MultiSlider.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SweeterSwift/SweeterSwift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework"
   install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/OpenSSL/OpenSSL.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/AppAuth/AppAuth.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/AvailableHapticFeedback/AvailableHapticFeedback.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/GMStepper/GMStepper.framework"
@@ -201,8 +205,10 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/HMSegmentedControl/HMSegmentedControl.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/MultiSlider/MultiSlider.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SweeterSwift/SweeterSwift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework"
   install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/OpenSSL/OpenSSL.framework"
 fi

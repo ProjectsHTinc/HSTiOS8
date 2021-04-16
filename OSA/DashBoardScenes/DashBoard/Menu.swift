@@ -59,7 +59,7 @@ class Menu: UIViewController, ProfileDetailsDisplayLogic {
     func successFetchedItems(viewModel: ProfileDetailsModel.Fetch.ViewModel) {
         
         self.userPic.sd_setImage(with: URL(string:viewModel.profile_picture!), placeholderImage: UIImage(named: ""))
-        self.userNameLbl.text = viewModel.profile_picture
+        self.userNameLbl.text = viewModel.first_name
         self.userMailidLbl.text = viewModel.phone_number
     }
     

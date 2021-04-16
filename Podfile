@@ -13,4 +13,5 @@
    pod "GMStepper"
    pod 'OpenSSL-Universal'
    pod 'MBProgressHUD', '~> 1.2.0'
+   pod 'MultiSlider'
    end

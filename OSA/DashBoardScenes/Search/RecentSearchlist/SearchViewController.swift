@@ -93,4 +93,5 @@ class SearchViewController: UIViewController,UITableViewDelegate,UITableViewData
         
     }
 }
-
+//
+//user_id,cat_id,sub_cat_id,min_price_range,max_price_range,product_size_id,product_colour_id

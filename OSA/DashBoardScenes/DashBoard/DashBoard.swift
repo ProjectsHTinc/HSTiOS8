@@ -8,7 +8,7 @@
 import UIKit
 import SideMenu
 import SDWebImage
-
+ 
 protocol DashBoardDisplayLogic: class
 {
     func successFetchedItems(viewModel: DashBoardModel.Fetch.ViewModel)
@@ -40,7 +40,7 @@ protocol WishListAddDisplayLogic: class
     func errorFetchingItems(viewModel: WishListAddModel.Fetch.ViewModel)
 }
 protocol WishListDeleteDisplayLogic: class
-{ 
+{
     func successFetchedItems(viewModel: WishListDeleteModel.Fetch.ViewModel)
     func errorFetchingItems(viewModel: WishListDeleteModel.Fetch.ViewModel)
 }
@@ -350,6 +350,48 @@ extension DashBoard : UITableViewDelegate,UITableViewDataSource {
         cell.productTitlelabel.text = newArrivaldata.product_name
         cell.MrpPriceLabel.text = "₹\(newArrivaldata.prod_actual_price!)"
         cell.actualPriceLabel.text = "₹\(newArrivaldata.prod_mrp_price!)"
+            
+            if newArrivaldata.review_average == "1"{
+                
+                cell.image1.image = UIImage(named:"star (3)")
+                cell.image2.image = UIImage(named:"star (3)-1")
+                cell.image3.image = UIImage(named:"star (3)-1")
+                cell.image4.image = UIImage(named:"star (3)-1")
+                cell.image5.image = UIImage(named:"star (3)-1")
+            }
+            else if newArrivaldata.review_average == "2"{
+                
+                cell.image1.image = UIImage(named:"star (3)")
+                cell.image2.image = UIImage(named:"star (3)")
+                cell.image3.image = UIImage(named:"star (3)-1")
+                cell.image4.image = UIImage(named:"star (3)-1")
+                cell.image5.image = UIImage(named:"star (3)-1")
+            }
+            else if newArrivaldata.review_average == "3"{
+                
+                cell.image1.image = UIImage(named:"star (3)")
+                cell.image2.image = UIImage(named:"star (3)")
+                cell.image3.image = UIImage(named:"star (3)")
+                cell.image4.image = UIImage(named:"star (3)-1")
+                cell.image5.image = UIImage(named:"star (3)-1")
+            }
+            else if newArrivaldata.review_average == "4"{
+                
+                cell.image1.image = UIImage(named:"star (3)")
+                cell.image2.image = UIImage(named:"star (3)")
+                cell.image3.image = UIImage(named:"star (3)")
+                cell.image4.image = UIImage(named:"star (3)")
+                cell.image5.image = UIImage(named:"star (3)-1")
+            }
+            else if newArrivaldata.review_average == "5"{
+                
+                cell.image1.image = UIImage(named:"star (3)")
+                cell.image2.image = UIImage(named:"star (3)")
+                cell.image3.image = UIImage(named:"star (3)")
+                cell.image4.image = UIImage(named:"star (3)")
+                cell.image5.image = UIImage(named:"star (3)")
+            }
+            
             if newArrivaldata.wishlisted == "1"
             {
             cell.likeImage.image = UIImage(named:"heart (1)-1")
@@ -458,7 +500,49 @@ extension DashBoard : UICollectionViewDelegate,UICollectionViewDataSource,UIText
            cell.actualPricelabel.text = "₹\(bestSellingData.prod_actual_price!)"
            cell.discoutPricelabel.text = "₹\(bestSellingData.prod_mrp_price!)"
            cell.offerPercentageLabel.text = bestSellingData.offer_percentage!+percentageText
-         
+        
+        if bestSellingData.review_average == "1"{
+            
+            cell.image1.image = UIImage(named:"star (3)")
+            cell.image2.image = UIImage(named:"star (3)-1")
+            cell.image3.image = UIImage(named:"star (3)-1")
+            cell.image4.image = UIImage(named:"star (3)-1")
+            cell.image5.image = UIImage(named:"star (3)-1")
+        }
+        else if bestSellingData.review_average == "2"{
+            
+            cell.image1.image = UIImage(named:"star (3)")
+            cell.image2.image = UIImage(named:"star (3)")
+            cell.image3.image = UIImage(named:"star (3)-1")
+            cell.image4.image = UIImage(named:"star (3)-1")
+            cell.image5.image = UIImage(named:"star (3)-1")
+        }
+        else if bestSellingData.review_average == "3"{
+            
+            cell.image1.image = UIImage(named:"star (3)")
+            cell.image2.image = UIImage(named:"star (3)")
+            cell.image3.image = UIImage(named:"star (3)")
+            cell.image4.image = UIImage(named:"star (3)-1")
+            cell.image5.image = UIImage(named:"star (3)-1")
+        }
+        else if bestSellingData.review_average == "4"{
+            
+            cell.image1.image = UIImage(named:"star (3)")
+            cell.image2.image = UIImage(named:"star (3)")
+            cell.image3.image = UIImage(named:"star (3)")
+            cell.image4.image = UIImage(named:"star (3)")
+            cell.image5.image = UIImage(named:"star (3)-1")
+        }
+        else if bestSellingData.review_average == "5"{
+            
+            cell.image1.image = UIImage(named:"star (3)")
+            cell.image2.image = UIImage(named:"star (3)")
+            cell.image3.image = UIImage(named:"star (3)")
+            cell.image4.image = UIImage(named:"star (3)")
+            cell.image5.image = UIImage(named:"star (3)")
+        }
+        
+        
         
            if bestSellingData.wishlisted == "1"
            {

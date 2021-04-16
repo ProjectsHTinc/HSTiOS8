@@ -13,7 +13,7 @@ typealias ProductSizeresponseHandler = (_ response:ProductSizeModel.Fetch.Respon
 class ProductSizeWorker{
     
    var respData = [ProductSizeModels]()
-   func fetch(product_id:String, onSuccess successCallback:(ProductSizeresponseHandler)?,onFailure failureCallback: @escaping(ProductSizeresponseHandler)) {
+    func fetch(product_id:String, onSuccess successCallback:(ProductSizeresponseHandler)?,onFailure failureCallback: @escaping(ProductSizeresponseHandler)) {
        let manager = APIManager()
        manager.callAPIProductSize(
         product_id:product_id, onSuccess: { (resp)  in

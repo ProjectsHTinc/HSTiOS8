@@ -37,6 +37,7 @@ struct ProductDetailsModel{
             var product_meta_title : String?
             var product_meta_desc : String?
             var stocks_left: String?
+            var product_review: String?
             var isError: Bool
             var message: String?
         }

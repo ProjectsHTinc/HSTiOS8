@@ -21,6 +21,7 @@ class ProductDetailsModels {
     var product_meta_title : String?
     var product_meta_desc : String?
     var stocks_left: String?
+    var product_review: String?
     
     // MARK: Instance Method
     func loadFromDictionary(_ dict: [String: AnyObject])
@@ -60,6 +61,9 @@ class ProductDetailsModels {
         }
         if let data = dict["stocks_left"] as? String {
             self.stocks_left = data
+        }
+        if let data = dict["average"] as? String {
+            self.product_review = data
         }
     }
 }

@@ -14,10 +14,18 @@ protocol LoginDisplayLogic: class
     func successFetchedItems(viewModel: LoginModel.Fetch.ViewModel)
     func errorFetchingItems(viewModel: LoginModel.Fetch.ViewModel)
 }
+protocol GoogleIntegrationDisplayLogic: class
+{
+    func successFetchedItems(viewModel: GoogleIntegrationModel.Fetch.ViewModel)
+    func errorFetchingItems(viewModel: GoogleIntegrationModel.Fetch.ViewModel)
+}
 
-class LoginViewController: UIViewController, GIDSignInDelegate, LoginDisplayLogic {
+class LoginViewController: UIViewController, GIDSignInDelegate, LoginDisplayLogic, GoogleIntegrationDisplayLogic {
+  
+    
     
     var interactor: LoginBusinessLogic?
+    var interactor1: GoogleIntegrationBusinessLogic?
     var router: (NSObjectProtocol & LoginRoutingLogic & LoginDataPassing)?
     var Otp = String()
     
@@ -69,6 +77,13 @@ class LoginViewController: UIViewController, GIDSignInDelegate, LoginDisplayLogi
         presenter.viewController = viewController
         router.viewController = viewController
         router.dataStore = interactor
+        
+        let viewController1 = self
+        let interactor1 = GoogleIntegrationInteractor()
+        let presenter1 = GoogleIntegrationPresenter()
+        viewController1.interactor1 = interactor1
+        interactor1.presenter1 = presenter1
+        presenter1.viewController1 = viewController1
     }
     
     @IBAction func loginFbTapped(_ sender: Any) {
@@ -100,6 +115,7 @@ class LoginViewController: UIViewController, GIDSignInDelegate, LoginDisplayLogi
           let givenName = user.profile.givenName
           let familyName = user.profile.familyName
           let email = user.profile.email
+         
          print(userId!)
          print(idToken!)
          print(fullName!)
@@ -107,6 +123,12 @@ class LoginViewController: UIViewController, GIDSignInDelegate, LoginDisplayLogi
          print(familyName!)
          print(email!)
           // ...
+        
+        let deviceToken = UserDefaults.standard.object(forKey: UserDefaultsKey.deviceTokenKey.rawValue) ?? ""
+        print("The device token is \(deviceToken)")
+        
+        interactor1?.fetchItems(request:GoogleIntegrationModel.Fetch.Request(email :email,first_name:fullName, last_name:"" ,mobile_type:"2",mob_key :deviceToken as? String,login_type:"Gplus", login_portal:"App"))
+
     }
     
     func successFetchedItems(viewModel: LoginModel.Fetch.ViewModel) {
@@ -122,13 +144,50 @@ class LoginViewController: UIViewController, GIDSignInDelegate, LoginDisplayLogi
   
     }
     
+    func successFetchedItems(viewModel: GoogleIntegrationModel.Fetch.ViewModel) {
+        
+        print(viewModel.phone_number!)
+        if viewModel.status == "success" {
+           
+            UserDefaults.standard.set(viewModel.customer_id!, forKey: UserDefaultsKey.customer_idkey.rawValue)
+            GlobalVariables.shared.customer_id = UserDefaults.standard.object(forKey: UserDefaultsKey.customer_idkey.rawValue) as! String
+            
+            UserDefaults.standard.set(viewModel.profile_picture!, forKey: UserDefaultsKey.profile_picturekey.rawValue)
+            GlobalVariables.shared.profile_picture = UserDefaults.standard.object(forKey: UserDefaultsKey.profile_picturekey.rawValue) as! String
+            
+            UserDefaults.standard.set(viewModel.phone_number!, forKey: UserDefaultsKey.phone_numberKey.rawValue)
+            GlobalVariables.shared.phone_number = UserDefaults.standard.object(forKey: UserDefaultsKey.phone_numberKey.rawValue) as! String
+            
+            UserDefaults.standard.set(viewModel.first_name!, forKey: UserDefaultsKey.first_nameKey.rawValue)
+            GlobalVariables.shared.first_name = UserDefaults.standard.object(forKey: UserDefaultsKey.first_nameKey.rawValue) as! String
+            
+            UserDefaults.standard.set(viewModel.last_name!, forKey: UserDefaultsKey.last_namekey.rawValue)
+            GlobalVariables.shared.last_name = UserDefaults.standard.object(forKey: UserDefaultsKey.last_namekey.rawValue) as! String
+            
+            UserDefaults.standard.set(viewModel.email!, forKey: UserDefaultsKey.email_idkey.rawValue)
+            GlobalVariables.shared.email_Id = UserDefaults.standard.object(forKey: UserDefaultsKey.email_idkey.rawValue) as! String
+
+        self.performSegue(withIdentifier: "to_dashBoard2", sender: self)
+        }
+    }
+    
+    func errorFetchingItems(viewModel: GoogleIntegrationModel.Fetch.ViewModel) {
+        
+    }
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "to_otp")
         {
         let vc = segue.destination as! OTPViewController
             vc.mobileNumber = self.phoneNumTextField.text!
             vc.otp = self.Otp
-    }
+        }
+        else if (segue.identifier == "to_dashBoard2") {
+            
+            _ = segue.destination as! UINavigationController
+            
+        }
   }
     
     func CheckValuesAreEmpty () -> Bool{
@@ -149,3 +208,4 @@ class LoginViewController: UIViewController, GIDSignInDelegate, LoginDisplayLogi
           return true
     }
 }
+ 

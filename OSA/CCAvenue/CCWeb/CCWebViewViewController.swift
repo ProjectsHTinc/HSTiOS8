@@ -8,15 +8,15 @@
 import UIKit
 import Foundation
 
-protocol CCWebViewDisplayLogic: class
-{
-    func successFetchedItems(viewModel: CCWebViewModel.Fetch.ViewModel)
-    func errorFetchingItems(viewModel: CCWebViewModel.Fetch.ViewModel)
-}
+//protocol CCWebViewDisplayLogic: class
+//{
+//    func successFetchedItems(viewModel: CCWebViewModel.Fetch.ViewModel)
+//    func errorFetchingItems(viewModel: CCWebViewModel.Fetch.ViewModel)
+//}
 
-class CCWebViewViewController: UIViewController, CCWebViewDisplayLogic,UIWebViewDelegate, UIViewControllerTransitioningDelegate {
+class CCWebViewViewController: UIViewController,UIWebViewDelegate, UIViewControllerTransitioningDelegate {
    
-    var interactor: CCWebViewBusinessLogic?
+//    var interactor: CCWebViewBusinessLogic?
     var accessCode = String()
     var merchantId = String()
     var orderId = String()
@@ -56,35 +56,35 @@ class CCWebViewViewController: UIViewController, CCWebViewDisplayLogic,UIWebView
         setupWebView()
     }
     
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
-    {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        setup()
-    }
-    
-    required init?(coder aDecoder: NSCoder)
-    {
-        super.init(coder: aDecoder)
-        setup()
-    }
-      
-    private func setup()
-    {
-        let viewController = self
-        let interactor = CCWebViewInteractor()
-        let presenter = CCWebViewPresenter()
-        viewController.interactor = interactor
-        interactor.presenter = presenter
-        presenter.viewController = viewController
-    }
-    
-    func successFetchedItems(viewModel: CCWebViewModel.Fetch.ViewModel) {
-        
-    }
-    
-    func errorFetchingItems(viewModel: CCWebViewModel.Fetch.ViewModel) {
-        
-    }
+//    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
+//    {
+//        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+//        setup()
+//    }
+//
+//    required init?(coder aDecoder: NSCoder)
+//    {
+//        super.init(coder: aDecoder)
+//        setup()
+//    }
+//
+//    private func setup()
+//    {
+//        let viewController = self
+//        let interactor = CCWebViewInteractor()
+//        let presenter = CCWebViewPresenter()
+//        viewController.interactor = interactor
+//        interactor.presenter = presenter
+//        presenter.viewController = viewController
+//    }
+//
+//    func successFetchedItems(viewModel: CCWebViewModel.Fetch.ViewModel) {
+//
+//    }
+//
+//    func errorFetchingItems(viewModel: CCWebViewModel.Fetch.ViewModel) {
+//
+//    }
     
     override func viewWillAppear(_ animated: Bool) {
         /**

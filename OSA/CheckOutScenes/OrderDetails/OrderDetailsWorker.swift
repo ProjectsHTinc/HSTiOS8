@@ -17,7 +17,7 @@ class OrderDetailsWorker{
     func fetch(user_id:String,order_id:String, onSuccess successCallback:(OrderDetailsresponseHandler)?,onFailure failureCallback: @escaping(OrderDetailsresponseHandler)) {
        let manager = APIManager()
        manager.callAPIOrderDetails(
-        order_id:order_id, user_id:user_id, onSuccess: { (resp)  in
+        user_id:user_id, order_id:order_id, onSuccess: { (resp)  in
                successCallback?(OrderDetailsModel.Fetch.Response(testObj:resp, isError: false, message:nil))
            },
                onFailure: { (errorMessage) in

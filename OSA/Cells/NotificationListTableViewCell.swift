@@ -10,6 +10,12 @@ import UIKit
 
 class NotificationListTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var Titlelabel: UILabel!
+    @IBOutlet weak var offerLabel: UILabel!
+    @IBOutlet weak var timeLbl: UILabel!
+    @IBOutlet weak var descLabel: UILabel!
+    @IBOutlet weak var productImage: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -20,7 +20,7 @@ class ProfileUpdatePresenter: ProfileUpdatePresentationLogic
     // MARK: - Presentation logic
     func presentFetchResults(resp: ProfileUpdateModel.Fetch.Response) {
         // NOTE: Format the response from the Interactor and pass the result back to the View Controller
-        let viewModel = ProfileUpdateModel.Fetch.ViewModel(msg: resp.testObj?.msg, status: resp.testObj?.status,order_id: resp.testObj?.order_id, amount: resp.testObj?.amount, isError: resp.isError, message: resp.message)
+        let viewModel = ProfileUpdateModel.Fetch.ViewModel(msg: resp.testObj?.msg, status: resp.testObj?.status, isError: resp.isError, message: resp.message)
         
         if viewModel.isError{
             viewController?.errorFetchingItems(viewModel: viewModel)
