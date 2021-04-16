@@ -72,13 +72,13 @@ class ChangePasswordViewController: UIViewController, CheckPasswordDisplayLogic,
                 
               })
         }
-        else if passwordTextfield.text!.count <= 7
+        else if NewPasswordTextfield.text!.count < 7
         {
             AlertController.shared.showAlert(targetVc: self, title: Globals.alertTitle, message:"Minimum 7 charaters required", complition: {
                 
               })
         }
-        else if passwordTextfield.text!.count <= 7
+        else if ConfirmPasswordTextfield.text!.count < 7
         {
             AlertController.shared.showAlert(targetVc: self, title: Globals.alertTitle, message:"Minimum 7 charaters required", complition: {
                 

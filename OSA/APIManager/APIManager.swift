@@ -56,7 +56,7 @@ class APIManager: NSObject {
        // Create dictionary
        print(responseObject)
          
-       guard let msg = responseObject["msg"].string, msg == "OTP Generated" else{
+       guard let msg = responseObject["msg"].string, msg == "Mobile Login" else{
              failureCallback?(responseObject["msg"].string!)
              return
         }
@@ -89,22 +89,22 @@ class APIManager: NSObject {
        // Create dictionary
        print(responseObject)
          
-       guard let msg = responseObject["msg"].string, msg == "OTP Generated" else{
+       guard let msg = responseObject["msg"].string, msg == "Login Successfully" else{
              failureCallback?(responseObject["msg"].string!)
              return
         }
            
-           let address_id =  responseObject["address_id"].string
-           let birth_date =  responseObject["birth_date"].string
-           let customer_id =  responseObject["customer_id"].string
-           let first_name =  responseObject["first_name"].string
-           let last_login =  responseObject["last_login"].string
-           let last_name =  responseObject["last_name"].string
-           let newsletter_status =  responseObject["newsletter_status"].string
-           let phone_number =  responseObject["phone_number"].string
-           let profile_picture =  responseObject["profile_picture"].string
-           let status =  responseObject["status"].string
-           let email =  responseObject["email"].string
+           let address_id =  responseObject["userData"]["address_id"].string
+           let birth_date =  responseObject["userData"]["birth_date"].string
+           let customer_id =  responseObject["userData"]["customer_id"].string
+           let first_name =  responseObject["userData"]["first_name"].string
+           let last_login =  responseObject["userData"]["last_login"].string
+           let last_name =  responseObject["userData"]["last_name"].string
+           let newsletter_status =  responseObject["userData"]["newsletter_status"].string
+           let phone_number =  responseObject["userData"]["phone_number"].string
+           let profile_picture =  responseObject["userData"]["profile_picture"].string
+           let status =  responseObject["userData"]["status"].string
+           let email =  responseObject["userData"]["email"].string
          
            let sendToModel = EmailLoginModels()
            sendToModel.address_id = address_id
@@ -139,22 +139,22 @@ class APIManager: NSObject {
        // Create dictionary
        print(responseObject)
          
-       guard let msg = responseObject["msg"].string, msg == "OTP Generated" else{
+       guard let msg = responseObject["msg"].string, msg == "Login Successfully" else{
              failureCallback?(responseObject["msg"].string!)
              return
         }
            
-           let address_id =  responseObject["address_id"].string
-           let birth_date =  responseObject["birth_date"].string
-           let customer_id =  responseObject["customer_id"].string
-           let first_name =  responseObject["first_name"].string
-           let last_login =  responseObject["last_login"].string
-           let last_name =  responseObject["last_name"].string
-           let newsletter_status =  responseObject["newsletter_status"].string
-           let phone_number =  responseObject["phone_number"].string
-           let profile_picture =  responseObject["profile_picture"].string
+           let address_id =  responseObject["userData"]["address_id"].string
+           let birth_date =  responseObject["userData"]["birth_date"].string
+           let customer_id =  responseObject["userData"]["customer_id"].string
+           let first_name =  responseObject["userData"]["first_name"].string
+           let last_login =  responseObject["userData"]["last_login"].string
+           let last_name =  responseObject["userData"]["last_name"].string
+           let newsletter_status =  responseObject["userData"]["newsletter_status"].string
+           let phone_number =  responseObject["userData"]["phone_number"].string
+           let profile_picture =  responseObject["userData"]["profile_picture"].string
            let status =  responseObject["status"].string
-           let email =  responseObject["email"].string
+           let email =  responseObject["userData"]["email"].string
          
            let sendToModel = OTPModels()
            sendToModel.address_id = address_id
@@ -195,16 +195,16 @@ class APIManager: NSObject {
              return
         }
            
-           let address_id =  responseObject["address_id"].string
-           let birth_date =  responseObject["birth_date"].string
-           let customer_id =  responseObject["customer_id"].string
-           let first_name =  responseObject["first_name"].string
-           let last_login =  responseObject["last_login"].string
-           let last_name =  responseObject["last_name"].string
-           let newsletter_status =  responseObject["newsletter_status"].string
-           let phone_number =  responseObject["phone_number"].string
-           let profile_picture =  responseObject["profile_picture"].string
-           let status =  responseObject["status"].string
+           let address_id =  responseObject["userData"]["address_id"].string
+           let birth_date =  responseObject["userData"]["birth_date"].string
+           let customer_id =  responseObject["userData"]["customer_id"].string
+           let first_name =  responseObject["userData"]["first_name"].string
+           let last_login =  responseObject["userData"]["last_login"].string
+           let last_name =  responseObject["userData"]["last_name"].string
+           let newsletter_status =  responseObject["userData"]["newsletter_status"].string
+           let phone_number =  responseObject["userData"]["phone_number"].string
+           let profile_picture =  responseObject["userData"]["profile_picture"].string
+           let status =  responseObject["userData"]["status"].string
     
          
            let sendToModel = ForgotPasswordModels()
@@ -240,10 +240,11 @@ class APIManager: NSObject {
        // Create dictionary
        print(responseObject)
          
-       guard let msg = responseObject["msg"].string, msg == "OTP Generated" else{
+       guard let msg = responseObject["msg"].string, msg == "Signup Successfully" else{
              failureCallback?(responseObject["msg"].string!)
              return
         }
+        
            
           
            let status =  responseObject["status"].string
@@ -271,22 +272,22 @@ class APIManager: NSObject {
        // Create dictionary
        print(responseObject)
          
-       guard let msg = responseObject["msg"].string, msg == "OTP Generated" else{
+       guard let msg = responseObject["msg"].string, msg == "Login Successfully" else{
              failureCallback?(responseObject["msg"].string!)
              return
         }
            
-           let address_id =  responseObject["address_id"].string
-           let birth_date =  responseObject["birth_date"].string
-           let customer_id =  responseObject["customer_id"].string
-           let first_name =  responseObject["first_name"].string
-           let last_login =  responseObject["last_login"].string
-           let last_name =  responseObject["last_name"].string
-           let newsletter_status =  responseObject["newsletter_status"].string
-           let phone_number =  responseObject["phone_number"].string
-           let profile_picture =  responseObject["profile_picture"].string
-           let status =  responseObject["status"].string
-           let email =  responseObject["email"].string
+           let address_id =  responseObject["userData"]["address_id"].string
+           let birth_date =  responseObject["userData"]["birth_date"].string
+           let customer_id =  responseObject["userData"]["customer_id"].string
+           let first_name =  responseObject["userData"]["first_name"].string
+           let last_login =  responseObject["userData"]["last_login"].string
+           let last_name =  responseObject["userData"]["last_name"].string
+           let newsletter_status =  responseObject["userData"]["newsletter_status"].string
+           let phone_number =  responseObject["userData"]["phone_number"].string
+           let profile_picture =  responseObject["userData"]["profile_picture"].string
+           let status =  responseObject["userData"]["status"].string
+           let email =  responseObject["userData"]["email"].string
          
            let sendToModel = GoogleIntegrationModels()
            sendToModel.address_id = address_id
