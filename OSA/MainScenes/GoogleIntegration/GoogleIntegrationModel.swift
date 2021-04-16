@@ -1,8 +1,8 @@
 //
-//  APIManager.swift
+//  GoogleIntegrationModel.swift
 //  OSA
 //
-//  Created by HappysanziMac on 15/04/21.
+//  Created by Happy Sanz Tech on 07/04/21.
 //  Copyright © 2021 Happy Sanz Tech. All rights reserved.
 //
 

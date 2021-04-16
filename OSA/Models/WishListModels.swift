@@ -1,5 +1,5 @@
 //
-//  APIManager.swift
+//  WishListModels.swift
 //  OSA
 //
 //  Created by HappysanziMac on 15/04/21.
