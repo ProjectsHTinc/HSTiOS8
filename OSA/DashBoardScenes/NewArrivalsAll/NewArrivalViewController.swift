@@ -7,17 +7,30 @@
 
 import UIKit
 
-class NewArrivalViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,NewArrivalsDisplayLogic {
+class NewArrivalViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,NewArrivalsDisplayLogic, BestSellingDisplayLogic {
       
     @IBOutlet weak var newArrivalCollectionView: UICollectionView!
     @IBOutlet weak var searchTextfield: UITextField!
     
     var interactor3: NewArrivalsBusinessLogic?
+    var interactor2: BestSellingBusinessLogic?
     var displayedNewArrivalsData: [NewArrivalsModel.Fetch.ViewModel.DisplayedNewArrivalsData] = []
+    var displayedBestSellingData: [BestSellingModel.Fetch.ViewModel.DisplayedBestSellingData] = []
+    
+    var product_id = String()
+    var fromDashboardData = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        interactor3?.fetchItems(request: NewArrivalsModel.Fetch.Request(user_id:"1"))
+        
+        if fromDashboardData == "to_newArrival" {
+            interactor2?.fetchItems(request: BestSellingModel.Fetch.Request(user_id:"1"))
+        }
+        else
+        {
+            interactor3?.fetchItems(request: NewArrivalsModel.Fetch.Request(user_id:"1"))
+        }
+        
         searchTextfield.setCorner(radius: 25)
     }
     
@@ -41,22 +54,63 @@ class NewArrivalViewController: UIViewController,UICollectionViewDelegate,UIColl
         viewController3.interactor3 = interactor3
         interactor3.presenter3 = presenter3
         presenter3.viewController3 = viewController3
+        
+        let viewController2 = self
+        let interactor2 = BestSellingInteractor()
+        let presenter2 = BestSellingPresenter()
+        viewController2.interactor2 = interactor2
+        interactor2.presenter2 = presenter2
+        presenter2.viewController2 = viewController2
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-       
-        return displayedNewArrivalsData.count
+        if fromDashboardData == "to_newArrival" {
+            
+            return displayedBestSellingData.count
+            
+        }
+        else {
+            return displayedNewArrivalsData.count
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        if fromDashboardData == "to_newArrival" {
         let cell = newArrivalCollectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! NewArrivalALlCollectionViewCell
-        let newArrivaldata = displayedNewArrivalsData[indexPath.row]
+        let newArrivaldata = displayedBestSellingData[indexPath.row]
         cell.newArrivalImage.sd_setImage(with: URL(string: newArrivaldata.product_cover_img!), placeholderImage: UIImage(named: ""))
         cell.productTitlelabel.text = newArrivaldata.product_name
         cell.MrpPriceLabel.text = "₹\(newArrivaldata.prod_actual_price!)"
         cell.actualPriceLabel.text = "₹\(newArrivaldata.prod_mrp_price!)"
-        
-           return cell
+            return cell
+        }
+        else {
+            let cell = newArrivalCollectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! NewArrivalALlCollectionViewCell
+            let newArrivaldata = displayedNewArrivalsData[indexPath.row]
+            cell.newArrivalImage.sd_setImage(with: URL(string: newArrivaldata.product_cover_img!), placeholderImage: UIImage(named: ""))
+            cell.productTitlelabel.text = newArrivaldata.product_name
+            cell.MrpPriceLabel.text = "₹\(newArrivaldata.prod_actual_price!)"
+            cell.actualPriceLabel.text = "₹\(newArrivaldata.prod_mrp_price!)"
+            return cell
+        }
+          
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+       
+        if fromDashboardData == "to_newArrival" {
+            
+            let data = displayedBestSellingData[indexPath.row]
+            self.product_id = data.id!
+            self.performSegue(withIdentifier: "to_productDetails", sender: self)
+        }
+        else {
+            let data = displayedNewArrivalsData[indexPath.row]
+            self.product_id = data.id!
+            self.performSegue(withIdentifier: "to_productDetails", sender: self)
+        }
     }
     
     
@@ -69,5 +123,20 @@ class NewArrivalViewController: UIViewController,UICollectionViewDelegate,UIColl
         
     }
     
-   
+    func successFetchedItems(viewModel: BestSellingModel.Fetch.ViewModel) {
+        displayedBestSellingData = viewModel.displayedBestSellingData
+        self.newArrivalCollectionView.reloadData()
+    }
+    
+    func errorFetchingItems(viewModel: BestSellingModel.Fetch.ViewModel) {
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "to_productDetails" {
+        let vc = segue.destination as! ProductDetailsViewController
+           vc.product_id = self.product_id
+        }
+    }
 }

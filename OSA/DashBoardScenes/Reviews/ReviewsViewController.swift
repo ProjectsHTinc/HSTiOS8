@@ -7,6 +7,7 @@
 //  Copyright © 2021 Happy Sanz Tech. All rights reserved.
 //
 
+
 import UIKit
 
 protocol AddReviewDisplayLogic: class
@@ -26,6 +27,7 @@ protocol UpdateReviewDisplayLogic: class
     func successFetchedItems(viewModel: UpdateReviewModel.Fetch.ViewModel)
     func errorFetchingItems(viewModel: UpdateReviewModel.Fetch.ViewModel)
 }
+
 class ReviewsViewController: UIViewController, AddReviewDisplayLogic, CheckReviewDisplayLogic,UpdateReviewDisplayLogic {
  
     @IBOutlet weak var buttonOneOutlet: UIButton!
@@ -143,7 +145,7 @@ class ReviewsViewController: UIViewController, AddReviewDisplayLogic, CheckRevie
 //    UpdateReviewDisplayLogic
     func successFetchedItems(viewModel: UpdateReviewModel.Fetch.ViewModel) {
         
-        AlertController.shared.showAlert(targetVc: self, title: viewModel.msg!, message: Globals.LoginAlertMessage, complition: {
+        AlertController.shared.showAlert(targetVc: self, title: viewModel.msg!, message: "Success", complition: {
             
           })
     }

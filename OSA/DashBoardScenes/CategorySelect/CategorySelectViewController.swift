@@ -142,6 +142,12 @@ class CategorySelectViewController: UIViewController,UICollectionViewDelegate,UI
     func successFetchedItems(viewModel: SubCategoryListModel.Fetch.ViewModel) {
         displayedSubCategoryListData = viewModel.displayedSubCategoryListData
         print(displayedSubCategoryListData.count)
+        
+        if displayedSubCategoryListData.count == 0 {
+            AlertController.shared.showAlert(targetVc: self, title: Globals.alertTitle, message: "No data found", complition: {
+                
+              })
+        }
         self.subCategoryListCollectionView.reloadData()
         self.categoryCount.text = String("\(GlobalVariables.shared.categoryList_count) items")
         

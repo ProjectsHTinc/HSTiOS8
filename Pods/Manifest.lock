@@ -6,6 +6,7 @@ PODS:
   - AppAuth/Core (1.4.0)
   - AppAuth/ExternalUserAgent (1.4.0)
   - AvailableHapticFeedback (1.0.2)
+  - DropDown (2.3.13)
   - FBSDKCoreKit (9.1.0):
     - FBSDKCoreKit/Basics (= 9.1.0)
     - FBSDKCoreKit/Core (= 9.1.0)
@@ -45,6 +46,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 4.7.2)
+  - DropDown
   - FBSDKLoginKit
   - GMStepper
   - GoogleSignIn
@@ -62,6 +64,7 @@ SPEC REPOS:
     - Alamofire
     - AppAuth
     - AvailableHapticFeedback
+    - DropDown
     - FBSDKCoreKit
     - FBSDKLoginKit
     - GMStepper
@@ -82,6 +85,7 @@ SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
   AppAuth: 31bcec809a638d7bd2f86ea8a52bd45f6e81e7c7
   AvailableHapticFeedback: 9b21b9f6d3e4566015988b5de35b40abefe6c09a
+  DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
   FBSDKCoreKit: a00fe2efd780c195a5e09201bf51c56106245b40
   FBSDKLoginKit: d98498c598ec09de657385a9349a1f21119b7f86
   GMStepper: 89fb106944dfcc3aa3add7164e3ebd463ea2104b
@@ -98,6 +102,6 @@ SPEC CHECKSUMS:
   SweeterSwift: 8a90cf3156f5a1b6f39785c479369a16633b5ea9
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
 
-PODFILE CHECKSUM: 5a0af0a63cbdf47d59b7de2019e766bc3632ba62
+PODFILE CHECKSUM: d47577d3ba27d21fa5e1a0ab207b3edf82718953
 
 COCOAPODS: 1.10.1

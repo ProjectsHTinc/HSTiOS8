@@ -15,3 +15,5 @@ class DashBoardBannerCell: UICollectionViewCell {
     @IBOutlet weak var bannerDescLabel: UILabel!
     
 }
+
+

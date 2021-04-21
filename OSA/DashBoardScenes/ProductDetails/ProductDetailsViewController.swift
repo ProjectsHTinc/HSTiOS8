@@ -93,6 +93,7 @@ class ProductDetailsViewController: UIViewController, ProductSizeDisplayLogic, P
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.setNavigationBar()
         print(product_id)
         print("Karann\(GlobalVariables.shared.customer_id)")
         stepper.addTarget(self, action: #selector(ProductDetailsViewController.stepperValueChanged), for: .valueChanged)
@@ -100,6 +101,14 @@ class ProductDetailsViewController: UIViewController, ProductSizeDisplayLogic, P
         self.selectedcolourId = "0"
         self.hideKeyboardWhenTappedAround()
         // Do any additional setup after loading the view.
+    }
+    
+    func setNavigationBar() {
+        
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default) //UIImage.init(named: "transparent.png")
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.view.backgroundColor = .clear
     }
     
     func callInteractor () {

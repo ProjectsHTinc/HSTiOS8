@@ -65,9 +65,7 @@ class WishListModels : NSObject {
     var product_meta_desc : String?
     var product_meta_keywords : String?
     var stocks_left : String?
-    var review_average : String?
-    var wishlisted : String?
-
+  
     
      // MARK: Instance Method
      func loadFromDictionary(_ dict: [String: AnyObject])
@@ -83,12 +81,6 @@ class WishListModels : NSObject {
         }
         if let data = dict["stocks_left"] as? String {
             self.stocks_left = data
-        }
-        if let data = dict["review_average"] as? String {
-            self.review_average = data
-        }
-        if let data = dict["wishlisted"] as? String {
-            self.wishlisted = data
         }
         if let data = dict["prod_cod"] as? String {
            self.prod_cod = data

@@ -80,6 +80,7 @@ class DashBoard: UIViewController, DashBoardDisplayLogic,CategoryDisplayLogic,Be
     var selectedNewArrivalIdArr = String()
     var indexArray  : [NSIndexPath]?
     var fromSearchText = String()
+    var dashBoarddata_toDetail = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -91,6 +92,8 @@ class DashBoard: UIViewController, DashBoardDisplayLogic,CategoryDisplayLogic,Be
         if let navigationbar = self.navigationController?.navigationBar {
             
             navigationbar.setGradientBackground(colors: [UIColor(red: 189.0/255.0, green: 6.0/255.0, blue: 33.0/255.0, alpha: 1.0), UIColor(red: 95.0/255.0, green: 3.0/255.0, blue: 17.0/255.0, alpha: 1.0)], startPoint: .left, endPoint: .right)
+            let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
+            navigationController?.navigationBar.titleTextAttributes = textAttributes
         }
         
         interactor?.fetchItems(request: DashBoardModel.Fetch.Request(user_id:"1"))
@@ -190,6 +193,13 @@ class DashBoard: UIViewController, DashBoardDisplayLogic,CategoryDisplayLogic,Be
         interactor6.presenter6 = presenter6
         presenter6.viewController6 = viewController6
     }
+    
+    @IBAction func NewArrivalDetailAction(_ sender: Any) {
+        self.dashBoarddata_toDetail = "to_newArrival"
+        self.performSegue(withIdentifier: "newArrivallSegue", sender: self)
+        
+    }
+    
     
     private func setupSideMenu() {
         // Define the menus
@@ -635,7 +645,11 @@ extension DashBoard : UICollectionViewDelegate,UICollectionViewDataSource,UIText
             let vc = segue.destination as! SearchListViewController
             vc.searchText = self.searchTextfield.text!
             vc.fromSearchText = self.fromSearchText
-         
+        }
+        else if (segue.identifier == "newArrivallSegue")
+        {
+            let vc = segue.destination as! NewArrivalViewController
+            vc.fromDashboardData = self.dashBoarddata_toDetail
         }
     }
 }
@@ -662,5 +676,3 @@ extension UIView {
         return UINavigationController(rootViewController: controller.presentedViewController)
     }
 }
-
-

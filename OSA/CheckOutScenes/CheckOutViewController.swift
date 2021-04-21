@@ -62,9 +62,9 @@ class CheckOutViewController: UIViewController,DeliveryAddressDisplayLogic, Prom
     var interactor4: RemovePromoCodeBusinessLogic?
     var interactor5: WalletApplyBusinessLogic?
 
-    var userCity  = String()
-    var userName = String()
-    var userPhoneNumber = String()
+    var userCity  = [String]()
+    var userName = [String]()
+    var userPhoneNumber = [String]()
     var addressId = String()
     var orderId = String()
     var items = String()
@@ -197,9 +197,9 @@ class CheckOutViewController: UIViewController,DeliveryAddressDisplayLogic, Prom
             
         }
          print("Project\(addressId)")
-         self.nameLbl.text = userName
-         self.addressLbl.text = userCity
-         self.phoneNumberLbl.text = userPhoneNumber
+         self.nameLbl.text = userName[0]
+         self.addressLbl.text = userCity[0]
+         self.phoneNumberLbl.text = userPhoneNumber[0]
         interactor2?.fetchItems(request: PlaceOrderModel.Fetch.Request(cus_notes:"", user_id:GlobalVariables.shared.customer_id,address_id:"1"))
         
     }

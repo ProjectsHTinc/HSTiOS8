@@ -28,6 +28,7 @@ class GlobalVariables: NSObject {
     var wallet_amount = String()
     var order_id = String()
     var total_price = String()
+    var product_detail_reviewCount = String()
     
 }
 

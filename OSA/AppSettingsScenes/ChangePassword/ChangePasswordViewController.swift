@@ -21,7 +21,6 @@ protocol ChangePasswordDisplayLogic: class
 
 class ChangePasswordViewController: UIViewController, CheckPasswordDisplayLogic,ChangePasswordDisplayLogic {
     
-   
     var interactor: CheckPasswordBusinessLogic?
     var interactor1: ChangePasswordBusinessLogic?
 
@@ -69,19 +68,16 @@ class ChangePasswordViewController: UIViewController, CheckPasswordDisplayLogic,
         if passwordTextfield.text!.count == 0 
         {
             AlertController.shared.showAlert(targetVc: self, title: Globals.alertTitle, message:"Password cannot be empty", complition: {
-                
               })
         }
         else if NewPasswordTextfield.text!.count < 7
         {
             AlertController.shared.showAlert(targetVc: self, title: Globals.alertTitle, message:"Minimum 7 charaters required", complition: {
-                
               })
         }
         else if ConfirmPasswordTextfield.text!.count < 7
         {
             AlertController.shared.showAlert(targetVc: self, title: Globals.alertTitle, message:"Minimum 7 charaters required", complition: {
-                
               })
         }
         else
@@ -105,8 +101,7 @@ class ChangePasswordViewController: UIViewController, CheckPasswordDisplayLogic,
             else
             {
                 AlertController.shared.showAlert(targetVc: self, title: Globals.alertTitle, message:"Password does not match", complition: {
-                    
-                  })
+               })
             }
          }
          else
@@ -124,7 +119,6 @@ class ChangePasswordViewController: UIViewController, CheckPasswordDisplayLogic,
           })
     }
     
-    
 //   ChangePasswordDisplayLogic
     func successFetchedItems(viewModel: ChangePasswordModel.Fetch.ViewModel) {
         
@@ -133,6 +127,4 @@ class ChangePasswordViewController: UIViewController, CheckPasswordDisplayLogic,
     func errorFetchingItems(viewModel: ChangePasswordModel.Fetch.ViewModel) {
         
     }
-    
-    
 }

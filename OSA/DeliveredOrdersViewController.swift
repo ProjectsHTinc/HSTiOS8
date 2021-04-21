@@ -27,7 +27,7 @@ class DeliveredOrdersViewController: UIViewController, DeliveredOrdersDisplayLog
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        interactor?.fetchItems(request: DeliveredOrdersModel.Fetch.Request(user_id:GlobalVariables.shared.customer_id,status:"Transit"))
+        interactor?.fetchItems(request: DeliveredOrdersModel.Fetch.Request(user_id:GlobalVariables.shared.customer_id,status:"Deliverd"))
 
         // Do any additional setup after loading the view.
     }

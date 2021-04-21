@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BEw-xv-9n8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BEw-xv-9n8">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -27,26 +27,8 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qc8-pe-a1d">
                                 <rect key="frame" x="0.0" y="44" width="414" height="52"/>
-                                <subviews>
-                                    <searchBar contentMode="redraw" searchBarStyle="prominent" translatesAutoresizingMaskIntoConstraints="NO" id="NDd-ek-hCa">
-                                        <rect key="frame" x="8" y="30" width="398" height="44"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="44" id="iQX-P0-pTI"/>
-                                        </constraints>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="0.0"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </searchBar>
-                                </subviews>
                                 <color key="backgroundColor" red="0.65098039220000004" green="0.023529411760000001" blue="0.1137254902" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="NDd-ek-hCa" secondAttribute="trailing" constant="8" id="GWS-6s-b3S"/>
-                                    <constraint firstItem="NDd-ek-hCa" firstAttribute="leading" secondItem="qc8-pe-a1d" secondAttribute="leading" constant="8" id="VOs-aS-OFY"/>
-                                    <constraint firstItem="NDd-ek-hCa" firstAttribute="top" secondItem="qc8-pe-a1d" secondAttribute="top" constant="30" id="gXv-CW-W1p"/>
                                     <constraint firstAttribute="width" constant="414" id="rd5-FM-Jcw"/>
                                     <constraint firstAttribute="height" constant="52" id="zcI-ma-F69"/>
                                 </constraints>
@@ -77,16 +59,33 @@
                                     <segue destination="XpU-qK-9uB" kind="embed" id="630-9a-80D"/>
                                 </connections>
                             </containerView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="What are you looking for?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dLD-Sw-EZA">
+                                <rect key="frame" x="20" y="74" width="374" height="45"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="QFD-fi-a4t"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="LXF-cW-9Hh"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="lXr-di-TZC" firstAttribute="top" secondItem="PR4-As-SZ0" secondAttribute="bottom" constant="15" id="47q-2R-814"/>
+                            <constraint firstItem="dLD-Sw-EZA" firstAttribute="top" secondItem="LXF-cW-9Hh" secondAttribute="top" constant="30" id="6CV-e1-oW0"/>
+                            <constraint firstItem="dLD-Sw-EZA" firstAttribute="leading" secondItem="LXF-cW-9Hh" secondAttribute="leading" constant="20" id="6wj-DC-c80"/>
                             <constraint firstItem="PR4-As-SZ0" firstAttribute="top" secondItem="qc8-pe-a1d" secondAttribute="bottom" constant="37" id="84U-OZ-JIE"/>
                             <constraint firstItem="qc8-pe-a1d" firstAttribute="trailing" secondItem="LXF-cW-9Hh" secondAttribute="trailing" id="C0m-Gb-kfk"/>
                             <constraint firstItem="LXF-cW-9Hh" firstAttribute="trailing" secondItem="PR4-As-SZ0" secondAttribute="trailing" constant="20" id="KWm-3U-Myi"/>
                             <constraint firstItem="FcG-co-3KF" firstAttribute="trailing" secondItem="LXF-cW-9Hh" secondAttribute="trailing" id="LiU-QS-h1h"/>
                             <constraint firstItem="FcG-co-3KF" firstAttribute="leading" secondItem="LXF-cW-9Hh" secondAttribute="leading" id="NSf-0f-J1s"/>
+                            <constraint firstItem="LXF-cW-9Hh" firstAttribute="trailing" secondItem="dLD-Sw-EZA" secondAttribute="trailing" constant="20" id="R5L-Up-tKK"/>
                             <constraint firstItem="FcG-co-3KF" firstAttribute="top" secondItem="PR4-As-SZ0" secondAttribute="bottom" constant="15" id="Ty3-i3-oBu"/>
                             <constraint firstItem="lXr-di-TZC" firstAttribute="trailing" secondItem="LXF-cW-9Hh" secondAttribute="trailing" id="Zjx-R8-zkF"/>
                             <constraint firstItem="PR4-As-SZ0" firstAttribute="leading" secondItem="LXF-cW-9Hh" secondAttribute="leading" constant="20" id="aan-Hi-EZZ"/>
@@ -99,6 +98,7 @@
                     </view>
                     <connections>
                         <outlet property="deleviredOrderView" destination="lXr-di-TZC" id="Pez-Ot-P1U"/>
+                        <outlet property="searchBarView" destination="qc8-pe-a1d" id="V5d-Lr-MkW"/>
                         <outlet property="segmentedControl" destination="PR4-As-SZ0" id="h3c-JD-yRm"/>
                         <outlet property="transitView" destination="FcG-co-3KF" id="GSG-Lq-UFz"/>
                     </connections>
@@ -113,7 +113,7 @@
             <objects>
                 <viewController id="kvn-n3-Olm" customClass="DeliveredOrdersViewController" customModule="OSA" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ULK-aR-fXp">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="683"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HoY-4t-kdY">

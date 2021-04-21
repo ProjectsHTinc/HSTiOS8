@@ -75,7 +75,7 @@ class CartListViewController: UIViewController,UITableViewDelegate,UITableViewDa
         router.viewController = viewController
         router.dataStore = interactor
         
-        let viewController1 = self
+        let viewController1 = self 
         let interactor1 = DeleteCartInteractor()
         let presenter1 = DeleteCartPresenter()
         viewController1.interactor1 = interactor1
@@ -188,7 +188,7 @@ class CartListViewController: UIViewController,UITableViewDelegate,UITableViewDa
         let Quantity = stepper.value
         let quantityValue = String(Quantity)
         print(quantityValue)
-        interactor2?.fetchItems(request: QuantityUpdateModel.Fetch.Request(cart_id:self.selectedCartId, user_id:GlobalVariables.shared.customer_id,cart_quantity:quantityValue))
+        interactor2?.fetchItems(request: QuantityUpdateModel.Fetch.Request(cart_id:self.selectedCartId, user_id:GlobalVariables.shared.customer_id,cart_quantity:String(Quantity)))
     }
 }
 

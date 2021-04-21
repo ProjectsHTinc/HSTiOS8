@@ -31,6 +31,7 @@ class CategoryDetailViewController: UIViewController,CategoryDisplayLogic,UIColl
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.setNavigationBar()
         self.callInteractor ()
         self.hideKeyboardWhenTappedAround()
         self.navigationController?.navigationBar.shadowImage = UIImage()
@@ -43,6 +44,14 @@ class CategoryDetailViewController: UIViewController,CategoryDisplayLogic,UIColl
     override func viewDidLayoutSubviews(){
 
         searchBarView.layerGradient(startPoint: .left, endPoint: .right, colorArray: [UIColor(red: 189.0/255.0, green: 6.0/255.0, blue: 33.0/255.0, alpha: 1.0).cgColor, UIColor(red: 95.0/255.0, green: 3.0/255.0, blue: 17.0/255.0, alpha: 1.0).cgColor], type: .axial)
+    }
+    
+    func setNavigationBar() {
+        
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default) //UIImage.init(named: "transparent.png")
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.view.backgroundColor = .clear
     }
     
     func callInteractor () {
