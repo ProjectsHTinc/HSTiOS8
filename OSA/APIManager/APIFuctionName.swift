@@ -52,6 +52,7 @@ struct APIFunctionName {
     static let payCODUrl = "mobileapi/payby_cod"
     static let orderCartDetailsUrl = "mobileapi/view_order_cart_details"
     static let returnReasonList = "mobileapi/return_reason_list"
+    static let returnRequestOrderUrl = "mobileapi/return_order_request"
     static let productReviewAddUrl = "mobileapi/product_reviews_add"
     static let productCheckReviewUrl = "mobileapi/product_review_check"
     static let productUpdateReviewUrl = "mobileapi/review_update"

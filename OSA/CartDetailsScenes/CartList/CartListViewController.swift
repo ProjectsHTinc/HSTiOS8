@@ -27,7 +27,6 @@ protocol QuantityUpdateDisplayLogic: class
 }
 
 class CartListViewController: UIViewController,UITableViewDelegate,UITableViewDataSource, CartListDisplayLogic, DeleteCartDisplayLogic,QuantityUpdateDisplayLogic {
-     
  
     @IBOutlet weak var cartListTableView: UITableView!
     @IBOutlet weak var totalAmountLbl: UILabel!
@@ -39,6 +38,7 @@ class CartListViewController: UIViewController,UITableViewDelegate,UITableViewDa
     var deletedCartId = String()
     var selectedCartId = String()
     var idArr = [String]()
+    var selectedQuantity = String()
     var quantityArr = [Double]()
     
     var displayedCartListData: [CartListModel.Fetch.ViewModel.DisplayedCartListData] = []
@@ -99,7 +99,7 @@ class CartListViewController: UIViewController,UITableViewDelegate,UITableViewDa
         for data in displayedCartListData {
             let id = data.id
             let quantity = Double(data.quantity!)
-        
+            
             self.quantityArr.append(quantity!)
             self.idArr.append(id!)
         }
@@ -184,11 +184,17 @@ class CartListViewController: UIViewController,UITableViewDelegate,UITableViewDa
           let sel = self.idArr[selectedIndex]
          self.selectedCartId = String(sel)
      
-        
         let Quantity = stepper.value
         let quantityValue = String(Quantity)
         print(quantityValue)
-        interactor2?.fetchItems(request: QuantityUpdateModel.Fetch.Request(cart_id:self.selectedCartId, user_id:GlobalVariables.shared.customer_id,cart_quantity:String(Quantity)))
+        self.selectedQuantity = quantityValue
+        let qauantityInt = Int(selectedQuantity)
+        
+        if qauantityInt.hashValue >= Int(1.00) {
+           print("123")
+        }
+        
+        interactor2?.fetchItems(request: QuantityUpdateModel.Fetch.Request(cart_id:self.selectedCartId, user_id:GlobalVariables.shared.customer_id,cart_quantity:selectedQuantity))
     }
 }
 

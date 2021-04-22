@@ -14,8 +14,14 @@ protocol ReturnReasonListDisplayLogic: class
     func successFetchedItems(viewModel: ReturnReasonListModel.Fetch.ViewModel)
     func errorFetchingItems(viewModel: ReturnReasonListModel.Fetch.ViewModel)
 }
+protocol ReturnOrderRequestDisplayLogic: class
+{
+    func successFetchedItems(viewModel: ReturnOrderRequestModel.Fetch.ViewModel)
+    func errorFetchingItems(viewModel: ReturnOrderRequestModel.Fetch.ViewModel)
+}
 
-class ReturnOrderViewController: UIViewController, ReturnReasonListDisplayLogic {
+class ReturnOrderViewController: UIViewController, ReturnReasonListDisplayLogic, ReturnOrderRequestDisplayLogic {
+ 
     
     
     @IBOutlet weak var tableView: UITableView!
@@ -23,6 +29,8 @@ class ReturnOrderViewController: UIViewController, ReturnReasonListDisplayLogic 
     var displayedReturnReasonListData: [ReturnReasonListModel.Fetch.ViewModel.DisplayedReturnReasonListData] = []
     
     var interactor: ReturnReasonListBusinessLogic?
+    var interactor1: ReturnOrderRequestBusinessLogic?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,9 +58,17 @@ class ReturnOrderViewController: UIViewController, ReturnReasonListDisplayLogic 
         viewController.interactor = interactor
         interactor.presenter = presenter
         presenter.viewController = viewController
+        
+        let viewController1 = self
+        let interactor1 = ReturnOrderRequestInteractor()
+        let presenter1 = ReturnOrderRequestPresenter()
+        viewController1.interactor1 = interactor1
+        interactor1.presenter1 = presenter1
+        presenter1.viewController1 = viewController1
        
     }
     
+//
     func successFetchedItems(viewModel: ReturnReasonListModel.Fetch.ViewModel) {
         
         displayedReturnReasonListData = viewModel.displayedReturnReasonListData
@@ -63,8 +79,16 @@ class ReturnOrderViewController: UIViewController, ReturnReasonListDisplayLogic 
     func errorFetchingItems(viewModel: ReturnReasonListModel.Fetch.ViewModel) {
         
     }
+    
+//
+    func successFetchedItems(viewModel: ReturnOrderRequestModel.Fetch.ViewModel) {
+        
+    }
+    
+    func errorFetchingItems(viewModel: ReturnOrderRequestModel.Fetch.ViewModel) {
+        
+    }
 }
-
 
 extension ReturnOrderViewController: UITableViewDelegate,UITableViewDataSource {
     
@@ -84,6 +108,7 @@ extension ReturnOrderViewController: UITableViewDelegate,UITableViewDataSource {
         
         return cell
     }
+    
     @objc func returnOrderButtonClicked(sender: UIButton){
         
          let buttonClicked = sender.tag

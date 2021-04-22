@@ -1729,7 +1729,9 @@ class APIManager: NSObject {
                ].string!)
                return
          }
-          if let responseDict = responseObject["election_result"].arrayObject
+            GlobalVariables.shared.wallet_amount = responseObject["wallet_amount"].string!
+            
+          if let responseDict = responseObject["wallet_history"].arrayObject
           {
                   let toModel = responseDict as! [[String:AnyObject]]
                   // Create object
@@ -2168,5 +2170,34 @@ class APIManager: NSObject {
          }
       )
     }
+    
+    func callAPIReturnOrderRequest(user_id:String,purchase_order_id:String,reason_question_id:String,answer_text:String,onSuccess successCallback: ((_ login: ReturnOrderRequestsModels) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
+         // Build URL
+         let url = APIURL.BaseUrl_Dev+APIFunctionName.deleteAddressUrl
+         // Set Parameters
+         let parameters: Parameters =  ["user_id": user_id,"purchase_order_id": purchase_order_id,"answer_text": answer_text,"reason_question_id": reason_question_id]
+         // call API
+         self.createRequest(url, method: .post, headers: nil, parameters: parameters as? [String : String], onSuccess: {(responseObject: JSON) -> Void in
+         // Create dictionary
+         print(responseObject)
+     
+         guard let status = responseObject["status"].string, status == "success" else{
+          failureCallback?(responseObject["msg"].string!)
+           return
+         }
+    
+          let sendToModel = ReturnOrderRequestsModels()
+           
+           sendToModel.status = status
+         
+           successCallback?(sendToModel)
+       
+         },
+          onFailure: {(errorMessage: String) -> Void in
+          failureCallback?(errorMessage)
+        }
+      )
+    }
 
 }
+

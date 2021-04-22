@@ -25,7 +25,7 @@ class WalletDetailsViewController: UIViewController,UITableViewDelegate,UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        interactor?.fetchItems(request: WalletDetailsModel.Fetch.Request(user_id:GlobalVariables.shared.customer_id))
+        interactor?.fetchItems(request: WalletDetailsModel.Fetch.Request(user_id:"3"))
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)

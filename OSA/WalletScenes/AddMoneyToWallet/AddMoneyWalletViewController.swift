@@ -16,6 +16,7 @@ protocol AddMoneyToWalletDisplayLogic: class
 class AddMoneyWalletViewController: UIViewController, AddMoneyToWalletDisplayLogic {
    
     @IBOutlet weak var walletAmountTextField: UITextField!
+    @IBOutlet weak var walletAmountLabel: UILabel!
     
     var interactor: AddMoneyToWalletBusinessLogic?
     
@@ -60,6 +61,7 @@ class AddMoneyWalletViewController: UIViewController, AddMoneyToWalletDisplayLog
     func successFetchedItems(viewModel: AddMoneyToWalletModel.Fetch.ViewModel) {
         
         GlobalVariables.shared.order_id = viewModel.order_id!
+        self.walletAmountLabel.text  = "₹\(GlobalVariables.shared.wallet_amount)"
         self.addToWalletByPaymemtGateway(amount: self.walletAmountTextField.text!)
     }
     

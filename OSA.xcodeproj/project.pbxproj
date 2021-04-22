@@ -416,6 +416,10 @@
 		7990552D26282637002D7AF6 /* WishListModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7990552C26282637002D7AF6 /* WishListModels.swift */; };
 		799055332628313C002D7AF6 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799055322628313C002D7AF6 /* APIManager.swift */; };
 		7990553D2628708A002D7AF6 /* Wallet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7990553C26287089002D7AF6 /* Wallet.storyboard */; };
+		79E9CA9B26319AF700D45621 /* ReturnRequestInteracter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E9CA9A26319AF700D45621 /* ReturnRequestInteracter.swift */; };
+		79E9CAA126319B0E00D45621 /* ReturnRequestWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E9CAA026319B0E00D45621 /* ReturnRequestWorker.swift */; };
+		79E9CAA326319B1B00D45621 /* ReturnRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E9CAA226319B1B00D45621 /* ReturnRequestModel.swift */; };
+		79E9CAA926319B2A00D45621 /* ReturnRequestPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E9CAA826319B2A00D45621 /* ReturnRequestPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1047,6 +1051,10 @@
 		7990552C26282637002D7AF6 /* WishListModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListModels.swift; sourceTree = "<group>"; };
 		799055322628313C002D7AF6 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		7990553C26287089002D7AF6 /* Wallet.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Wallet.storyboard; path = ../../../../Downloads/Wallet.storyboard; sourceTree = "<group>"; };
+		79E9CA9A26319AF700D45621 /* ReturnRequestInteracter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReturnRequestInteracter.swift; sourceTree = "<group>"; };
+		79E9CAA026319B0E00D45621 /* ReturnRequestWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReturnRequestWorker.swift; sourceTree = "<group>"; };
+		79E9CAA226319B1B00D45621 /* ReturnRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReturnRequestModel.swift; sourceTree = "<group>"; };
+		79E9CAA826319B2A00D45621 /* ReturnRequestPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReturnRequestPresenter.swift; sourceTree = "<group>"; };
 		C134F5B017747ACB187BB640 /* Pods-OSA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OSA.release.xcconfig"; path = "Target Support Files/Pods-OSA/Pods-OSA.release.xcconfig"; sourceTree = "<group>"; };
 		CF962641A5DDA5A0E8EED271 /* Pods-OSA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OSA.debug.xcconfig"; path = "Target Support Files/Pods-OSA/Pods-OSA.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1319,6 +1327,7 @@
 			children = (
 				6B176BAC260B5F2000A9A9C6 /* ReturnOrderViewController.swift */,
 				6B176BB1260B605D00A9A9C6 /* ReturnResonList */,
+				79E9CA9926319AC400D45621 /* ReturnRequestOrder */,
 			);
 			name = ReturnReplacementOrder;
 			sourceTree = "<group>";
@@ -2572,6 +2581,17 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		79E9CA9926319AC400D45621 /* ReturnRequestOrder */ = {
+			isa = PBXGroup;
+			children = (
+				79E9CA9A26319AF700D45621 /* ReturnRequestInteracter.swift */,
+				79E9CAA026319B0E00D45621 /* ReturnRequestWorker.swift */,
+				79E9CAA226319B1B00D45621 /* ReturnRequestModel.swift */,
+				79E9CAA826319B2A00D45621 /* ReturnRequestPresenter.swift */,
+			);
+			name = ReturnRequestOrder;
+			sourceTree = "<group>";
+		};
 		8F4DB25C7B379BC15395EAF8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -2890,6 +2910,7 @@
 				6BE8588825EE6C9B00A1F30B /* ProductColourCollectionViewCell.swift in Sources */,
 				6B0F6D4025F0DA0D008726FB /* AddtoCartPresenter.swift in Sources */,
 				6BFAEF1F260DC78E0051B766 /* ChangePasswordPresenter.swift in Sources */,
+				79E9CAA926319B2A00D45621 /* ReturnRequestPresenter.swift in Sources */,
 				6BBFA24925FF9CA2003ADB6C /* ReviewOrderPresenter.swift in Sources */,
 				6B7CC29B25E7B2AD0045DFB8 /* CategorySelectModel.swift in Sources */,
 				6B0D9C8F25F78358003DBBDF /* AddressListWorker.swift in Sources */,
@@ -2921,6 +2942,7 @@
 				6B11792825F61F8E00B0D9EA /* DeliveryAddressPresenter.swift in Sources */,
 				6B158D3325E37C8B00A247A1 /* CategoryInteracter.swift in Sources */,
 				6BC3EE2E25E917DD00A0CAD9 /* SubCategoryRouter.swift in Sources */,
+				79E9CAA126319B0E00D45621 /* ReturnRequestWorker.swift in Sources */,
 				6B05F63B25E5040E001668B3 /* NewArrivalsInteracter.swift in Sources */,
 				799055332628313C002D7AF6 /* APIManager.swift in Sources */,
 				6BE8587425EE5A3400A1F30B /* ProductColourWorker.swift in Sources */,
@@ -3148,6 +3170,7 @@
 				6BBFA24425FF9C92003ADB6C /* ReviewOrderIntercter.swift in Sources */,
 				6B0D9C8125F781D4003DBBDF /* AddressListTableViewCell.swift in Sources */,
 				6B92963A25FB55F800C5E72B /* WalletModels.swift in Sources */,
+				79E9CA9B26319AF700D45621 /* ReturnRequestInteracter.swift in Sources */,
 				6B176BA2260B46D300A9A9C6 /* OrderCartDetailsModels.swift in Sources */,
 				6BC9C34C2615F226005A3F56 /* SizeListPresenter.swift in Sources */,
 				6B7CC2AD25E7C3240045DFB8 /* CategoryModels.swift in Sources */,
@@ -3179,6 +3202,7 @@
 				6B176BC5260B618800A9A9C6 /* ReturnReasonListModel.swift in Sources */,
 				6B0D9C8A25F78343003DBBDF /* AddressListInteracter.swift in Sources */,
 				6B9BBBDF260C699100B215F5 /* AddReviewIntearcter.swift in Sources */,
+				79E9CAA326319B1B00D45621 /* ReturnRequestModel.swift in Sources */,
 				6B6FDB4925EFAAE700B07955 /* ReviewListInteracter.swift in Sources */,
 				6BFB266426089568006E58B7 /* OrderHistoryModels.swift in Sources */,
 				6B70FA8625CBD47C00AA4DD8 /* Reachability.swift in Sources */,

@@ -79,6 +79,7 @@ extension OrderHistoryDetailsViewController: UITableViewDelegate,UITableViewData
 //        cell.status.text = data.order_id
         cell.productName.text = data.product_name
         cell.MrpPrice.text = data.price
+        cell.productImage.sd_setImage(with: URL(string: data.product_cover_img!), placeholderImage: UIImage(named: ""))
         cell.returnOrder.tag = indexPath.row
         cell.returnOrder.addTarget(self, action: #selector(returnOrderButtonClicked(sender:)), for: .touchUpInside)
         
