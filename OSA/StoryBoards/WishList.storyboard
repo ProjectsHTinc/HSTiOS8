@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Zy4-VJ-ySC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Zy4-VJ-ySC">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -29,27 +29,28 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gFd-ww-CNM">
                                 <rect key="frame" x="0.0" y="44" width="414" height="52"/>
                                 <subviews>
-                                    <searchBar contentMode="redraw" searchBarStyle="prominent" translatesAutoresizingMaskIntoConstraints="NO" id="ZNo-YE-iey">
-                                        <rect key="frame" x="8" y="30" width="398" height="44"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="What are you looking for?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zNx-UZ-itm">
+                                        <rect key="frame" x="20" y="30" width="374" height="45"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="44" id="GUm-dQ-4SQ"/>
+                                            <constraint firstAttribute="height" constant="45" id="EXq-6a-dgF"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="0.0"/>
+                                                <real key="value" value="12"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
-                                    </searchBar>
+                                    </textField>
                                 </subviews>
                                 <color key="backgroundColor" red="0.65098039220000004" green="0.023529411760000001" blue="0.1137254902" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstItem="zNx-UZ-itm" firstAttribute="top" secondItem="gFd-ww-CNM" secondAttribute="top" constant="30" id="659-NQ-qRf"/>
                                     <constraint firstAttribute="width" constant="414" id="HOC-ru-F68"/>
-                                    <constraint firstAttribute="trailing" secondItem="ZNo-YE-iey" secondAttribute="trailing" constant="8" id="I07-fQ-C43"/>
-                                    <constraint firstItem="ZNo-YE-iey" firstAttribute="leading" secondItem="gFd-ww-CNM" secondAttribute="leading" constant="8" id="MoA-ah-uoo"/>
+                                    <constraint firstItem="zNx-UZ-itm" firstAttribute="leading" secondItem="gFd-ww-CNM" secondAttribute="leading" constant="20" id="PQG-n5-8LR"/>
                                     <constraint firstAttribute="height" constant="52" id="bR7-m8-zce"/>
-                                    <constraint firstItem="ZNo-YE-iey" firstAttribute="top" secondItem="gFd-ww-CNM" secondAttribute="top" constant="30" id="wSc-WA-qM4"/>
+                                    <constraint firstAttribute="trailing" secondItem="zNx-UZ-itm" secondAttribute="trailing" constant="20" id="ymx-K6-cr4"/>
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ePw-9N-m0D">
@@ -85,13 +86,18 @@
                                                         <constraint firstAttribute="height" constant="186" id="H4b-Vh-SZ5"/>
                                                         <constraint firstAttribute="width" constant="195" id="ZBi-KS-Sot"/>
                                                     </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="12"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jtd-D1-68e">
                                                     <rect key="frame" x="0.0" y="204" width="195" height="35"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="35" id="4gc-70-bjK"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="16"/>
+                                                    <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -102,7 +108,7 @@
                                                         <constraint firstAttribute="height" constant="23" id="zMg-Ux-Ops"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vy6-9A-FqI">

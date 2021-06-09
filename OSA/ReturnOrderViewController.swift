@@ -21,8 +21,6 @@ protocol ReturnOrderRequestDisplayLogic: class
 }
 
 class ReturnOrderViewController: UIViewController, ReturnReasonListDisplayLogic, ReturnOrderRequestDisplayLogic {
- 
-    
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -30,6 +28,7 @@ class ReturnOrderViewController: UIViewController, ReturnReasonListDisplayLogic,
     
     var interactor: ReturnReasonListBusinessLogic?
     var interactor1: ReturnOrderRequestBusinessLogic?
+    var id = String()
     
     
     override func viewDidLoad() {
@@ -66,6 +65,11 @@ class ReturnOrderViewController: UIViewController, ReturnReasonListDisplayLogic,
         interactor1.presenter1 = presenter1
         presenter1.viewController1 = viewController1
        
+    }
+    
+    @IBAction func submitAction(_ sender: Any) {
+        
+        
     }
     
 //
@@ -108,6 +112,50 @@ extension ReturnOrderViewController: UITableViewDelegate,UITableViewDataSource {
         
         return cell
     }
+    
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//
+////        let data = displayedReturnReasonListData[indexPath.row]
+////        self.id = data.id!
+////
+////        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ReturnReasonListTableViewCell
+////        cell.selectRadioButtonImage.image = UIImage(named:"check-mark")
+////        self.performSegue(withIdentifier: "to-Category", sender: self)
+//
+//
+//    }
+    
+    
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//
+////        tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
+////        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ReturnReasonListTableViewCell
+////             cell.selectRadioButtonImage.image = UIImage(named:"check-mark")
+//        guard let btn = (tableView.cellForItem(at: indexPath) as! ReturnReasonListTableViewCell).button else {
+//                    return
+//                }
+//                btn.setImage(UIImage(named: "check-mark"), for: .normal)
+//    }
+    
+//    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+//
+//        tableView.cellForRow(at: indexPath)?.accessoryType = .none
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ReturnReasonListTableViewCell
+//             cell.selectRadioButtonImage.image = UIImage(named:"Ellipse 4")
+//    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+            guard let btn = (tableView.cellForRow(at: indexPath) as! ReturnReasonListTableViewCell).selectButton else {
+                return
+            }
+            btn.setImage(UIImage(named: "check-mark"), for: .normal)
+        }
+        func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+            guard let btn = (tableView.cellForRow(at: indexPath) as! ReturnReasonListTableViewCell).selectButton else {
+                return
+            }
+            btn.setImage(UIImage(named: "Ellipse 4"), for: .normal)
+        }
     
     @objc func returnOrderButtonClicked(sender: UIButton){
         

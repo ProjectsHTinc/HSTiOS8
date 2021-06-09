@@ -14,14 +14,14 @@ class InTransitViewController: UIViewController,UITableViewDelegate,UITableViewD
     @IBOutlet weak var inTransitTableView: UITableView!
     
     var displayedDeliveredOrdersData: [DeliveredOrdersModel.Fetch.ViewModel.DisplayedDeliveredOrdersData] = []
-    var interactor: DeliveredOrdersBusinessLogic?
+    var interactor1: DeliveredOrdersBusinessLogic?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         MBProgressHUD.hide(for: self.view, animated: true)
-        interactor?.fetchItems(request: DeliveredOrdersModel.Fetch.Request(user_id:GlobalVariables.shared.customer_id,status:"Transit"))
+//        interactor1?.fetchItems(request: DeliveredOrdersModel.Fetch.Request(user_id:GlobalVariables.shared.customer_id,status:"Transit"))
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
@@ -38,12 +38,12 @@ class InTransitViewController: UIViewController,UITableViewDelegate,UITableViewD
     
     private func setup()
     {
-        let viewController = self
-        let interactor = DeliveredOrdersInteractor()
-        let presenter = DeliveredOrdersPresenter()
-        viewController.interactor = interactor
-        interactor.presenter = presenter
-        presenter.viewController = viewController
+        let viewController1 = self
+        let interactor1 = DeliveredOrdersInteractor()
+        let presenter1 = DeliveredOrdersPresenter()
+        viewController1.interactor1 = interactor1
+        interactor1.presenter1 = presenter1
+        presenter1.viewController1 = viewController1
       
     }
     
@@ -69,8 +69,23 @@ class InTransitViewController: UIViewController,UITableViewDelegate,UITableViewD
         cell.date.text = data.total_amount
         cell.price.text = data.street
         cell.status.text = data.status
-        cell.viewProducts.tag = indexPath.row
+        cell.productImage.sd_setImage(with: URL(string: data.order_cover_img!), placeholderImage: UIImage(named: ""))
        return cell
-        
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+     
+//        tableView.cellForRow(at: indexPath)?.accessoryType = .none
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as!
+        self.performSegue(withIdentifier: "to_deliveredOrderDetails1", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+          if (segue.identifier == "to_deliveredOrderDetails1")
+          {
+            _ = segue.destination as! OrderHistoryViewController
+       
+          }
+     }
 }

@@ -10,10 +10,7 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
-
-
 class APIManager: NSObject {
-    
     
     static let instance = APIManager()
     var manager: SessionManager {
@@ -221,9 +218,7 @@ class APIManager: NSObject {
            sendToModel.profile_picture = profile_picture
            sendToModel.status = status
 
-        
            successCallback?(sendToModel)
-           
        },
        onFailure: {(errorMessage: String) -> Void in
            failureCallback?(errorMessage)
@@ -244,17 +239,12 @@ class APIManager: NSObject {
              failureCallback?(responseObject["msg"].string!)
              return
         }
-        
-           
           
            let status =  responseObject["status"].string
-         
            let sendToModel = SignUpModels()
-        
            sendToModel.status = status
 
            successCallback?(sendToModel)
-           
        },
        onFailure: {(errorMessage: String) -> Void in
            failureCallback?(errorMessage)
@@ -510,7 +500,7 @@ class APIManager: NSObject {
                ].string!)
                return
          }
-          if let responseDict = responseObject["election_result"].arrayObject
+          if let responseDict = responseObject["product_list"].arrayObject
           {
                   let toModel = responseDict as! [[String:AnyObject]]
                   // Create object
@@ -806,10 +796,9 @@ class APIManager: NSObject {
       )
      }
     
-    
     func callAPIReviewList(product_id:String, onSuccess successCallback: ((_ resp: [ReviewListModels]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
          // Build URL
-         let url = APIURL.BaseUrl_Dev+APIFunctionName.productDetailsURL
+         let url = APIURL.BaseUrl_Dev+APIFunctionName.ProductReviewListUrl
          // Set Parameters
          let parameters: Parameters =  ["product_id": product_id]
          // call API
@@ -822,7 +811,7 @@ class APIManager: NSObject {
                ].string!)
                return
          }
-          if let responseDict = responseObject["election_result"].arrayObject
+          if let responseDict = responseObject["product_reviews"].arrayObject
           {
                   let toModel = responseDict as! [[String:AnyObject]]
                   // Create object
@@ -1490,6 +1479,8 @@ class APIManager: NSObject {
          let url = APIURL.BaseUrl_Dev+APIFunctionName.orderDetailsUrl
          // Set Parameters
          let parameters: Parameters =  ["user_id": user_id,"order_id": order_id]
+        print(user_id)
+        print(order_id)
          // call API
          self.createRequest(url, method: .post, headers: nil, parameters: parameters as? [String : String], onSuccess: {(responseObject: JSON) -> Void in
          // Create dictionary
@@ -1500,7 +1491,7 @@ class APIManager: NSObject {
                ].string!)
                return
          }
-          if let responseDict = responseObject["election_result"].arrayObject
+          if let responseDict = responseObject["order_details"].arrayObject
           {
                   let toModel = responseDict as! [[String:AnyObject]]
                   // Create object
@@ -1650,7 +1641,6 @@ class APIManager: NSObject {
         }
       )
     }
-    
     
     func callAPIUpdateAddress(user_id:String,country_id:String,state:String,city:String,pincode:String,house_no:String,street:String,landmark:String,full_name:String,mobile_number:String,email_address:String,alternative_mobile_number:String,address_type:String,address_id:String,status:String,onSuccess successCallback: ((_ login: UpdateAddressModels) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
    // Build URL
@@ -1842,7 +1832,7 @@ class APIManager: NSObject {
           let status =  responseObject["status"].string
      
           let sendToModel = PayCODModels()
-           
+            
            sendToModel.status = status
          
            successCallback?(sendToModel)
@@ -1945,6 +1935,7 @@ class APIManager: NSObject {
                ].string!)
                return
          }
+            GlobalVariables.shared.orderCount = responseObject["order_count"].int!
           if let responseDict = responseObject["order_details"].arrayObject
           {
                   let toModel = responseDict as! [[String:AnyObject]]

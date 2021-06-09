@@ -1,6 +1,6 @@
 //
 //  DashBoard.swift
-//  OSA
+//  OSA                                                                                            
 //
 //  Created by Happy Sanz Tech on 11/02/21.
 //
@@ -8,6 +8,7 @@
 import UIKit
 import SideMenu
 import SDWebImage
+import MBProgressHUD
  
 protocol DashBoardDisplayLogic: class
 {
@@ -47,7 +48,6 @@ protocol WishListDeleteDisplayLogic: class
 
 class DashBoard: UIViewController, DashBoardDisplayLogic,CategoryDisplayLogic,BestSellingDisplayLogic,NewArrivalsDisplayLogic,AdvertisementDisplayLogic, WishListAddDisplayLogic, WishListDeleteDisplayLogic,UIPopoverPresentationControllerDelegate{
  
-                 
     @IBOutlet weak var bannerCollectionView: UICollectionView!
     @IBOutlet weak var categoryCollectionView: UICollectionView!
     @IBOutlet weak var bestSellingCollectionView: UICollectionView!
@@ -81,10 +81,16 @@ class DashBoard: UIViewController, DashBoardDisplayLogic,CategoryDisplayLogic,Be
     var indexArray  : [NSIndexPath]?
     var fromSearchText = String()
     var dashBoarddata_toDetail = String()
+    let transparentView = UIView()
+    let TableView = UITableView()
+    var selectedButton = UIButton()
+    var dataSource = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.setNavigationBar()
+        MBProgressHUD.showAdded(to: self.view, animated: true)
         self.hideKeyboardWhenTappedAround()
         self.sideMenuButton()
         self.fromSearchText = "to_searchList"
@@ -95,7 +101,6 @@ class DashBoard: UIViewController, DashBoardDisplayLogic,CategoryDisplayLogic,Be
             let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
             navigationController?.navigationBar.titleTextAttributes = textAttributes
         }
-        
         interactor?.fetchItems(request: DashBoardModel.Fetch.Request(user_id:"1"))
         interactor1?.fetchItems(request: CategoryModel.Fetch.Request(user_id:"1"))
         interactor2?.fetchItems(request: BestSellingModel.Fetch.Request(user_id:"1"))
@@ -120,7 +125,15 @@ class DashBoard: UIViewController, DashBoardDisplayLogic,CategoryDisplayLogic,Be
             searchTextfield.setCorner(radius: 25)
         }
     }
-
+    
+    func setNavigationBar() {
+        
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default) //UIImage.init(named: "transparent.png")
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.view.backgroundColor = .clear
+    }
+    
     override func viewDidLayoutSubviews() {
 
         searchBarView.layerGradient(startPoint: .left, endPoint: .right, colorArray: [UIColor(red: 189.0/255.0, green: 6.0/255.0, blue: 33.0/255.0, alpha: 1.0).cgColor, UIColor(red: 95.0/255.0, green: 3.0/255.0, blue: 17.0/255.0, alpha: 1.0).cgColor], type: .axial)
@@ -197,19 +210,16 @@ class DashBoard: UIViewController, DashBoardDisplayLogic,CategoryDisplayLogic,Be
     @IBAction func NewArrivalDetailAction(_ sender: Any) {
         self.dashBoarddata_toDetail = "to_newArrival"
         self.performSegue(withIdentifier: "newArrivallSegue", sender: self)
-        
     }
-    
     
     private func setupSideMenu() {
         // Define the menus
         SideMenuManager.default.leftMenuNavigationController = storyboard?.instantiateViewController(withIdentifier: "LeftMenuNavigationController") as? SideMenuNavigationController
-        
         SideMenuManager.default.addPanGestureToPresent(toView: navigationController!.navigationBar)
         SideMenuManager.default.addScreenEdgePanGesturesToPresent(toView: view)
     }
     
-    func makeSettings() -> SideMenuSettings{
+    func makeSettings() -> SideMenuSettings {
         var settings = SideMenuSettings()
         settings.allowPushOfSameClassTwice = false
         settings.presentationStyle = .viewSlideOut
@@ -235,14 +245,51 @@ class DashBoard: UIViewController, DashBoardDisplayLogic,CategoryDisplayLogic,Be
             return true
     }
     
-    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool  {
-        self.popOver(sender:searchTextfield)
-        return true
-    }
     
+//    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool  {
+////        self.popOver(sender:searchTextfield)
+////        dataSource = ["Apple", "Mango", "Orange"]
+//////          selectedButton = UITextField
+////          addTransparentView(frames: searchTextfield.frame)
+//        return true
+//    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+             selectedButton.setTitle(dataSource[indexPath.row], for: .normal)
+             removeTransparentView()
+         }
+    
+    func addTransparentView(frames: CGRect) {
+             let window = UIApplication.shared.keyWindow
+             transparentView.frame = window?.frame ?? self.view.frame
+             self.view.addSubview(transparentView)
+             
+             TableView.frame = CGRect(x: frames.origin.x, y: frames.origin.y + frames.height, width: frames.width, height: 0)
+             self.view.addSubview(TableView)
+             TableView.layer.cornerRadius = 5
+             
+             transparentView.backgroundColor = UIColor.black.withAlphaComponent(0.9)
+             TableView.reloadData()
+             let tapgesture = UITapGestureRecognizer(target: self, action: #selector(removeTransparentView))
+             transparentView.addGestureRecognizer(tapgesture)
+             transparentView.alpha = 0
+        UIView.animate(withDuration: 0.4, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 1.0, options: .curveEaseInOut, animations: {
+                 self.transparentView.alpha = 0.5
+                 self.TableView.frame = CGRect(x: frames.origin.x, y: frames.origin.y + frames.height + 5, width: frames.width, height: CGFloat(self.dataSource.count * 50))
+             }, completion: nil)
+         }
+    
+     @objc func removeTransparentView() {
+             let frames = selectedButton.frame
+             UIView.animate(withDuration: 0.4, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 1.0, options: .curveEaseInOut, animations: {
+                 self.transparentView.alpha = 0
+                 self.TableView.frame = CGRect(x: frames.origin.x, y: frames.origin.y + frames.height, width: frames.width, height: 0)
+             }, completion: nil)
+         }
 
 //    Banner Display Logic
     func successFetchedItems(viewModel: DashBoardModel.Fetch.ViewModel) {
+        MBProgressHUD.hide(for: self.view, animated: true)
         displayedDashBoardData = viewModel.displayedDashBoardData
           print("123456")
         print(displayedDashBoardData.count)
@@ -275,7 +322,6 @@ class DashBoard: UIViewController, DashBoardDisplayLogic,CategoryDisplayLogic,Be
         self.bestSellingProductIdArr.removeAll()
         for data in displayedBestSellingData {
             let product_id = data.id
-            
             self.bestSellingProductIdArr.append(product_id!)
             
         }
@@ -299,6 +345,7 @@ class DashBoard: UIViewController, DashBoardDisplayLogic,CategoryDisplayLogic,Be
     func errorFetchingItems(viewModel: NewArrivalsModel.Fetch.ViewModel) {
         
     }
+    
 //    Advertisement DisplayLogic
     func successFetchedItems(viewModel: AdvertisementModel.Fetch.ViewModel) {
         displayedAdvertisementData = viewModel.displayedAdvertisementData
@@ -338,7 +385,6 @@ class DashBoard: UIViewController, DashBoardDisplayLogic,CategoryDisplayLogic,Be
     }
 }
 
-
 extension DashBoard : UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -353,7 +399,9 @@ extension DashBoard : UITableViewDelegate,UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         if tableView == self.tableView {
+            
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! NewArrivalsTableViewCell
         let newArrivaldata = displayedNewArrivalsData[indexPath.row]
         cell.newArrivalImage.sd_setImage(with: URL(string: newArrivaldata.product_cover_img!), placeholderImage: UIImage(named: ""))
@@ -361,7 +409,7 @@ extension DashBoard : UITableViewDelegate,UITableViewDataSource {
         cell.MrpPriceLabel.text = "₹\(newArrivaldata.prod_actual_price!)"
         cell.actualPriceLabel.text = "₹\(newArrivaldata.prod_mrp_price!)"
             
-            if newArrivaldata.review_average == "1"{
+            if newArrivaldata.review_average == "1" {
                 
                 cell.image1.image = UIImage(named:"star (3)")
                 cell.image2.image = UIImage(named:"star (3)-1")
@@ -369,7 +417,7 @@ extension DashBoard : UITableViewDelegate,UITableViewDataSource {
                 cell.image4.image = UIImage(named:"star (3)-1")
                 cell.image5.image = UIImage(named:"star (3)-1")
             }
-            else if newArrivaldata.review_average == "2"{
+            else if newArrivaldata.review_average == "2" {
                 
                 cell.image1.image = UIImage(named:"star (3)")
                 cell.image2.image = UIImage(named:"star (3)")
@@ -377,7 +425,7 @@ extension DashBoard : UITableViewDelegate,UITableViewDataSource {
                 cell.image4.image = UIImage(named:"star (3)-1")
                 cell.image5.image = UIImage(named:"star (3)-1")
             }
-            else if newArrivaldata.review_average == "3"{
+            else if newArrivaldata.review_average == "3" {
                 
                 cell.image1.image = UIImage(named:"star (3)")
                 cell.image2.image = UIImage(named:"star (3)")
@@ -385,7 +433,7 @@ extension DashBoard : UITableViewDelegate,UITableViewDataSource {
                 cell.image4.image = UIImage(named:"star (3)-1")
                 cell.image5.image = UIImage(named:"star (3)-1")
             }
-            else if newArrivaldata.review_average == "4"{
+            else if newArrivaldata.review_average == "4" {
                 
                 cell.image1.image = UIImage(named:"star (3)")
                 cell.image2.image = UIImage(named:"star (3)")
@@ -393,7 +441,7 @@ extension DashBoard : UITableViewDelegate,UITableViewDataSource {
                 cell.image4.image = UIImage(named:"star (3)")
                 cell.image5.image = UIImage(named:"star (3)-1")
             }
-            else if newArrivaldata.review_average == "5"{
+            else if newArrivaldata.review_average == "5" {
                 
                 cell.image1.image = UIImage(named:"star (3)")
                 cell.image2.image = UIImage(named:"star (3)")
@@ -484,8 +532,8 @@ extension DashBoard : UICollectionViewDelegate,UICollectionViewDataSource,UIText
        let bannerImg = displayedDashBoardData[indexPath.row]
        
        cell.bannerImg.sd_setImage(with: URL(string: bannerImg.banner_image!), placeholderImage: UIImage(named: ""))
-           cell.bannerTitle.text = bannerImg.banner_title
-           cell.offerlabel.text = bannerImg.banner_desc
+//           cell.bannerTitle.text = bannerImg.banner_title
+//           cell.offerlabel.text = bannerImg.banner_desc
 //          cell.bannerDescLabel.text = bannerImg.category_name
        return cell
        }
@@ -511,7 +559,7 @@ extension DashBoard : UICollectionViewDelegate,UICollectionViewDataSource,UIText
            cell.discoutPricelabel.text = "₹\(bestSellingData.prod_mrp_price!)"
            cell.offerPercentageLabel.text = bestSellingData.offer_percentage!+percentageText
         
-        if bestSellingData.review_average == "1"{
+        if bestSellingData.review_average == "1" {
             
             cell.image1.image = UIImage(named:"star (3)")
             cell.image2.image = UIImage(named:"star (3)-1")
@@ -519,7 +567,7 @@ extension DashBoard : UICollectionViewDelegate,UICollectionViewDataSource,UIText
             cell.image4.image = UIImage(named:"star (3)-1")
             cell.image5.image = UIImage(named:"star (3)-1")
         }
-        else if bestSellingData.review_average == "2"{
+        else if bestSellingData.review_average == "2" {
             
             cell.image1.image = UIImage(named:"star (3)")
             cell.image2.image = UIImage(named:"star (3)")
@@ -527,7 +575,7 @@ extension DashBoard : UICollectionViewDelegate,UICollectionViewDataSource,UIText
             cell.image4.image = UIImage(named:"star (3)-1")
             cell.image5.image = UIImage(named:"star (3)-1")
         }
-        else if bestSellingData.review_average == "3"{
+        else if bestSellingData.review_average == "3" {
             
             cell.image1.image = UIImage(named:"star (3)")
             cell.image2.image = UIImage(named:"star (3)")
@@ -535,7 +583,7 @@ extension DashBoard : UICollectionViewDelegate,UICollectionViewDataSource,UIText
             cell.image4.image = UIImage(named:"star (3)-1")
             cell.image5.image = UIImage(named:"star (3)-1")
         }
-        else if bestSellingData.review_average == "4"{
+        else if bestSellingData.review_average == "4" {
             
             cell.image1.image = UIImage(named:"star (3)")
             cell.image2.image = UIImage(named:"star (3)")
@@ -551,8 +599,6 @@ extension DashBoard : UICollectionViewDelegate,UICollectionViewDataSource,UIText
             cell.image4.image = UIImage(named:"star (3)")
             cell.image5.image = UIImage(named:"star (3)")
         }
-        
-        
         
            if bestSellingData.wishlisted == "1"
            {
@@ -676,3 +722,4 @@ extension UIView {
         return UINavigationController(rootViewController: controller.presentedViewController)
     }
 }
+  

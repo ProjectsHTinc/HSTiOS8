@@ -21,18 +21,18 @@ protocol DeliveredOrdersDataStore
 class DeliveredOrdersInteractor: DeliveredOrdersBusinessLogic,DeliveredOrdersDataStore
 {
 
-    var presenter: DeliveredOrdersPresentationLogic?
+    var presenter1: DeliveredOrdersPresentationLogic?
     var worker: DeliveredOrdersWorker?
     var respData = [DeliveredOrdersModels]()
     func fetchItems(request: DeliveredOrdersModel.Fetch.Request) {
         if request.user_id == nil {
-           self.presenter?.presentFetchResults(resp: DeliveredOrdersModel.Fetch.Response(testObj: respData, isError:true, message: "emptyyy" ))
+           self.presenter1?.presentFetchResults(resp: DeliveredOrdersModel.Fetch.Response(testObj: respData, isError:true, message: "emptyyy" ))
         }
         worker = DeliveredOrdersWorker()
         worker!.fetch(user_id:request.user_id!,status:request.status!, onSuccess: { (resp) in
-            self.presenter?.presentFetchResults(resp: DeliveredOrdersModel.Fetch.Response(testObj: resp.testObj, isError: false, message: nil))
+            self.presenter1?.presentFetchResults(resp: DeliveredOrdersModel.Fetch.Response(testObj: resp.testObj, isError: false, message: nil))
         }) { (errorMessage) in
-            self.presenter?.presentFetchResults(resp: DeliveredOrdersModel.Fetch.Response(testObj: errorMessage.testObj, isError: true, message: "An error Occured"))
+            self.presenter1?.presentFetchResults(resp: DeliveredOrdersModel.Fetch.Response(testObj: errorMessage.testObj, isError: true, message: "An error Occured"))
         }
     }
 }

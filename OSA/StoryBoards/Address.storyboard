@@ -61,7 +61,7 @@
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="14" id="4Pe-Pn-4Aw"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="17"/>
+                                                            <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -70,7 +70,7 @@
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="14" id="pfa-3d-v5s"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="17"/>
+                                                            <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -79,7 +79,7 @@
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="14" id="8sp-d1-Sra"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="17"/>
+                                                            <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -132,7 +132,7 @@
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="14" id="cr5-oc-IkG"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="17"/>
+                                                            <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -326,7 +326,7 @@
             <objects>
                 <viewController id="jA7-Br-5kh" customClass="AddAddressViewController" customModule="OSA" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UBj-ED-HBr">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="1046"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H7x-hu-jEQ">
@@ -676,7 +676,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xkW-ql-7bQ">
-                                                <rect key="frame" x="203" y="570" width="0.0" height="21"/>
+                                                <rect key="frame" x="203" y="570.5" width="0.0" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" id="nWm-Ig-08H"/>
                                                 </constraints>

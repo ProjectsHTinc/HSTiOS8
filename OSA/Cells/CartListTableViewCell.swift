@@ -16,6 +16,7 @@ class CartListTableViewCell: UITableViewCell {
     @IBOutlet weak var stockLabel: UILabel!
     @IBOutlet weak var MrpPrice: UILabel!
     @IBOutlet weak var deleteCart: UIButton!
+//    @IBOutlet weak var stepper: GMStepper!
     @IBOutlet weak var stepper: GMStepper!
     
     override func awakeFromNib() {

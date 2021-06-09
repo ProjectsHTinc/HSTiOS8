@@ -18,16 +18,17 @@ class DeliveredOrdersViewController: UIViewController, DeliveredOrdersDisplayLog
 
    
     @IBOutlet weak var deliveredOrderTableView: UITableView!
+    @IBOutlet weak var orderCountLbl: UILabel!
     
     var displayedDeliveredOrdersData: [DeliveredOrdersModel.Fetch.ViewModel.DisplayedDeliveredOrdersData] = []
     
-    var interactor: DeliveredOrdersBusinessLogic?
+    var interactor1: DeliveredOrdersBusinessLogic?
     var order_id = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        interactor?.fetchItems(request: DeliveredOrdersModel.Fetch.Request(user_id:GlobalVariables.shared.customer_id,status:"Deliverd"))
+        interactor1?.fetchItems(request: DeliveredOrdersModel.Fetch.Request(user_id:GlobalVariables.shared.customer_id,status:"Deliverd"))
 
         // Do any additional setup after loading the view.
     }
@@ -46,17 +47,20 @@ class DeliveredOrdersViewController: UIViewController, DeliveredOrdersDisplayLog
     
     private func setup()
     {
-        let viewController = self
-        let interactor = DeliveredOrdersInteractor()
-        let presenter = DeliveredOrdersPresenter()
-        viewController.interactor = interactor
-        interactor.presenter = presenter
-        presenter.viewController = viewController
+     
+        let viewController1 = self
+        let interactor1 = DeliveredOrdersInteractor()
+        let presenter1 = DeliveredOrdersPresenter()
+        viewController1.interactor1 = interactor1
+        interactor1.presenter1 = presenter1
+        presenter1.viewController1 = viewController1
       
     }
    
     func successFetchedItems(viewModel: DeliveredOrdersModel.Fetch.ViewModel) {
         displayedDeliveredOrdersData = viewModel.displayedDeliveredOrdersData
+        self.orderCountLbl.text = String(GlobalVariables.shared.orderCount) + "Order"
+        
         for data in displayedDeliveredOrdersData {
             let order_id = data.order_id
             self.order_id.append(order_id!)
@@ -77,28 +81,27 @@ class DeliveredOrdersViewController: UIViewController, DeliveredOrdersDisplayLog
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! DeliveredOrdersTableViewCell
         
+        
         let data = displayedDeliveredOrdersData[indexPath.row]
         cell.orderId.text = data.order_id
         cell.date.text = data.total_amount
         cell.price.text = data.street
         cell.status.text = data.status
-        cell.viewProducts.tag = indexPath.row
-        cell.viewProducts.addTarget(self, action: #selector(viewProductsButtonClicked(sender:)), for: .touchUpInside)
-  
-        
+        cell.productImage.sd_setImage(with: URL(string: data.order_cover_img!), placeholderImage: UIImage(named: ""))
+//        cell.viewProducts.tag = indexPath.row
+//        cell.viewProducts.addTarget(self, action: #selector(viewProductsButtonClicked(sender:)), for: .touchUpInside)
+//
       return cell
     }
     
-    @objc func viewProductsButtonClicked(sender: UIButton){
-        
-         let buttonClicked = sender.tag
-         print(buttonClicked)
-         let selectedIndex = Int(buttonClicked)
-         print(selectedIndex)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+     
+//        tableView.cellForRow(at: indexPath)?.accessoryType = .none
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as!
+   
         self.performSegue(withIdentifier: "to_deliveredOrderDetails", sender: self)
-            
     }
-
+            
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "to_deliveredOrderDetails")
         {

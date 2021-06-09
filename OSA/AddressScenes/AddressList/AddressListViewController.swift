@@ -194,11 +194,18 @@ class AddressListViewController: UIViewController,UITableViewDelegate,UITableVie
         cell.radioButImage.isHidden = false
         cell.tickRadioButtonImage.isHidden = true
         let data = displayedAddressListData[indexPath.row]
-        cell.addressLbl.text = data.street
+        cell.addressLbl.text = data.house_no
         cell.nameLbl.text = data.full_name
         cell.phoneNumber.text = data.mobile_number
+        cell.areaLbl.text = data.landmark
         cell.cityLbl.text = data.city! + "-" + data.pincode!
-        cell.phoneNumber.text = data.mobile_number
+//        cell.phoneNumber.text = data.mobile_number
+//
+//        @IBOutlet weak var addressLbl: UILabel!
+//        @IBOutlet weak var nameLbl: UILabel!
+//        @IBOutlet weak var areaLbl: UILabel!
+//        @IBOutlet weak var cityLbl: UILabel!
+//        @IBOutlet weak var phoneNumber: UILabel!
         
         cell.deleteAddress.tag = indexPath.row
         cell.deleteAddress.addTarget(self, action: #selector(deleteButtonClicked(sender:)), for: .touchUpInside)

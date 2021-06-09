@@ -23,6 +23,7 @@ class Menu: UIViewController, ProfileDetailsDisplayLogic {
 
         // Do any additional setup after loading the view.
         interactor1?.fetchItems(request: ProfileDetailsModel.Fetch.Request( user_id:GlobalVariables.shared.customer_id))
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -34,6 +35,7 @@ class Menu: UIViewController, ProfileDetailsDisplayLogic {
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
+   
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
     {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)

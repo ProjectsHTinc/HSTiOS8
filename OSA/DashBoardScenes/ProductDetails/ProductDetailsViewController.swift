@@ -1,3 +1,4 @@
+
 //
 //  ProductDetailsViewController.swift
 //  OSA
@@ -6,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 import SDWebImage
 import GMStepper
 
@@ -47,7 +49,6 @@ protocol CheckPincodeDisplayLogic: class
 
 class ProductDetailsViewController: UIViewController, ProductSizeDisplayLogic, ProductDetailsDisplayLogic,ProductColourDisplayLogic, RelatedProductDisplayLogic, ReviewListDisplayLogic, AddToCartDisplayLogic, CheckPincodeDisplayLogic, UIPopoverPresentationControllerDelegate {
  
-       
     @IBOutlet weak var productImage: UIImageView!
     @IBOutlet weak var productName: UILabel!
     @IBOutlet weak var productSizeCollectionView: UICollectionView!
@@ -67,9 +68,14 @@ class ProductDetailsViewController: UIViewController, ProductSizeDisplayLogic, P
     @IBOutlet weak var image4: UIImageView!
     @IBOutlet weak var image5: UIImageView!
     @IBOutlet weak var writeReviewOutlet: UIButton!
+    @IBOutlet weak var likeimage: UIImageView!
+    @IBOutlet weak var likeImageButton: UIButton!
+    @IBOutlet weak var sizeFoundLabel: UILabel!
+    @IBOutlet weak var colourFoundLabel: UILabel!
     
     var router: (NSObjectProtocol & ProductDetailsRoutingLogic & ProductDetailsDataPassing)?
     var product_id = String()
+    var reviewAverage = String()
     var interactor: ProductDetailsBusinessLogic?
     var interactor1: ProductSizeBusinessLogic?
     var interactor2: ProductColourBusinessLogic?
@@ -77,30 +83,74 @@ class ProductDetailsViewController: UIViewController, ProductSizeDisplayLogic, P
     var interactor4: ReviewListBusinessLogic?
     var interactor5: AddToCartBusinessLogic?
     var interactor6: CheckPincodeBusinessLogic?
-    
-    var displayedProductSizeData: [ProductSizeModel.Fetch.ViewModel.DisplayedProductSizeData] = []
-    var displayedProductColourData: [ProductColourModel.Fetch.ViewModel.DisplayedProductColourData] = []
-    var displayedRelatedProductData: [RelatedProductModel.Fetch.ViewModel.DisplayedRelatedProductData] = []
-    var displayedReviewListData: [ReviewListModel.Fetch.ViewModel.DisplayedReviewListData] = []
-    
     var sizeIdArr = [String]()
     var selectedsizeId = String()
     var colourIdArr = [String]()
     var selectedcolourId = String()
     var colourCodeArr = [String]()
     var quantity = String()
+    var displayedProductSizeData: [ProductSizeModel.Fetch.ViewModel.DisplayedProductSizeData] = []
+    var displayedProductColourData: [ProductColourModel.Fetch.ViewModel.DisplayedProductColourData] = []
+    var displayedRelatedProductData: [RelatedProductModel.Fetch.ViewModel.DisplayedRelatedProductData] = []
+    var displayedReviewListData: [ReviewListModel.Fetch.ViewModel.DisplayedReviewListData] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.setNavigationBar()
+        self.quantity = "1"
         print(product_id)
         print("Karann\(GlobalVariables.shared.customer_id)")
         stepper.addTarget(self, action: #selector(ProductDetailsViewController.stepperValueChanged), for: .valueChanged)
         self.callInteractor()
         self.selectedcolourId = "0"
         self.hideKeyboardWhenTappedAround()
+        self.setProductRating ()
         // Do any additional setup after loading the view.
+    }
+    
+    func setProductRating () {
+        
+        if reviewAverage == "1"{
+            
+            image1.image = UIImage(named:"star (3)")
+            image2.image = UIImage(named:"star (3)-1")
+            image3.image = UIImage(named:"star (3)-1")
+            image4.image = UIImage(named:"star (3)-1")
+            image5.image = UIImage(named:"star (3)-1")
+        }
+        else if reviewAverage == "2"{
+            
+            image1.image = UIImage(named:"star (3)")
+            image2.image = UIImage(named:"star (3)")
+            image3.image = UIImage(named:"star (3)-1")
+            image4.image = UIImage(named:"star (3)-1")
+            image5.image = UIImage(named:"star (3)-1")
+        }
+        else if reviewAverage == "3"{
+            
+            image1.image = UIImage(named:"star (3)")
+            image2.image = UIImage(named:"star (3)")
+            image3.image = UIImage(named:"star (3)")
+            image4.image = UIImage(named:"star (3)-1")
+            image5.image = UIImage(named:"star (3)-1")
+        }
+        else if reviewAverage == "4"{
+            
+            image1.image = UIImage(named:"star (3)")
+            image2.image = UIImage(named:"star (3)")
+            image3.image = UIImage(named:"star (3)")
+            image4.image = UIImage(named:"star (3)")
+            image5.image = UIImage(named:"star (3)-1")
+        }
+        else if reviewAverage == "5"{
+            
+            image1.image = UIImage(named:"star (3)")
+            image2.image = UIImage(named:"star (3)")
+            image3.image = UIImage(named:"star (3)")
+            image4.image = UIImage(named:"star (3)")
+            image5.image = UIImage(named:"star (3)")
+        }
     }
     
     func setNavigationBar() {
@@ -218,7 +268,7 @@ class ProductDetailsViewController: UIViewController, ProductSizeDisplayLogic, P
         viewController3.interactor3 = interactor3
         interactor3.presenter3 = presenter3
         presenter3.viewController3 = viewController3
-                
+
         let viewController4 = self
         let interactor4 = ReviewListInteractor()
         let presenter4 = ReviewListPresenter()
@@ -254,13 +304,17 @@ class ProductDetailsViewController: UIViewController, ProductSizeDisplayLogic, P
     }
     
     func errorFetchingItems(viewModel: ProductDetailsModel.Fetch.ViewModel) {
-        
+         
     }
     
 //    Product Size
     func successFetchedItems(viewModel: ProductSizeModel.Fetch.ViewModel) {
         displayedProductSizeData = viewModel.displayedProductSizeData
         
+        if displayedProductSizeData.count == 0 {
+            self.sizeFoundLabel.text = "No Size Found"
+           
+        }
         self.sizeIdArr.removeAll()
         
         for items in displayedProductSizeData{
@@ -278,7 +332,11 @@ class ProductDetailsViewController: UIViewController, ProductSizeDisplayLogic, P
 //    Product Colour
     func successFetchedItems(viewModel: ProductColourModel.Fetch.ViewModel) {
         displayedProductColourData = viewModel.displayedProductColourData
-        self.productColourCollectionView.reloadData()
+        
+        if displayedProductColourData.count == 0 {
+            self.colourFoundLabel.text = "No Colour Found"
+        }
+       
         self.colourIdArr.removeAll()
         self.selectedcolourId.removeAll()
         self.colourCodeArr.removeAll()
@@ -361,7 +419,6 @@ class ProductDetailsViewController: UIViewController, ProductSizeDisplayLogic, P
     }
 }
     
-
 extension ProductDetailsViewController :  UICollectionViewDelegate,UICollectionViewDataSource,UITableViewDelegate,UITableViewDataSource {
     
     
@@ -540,7 +597,6 @@ extension ProductDetailsViewController :  UICollectionViewDelegate,UICollectionV
         if (segue.identifier == "to_cartList")
         {
             _ = segue.destination as! CartListViewController
-            
         }
     }
     
@@ -558,4 +614,22 @@ extension ProductDetailsViewController :  UICollectionViewDelegate,UICollectionV
             }
             present(reviewVC, animated: true, completion: nil)
     }
+    
+    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+           var numOfSection: NSInteger = 0
+            if displayedProductSizeData.count > 0
+    {
+                self.productSizeCollectionView.backgroundView = nil
+                numOfSection = 1
+             }
+    else
+    {
+        let noDataLabel: UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.productSizeCollectionView.bounds.size.width, height: self.productSizeCollectionView.bounds.size.height))
+                noDataLabel.text = "No Data Available"
+                noDataLabel.textColor = UIColor(red: 22.0/255.0, green: 106.0/255.0, blue: 176.0/255.0, alpha: 1.0)
+        noDataLabel.textAlignment = NSTextAlignment.center
+                self.productSizeCollectionView.backgroundView = noDataLabel
+              }
+            return numOfSection
+      }
 }

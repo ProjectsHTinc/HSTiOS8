@@ -7,18 +7,14 @@
 
 import UIKit
 
-
-class CategoryDetailViewController: UIViewController,CategoryDisplayLogic,UICollectionViewDelegate,UICollectionViewDataSource {
-  
+class CategoryDetailViewController: UIViewController,CategoryDisplayLogic,UICollectionViewDelegate,UICollectionViewDataSource{
    
     @IBOutlet weak var allCategoryCollectionview: UICollectionView!
     @IBOutlet weak var searchBarView: UIView!
     @IBOutlet weak var searchTextfield: UITextField!
     
     var interactor1: CategoryBusinessLogic?
-  
     var displayedCategoryData: [CategoryModel.Fetch.ViewModel.DisplayedCategoryData] = []
-  
     var router: (NSObjectProtocol & CategoryRoutingLogic & CategoryDataPassing)?
     
     var id = String()
@@ -26,7 +22,6 @@ class CategoryDetailViewController: UIViewController,CategoryDisplayLogic,UIColl
     var category_image = String()
     var category_desc = String()
     var category_name = String()
-   
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +36,7 @@ class CategoryDetailViewController: UIViewController,CategoryDisplayLogic,UIColl
         searchTextfield.setCorner(radius: 25)
     }
     
-    override func viewDidLayoutSubviews(){
+    override func viewDidLayoutSubviews() {
 
         searchBarView.layerGradient(startPoint: .left, endPoint: .right, colorArray: [UIColor(red: 189.0/255.0, green: 6.0/255.0, blue: 33.0/255.0, alpha: 1.0).cgColor, UIColor(red: 95.0/255.0, green: 3.0/255.0, blue: 17.0/255.0, alpha: 1.0).cgColor], type: .axial)
     }
@@ -56,9 +51,7 @@ class CategoryDetailViewController: UIViewController,CategoryDisplayLogic,UIColl
     
     func callInteractor () {
         
-       
             interactor1?.fetchItems(request: CategoryModel.Fetch.Request(user_id:"1"))
-  
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
@@ -85,9 +78,7 @@ class CategoryDetailViewController: UIViewController,CategoryDisplayLogic,UIColl
         router.viewController = viewController1
         router.dataStore = interactor1
         
-       
     }
-    
 //
     func successFetchedItems(viewModel: CategoryModel.Fetch.ViewModel) {
         displayedCategoryData = viewModel.displayedCategoryData
@@ -100,7 +91,6 @@ class CategoryDetailViewController: UIViewController,CategoryDisplayLogic,UIColl
         
     }
     
-
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return displayedCategoryData.count
     }
@@ -126,26 +116,6 @@ class CategoryDetailViewController: UIViewController,CategoryDisplayLogic,UIColl
         self.performSegue(withIdentifier: "to-Category", sender: self)
     }
     
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        let yourWidth = collectionView.bounds.width/3.0
-//        let yourHeight = yourWidth
-//
-//        return CGSize(width: yourWidth, height: yourHeight)
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-//        return UIEdgeInsets.zero
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-//        return 0
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-//        return 0
-//    }
-//
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "to-Category")
         {
@@ -156,10 +126,17 @@ class CategoryDetailViewController: UIViewController,CategoryDisplayLogic,UIColl
             vc.category_desc = category_desc
             vc.category_name = category_name
         }
-    }
+     }
  }
-//var id : String?
-//var parent_id : String?
-//var category_image : String?
-//var category_desc : String?
-//var category_name : String?
+
+extension CategoryDetailViewController: UICollectionViewDelegateFlowLayout {
+
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+
+    let padding: CGFloat = 25
+    let collectionCellSize = allCategoryCollectionview.frame.size.width - padding
+
+  return CGSize(width: collectionCellSize/2, height: collectionCellSize/2)
+
+   }
+}

@@ -38,6 +38,7 @@ struct SubCategoryListModel{
             var delivery_fee_status : String?
             var product_description : String?
             var product_meta_keywords : String?
+            var review_average : String?
             
             }
             var displayedSubCategoryListData: [DisplayedSubCategoryListData]

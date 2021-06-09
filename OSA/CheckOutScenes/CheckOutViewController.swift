@@ -50,6 +50,8 @@ class CheckOutViewController: UIViewController,DeliveryAddressDisplayLogic, Prom
     @IBOutlet weak var totalPriceLbl: UILabel!
     @IBOutlet weak var walletSelectImage: UIImageView!
     @IBOutlet weak var cashOnDeliveryImage: UIImageView!
+    @IBOutlet weak var pincodeLbl: UILabel!
+    @IBOutlet weak var cityLbl: UILabel!
     
     var router: (NSObjectProtocol & DeliveryAddressRoutingLogic & DeliveryAddressDataPassing)?
     var displayedDeliveryAddressData: [DeliveryAddressModel.Fetch.ViewModel.DisplayedDeliveryAddressData] = []
@@ -65,6 +67,11 @@ class CheckOutViewController: UIViewController,DeliveryAddressDisplayLogic, Prom
     var userCity  = [String]()
     var userName = [String]()
     var userPhoneNumber = [String]()
+    var pincode = [String]()
+    var city = [String]()
+    var houseNum = [String]()
+//    var addressId = [String]()
+    
     var addressId = String()
     var orderId = String()
     var items = String()
@@ -184,13 +191,20 @@ class CheckOutViewController: UIViewController,DeliveryAddressDisplayLogic, Prom
         self.userName.removeAll()
         self.userPhoneNumber.removeAll()
         self.addressId.removeAll()
+        self.pincode.removeAll()
+        
         for data in displayedDeliveryAddressData {
             let name = data.full_name
             let phoneNumber = data.mobile_number
             let city = data.city
             let id = data.id
+            let pincode = data.pincode
+            let houseNum = data.house_no
+      
             
+            self.houseNum.append(houseNum!)
             self.userCity.append(city!)
+            self.pincode.append(pincode!)
             self.userName.append(name!)
             self.userPhoneNumber.append(phoneNumber!)
             self.addressId.append(id!)
@@ -198,9 +212,12 @@ class CheckOutViewController: UIViewController,DeliveryAddressDisplayLogic, Prom
         }
          print("Project\(addressId)")
          self.nameLbl.text = userName[0]
-         self.addressLbl.text = userCity[0]
+         self.addressLbl.text = houseNum[0]
+         self.pincodeLbl.text = pincode[0]
+         self.cityLbl.text = userCity[0]
          self.phoneNumberLbl.text = userPhoneNumber[0]
-        interactor2?.fetchItems(request: PlaceOrderModel.Fetch.Request(cus_notes:"", user_id:GlobalVariables.shared.customer_id,address_id:"1"))
+        
+        interactor2?.fetchItems(request: PlaceOrderModel.Fetch.Request(cus_notes:"", user_id:GlobalVariables.shared.customer_id,address_id:"94"))
         
     }
     

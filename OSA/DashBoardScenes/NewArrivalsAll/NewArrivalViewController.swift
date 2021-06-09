@@ -11,6 +11,7 @@ class NewArrivalViewController: UIViewController,UICollectionViewDelegate,UIColl
       
     @IBOutlet weak var newArrivalCollectionView: UICollectionView!
     @IBOutlet weak var searchTextfield: UITextField!
+    @IBOutlet weak var searchBarView: UIView!
     
     var interactor3: NewArrivalsBusinessLogic?
     var interactor2: BestSellingBusinessLogic?
@@ -32,6 +33,11 @@ class NewArrivalViewController: UIViewController,UICollectionViewDelegate,UIColl
         }
         
         searchTextfield.setCorner(radius: 25)
+    }
+    
+    override func viewDidLayoutSubviews() {
+
+        searchBarView.layerGradient(startPoint: .left, endPoint: .right, colorArray: [UIColor(red: 189.0/255.0, green: 6.0/255.0, blue: 33.0/255.0, alpha: 1.0).cgColor, UIColor(red: 95.0/255.0, green: 3.0/255.0, blue: 17.0/255.0, alpha: 1.0).cgColor], type: .axial)
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)

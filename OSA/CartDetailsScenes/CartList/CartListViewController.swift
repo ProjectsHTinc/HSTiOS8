@@ -14,7 +14,6 @@ protocol CartListDisplayLogic: class
     func successFetchedItems(viewModel: CartListModel.Fetch.ViewModel)
     func errorFetchingItems(viewModel: CartListModel.Fetch.ViewModel)
 }
-
 protocol DeleteCartDisplayLogic: class
 {
     func successFetchedItems(viewModel:DeleteCartModel.Fetch.ViewModel)
@@ -40,13 +39,13 @@ class CartListViewController: UIViewController,UITableViewDelegate,UITableViewDa
     var idArr = [String]()
     var selectedQuantity = String()
     var quantityArr = [Double]()
-    
     var displayedCartListData: [CartListModel.Fetch.ViewModel.DisplayedCartListData] = []
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         interactor?.fetchItems(request: CartListModel.Fetch.Request(user_id:GlobalVariables.shared.customer_id))
+       
         // Do any additional setup after loading the view.
     }
     
@@ -90,18 +89,27 @@ class CartListViewController: UIViewController,UITableViewDelegate,UITableViewDa
         presenter2.viewController2 = viewController2
     }
     
+    @IBAction func continueAction(_ sender: Any) {
+        
+        self.performSegue(withIdentifier: "to_checkout", sender: self)
+        
+    }
+    
 //    Cart List
     func successFetchedItems(viewModel: CartListModel.Fetch.ViewModel) {
         displayedCartListData = viewModel.displayedCartListData
         self.totalAmountLbl.text = "₹\(GlobalVariables.shared.total_cart_payment)"
+        
         self.idArr.removeAll()
         self.quantityArr.removeAll()
+        
         for data in displayedCartListData {
             let id = data.id
             let quantity = Double(data.quantity!)
             
             self.quantityArr.append(quantity!)
             self.idArr.append(id!)
+            
         }
         self.cartListTableView.reloadData()
     }
@@ -139,8 +147,10 @@ class CartListViewController: UIViewController,UITableViewDelegate,UITableViewDa
 //    Quantity Update
     func successFetchedItems(viewModel: QuantityUpdateModel.Fetch.ViewModel) {
         if viewModel.msg == "Product Quantity Updated" {
+            
            
-        interactor?.fetchItems(request: CartListModel.Fetch.Request(user_id:GlobalVariables.shared.customer_id))
+//        interactor?.fetchItems(request: CartListModel.Fetch.Request(user_id:GlobalVariables.shared.customer_id))
+//            self.cartListTableView.reloadData()
         }
     }
     
@@ -153,6 +163,7 @@ class CartListViewController: UIViewController,UITableViewDelegate,UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CartListTableViewCell
         let cartData = displayedCartListData[indexPath.row]
         
@@ -163,12 +174,13 @@ class CartListViewController: UIViewController,UITableViewDelegate,UITableViewDa
         cell.deleteCart.tag = indexPath.row
         cell.stepper.tag = indexPath.row
         cell.deleteCart.addTarget(self, action: #selector(deleteButtonClicked(sender:)), for: .touchUpInside)
-        cell.stepper.addTarget(self, action: #selector(CartListViewController.stepperValueChanged), for: .valueChanged)
-
+        cell.stepper.addTarget(self, action: #selector(stepperValueChanged), for: .valueChanged)
+ 
            return cell
     }
     
     @objc func deleteButtonClicked(sender: UIButton){
+        
       let buttonClicked = sender.tag
         print(buttonClicked)
         let selectedIndex = Int(buttonClicked)
@@ -179,22 +191,22 @@ class CartListViewController: UIViewController,UITableViewDelegate,UITableViewDa
     
     @objc func stepperValueChanged(stepper: GMStepper){
         let buttonClicked = stepper.tag
-          print(buttonClicked)
-          let selectedIndex = Int(buttonClicked)
-          let sel = self.idArr[selectedIndex]
+        print(buttonClicked)
+         let selectedIndex = Int(buttonClicked)
+         let sel = self.idArr[selectedIndex]
          self.selectedCartId = String(sel)
      
         let Quantity = stepper.value
         let quantityValue = String(Quantity)
-        print(quantityValue)
-        self.selectedQuantity = quantityValue
-        let qauantityInt = Int(selectedQuantity)
-        
-        if qauantityInt.hashValue >= Int(1.00) {
-           print("123")
+         print(quantityValue)
+         self.selectedQuantity = quantityValue
+         interactor2?.fetchItems(request: QuantityUpdateModel.Fetch.Request(cart_id:self.selectedCartId, user_id:GlobalVariables.shared.customer_id,cart_quantity:selectedQuantity))
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "to_checkout")
+        {
+            _ = segue.destination as! CheckOutViewController
         }
-        
-        interactor2?.fetchItems(request: QuantityUpdateModel.Fetch.Request(cart_id:self.selectedCartId, user_id:GlobalVariables.shared.customer_id,cart_quantity:selectedQuantity))
     }
 }
-

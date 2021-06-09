@@ -29,6 +29,7 @@ class GlobalVariables: NSObject {
     var order_id = String()
     var total_price = String()
     var product_detail_reviewCount = String()
+    var orderCount = Int()
     
     
 }

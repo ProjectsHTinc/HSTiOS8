@@ -36,6 +36,7 @@ class CategorySelectViewController: UIViewController,UICollectionViewDelegate,UI
     var displayedCategorySelectData: [CategorySelectModel.Fetch.ViewModel.DisplayedCategorySelectData] = []
     var displayedSubCategoryListData: [SubCategoryListModel.Fetch.ViewModel.DisplayedSubCategoryListData] = []
     
+    var collectionCellSize = CGFloat()
     var id = String()
     var parent_id = String()
     var category_image = String()
@@ -46,11 +47,13 @@ class CategorySelectViewController: UIViewController,UICollectionViewDelegate,UI
     var categoryArr = [String]()
     var product_id = String()
     var selectedIndex = Int ()
+    var reviewAverage = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         interactor?.fetchItems(request: CategorySelectModel.Fetch.Request(cat_id:id))
         searchTextfield.setCorner(radius: 25)
+        interactor2?.fetchItems(request: SubCategoryListModel.Fetch.Request(cat_id:id,sub_cat_id:"All",user_id:"1"))
     }
     
     override func viewDidLayoutSubviews(){
@@ -183,6 +186,47 @@ class CategorySelectViewController: UIViewController,UICollectionViewDelegate,UI
             cell.productTitlelabel.text = catArr.product_name
             cell.MrpPriceLabel.text = "₹\(catArr.prod_mrp_price!)"
             cell.categoryImage.sd_setImage(with: URL(string: catArr.product_cover_img!), placeholderImage: UIImage(named: ""))
+            if catArr.review_average == "1" {
+
+                cell.image1.image = UIImage(named:"star (3)")
+                cell.image2.image = UIImage(named:"star (3)-1")
+                cell.image3.image = UIImage(named:"star (3)-1")
+                cell.image4.image = UIImage(named:"star (3)-1")
+                cell.image5.image = UIImage(named:"star (3)-1")
+            }
+            else if catArr.review_average == "2" {
+
+                cell.image1.image = UIImage(named:"star (3)")
+                cell.image2.image = UIImage(named:"star (3)")
+                cell.image3.image = UIImage(named:"star (3)-1")
+                cell.image4.image = UIImage(named:"star (3)-1")
+                cell.image5.image = UIImage(named:"star (3)-1")
+            }
+            else if catArr.review_average == "3" {
+
+                cell.image1.image = UIImage(named:"star (3)")
+                cell.image2.image = UIImage(named:"star (3)")
+                cell.image3.image = UIImage(named:"star (3)")
+                cell.image4.image = UIImage(named:"star (3)-1")
+                cell.image5.image = UIImage(named:"star (3)-1")
+            }
+            else if catArr.review_average == "4" {
+
+                cell.image1.image = UIImage(named:"star (3)")
+                cell.image2.image = UIImage(named:"star (3)")
+                cell.image3.image = UIImage(named:"star (3)")
+                cell.image4.image = UIImage(named:"star (3)")
+                cell.image5.image = UIImage(named:"star (3)-1")
+            }
+            else if catArr.review_average == "5"{
+
+                cell.image1.image = UIImage(named:"star (3)")
+                cell.image2.image = UIImage(named:"star (3)")
+                cell.image3.image = UIImage(named:"star (3)")
+                cell.image4.image = UIImage(named:"star (3)")
+                cell.image5.image = UIImage(named:"star (3)")
+            }
+            
               return cell
         }
     }
@@ -202,6 +246,7 @@ class CategorySelectViewController: UIViewController,UICollectionViewDelegate,UI
         {
             let data = displayedSubCategoryListData[indexPath.row]
             self.product_id = data.id!
+            self.reviewAverage = data.review_average!
             self.performSegue(withIdentifier: "to_productDetail", sender: self)
         }
     }
@@ -211,6 +256,7 @@ class CategorySelectViewController: UIViewController,UICollectionViewDelegate,UI
          {
          let vc = segue.destination as! ProductDetailsViewController
             vc.product_id = self.product_id
+            vc.reviewAverage = self.reviewAverage
          }
          else if (segue.identifier == "to_filter")
          {
@@ -221,3 +267,15 @@ class CategorySelectViewController: UIViewController,UICollectionViewDelegate,UI
      }
 }
 
+//extension CategorySelectViewController: UICollectionViewDelegateFlowLayout {
+//
+//  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//    if collectionView == subCategoryListCollectionView {
+//
+//    let padding: CGFloat = 25
+//   collectionCellSize = subCategoryListCollectionView.frame.size.width - padding
+//    }
+//  return CGSize(width: collectionCellSize/2, height: collectionCellSize/2)
+////   }
+//    }
+//}

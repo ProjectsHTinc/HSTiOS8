@@ -14,7 +14,8 @@ class CategorySelectDetailModels : NSObject {
     var category_name : String?
     var category_image : String?
     var category_desc : String?
-   
+    
+    
      // MARK: Instance Method
      func loadFromDictionary(_ dict: [String: AnyObject])
      {
@@ -33,6 +34,7 @@ class CategorySelectDetailModels : NSObject {
        if let data = dict["category_desc"] as? String {
             self.category_desc = data
        }
+       
       }
      // MARK: Class Method
      class func build(_ dict: [String: AnyObject]) -> CategorySelectDetailModels {
@@ -54,6 +56,7 @@ class SubCategoryListDetailModels : NSObject {
     var delivery_fee_status : String?
     var product_description : String?
     var product_meta_keywords : String?
+    var review_average : String?
     
      // MARK: Instance Method
      func loadFromDictionary(_ dict: [String: AnyObject])
@@ -88,7 +91,9 @@ class SubCategoryListDetailModels : NSObject {
         if let data = dict["product_meta_keywords"] as? String {
              self.product_meta_keywords = data
         }
-     
+        if let data = dict["review_average"] as? String {
+             self.review_average = data
+        }
       }
      // MARK: Class Method
      class func build(_ dict: [String: AnyObject]) -> SubCategoryListDetailModels {

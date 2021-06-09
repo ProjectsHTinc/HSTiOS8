@@ -14,9 +14,8 @@ class DeliveredOrdersTableViewCell: UITableViewCell {
     @IBOutlet weak var date: UILabel!
     @IBOutlet weak var price: UILabel!
     @IBOutlet weak var status: UILabel!
-    @IBOutlet weak var viewProducts: UIButton!
-   
-  
+    @IBOutlet weak var productImage: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

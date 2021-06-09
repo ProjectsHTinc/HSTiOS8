@@ -29,10 +29,35 @@ class DeliveredOrdersModels : NSObject {
     var landmark : String?
     var order_cover_img : String?
     var order_id : String?
+    var promo_amount : String?
+    var purchase_order_status : String?
+    var paid_amount : String?
+    var payment_status : String?
+    var country_name : String?
+    var wallet_amount : String?
+
    
      // MARK: Instance Method
      func loadFromDictionary(_ dict: [String: AnyObject])
      {
+        if let data = dict["wallet_amount"] as? String {
+             self.wallet_amount = data
+        }
+        if let data = dict["country_name"] as? String {
+             self.country_name = data
+        }
+        if let data = dict["promo_amount"] as? String {
+             self.promo_amount = data
+        }
+        if let data = dict["purchase_order_status"] as? String {
+            self.purchase_order_status = data
+        }
+        if let data = dict["paid_amount"] as? String {
+            self.paid_amount = data
+        }
+        if let data = dict["payment_status"] as? String {
+            self.payment_status = data
+        }
         if let data = dict["total_amount"] as? String {
              self.total_amount = data
         }
