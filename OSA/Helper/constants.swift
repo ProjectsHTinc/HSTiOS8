@@ -16,5 +16,7 @@ struct Globals {
        static let ConstituencyAlertMessage = "";
        static let OTPAlertMessage = "Otp is incorrect";
        static let homePageImage = "";
+       static let primaryColorCode = "";
+
 }
  

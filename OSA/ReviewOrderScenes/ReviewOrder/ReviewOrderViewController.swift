@@ -135,20 +135,20 @@ extension ReviewOrderViewController: UITableViewDelegate,UITableViewDataSource {
     
     func webRequestCCavenue ()
     {
-        let concordinateString = "\(GlobalVariables.shared.order_id)" + "-" + GlobalVariables.shared.customer_id
-        UserDefaults.standard.set("Ap", forKey: "Advance/customer")
-        let viewController = self.storyboard!.instantiateViewController(withIdentifier: "CCWebViewController") as! CCWebViewViewController
-        viewController.accessCode = "AVAU84GD83BV10UAVB"
-        viewController.merchantId = "216134"
-        viewController.amount = GlobalVariables.shared.total_price
-        // advance_amount
-        viewController.currency = "INR"
-        viewController.orderId = concordinateString
-        viewController.redirectUrl = APIURL.BaseUrl_Dev + APIFunctionName.ccWebViewUrl
-        viewController.cancelUrl = APIURL.BaseUrl_Dev + "ccavenue_app/adding_money_to_wallet.php"
-        viewController.rsaKeyUrl = APIURL.BaseUrl_Dev + "ccavenue_app/GetRSA.php"
-        
-        self.present(viewController, animated: true, completion: nil)
+//        let concordinateString = "\(GlobalVariables.shared.order_id)" + "-" + GlobalVariables.shared.customer_id
+//        UserDefaults.standard.set("Ap", forKey: "Advance/customer")
+//        let viewController = self.storyboard!.instantiateViewController(withIdentifier: "CCWebViewController") as! CCWebViewViewController
+//        viewController.accessCode = "AVAU84GD83BV10UAVB"
+//        viewController.merchantId = "216134"
+//        viewController.amount = GlobalVariables.shared.total_price
+//        // advance_amount
+//        viewController.currency = "INR"
+//        viewController.orderId = concordinateString
+//        viewController.redirectUrl = APIURL.BaseUrl_Dev + APIFunctionName.ccWebViewUrl
+//        viewController.cancelUrl = APIURL.BaseUrl_Dev + "ccavenue_app/adding_money_to_wallet.php"
+//        viewController.rsaKeyUrl = APIURL.BaseUrl_Dev + "ccavenue_app/GetRSA.php"
+//
+//        self.present(viewController, animated: true, completion: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

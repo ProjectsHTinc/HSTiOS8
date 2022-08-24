@@ -69,34 +69,34 @@ class AddMoneyWalletViewController: UIViewController, AddMoneyToWalletDisplayLog
         
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-       if (segue.identifier == "to_webView")
-       {
-        _ = segue.destination as! CCWebViewViewController
-       
-       }
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        
+//       if (segue.identifier == "to_webView")
+//       {
+//        _ = segue.destination as! CCWebViewViewController
+//       
+//       }
+//    }
     
     func addToWalletByPaymemtGateway (amount:String)
     {
         
-        let concordinateString = "\(GlobalVariables.shared.order_id)" + "-" + GlobalVariables.shared.customer_id
-        print(concordinateString)
-        UserDefaults.standard.set("MW", forKey: "Advance/customer")
-        let viewController = self.storyboard!.instantiateViewController(withIdentifier: "CCWebViewController") as! CCWebViewViewController
-        viewController.accessCode = "AVAU84GD83BV10UAVB"
-        viewController.merchantId = "216134"
-        viewController.amount = amount
-        // advance_amount
-        viewController.strAddMoneyToWallet = concordinateString
-        viewController.currency = "INR"
-        viewController.orderId = concordinateString
-        viewController.redirectUrl = APIURL.BaseUrl_Dev + APIFunctionName.ccWebViewUrl
-        viewController.cancelUrl = APIURL.BaseUrl_Dev + "ccavenue_app/adding_money_to_wallet.php"
-        viewController.rsaKeyUrl = APIURL.BaseUrl_Dev + "ccavenue_app/GetRSA.php"
-                
-        self.present(viewController, animated: true, completion: nil)
+//        let concordinateString = "\(GlobalVariables.shared.order_id)" + "-" + GlobalVariables.shared.customer_id
+//        print(concordinateString)
+//        UserDefaults.standard.set("MW", forKey: "Advance/customer")
+//        let viewController = self.storyboard!.instantiateViewController(withIdentifier: "CCWebViewController") as! CCWebViewViewController
+//        viewController.accessCode = "AVAU84GD83BV10UAVB"
+//        viewController.merchantId = "216134"
+//        viewController.amount = amount
+//        // advance_amount
+//        viewController.strAddMoneyToWallet = concordinateString
+//        viewController.currency = "INR"
+//        viewController.orderId = concordinateString
+//        viewController.redirectUrl = APIURL.BaseUrl_Dev + APIFunctionName.ccWebViewUrl
+//        viewController.cancelUrl = APIURL.BaseUrl_Dev + "ccavenue_app/adding_money_to_wallet.php"
+//        viewController.rsaKeyUrl = APIURL.BaseUrl_Dev + "ccavenue_app/GetRSA.php"
+//
+//        self.present(viewController, animated: true, completion: nil)
 
     }
 }

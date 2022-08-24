@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		385ED36A77F981B0B69F82E6 /* Pods_OSA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 251184F32CEA9EB8AD76143C /* Pods_OSA.framework */; };
 		6B00C864261366CF004E7D6F /* SearchProductInteracter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B00C863261366CE004E7D6F /* SearchProductInteracter.swift */; };
 		6B00C869261366F5004E7D6F /* SearchProductWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B00C868261366F5004E7D6F /* SearchProductWorker.swift */; };
 		6B00C86B2613670C004E7D6F /* SearchProductPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B00C86A2613670C004E7D6F /* SearchProductPresenter.swift */; };
@@ -113,13 +112,6 @@
 		6B2AF6AE25DD4973003D1930 /* DashBoardInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2AF6AD25DD4973003D1930 /* DashBoardInteractor.swift */; };
 		6B2AF6B325DD4987003D1930 /* DashBoardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2AF6B225DD4987003D1930 /* DashBoardModel.swift */; };
 		6B3B34A325F7AB2F00C075A0 /* AddAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3B34A225F7AB2F00C075A0 /* AddAddressViewController.swift */; };
-		6B409E9D25FCB7AA00C5E6BA /* LoadingOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B409E9C25FCB7AA00C5E6BA /* LoadingOverlay.swift */; };
-		6B409EAA25FCB81A00C5E6BA /* CCResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B409EA925FCB81A00C5E6BA /* CCResultViewController.swift */; };
-		6B409EF025FCD7C500C5E6BA /* CCWebViewInteracter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B409EEF25FCD7C500C5E6BA /* CCWebViewInteracter.swift */; };
-		6B409EF525FCD7F700C5E6BA /* CCWebViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B409EF425FCD7F700C5E6BA /* CCWebViewPresenter.swift */; };
-		6B409EFA25FCD84400C5E6BA /* CCWebViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B409EF925FCD84400C5E6BA /* CCWebViewRouter.swift */; };
-		6B409EFF25FCD86600C5E6BA /* CCWebViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B409EFE25FCD86600C5E6BA /* CCWebViewModel.swift */; };
-		6B409F0B25FCD96F00C5E6BA /* CCWebViewWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B409F0A25FCD96F00C5E6BA /* CCWebViewWorker.swift */; };
 		6B409F1625FCDAC000C5E6BA /* CCWebViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B409F1525FCDAC000C5E6BA /* CCWebViewModels.swift */; };
 		6B457CCC25F7551C00DC017F /* OrderDetailsInteracter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B457CCB25F7551C00DC017F /* OrderDetailsInteracter.swift */; };
 		6B457CD125F7554000DC017F /* OrderDetailsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B457CD025F7554000DC017F /* OrderDetailsWorker.swift */; };
@@ -187,7 +179,6 @@
 		6B79A2AD2604C5EC00CF7A50 /* WishListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B79A2AC2604C5EC00CF7A50 /* WishListPresenter.swift */; };
 		6B79A2B22604C60700CF7A50 /* WishListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B79A2B12604C60700CF7A50 /* WishListModel.swift */; };
 		6B79A2BA2604C62500CF7A50 /* WishListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B79A2B92604C62500CF7A50 /* WishListRouter.swift */; };
-		6B7CB0A725FB9B3300DF76C5 /* CCWebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7CB0A625FB9B3200DF76C5 /* CCWebViewViewController.swift */; };
 		6B7CC29125E7B24E0045DFB8 /* CategorySelectInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7CC29025E7B24E0045DFB8 /* CategorySelectInteractor.swift */; };
 		6B7CC29625E7B2850045DFB8 /* CategorySelectWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7CC29525E7B2850045DFB8 /* CategorySelectWorker.swift */; };
 		6B7CC29B25E7B2AD0045DFB8 /* CategorySelectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7CC29A25E7B2AD0045DFB8 /* CategorySelectModel.swift */; };
@@ -297,12 +288,6 @@
 		6BD68C00261DC25500355F41 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC207D725CA9DD1007083D4 /* LoginViewController.swift */; };
 		6BD7693025FF213400E89948 /* BookingSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD7692F25FF213400E89948 /* BookingSuccessViewController.swift */; };
 		6BD7727A25FF578B00E89948 /* OpenSSL.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BD76A5D25FF52A600E89948 /* OpenSSL.xcframework */; };
-		6BD772F125FF5D2500E89948 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BD772E825FF5D2500E89948 /* libssl.a */; };
-		6BD772F425FF5D2500E89948 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BD772EC25FF5D2500E89948 /* libssl.a */; };
-		6BD7735725FF5EC000E89948 /* CCInitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD7735525FF5EBF00E89948 /* CCInitViewController.swift */; };
-		6BD7735825FF5EC000E89948 /* CCInitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD7735625FF5EBF00E89948 /* CCInitView.swift */; };
-		6BD7736625FF601600E89948 /* CCTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BD7736125FF601600E89948 /* CCTool.m */; };
-		6BD7736725FF601600E89948 /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BD7736425FF601600E89948 /* Base64.m */; };
 		6BD7EE9525D2C3AE00404671 /* DashBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BD7EE9425D2C3AE00404671 /* DashBoard.storyboard */; };
 		6BD8923525F206AB0004EEB3 /* CartDeleteInteracter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD8923425F206AB0004EEB3 /* CartDeleteInteracter.swift */; };
 		6BD8923A25F206DC0004EEB3 /* CartDeleteWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD8923925F206DC0004EEB3 /* CartDeleteWorker.swift */; };
@@ -412,14 +397,15 @@
 		6BFF985425C92ACA00D60BF3 /* Montserrat-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6BFF984925C92ACA00D60BF3 /* Montserrat-Medium.otf */; };
 		6BFF985525C92ACA00D60BF3 /* Montserrat-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6BFF984A25C92ACA00D60BF3 /* Montserrat-BoldItalic.otf */; };
 		6BFF985625C92ACA00D60BF3 /* Montserrat-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6BFF984B25C92ACA00D60BF3 /* Montserrat-ExtraBold.otf */; };
+		71A932E6A2406BDC587EA173 /* Pods_OSA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0EE2B05EC739D26B5E40F4F /* Pods_OSA.framework */; };
 		7990552726282471002D7AF6 /* WishListRemoveInteracter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7990552626282471002D7AF6 /* WishListRemoveInteracter.swift */; };
 		7990552D26282637002D7AF6 /* WishListModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7990552C26282637002D7AF6 /* WishListModels.swift */; };
 		799055332628313C002D7AF6 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799055322628313C002D7AF6 /* APIManager.swift */; };
-		7990553D2628708A002D7AF6 /* Wallet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7990553C26287089002D7AF6 /* Wallet.storyboard */; };
 		79E9CA9B26319AF700D45621 /* ReturnRequestInteracter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E9CA9A26319AF700D45621 /* ReturnRequestInteracter.swift */; };
 		79E9CAA126319B0E00D45621 /* ReturnRequestWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E9CAA026319B0E00D45621 /* ReturnRequestWorker.swift */; };
 		79E9CAA326319B1B00D45621 /* ReturnRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E9CAA226319B1B00D45621 /* ReturnRequestModel.swift */; };
 		79E9CAA926319B2A00D45621 /* ReturnRequestPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E9CAA826319B2A00D45621 /* ReturnRequestPresenter.swift */; };
+		EE0B9AF728B4C6C6006BB9CA /* Wallet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE0B9AF628B4C6C6006BB9CA /* Wallet.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -461,7 +447,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		251184F32CEA9EB8AD76143C /* Pods_OSA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OSA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		566970A89DE8E788D51108CA /* Pods-OSA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OSA.release.xcconfig"; path = "Target Support Files/Pods-OSA/Pods-OSA.release.xcconfig"; sourceTree = "<group>"; };
 		6B00C863261366CE004E7D6F /* SearchProductInteracter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchProductInteracter.swift; sourceTree = "<group>"; };
 		6B00C868261366F5004E7D6F /* SearchProductWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchProductWorker.swift; sourceTree = "<group>"; };
 		6B00C86A2613670C004E7D6F /* SearchProductPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchProductPresenter.swift; sourceTree = "<group>"; };
@@ -567,14 +553,7 @@
 		6B2AF6AD25DD4973003D1930 /* DashBoardInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashBoardInteractor.swift; sourceTree = "<group>"; };
 		6B2AF6B225DD4987003D1930 /* DashBoardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashBoardModel.swift; sourceTree = "<group>"; };
 		6B3B34A225F7AB2F00C075A0 /* AddAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAddressViewController.swift; sourceTree = "<group>"; };
-		6B409E9C25FCB7AA00C5E6BA /* LoadingOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingOverlay.swift; sourceTree = "<group>"; };
-		6B409EA925FCB81A00C5E6BA /* CCResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCResultViewController.swift; sourceTree = "<group>"; };
 		6B409EE725FCCAA400C5E6BA /* OpenSSL.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = OpenSSL.xcframework; path = "Pods/OpenSSL-Universal/Frameworks/OpenSSL.xcframework"; sourceTree = "<group>"; };
-		6B409EEF25FCD7C500C5E6BA /* CCWebViewInteracter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCWebViewInteracter.swift; sourceTree = "<group>"; };
-		6B409EF425FCD7F700C5E6BA /* CCWebViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCWebViewPresenter.swift; sourceTree = "<group>"; };
-		6B409EF925FCD84400C5E6BA /* CCWebViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCWebViewRouter.swift; sourceTree = "<group>"; };
-		6B409EFE25FCD86600C5E6BA /* CCWebViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCWebViewModel.swift; sourceTree = "<group>"; };
-		6B409F0A25FCD96F00C5E6BA /* CCWebViewWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCWebViewWorker.swift; sourceTree = "<group>"; };
 		6B409F1525FCDAC000C5E6BA /* CCWebViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCWebViewModels.swift; sourceTree = "<group>"; };
 		6B457CCB25F7551C00DC017F /* OrderDetailsInteracter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailsInteracter.swift; sourceTree = "<group>"; };
 		6B457CD025F7554000DC017F /* OrderDetailsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailsWorker.swift; sourceTree = "<group>"; };
@@ -642,7 +621,6 @@
 		6B79A2AC2604C5EC00CF7A50 /* WishListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListPresenter.swift; sourceTree = "<group>"; };
 		6B79A2B12604C60700CF7A50 /* WishListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListModel.swift; sourceTree = "<group>"; };
 		6B79A2B92604C62500CF7A50 /* WishListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListRouter.swift; sourceTree = "<group>"; };
-		6B7CB0A625FB9B3200DF76C5 /* CCWebViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCWebViewViewController.swift; sourceTree = "<group>"; };
 		6B7CC29025E7B24E0045DFB8 /* CategorySelectInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySelectInteractor.swift; sourceTree = "<group>"; };
 		6B7CC29525E7B2850045DFB8 /* CategorySelectWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySelectWorker.swift; sourceTree = "<group>"; };
 		6B7CC29A25E7B2AD0045DFB8 /* CategorySelectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySelectModel.swift; sourceTree = "<group>"; };
@@ -758,89 +736,6 @@
 		6BD76A5D25FF52A600E89948 /* OpenSSL.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = OpenSSL.xcframework; sourceTree = "<group>"; };
 		6BD76A5F25FF52AD00E89948 /* OpenSSL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OpenSSL.framework; sourceTree = "<group>"; };
 		6BD76A6725FF54BE00E89948 /* libafc.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libafc.tbd; path = usr/lib/libafc.tbd; sourceTree = SDKROOT; };
-		6BD7729925FF5D2500E89948 /* pem2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pem2.h; sourceTree = "<group>"; };
-		6BD7729A25FF5D2500E89948 /* pem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pem.h; sourceTree = "<group>"; };
-		6BD7729B25FF5D2500E89948 /* ssl3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ssl3.h; sourceTree = "<group>"; };
-		6BD7729C25FF5D2500E89948 /* ossl_typ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ossl_typ.h; sourceTree = "<group>"; };
-		6BD7729D25FF5D2500E89948 /* dtls1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dtls1.h; sourceTree = "<group>"; };
-		6BD7729E25FF5D2500E89948 /* err.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = err.h; sourceTree = "<group>"; };
-		6BD7729F25FF5D2500E89948 /* bn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bn.h; sourceTree = "<group>"; };
-		6BD772A025FF5D2500E89948 /* blowfish.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = blowfish.h; sourceTree = "<group>"; };
-		6BD772A125FF5D2500E89948 /* cms.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cms.h; sourceTree = "<group>"; };
-		6BD772A225FF5D2500E89948 /* engine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = engine.h; sourceTree = "<group>"; };
-		6BD772A325FF5D2500E89948 /* conf_api.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = conf_api.h; sourceTree = "<group>"; };
-		6BD772A425FF5D2500E89948 /* x509.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = x509.h; sourceTree = "<group>"; };
-		6BD772A525FF5D2500E89948 /* asn1_mac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = asn1_mac.h; sourceTree = "<group>"; };
-		6BD772A625FF5D2500E89948 /* ui.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui.h; sourceTree = "<group>"; };
-		6BD772A725FF5D2500E89948 /* kssl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kssl.h; sourceTree = "<group>"; };
-		6BD772A825FF5D2500E89948 /* sha.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sha.h; sourceTree = "<group>"; };
-		6BD772A925FF5D2500E89948 /* symhacks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = symhacks.h; sourceTree = "<group>"; };
-		6BD772AA25FF5D2500E89948 /* asn1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = asn1.h; sourceTree = "<group>"; };
-		6BD772AB25FF5D2500E89948 /* opensslconf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = opensslconf.h; sourceTree = "<group>"; };
-		6BD772AC25FF5D2500E89948 /* bio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bio.h; sourceTree = "<group>"; };
-		6BD772AD25FF5D2500E89948 /* rc2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rc2.h; sourceTree = "<group>"; };
-		6BD772AE25FF5D2500E89948 /* dh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dh.h; sourceTree = "<group>"; };
-		6BD772AF25FF5D2500E89948 /* ui_compat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_compat.h; sourceTree = "<group>"; };
-		6BD772B025FF5D2500E89948 /* x509v3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = x509v3.h; sourceTree = "<group>"; };
-		6BD772B125FF5D2500E89948 /* ssl23.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ssl23.h; sourceTree = "<group>"; };
-		6BD772B225FF5D2500E89948 /* conf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = conf.h; sourceTree = "<group>"; };
-		6BD772B325FF5D2500E89948 /* md5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = md5.h; sourceTree = "<group>"; };
-		6BD772B425FF5D2500E89948 /* x509_vfy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = x509_vfy.h; sourceTree = "<group>"; };
-		6BD772B525FF5D2500E89948 /* txt_db.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = txt_db.h; sourceTree = "<group>"; };
-		6BD772B625FF5D2500E89948 /* safestack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = safestack.h; sourceTree = "<group>"; };
-		6BD772B725FF5D2500E89948 /* ecdsa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ecdsa.h; sourceTree = "<group>"; };
-		6BD772B825FF5D2500E89948 /* objects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = objects.h; sourceTree = "<group>"; };
-		6BD772B925FF5D2500E89948 /* pkcs12.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pkcs12.h; sourceTree = "<group>"; };
-		6BD772BA25FF5D2500E89948 /* crypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crypto.h; sourceTree = "<group>"; };
-		6BD772BB25FF5D2500E89948 /* opensslv.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = opensslv.h; sourceTree = "<group>"; };
-		6BD772BC25FF5D2500E89948 /* pkcs7.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pkcs7.h; sourceTree = "<group>"; };
-		6BD772BD25FF5D2500E89948 /* obj_mac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = obj_mac.h; sourceTree = "<group>"; };
-		6BD772BE25FF5D2500E89948 /* buffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = buffer.h; sourceTree = "<group>"; };
-		6BD772BF25FF5D2500E89948 /* ssl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ssl.h; sourceTree = "<group>"; };
-		6BD772C025FF5D2500E89948 /* srp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = srp.h; sourceTree = "<group>"; };
-		6BD772C125FF5D2500E89948 /* camellia.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = camellia.h; sourceTree = "<group>"; };
-		6BD772C225FF5D2500E89948 /* evp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = evp.h; sourceTree = "<group>"; };
-		6BD772C325FF5D2500E89948 /* e_os2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = e_os2.h; sourceTree = "<group>"; };
-		6BD772C425FF5D2500E89948 /* md4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = md4.h; sourceTree = "<group>"; };
-		6BD772C525FF5D2500E89948 /* hmac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hmac.h; sourceTree = "<group>"; };
-		6BD772C625FF5D2500E89948 /* aes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aes.h; sourceTree = "<group>"; };
-		6BD772C725FF5D2500E89948 /* comp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = comp.h; sourceTree = "<group>"; };
-		6BD772C825FF5D2500E89948 /* cast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cast.h; sourceTree = "<group>"; };
-		6BD772C925FF5D2500E89948 /* rc4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rc4.h; sourceTree = "<group>"; };
-		6BD772CA25FF5D2500E89948 /* stack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stack.h; sourceTree = "<group>"; };
-		6BD772CB25FF5D2500E89948 /* des.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = des.h; sourceTree = "<group>"; };
-		6BD772CC25FF5D2500E89948 /* ocsp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ocsp.h; sourceTree = "<group>"; };
-		6BD772CD25FF5D2500E89948 /* ec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ec.h; sourceTree = "<group>"; };
-		6BD772CE25FF5D2500E89948 /* ecdh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ecdh.h; sourceTree = "<group>"; };
-		6BD772CF25FF5D2500E89948 /* rand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rand.h; sourceTree = "<group>"; };
-		6BD772D025FF5D2500E89948 /* ts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ts.h; sourceTree = "<group>"; };
-		6BD772D125FF5D2500E89948 /* pqueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pqueue.h; sourceTree = "<group>"; };
-		6BD772D225FF5D2500E89948 /* dso.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dso.h; sourceTree = "<group>"; };
-		6BD772D325FF5D2500E89948 /* seed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = seed.h; sourceTree = "<group>"; };
-		6BD772D425FF5D2500E89948 /* modes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = modes.h; sourceTree = "<group>"; };
-		6BD772D525FF5D2500E89948 /* ssl2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ssl2.h; sourceTree = "<group>"; };
-		6BD772D625FF5D2500E89948 /* rsa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rsa.h; sourceTree = "<group>"; };
-		6BD772D725FF5D2500E89948 /* krb5_asn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = krb5_asn.h; sourceTree = "<group>"; };
-		6BD772D825FF5D2500E89948 /* des_old.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = des_old.h; sourceTree = "<group>"; };
-		6BD772D925FF5D2500E89948 /* ripemd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ripemd.h; sourceTree = "<group>"; };
-		6BD772DA25FF5D2500E89948 /* whrlpool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = whrlpool.h; sourceTree = "<group>"; };
-		6BD772DB25FF5D2500E89948 /* tls1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tls1.h; sourceTree = "<group>"; };
-		6BD772DC25FF5D2500E89948 /* mdc2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mdc2.h; sourceTree = "<group>"; };
-		6BD772DD25FF5D2500E89948 /* dsa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dsa.h; sourceTree = "<group>"; };
-		6BD772DE25FF5D2500E89948 /* srtp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = srtp.h; sourceTree = "<group>"; };
-		6BD772DF25FF5D2500E89948 /* asn1t.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = asn1t.h; sourceTree = "<group>"; };
-		6BD772E025FF5D2500E89948 /* cmac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cmac.h; sourceTree = "<group>"; };
-		6BD772E125FF5D2500E89948 /* ebcdic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ebcdic.h; sourceTree = "<group>"; };
-		6BD772E225FF5D2500E89948 /* idea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = idea.h; sourceTree = "<group>"; };
-		6BD772E325FF5D2500E89948 /* lhash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lhash.h; sourceTree = "<group>"; };
-		6BD772E525FF5D2500E89948 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcrypto.a; sourceTree = "<group>"; };
-		6BD772E725FF5D2500E89948 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcrypto.a; sourceTree = "<group>"; };
-		6BD772E825FF5D2500E89948 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libssl.a; sourceTree = "<group>"; };
-		6BD772EA25FF5D2500E89948 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcrypto.a; sourceTree = "<group>"; };
-		6BD772EB25FF5D2500E89948 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libssl.a; sourceTree = "<group>"; };
-		6BD772EC25FF5D2500E89948 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libssl.a; sourceTree = "<group>"; };
-		6BD772ED25FF5D2500E89948 /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
-		6BD772EE25FF5D2500E89948 /* shim.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shim.h; sourceTree = "<group>"; };
 		6BD772FA25FF5D8700E89948 /* pem2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = pem2.h; sourceTree = "<group>"; };
 		6BD772FB25FF5D8700E89948 /* pem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = pem.h; sourceTree = "<group>"; };
 		6BD772FC25FF5D8700E89948 /* ssl3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ssl3.h; sourceTree = "<group>"; };
@@ -922,16 +817,6 @@
 		6BD7734B25FF5D9000E89948 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcrypto.a; sourceTree = "<group>"; };
 		6BD7734C25FF5D9000E89948 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libssl.a; sourceTree = "<group>"; };
 		6BD7734D25FF5D9000E89948 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libssl.a; sourceTree = "<group>"; };
-		6BD7735525FF5EBF00E89948 /* CCInitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCInitViewController.swift; sourceTree = "<group>"; };
-		6BD7735625FF5EBF00E89948 /* CCInitView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCInitView.swift; sourceTree = "<group>"; };
-		6BD7736025FF601600E89948 /* Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64.h; sourceTree = "<group>"; };
-		6BD7736125FF601600E89948 /* CCTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTool.m; sourceTree = "<group>"; };
-		6BD7736325FF601600E89948 /* CCIntegrationKit_swift+bridging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CCIntegrationKit_swift+bridging.h"; sourceTree = "<group>"; };
-		6BD7736425FF601600E89948 /* Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Base64.m; sourceTree = "<group>"; };
-		6BD7736525FF601600E89948 /* CCTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTool.h; sourceTree = "<group>"; };
-		6BD7736E25FF60D500E89948 /* OSA-BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OSA-BridgingHeader.h"; sourceTree = "<group>"; };
-		6BD7737325FF637800E89948 /* CCInitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCInitViewController.swift; sourceTree = "<group>"; };
-		6BD7737425FF637900E89948 /* CCInitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCInitView.swift; sourceTree = "<group>"; };
 		6BD7EE9425D2C3AE00404671 /* DashBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DashBoard.storyboard; sourceTree = "<group>"; };
 		6BD8923425F206AB0004EEB3 /* CartDeleteInteracter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartDeleteInteracter.swift; sourceTree = "<group>"; };
 		6BD8923925F206DC0004EEB3 /* CartDeleteWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartDeleteWorker.swift; sourceTree = "<group>"; };
@@ -1050,13 +935,13 @@
 		7990552626282471002D7AF6 /* WishListRemoveInteracter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListRemoveInteracter.swift; sourceTree = "<group>"; };
 		7990552C26282637002D7AF6 /* WishListModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListModels.swift; sourceTree = "<group>"; };
 		799055322628313C002D7AF6 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
-		7990553C26287089002D7AF6 /* Wallet.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Wallet.storyboard; path = ../../../../Downloads/Wallet.storyboard; sourceTree = "<group>"; };
 		79E9CA9A26319AF700D45621 /* ReturnRequestInteracter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReturnRequestInteracter.swift; sourceTree = "<group>"; };
 		79E9CAA026319B0E00D45621 /* ReturnRequestWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReturnRequestWorker.swift; sourceTree = "<group>"; };
 		79E9CAA226319B1B00D45621 /* ReturnRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReturnRequestModel.swift; sourceTree = "<group>"; };
 		79E9CAA826319B2A00D45621 /* ReturnRequestPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReturnRequestPresenter.swift; sourceTree = "<group>"; };
-		C134F5B017747ACB187BB640 /* Pods-OSA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OSA.release.xcconfig"; path = "Target Support Files/Pods-OSA/Pods-OSA.release.xcconfig"; sourceTree = "<group>"; };
-		CF962641A5DDA5A0E8EED271 /* Pods-OSA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OSA.debug.xcconfig"; path = "Target Support Files/Pods-OSA/Pods-OSA.debug.xcconfig"; sourceTree = "<group>"; };
+		C0EE2B05EC739D26B5E40F4F /* Pods_OSA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OSA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D6C084DF2364C846017F9136 /* Pods-OSA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OSA.debug.xcconfig"; path = "Target Support Files/Pods-OSA/Pods-OSA.debug.xcconfig"; sourceTree = "<group>"; };
+		EE0B9AF628B4C6C6006BB9CA /* Wallet.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Wallet.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1071,10 +956,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6BD772F425FF5D2500E89948 /* libssl.a in Frameworks */,
-				6BD772F125FF5D2500E89948 /* libssl.a in Frameworks */,
 				6BD7727A25FF578B00E89948 /* OpenSSL.xcframework in Frameworks */,
-				385ED36A77F981B0B69F82E6 /* Pods_OSA.framework in Frameworks */,
+				71A932E6A2406BDC587EA173 /* Pods_OSA.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1397,15 +1280,6 @@
 			path = AddAddress;
 			sourceTree = "<group>";
 		};
-		6B409EA525FCB7F400C5E6BA /* CCResult */ = {
-			isa = PBXGroup;
-			children = (
-				6BD7735F25FF601600E89948 /* Objective C Classes */,
-				6B409EA925FCB81A00C5E6BA /* CCResultViewController.swift */,
-			);
-			path = CCResult;
-			sourceTree = "<group>";
-		};
 		6B457CCA25F754D600DC017F /* OrderDetails */ = {
 			isa = PBXGroup;
 			children = (
@@ -1564,31 +1438,6 @@
 				6B78E49D25E67D9900A3AA6C /* NewArrivalViewController.swift */,
 			);
 			path = NewArrivalsAll;
-			sourceTree = "<group>";
-		};
-		6B7CB0A425FB9AB400DF76C5 /* CCAvenue */ = {
-			isa = PBXGroup;
-			children = (
-				6BD7737225FF637500E89948 /* CCInitial */,
-				6BD7729625FF5D2500E89948 /* SSL */,
-				6B409EA525FCB7F400C5E6BA /* CCResult */,
-				6B7CB0A525FB9AC000DF76C5 /* CCWeb */,
-			);
-			path = CCAvenue;
-			sourceTree = "<group>";
-		};
-		6B7CB0A525FB9AC000DF76C5 /* CCWeb */ = {
-			isa = PBXGroup;
-			children = (
-				6B409E9C25FCB7AA00C5E6BA /* LoadingOverlay.swift */,
-				6B7CB0A625FB9B3200DF76C5 /* CCWebViewViewController.swift */,
-				6B409EEF25FCD7C500C5E6BA /* CCWebViewInteracter.swift */,
-				6B409F0A25FCD96F00C5E6BA /* CCWebViewWorker.swift */,
-				6B409EF425FCD7F700C5E6BA /* CCWebViewPresenter.swift */,
-				6B409EFE25FCD86600C5E6BA /* CCWebViewModel.swift */,
-				6B409EF925FCD84400C5E6BA /* CCWebViewRouter.swift */,
-			);
-			path = CCWeb;
 			sourceTree = "<group>";
 		};
 		6B83FD202616EA8A00BB3307 /* NotificationService */ = {
@@ -1843,8 +1692,8 @@
 				6BD7EE9425D2C3AE00404671 /* DashBoard.storyboard */,
 				6B79A2932604C17100CF7A50 /* WishList.storyboard */,
 				6B0D9C7325F77CD4003DBBDF /* Address.storyboard */,
+				EE0B9AF628B4C6C6006BB9CA /* Wallet.storyboard */,
 				6BBFA23125FF984A003ADB6C /* ReviewOrder.storyboard */,
-				7990553C26287089002D7AF6 /* Wallet.storyboard */,
 				6BA45A602600D1690008B69F /* CCWebView.storyboard */,
 				6BA45A652600E9540008B69F /* BookingSuccess.storyboard */,
 				6B6855842603190B00056296 /* Profile.storyboard */,
@@ -1973,138 +1822,6 @@
 			path = "Pods/OpenSSL-Universal/Frameworks/OpenSSL.xcframework/ios-arm64_arm64e_armv7_armv7s";
 			sourceTree = "<group>";
 		};
-		6BD7729625FF5D2500E89948 /* SSL */ = {
-			isa = PBXGroup;
-			children = (
-				6BD7735425FF5EBF00E89948 /* CCInitial */,
-				6BD7729725FF5D2500E89948 /* include */,
-				6BD772E425FF5D2500E89948 /* lib */,
-				6BD772ED25FF5D2500E89948 /* module.modulemap */,
-				6BD772EE25FF5D2500E89948 /* shim.h */,
-			);
-			name = SSL;
-			path = ../../../HSTiOS1/SSL;
-			sourceTree = "<group>";
-		};
-		6BD7729725FF5D2500E89948 /* include */ = {
-			isa = PBXGroup;
-			children = (
-				6BD7729825FF5D2500E89948 /* openssl */,
-			);
-			path = include;
-			sourceTree = "<group>";
-		};
-		6BD7729825FF5D2500E89948 /* openssl */ = {
-			isa = PBXGroup;
-			children = (
-				6BD7729925FF5D2500E89948 /* pem2.h */,
-				6BD7729A25FF5D2500E89948 /* pem.h */,
-				6BD7729B25FF5D2500E89948 /* ssl3.h */,
-				6BD7729C25FF5D2500E89948 /* ossl_typ.h */,
-				6BD7729D25FF5D2500E89948 /* dtls1.h */,
-				6BD7729E25FF5D2500E89948 /* err.h */,
-				6BD7729F25FF5D2500E89948 /* bn.h */,
-				6BD772A025FF5D2500E89948 /* blowfish.h */,
-				6BD772A125FF5D2500E89948 /* cms.h */,
-				6BD772A225FF5D2500E89948 /* engine.h */,
-				6BD772A325FF5D2500E89948 /* conf_api.h */,
-				6BD772A425FF5D2500E89948 /* x509.h */,
-				6BD772A525FF5D2500E89948 /* asn1_mac.h */,
-				6BD772A625FF5D2500E89948 /* ui.h */,
-				6BD772A725FF5D2500E89948 /* kssl.h */,
-				6BD772A825FF5D2500E89948 /* sha.h */,
-				6BD772A925FF5D2500E89948 /* symhacks.h */,
-				6BD772AA25FF5D2500E89948 /* asn1.h */,
-				6BD772AB25FF5D2500E89948 /* opensslconf.h */,
-				6BD772AC25FF5D2500E89948 /* bio.h */,
-				6BD772AD25FF5D2500E89948 /* rc2.h */,
-				6BD772AE25FF5D2500E89948 /* dh.h */,
-				6BD772AF25FF5D2500E89948 /* ui_compat.h */,
-				6BD772B025FF5D2500E89948 /* x509v3.h */,
-				6BD772B125FF5D2500E89948 /* ssl23.h */,
-				6BD772B225FF5D2500E89948 /* conf.h */,
-				6BD772B325FF5D2500E89948 /* md5.h */,
-				6BD772B425FF5D2500E89948 /* x509_vfy.h */,
-				6BD772B525FF5D2500E89948 /* txt_db.h */,
-				6BD772B625FF5D2500E89948 /* safestack.h */,
-				6BD772B725FF5D2500E89948 /* ecdsa.h */,
-				6BD772B825FF5D2500E89948 /* objects.h */,
-				6BD772B925FF5D2500E89948 /* pkcs12.h */,
-				6BD772BA25FF5D2500E89948 /* crypto.h */,
-				6BD772BB25FF5D2500E89948 /* opensslv.h */,
-				6BD772BC25FF5D2500E89948 /* pkcs7.h */,
-				6BD772BD25FF5D2500E89948 /* obj_mac.h */,
-				6BD772BE25FF5D2500E89948 /* buffer.h */,
-				6BD772BF25FF5D2500E89948 /* ssl.h */,
-				6BD772C025FF5D2500E89948 /* srp.h */,
-				6BD772C125FF5D2500E89948 /* camellia.h */,
-				6BD772C225FF5D2500E89948 /* evp.h */,
-				6BD772C325FF5D2500E89948 /* e_os2.h */,
-				6BD772C425FF5D2500E89948 /* md4.h */,
-				6BD772C525FF5D2500E89948 /* hmac.h */,
-				6BD772C625FF5D2500E89948 /* aes.h */,
-				6BD772C725FF5D2500E89948 /* comp.h */,
-				6BD772C825FF5D2500E89948 /* cast.h */,
-				6BD772C925FF5D2500E89948 /* rc4.h */,
-				6BD772CA25FF5D2500E89948 /* stack.h */,
-				6BD772CB25FF5D2500E89948 /* des.h */,
-				6BD772CC25FF5D2500E89948 /* ocsp.h */,
-				6BD772CD25FF5D2500E89948 /* ec.h */,
-				6BD772CE25FF5D2500E89948 /* ecdh.h */,
-				6BD772CF25FF5D2500E89948 /* rand.h */,
-				6BD772D025FF5D2500E89948 /* ts.h */,
-				6BD772D125FF5D2500E89948 /* pqueue.h */,
-				6BD772D225FF5D2500E89948 /* dso.h */,
-				6BD772D325FF5D2500E89948 /* seed.h */,
-				6BD772D425FF5D2500E89948 /* modes.h */,
-				6BD772D525FF5D2500E89948 /* ssl2.h */,
-				6BD772D625FF5D2500E89948 /* rsa.h */,
-				6BD772D725FF5D2500E89948 /* krb5_asn.h */,
-				6BD772D825FF5D2500E89948 /* des_old.h */,
-				6BD772D925FF5D2500E89948 /* ripemd.h */,
-				6BD772DA25FF5D2500E89948 /* whrlpool.h */,
-				6BD772DB25FF5D2500E89948 /* tls1.h */,
-				6BD772DC25FF5D2500E89948 /* mdc2.h */,
-				6BD772DD25FF5D2500E89948 /* dsa.h */,
-				6BD772DE25FF5D2500E89948 /* srtp.h */,
-				6BD772DF25FF5D2500E89948 /* asn1t.h */,
-				6BD772E025FF5D2500E89948 /* cmac.h */,
-				6BD772E125FF5D2500E89948 /* ebcdic.h */,
-				6BD772E225FF5D2500E89948 /* idea.h */,
-				6BD772E325FF5D2500E89948 /* lhash.h */,
-			);
-			path = openssl;
-			sourceTree = "<group>";
-		};
-		6BD772E425FF5D2500E89948 /* lib */ = {
-			isa = PBXGroup;
-			children = (
-				6BD772E525FF5D2500E89948 /* libcrypto.a */,
-				6BD772E625FF5D2500E89948 /* iOS */,
-				6BD772E925FF5D2500E89948 /* Mac */,
-				6BD772EC25FF5D2500E89948 /* libssl.a */,
-			);
-			path = lib;
-			sourceTree = "<group>";
-		};
-		6BD772E625FF5D2500E89948 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				6BD772E725FF5D2500E89948 /* libcrypto.a */,
-				6BD772E825FF5D2500E89948 /* libssl.a */,
-			);
-			path = iOS;
-			sourceTree = "<group>";
-		};
-		6BD772E925FF5D2500E89948 /* Mac */ = {
-			isa = PBXGroup;
-			children = (
-				6BD772EA25FF5D2500E89948 /* libcrypto.a */,
-				6BD772EB25FF5D2500E89948 /* libssl.a */,
-			);
-			path = Mac;
-			sourceTree = "<group>";
-		};
 		6BD772F825FF5D8700E89948 /* include */ = {
 			isa = PBXGroup;
 			children = (
@@ -2224,38 +1941,6 @@
 				6BD7734C25FF5D9000E89948 /* libssl.a */,
 			);
 			path = Mac;
-			sourceTree = "<group>";
-		};
-		6BD7735425FF5EBF00E89948 /* CCInitial */ = {
-			isa = PBXGroup;
-			children = (
-				6BD7735525FF5EBF00E89948 /* CCInitViewController.swift */,
-				6BD7735625FF5EBF00E89948 /* CCInitView.swift */,
-			);
-			name = CCInitial;
-			path = ../SkilEx/CCAvenue/CCInitial;
-			sourceTree = "<group>";
-		};
-		6BD7735F25FF601600E89948 /* Objective C Classes */ = {
-			isa = PBXGroup;
-			children = (
-				6BD7736025FF601600E89948 /* Base64.h */,
-				6BD7736125FF601600E89948 /* CCTool.m */,
-				6BD7736325FF601600E89948 /* CCIntegrationKit_swift+bridging.h */,
-				6BD7736425FF601600E89948 /* Base64.m */,
-				6BD7736525FF601600E89948 /* CCTool.h */,
-				6BD7736E25FF60D500E89948 /* OSA-BridgingHeader.h */,
-			);
-			path = "Objective C Classes";
-			sourceTree = "<group>";
-		};
-		6BD7737225FF637500E89948 /* CCInitial */ = {
-			isa = PBXGroup;
-			children = (
-				6BD7737325FF637800E89948 /* CCInitViewController.swift */,
-				6BD7737425FF637900E89948 /* CCInitView.swift */,
-			);
-			path = CCInitial;
 			sourceTree = "<group>";
 		};
 		6BD8923325F206750004EEB3 /* CartDelete */ = {
@@ -2516,7 +2201,6 @@
 			isa = PBXGroup;
 			children = (
 				6B83FD452617145900BB3307 /* OSA.entitlements */,
-				6B7CB0A425FB9AB400DF76C5 /* CCAvenue */,
 				6BFF980E25C9253700D60BF3 /* AppDelegate.swift */,
 				6BFF981025C9253800D60BF3 /* SceneDelegate.swift */,
 				6BFF981225C9253800D60BF3 /* ViewController.swift */,
@@ -2602,7 +2286,7 @@
 				6BD76A5C25FF52A600E89948 /* Frameworks */,
 				6BD769D425FF400500E89948 /* OpenAL.framework */,
 				6B409EE725FCCAA400C5E6BA /* OpenSSL.xcframework */,
-				251184F32CEA9EB8AD76143C /* Pods_OSA.framework */,
+				C0EE2B05EC739D26B5E40F4F /* Pods_OSA.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -2610,8 +2294,8 @@
 		F1ED08369EB70DF7C5161126 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				CF962641A5DDA5A0E8EED271 /* Pods-OSA.debug.xcconfig */,
-				C134F5B017747ACB187BB640 /* Pods-OSA.release.xcconfig */,
+				D6C084DF2364C846017F9136 /* Pods-OSA.debug.xcconfig */,
+				566970A89DE8E788D51108CA /* Pods-OSA.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -2640,13 +2324,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6BFF983525C9255400D60BF3 /* Build configuration list for PBXNativeTarget "OSA" */;
 			buildPhases = (
-				EB6D07E1169B755CDDF675E9 /* [CP] Check Pods Manifest.lock */,
+				E9187626353E63E119A83DCF /* [CP] Check Pods Manifest.lock */,
 				6BFF980725C9253700D60BF3 /* Sources */,
 				6BFF980825C9253700D60BF3 /* Frameworks */,
 				6BFF980925C9253700D60BF3 /* Resources */,
 				6B83FD272616EA8A00BB3307 /* Embed App Extensions */,
-				7E4693E7FBA7BD73CA1BB60B /* [CP] Embed Pods Frameworks */,
-				6F7F20D3F948ABA1C7B46516 /* [CP] Copy Pods Resources */,
+				CEAE9F7FD1F743260C655F37 /* [CP] Embed Pods Frameworks */,
+				B898473B5DAD64EE9554C916 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -2755,7 +2439,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6BFF985625C92ACA00D60BF3 /* Montserrat-ExtraBold.otf in Resources */,
-				7990553D2628708A002D7AF6 /* Wallet.storyboard in Resources */,
+				EE0B9AF728B4C6C6006BB9CA /* Wallet.storyboard in Resources */,
 				6BFF984E25C92ACA00D60BF3 /* MontserratAlternates-Light.otf in Resources */,
 				6BA45A662600E9550008B69F /* BookingSuccess.storyboard in Resources */,
 				6BFF985425C92ACA00D60BF3 /* Montserrat-Medium.otf in Resources */,
@@ -2799,7 +2483,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		6F7F20D3F948ABA1C7B46516 /* [CP] Copy Pods Resources */ = {
+		B898473B5DAD64EE9554C916 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -2816,7 +2500,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OSA/Pods-OSA-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		7E4693E7FBA7BD73CA1BB60B /* [CP] Embed Pods Frameworks */ = {
+		CEAE9F7FD1F743260C655F37 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -2833,7 +2517,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OSA/Pods-OSA-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		EB6D07E1169B755CDDF675E9 /* [CP] Check Pods Manifest.lock */ = {
+		E9187626353E63E119A83DCF /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -2873,7 +2557,6 @@
 				6B05F64825E50424001668B3 /* NewArrivalsWorker.swift in Sources */,
 				6BF627F525D6847C00CC8535 /* OTPInteractor.swift in Sources */,
 				6BFDE3FE2615A46E00484533 /* ResultFilterPresenter.swift in Sources */,
-				6B409EF525FCD7F700C5E6BA /* CCWebViewPresenter.swift in Sources */,
 				6BBFA24F25FF9CD6003ADB6C /* ReviewOrderRouter.swift in Sources */,
 				6B6855A7260326CC00056296 /* ProfileUpdateWorker.swift in Sources */,
 				6B176BA0260B46CA00A9A9C6 /* OrderCartDetailsPresenter.swift in Sources */,
@@ -2893,8 +2576,6 @@
 				6B9BBBE6260C69E200B215F5 /* AddReviewPresenter.swift in Sources */,
 				6BE8586925EE59FD00A1F30B /* ProductSizeModel.swift in Sources */,
 				6B05F63625E5033F001668B3 /* NewArrivalsTableViewCell.swift in Sources */,
-				6B409F0B25FCD96F00C5E6BA /* CCWebViewWorker.swift in Sources */,
-				6B7CB0A725FB9B3300DF76C5 /* CCWebViewViewController.swift in Sources */,
 				6BF627FC25D684B600CC8535 /* OTPModel.swift in Sources */,
 				6BD68BC3261D971600355F41 /* NotificationListWorker.swift in Sources */,
 				6B05778025F9058E007E5F4F /* DeleteAddressWorker.swift in Sources */,
@@ -2933,7 +2614,6 @@
 				6B0F6D4A25F0DBA3008726FB /* CartModels.swift in Sources */,
 				6BE8588625EE6C6600A1F30B /* ProductSizeCollectionViewCell.swift in Sources */,
 				6B457CD625F7554F00DC017F /* OrderDetailsPresenter.swift in Sources */,
-				6B409EF025FCD7C500C5E6BA /* CCWebViewInteracter.swift in Sources */,
 				6B70FA7225CBCA1900AA4DD8 /* GradientView.swift in Sources */,
 				6B0D9CA125F783E6003DBBDF /* AddressListRouter.swift in Sources */,
 				6B03DCA325D4F694000344D0 /* DashBoard.swift in Sources */,
@@ -2957,7 +2637,6 @@
 				6BC5834C260465A800C1A39C /* WishListRemoveModel.swift in Sources */,
 				6B7CC29625E7B2850045DFB8 /* CategorySelectWorker.swift in Sources */,
 				6BF6281025D6864D00CC8535 /* ForgotPasswordInteractor.swift in Sources */,
-				6BD7735825FF5EC000E89948 /* CCInitView.swift in Sources */,
 				6B176BD5260B6BA600A9A9C6 /* ReturnReasonListTableViewCell.swift in Sources */,
 				6B71624725CD2C8F0021F55D /* LoginInteractor.swift in Sources */,
 				6BD1BE2725F24B1500CC5721 /* CheckPincodeWorker.swift in Sources */,
@@ -2992,9 +2671,7 @@
 				6BE8586425EE59DE00A1F30B /* ProductSizeWorker.swift in Sources */,
 				6B0F6D5125F0E7F5008726FB /* CartListViewController.swift in Sources */,
 				6BF6282425D6869100CC8535 /* ForgotPasswordRouter.swift in Sources */,
-				6B409EAA25FCB81A00C5E6BA /* CCResultViewController.swift in Sources */,
 				6BD68BC5261D972000355F41 /* NotificationListPresenter.swift in Sources */,
-				6B409E9D25FCB7AA00C5E6BA /* LoadingOverlay.swift in Sources */,
 				6B9BBBE4260C69BE00B215F5 /* AddReviewWorker.swift in Sources */,
 				6B05777025F8C97C007E5F4F /* AddAddressPresenter.swift in Sources */,
 				6B00C87226136744004E7D6F /* RecentSearchInteracter.swift in Sources */,
@@ -3057,7 +2734,6 @@
 				6BC207D825CA9DD2007083D4 /* LoginViewController.swift in Sources */,
 				6B158D2425E37C1200A247A1 /* CategoryWorker.swift in Sources */,
 				6B92962725FB545000C5E72B /* WalletDetailsInteracter.swift in Sources */,
-				6B409EFF25FCD86600C5E6BA /* CCWebViewModel.swift in Sources */,
 				6B05778525F905E8007E5F4F /* DeleteAddresPresenter.swift in Sources */,
 				6B480902260A1D58007E8E55 /* PayCODBookingSuccessViewController.swift in Sources */,
 				6B0D9C9725F78378003DBBDF /* AddressListPresenter.swift in Sources */,
@@ -3071,7 +2747,6 @@
 				6BFAEF38260DC7F70051B766 /* CheckPasswordModel.swift in Sources */,
 				6B9BBBEF260C6A6200B215F5 /* CheckReviewInteracter.swift in Sources */,
 				6B7D2AB825FB86A6003DDF82 /* AddMoneyToWalletPresenter.swift in Sources */,
-				6B409EFA25FCD84400C5E6BA /* CCWebViewRouter.swift in Sources */,
 				6BE8585625EE599D00A1F30B /* ProductSizeInteractor.swift in Sources */,
 				6BE4049525E4CB74006BC307 /* BestSellingInteracter.swift in Sources */,
 				6B2AF6AE25DD4973003D1930 /* DashBoardInteractor.swift in Sources */,
@@ -3150,7 +2825,6 @@
 				6BF6284325D68D0A00CC8535 /* SignUpPresenter.swift in Sources */,
 				6BC9C3562615F2AA005A3F56 /* ColourListModel.swift in Sources */,
 				6B8B014725EA70DA007564F9 /* ProductDetailsViewController.swift in Sources */,
-				6BD7736725FF601600E89948 /* Base64.m in Sources */,
 				6B05777B25F9052E007E5F4F /* DeleteAddressInteracter.swift in Sources */,
 				6B05776E25F8C92D007E5F4F /* AddAddressWorker.swift in Sources */,
 				6BEC7C262608BD5200A75767 /* WalletRemoveModel.swift in Sources */,
@@ -3214,7 +2888,6 @@
 				6B0D9CA625F786BD003DBBDF /* AddressModels.swift in Sources */,
 				6B05779A25F9064E007E5F4F /* UpdateAddressPresenter.swift in Sources */,
 				6B6FDB6225EFAECA00B07955 /* ReviewListTableViewCell.swift in Sources */,
-				6BD7736625FF601600E89948 /* CCTool.m in Sources */,
 				6B92963125FB547600C5E72B /* WalletDetailsPresenter.swift in Sources */,
 				6BE8587E25EE5A6000A1F30B /* ProductColourModel.swift in Sources */,
 				6BEC7C172608BD0E00A75767 /* WalletRemoveInteracter.swift in Sources */,
@@ -3244,7 +2917,6 @@
 				6B05778725F90601007E5F4F /* DeleteAddressModel.swift in Sources */,
 				6B70FA8725CBD47C00AA4DD8 /* constants.swift in Sources */,
 				6BFAEF1A260DC7620051B766 /* ChangePasswordWorker.swift in Sources */,
-				6BD7735725FF5EC000E89948 /* CCInitViewController.swift in Sources */,
 				6BD13BBF25F10255005EFAB4 /* CartListTableViewCell.swift in Sources */,
 				6BFDE3EB2615A3F100484533 /* ListFilterWorker.swift in Sources */,
 				6B00C86B2613670C004E7D6F /* SearchProductPresenter.swift in Sources */,
@@ -3313,7 +2985,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6V986NC4N5;
+				DEVELOPMENT_TEAM = VD7755LNVB;
 				INFOPLIST_FILE = NotificationService/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -3321,7 +2993,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.hst.OSA.NotificationService;
+				PRODUCT_BUNDLE_IDENTIFIER = com.assistly.OSA.NotificationService;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -3333,7 +3005,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6V986NC4N5;
+				DEVELOPMENT_TEAM = VD7755LNVB;
 				INFOPLIST_FILE = NotificationService/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -3341,7 +3013,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.hst.OSA.NotificationService;
+				PRODUCT_BUNDLE_IDENTIFIER = com.assistly.OSA.NotificationService;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -3467,7 +3139,7 @@
 		};
 		6BFF983625C9255400D60BF3 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CF962641A5DDA5A0E8EED271 /* Pods-OSA.debug.xcconfig */;
+			baseConfigurationReference = D6C084DF2364C846017F9136 /* Pods-OSA.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = YES;
@@ -3475,11 +3147,13 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = OSA/OSA.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6V986NC4N5;
+				DEVELOPMENT_TEAM = VD7755LNVB;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Pods/GoogleSignIn/Frameworks",
+					"$(PROJECT_DIR)/OSA",
 				);
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/SSL/include\"";
 				INFOPLIST_FILE = OSA/Info.plist;
@@ -3495,8 +3169,9 @@
 					"$(PROJECT_DIR)/OSA/CCAvenue/SSL/lib/Mac",
 				);
 				NEW_SETTING = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.hst.OSA;
+				PRODUCT_BUNDLE_IDENTIFIER = com.assistly.OSA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "OSA/CCAvenue/Objective C Classes/OSA-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -3506,7 +3181,7 @@
 		};
 		6BFF983725C9255400D60BF3 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C134F5B017747ACB187BB640 /* Pods-OSA.release.xcconfig */;
+			baseConfigurationReference = 566970A89DE8E788D51108CA /* Pods-OSA.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = YES;
@@ -3514,11 +3189,13 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = OSA/OSA.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6V986NC4N5;
+				DEVELOPMENT_TEAM = VD7755LNVB;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Pods/GoogleSignIn/Frameworks",
+					"$(PROJECT_DIR)/OSA",
 				);
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/SSL/include\"";
 				INFOPLIST_FILE = OSA/Info.plist;
@@ -3534,8 +3211,9 @@
 					"$(PROJECT_DIR)/OSA/CCAvenue/SSL/lib/Mac",
 				);
 				NEW_SETTING = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.hst.OSA;
+				PRODUCT_BUNDLE_IDENTIFIER = com.assistly.OSA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "OSA/CCAvenue/Objective C Classes/OSA-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -3547,8 +3225,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6V986NC4N5;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = OSATests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -3556,8 +3236,10 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.hst.OSATests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.assistly.OSATests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OSA.app/OSA";
@@ -3569,8 +3251,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6V986NC4N5;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = OSATests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -3578,8 +3262,10 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.hst.OSATests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.assistly.OSATests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OSA.app/OSA";
@@ -3591,14 +3277,14 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6V986NC4N5;
+				DEVELOPMENT_TEAM = VD7755LNVB;
 				INFOPLIST_FILE = OSAUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.hst.OSAUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.assistly.OSAUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -3611,14 +3297,14 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6V986NC4N5;
+				DEVELOPMENT_TEAM = VD7755LNVB;
 				INFOPLIST_FILE = OSAUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.hst.OSAUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.assistly.OSAUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

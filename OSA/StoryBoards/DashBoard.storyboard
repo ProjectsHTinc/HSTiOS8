@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="c5w-Jg-svK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="c5w-Jg-svK">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -354,7 +354,7 @@
                                                 </constraints>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="132" id="524-dz-htz" customClass="NewArrivalsTableViewCell" customModule="OSA" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="28" width="414" height="132"/>
+                                                        <rect key="frame" x="0.0" y="44.5" width="414" height="132"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="524-dz-htz" id="tqg-eH-V3F">
                                                             <rect key="frame" x="0.0" y="0.0" width="414" height="132"/>
@@ -541,7 +541,7 @@
                                                 <color key="sectionIndexBackgroundColor" red="0.95686274510000002" green="0.95294117649999999" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="adsCell" rowHeight="146" id="de4-ZM-JhL" customClass="AdsTableViewCell" customModule="OSA" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="28" width="414" height="146"/>
+                                                        <rect key="frame" x="0.0" y="44.5" width="414" height="146"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="de4-ZM-JhL" id="2Tg-b0-wXA">
                                                             <rect key="frame" x="0.0" y="0.0" width="414" height="146"/>
@@ -1019,7 +1019,7 @@
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="tJc-gu-ggx" customClass="RecentSearchListTableViewCell" customModule="OSA" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="28" width="414" height="31.5"/>
+                                                <rect key="frame" x="0.0" y="44.5" width="414" height="31.5"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tJc-gu-ggx" id="g4t-2D-LD4">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="31.5"/>
@@ -1937,7 +1937,7 @@
                                                 </constraints>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="99" id="qy3-61-G0N" customClass="ReviewListTableViewCell" customModule="OSA" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="28" width="414" height="99"/>
+                                                        <rect key="frame" x="0.0" y="44.5" width="414" height="99"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qy3-61-G0N" id="OfW-a9-XeR">
                                                             <rect key="frame" x="0.0" y="0.0" width="414" height="99"/>
@@ -2620,7 +2620,7 @@
                                 <color key="backgroundColor" red="0.95686274509803915" green="0.95294117647058818" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" rowHeight="145" id="WzP-Uv-Spa" customClass="CartListTableViewCell" customModule="OSA" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="145"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="145"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WzP-Uv-Spa" id="0D7-52-Jhn">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="145"/>
@@ -4234,8 +4234,8 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="gR7-08-QJS"/>
-        <segue reference="IPj-mk-tMa"/>
-        <segue reference="3eK-ZL-sen"/>
+        <segue reference="w1G-t9-CcQ"/>
+        <segue reference="ok8-vp-vWI"/>
         <segue reference="T1G-gb-bFv"/>
         <segue reference="zxd-Hz-Cz4"/>
         <segue reference="N5G-fO-NdY"/>
